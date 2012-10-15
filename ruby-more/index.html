@@ -2066,7 +2066,72 @@ varsa <code>self</code> kullanın</p>
             <header><h1>Sınıf İçinde Değişkenler ve Sabitler</h1></header>
             
             
-            <section><p>.code: rb_class_variable_experiment/main.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="c1"># Yardımcı</span>
+<span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="nb">p</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="nb">eval</span><span class="p">(</span><span class="nb">p</span><span class="p">,</span> <span class="no">TOPLEVEL_BINDING</span><span class="p">)</span> <span class="o">||</span> <span class="s1">&#39;boş&#39;</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="s2">&quot;A sınıfı tanımlanıyor&quot;</span>
+<span class="k">class</span> <span class="nc">A</span>
+  <span class="kp">attr</span> <span class="ss">:instance_variable</span>
+
+  <span class="no">CONSTANT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">_CONSTANT&quot;</span>
+  <span class="vc">@@class_variable</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">_class_variable&quot;</span>
+  <span class="vi">@class_instance_variable</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">_class_instance_variable&quot;</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@instance_variable</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">_instance_variable&quot;</span>
+  <span class="k">end</span>
+
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="kp">attr</span> <span class="ss">:class_instance_variable</span>
+    <span class="k">def</span> <span class="nf">class_variable</span>
+      <span class="vc">@@class_variable</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="s2">&quot;B &lt; A sınıfı tanımlanıyor (değişiklik yapmadan)&quot;</span>
+<span class="k">class</span> <span class="nc">B</span> <span class="o">&lt;</span> <span class="n">A</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="s2">&quot;C &lt; A sınıfı tanımlanıyor (değişiklik yaparak)&quot;</span>
+<span class="k">class</span> <span class="nc">C</span> <span class="o">&lt;</span> <span class="n">A</span>
+  <span class="no">CONSTANT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">_CONSTANT&quot;</span>
+  <span class="vc">@@class_variable</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">_class_variable&quot;</span>
+  <span class="vi">@class_instance_variable</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">_class_instance_variable&quot;</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="s2">&quot;A sınıfından a nesnesi oluşturuluyor&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">new</span>
+<span class="nb">puts</span> <span class="s2">&quot;B sınıfından b nesnesi oluşturuluyor&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">new</span>
+<span class="nb">puts</span> <span class="s2">&quot;C sınıfından c nesnesi oluşturuluyor&quot;</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">new</span>
+
+<span class="nb">puts</span>
+<span class="n">dump</span> <span class="s1">&#39;A&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;A::CONSTANT&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;A.class_variable&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;A.class_instance_variable&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;a.instance_variable&#39;</span>
+<span class="nb">puts</span>
+<span class="n">dump</span> <span class="s1">&#39;B&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;B::CONSTANT&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;B.class_variable&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;B.class_instance_variable&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;b.instance_variable&#39;</span>
+<span class="nb">puts</span>
+<span class="n">dump</span> <span class="s1">&#39;C&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;C::CONSTANT&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;C.class_variable&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;C.class_instance_variable&#39;</span>
+<span class="n">dump</span> <span class="s1">&#39;c.instance_variable&#39;</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2100,7 +2165,32 @@ varsa <code>self</code> kullanın</p>
 <li>Çıktı</li>
 </ul>
 
-<p>.code: rb_class_variable_experiment/out</p></section>
+<p><div class="highlight"><pre>A sınıfı tanımlanıyor
+B <span class="nt">&lt; A</span> <span class="err">sınıfı</span> <span class="err">tanımlanıyor</span> <span class="err">(değişiklik</span> <span class="err">yapmadan)</span>
+<span class="err">C</span> <span class="err">&lt;</span> <span class="err">A</span> <span class="err">sınıfı</span> <span class="err">tanımlanıyor</span> <span class="err">(değişiklik</span> <span class="err">yaparak)</span>
+<span class="err">A</span> <span class="err">sınıfından</span> <span class="err">a</span> <span class="err">nesnesi</span> <span class="err">oluşturuluyor</span>
+<span class="err">B</span> <span class="err">sınıfından</span> <span class="err">b</span> <span class="err">nesnesi</span> <span class="err">oluşturuluyor</span>
+<span class="err">C</span> <span class="err">sınıfından</span> <span class="err">c</span> <span class="err">nesnesi</span> <span class="err">oluşturuluyor</span>
+
+<span class="err">A:</span> <span class="err">A</span>
+<span class="err">A::CONSTANT:</span> <span class="err">A_CONSTANT</span>
+<span class="err">A.class_variable:</span> <span class="err">C_class_variable</span>
+<span class="err">A.class_instance_variable:</span> <span class="err">A_class_instance_variable</span>
+<span class="err">a.instance_variable:</span> <span class="err">#&lt;A:0x00000001bc1a28</span><span class="nt">&gt;</span>_instance_variable
+
+B: B
+B::CONSTANT: A_CONSTANT
+B.class_variable: C_class_variable
+B.class_instance_variable: boş
+b.instance_variable: #<span class="nt">&lt;B:0x00000001bc18c0&gt;</span>_instance_variable
+
+C: C
+C::CONSTANT: C_CONSTANT
+C.class_variable: C_class_variable
+C.class_instance_variable: C_class_instance_variable
+c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instance_variable
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2325,7 +2415,14 @@ gelen ilk argümanı gösterir, program ismini değil</p></li>
             <header><h1>Meta Programlama</h1></header>
             
             
-            <section><p>.code: rb_meta_simple_masallah/main.rb /if.+FILE.+==.+0/+1 /end/-1</p></section>
+            <section><p><div class="highlight"><pre>  <span class="mi">1</span><span class="o">.</span><span class="n">kez</span> <span class="n">g</span><span class="err">ö</span><span class="n">rd</span><span class="err">ü</span><span class="n">m</span>
+  <span class="mi">2</span><span class="o">.</span><span class="n">sefer</span> <span class="n">gittim</span>
+  <span class="mi">3</span><span class="o">.</span><span class="n">defa</span> <span class="n">evet</span>
+  <span class="mi">41</span><span class="o">.</span><span class="n">kere</span> <span class="n">ma</span><span class="err">ş</span><span class="n">allah</span>
+  <span class="mi">100</span><span class="o">.</span><span class="n">kere</span> <span class="n">t</span><span class="err">ö</span><span class="n">vbe</span>
+  <span class="c1"># Bu bir hikaye miydi?  Hmm, hayır!</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2355,7 +2452,48 @@ gelen ilk argümanı gösterir, program ismini değil</p></li>
             <header><h1>Meta Programlama</h1></header>
             
             
-            <section><p>.code: rb_meta_simple_masallah/main.rb</p>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="n">E</span><span class="err">Ş</span><span class="no">ANLAMLAR</span> <span class="o">=</span> <span class="sx">%w(</span>
+<span class="sx">  defa</span>
+<span class="sx">  kere</span>
+<span class="sx">  kez</span>
+<span class="sx">  sefer</span>
+<span class="sx">)</span>
+<span class="n">S</span><span class="err">Ö</span><span class="no">ZLER</span> <span class="o">=</span> <span class="sx">%w(</span>
+<span class="sx">  evet</span>
+<span class="sx">  gittim</span>
+<span class="sx">  gördüm</span>
+<span class="sx">  maşallah</span>
+<span class="sx">  tövbe</span>
+<span class="sx">)</span>
+
+<span class="k">class</span> <span class="nc">Object</span>
+  <span class="n">S</span><span class="err">Ö</span><span class="no">ZLER</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="err">ö</span><span class="n">z</span><span class="o">|</span>
+    <span class="n">define_method</span><span class="p">(</span><span class="n">s</span><span class="err">ö</span><span class="n">z</span><span class="o">.</span><span class="n">to_sym</span><span class="p">)</span> <span class="p">{</span> <span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="nb">puts</span> <span class="n">s</span><span class="err">ö</span><span class="n">z</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Fixnum</span>
+  <span class="k">def</span> <span class="nf">turkish_times</span><span class="p">(</span><span class="n">s</span><span class="err">ö</span><span class="n">yle</span><span class="p">)</span>
+    <span class="n">times</span> <span class="o">&amp;</span><span class="n">s</span><span class="err">ö</span><span class="n">yle</span>
+  <span class="k">end</span>
+  <span class="n">E</span><span class="err">Ş</span><span class="no">ANLAMLAR</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="err">ş</span><span class="n">anlam</span><span class="o">|</span>
+    <span class="nb">eval</span> <span class="s2">&quot;alias </span><span class="si">#{</span><span class="n">e</span><span class="err">ş</span><span class="n">anlam</span><span class="si">}</span><span class="s2"> :turkish_times&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+  <span class="mi">1</span><span class="o">.</span><span class="n">kez</span> <span class="n">g</span><span class="err">ö</span><span class="n">rd</span><span class="err">ü</span><span class="n">m</span>
+  <span class="mi">2</span><span class="o">.</span><span class="n">sefer</span> <span class="n">gittim</span>
+  <span class="mi">3</span><span class="o">.</span><span class="n">defa</span> <span class="n">evet</span>
+  <span class="mi">41</span><span class="o">.</span><span class="n">kere</span> <span class="n">ma</span><span class="err">ş</span><span class="n">allah</span>
+  <span class="mi">100</span><span class="o">.</span><span class="n">kere</span> <span class="n">t</span><span class="err">ö</span><span class="n">vbe</span>
+  <span class="c1"># Bu bir hikaye miydi?  Hmm, hayır!</span>
+<span class="k">end</span>
+</pre></div>
+</p>
 
 <!--
 

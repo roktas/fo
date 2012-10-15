@@ -62,7 +62,7 @@ Bu ilişkinin doğal olması lazım
 
 # Miras Alma (Hatalı Soyutlama)
 
-.code: rb_inheritance_vs_composition_vehicle/main1.rb
+.code: code/rb_inheritance_vs_composition_vehicle/main1.rb
 
 ---
 
@@ -124,7 +124,7 @@ Bize başka bir soyutlama lazım
 
 # Komposizyon
 
-.code: rb_inheritance_vs_composition_vehicle/main.rb
+.code: code/rb_inheritance_vs_composition_vehicle/main.rb
 
 ---
 
@@ -156,7 +156,7 @@ Bazen "Kompozisyon" ve "Miras Alma" birlikte kullanılabilir
 
 # Komposizyon ve Miras Alma
 
-.code: rb_inheritance_plus_composition_vehicle/main.rb
+.code: code/rb_inheritance_plus_composition_vehicle/main.rb
 
 ---
 
@@ -188,4 +188,4 @@ Araba içinde motorun çalışmasıyla ilgili tüm işler motora devredilmeli
 
 # Delegasyon
 
-.code: rb_delegation_vehicle/main.rb
+.code: code/rb_delegation_vehicle/main.rb

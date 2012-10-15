@@ -1804,7 +1804,35 @@ div.slide {
             <header><h1>Miras Alma (Hatalı Soyutlama)</h1></header>
             
             
-            <section><p>.code: rb_inheritance_vs_composition_vehicle/main1.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Vehicle</span>
+  <span class="c1"># Araç&#39;la ilgili tüm ortak akıl burada...</span>
+
+  <span class="k">def</span> <span class="nf">start_engine</span>
+    <span class="nb">puts</span> <span class="s2">&quot;başla&quot;</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">stop_engine</span>
+    <span class="nb">puts</span> <span class="s2">&quot;dur&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Car</span> <span class="o">&lt;</span> <span class="no">Vehicle</span>
+  <span class="c1"># Hafta sonu turu</span>
+  <span class="k">def</span> <span class="nf">sunday_drive</span>
+    <span class="n">start_engine</span>
+    <span class="c1"># Gez dolaş ve dön...</span>
+    <span class="n">stop_engine</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+  <span class="n">car</span> <span class="o">=</span> <span class="no">Car</span><span class="o">.</span><span class="n">new</span>
+  <span class="n">car</span><span class="o">.</span><span class="n">sunday_drive</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2012,7 +2040,38 @@ div.slide {
             <header><h1>Komposizyon</h1></header>
             
             
-            <section><p>.code: rb_inheritance_vs_composition_vehicle/main.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Engine</span>
+  <span class="c1"># Motor&#39;la ilgili tüm ortak akıl burada...</span>
+  <span class="k">def</span> <span class="nf">start</span>
+    <span class="nb">puts</span> <span class="s2">&quot;başla&quot;</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">stop</span>
+    <span class="nb">puts</span> <span class="s2">&quot;dur&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Car</span>
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@engine</span> <span class="o">=</span> <span class="no">Engine</span><span class="o">.</span><span class="n">new</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Hafta sonu turu</span>
+  <span class="k">def</span> <span class="nf">sunday_drive</span>
+    <span class="vi">@engine</span><span class="o">.</span><span class="n">start</span>
+    <span class="c1"># Gez dolaş ve dön...</span>
+    <span class="vi">@engine</span><span class="o">.</span><span class="n">stop</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+  <span class="n">car</span> <span class="o">=</span> <span class="no">Car</span><span class="o">.</span><span class="n">new</span>
+  <span class="n">car</span><span class="o">.</span><span class="n">sunday_drive</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2113,7 +2172,54 @@ div.slide {
             <header><h1>Komposizyon ve Miras Alma</h1></header>
             
             
-            <section><p>.code: rb_inheritance_plus_composition_vehicle/main.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Engine</span>
+  <span class="c1"># Motor&#39;la ilgili tüm ortak akıl burada...</span>
+  <span class="k">def</span> <span class="nf">start</span>
+    <span class="nb">puts</span> <span class="s2">&quot;başla&quot;</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">stop</span>
+    <span class="nb">puts</span> <span class="s2">&quot;dur&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">GasolineEngine</span> <span class="o">&lt;</span> <span class="no">Engine</span>
+  <span class="c1"># Benzinli Motor</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">DieselEngine</span> <span class="o">&lt;</span> <span class="no">Engine</span>
+  <span class="c1"># Dizel Motor</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Car</span>
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@engine</span> <span class="o">=</span> <span class="no">GasolineEngine</span><span class="o">.</span><span class="n">new</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Hafta sonu turu</span>
+  <span class="k">def</span> <span class="nf">sunday_drive</span>
+    <span class="nb">puts</span> <span class="s2">&quot;Motor tipi: </span><span class="si">#{</span><span class="vi">@engine</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="vi">@engine</span><span class="o">.</span><span class="n">start</span>
+    <span class="c1"># Gez dolaş ve dön...</span>
+    <span class="vi">@engine</span><span class="o">.</span><span class="n">stop</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Dizel&#39;e çevir</span>
+  <span class="k">def</span> <span class="nf">switch_to_diesel</span>
+    <span class="vi">@engine</span> <span class="o">=</span> <span class="no">DieselEngine</span><span class="o">.</span><span class="n">new</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+  <span class="n">car</span> <span class="o">=</span> <span class="no">Car</span><span class="o">.</span><span class="n">new</span>
+  <span class="n">car</span><span class="o">.</span><span class="n">sunday_drive</span>
+  <span class="n">car</span><span class="o">.</span><span class="n">switch_to_diesel</span>
+  <span class="n">car</span><span class="o">.</span><span class="n">sunday_drive</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2217,7 +2323,56 @@ div.slide {
             <header><h1>Delegasyon</h1></header>
             
             
-            <section><p>.code: rb_delegation_vehicle/main.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Engine</span>
+  <span class="c1"># Motor&#39;la ilgili tüm ortak akıl burada...</span>
+  <span class="k">def</span> <span class="nf">start</span>
+    <span class="nb">puts</span> <span class="s2">&quot;başla&quot;</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">stop</span>
+    <span class="nb">puts</span> <span class="s2">&quot;dur&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">GasolineEngine</span> <span class="o">&lt;</span> <span class="no">Engine</span>
+  <span class="c1"># Benzinli Motor</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">DieselEngine</span> <span class="o">&lt;</span> <span class="no">Engine</span>
+  <span class="c1"># Dizel Motor</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Car</span>
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@engine</span> <span class="o">=</span> <span class="no">GasolineEngine</span><span class="o">.</span><span class="n">new</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">sunday_drive</span>
+    <span class="nb">puts</span> <span class="s2">&quot;Motor tipi: </span><span class="si">#{</span><span class="vi">@engine</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="vi">@engine</span><span class="o">.</span><span class="n">start</span>
+    <span class="c1"># Cruise out into the country and return...</span>
+    <span class="vi">@engine</span><span class="o">.</span><span class="n">stop</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">switch_to_diesel</span>
+    <span class="vi">@engine</span> <span class="o">=</span> <span class="no">DieselEngine</span><span class="o">.</span><span class="n">new</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">start_engine</span>
+    <span class="vi">@engine</span><span class="o">.</span><span class="n">start</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">stop_engine</span>
+    <span class="vi">@engine</span><span class="o">.</span><span class="n">stop</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+  <span class="n">car</span> <span class="o">=</span> <span class="no">Car</span><span class="o">.</span><span class="n">new</span>
+  <span class="n">car</span><span class="o">.</span><span class="n">sunday_drive</span>
+  <span class="n">car</span><span class="o">.</span><span class="n">switch_to_diesel</span>
+  <span class="n">car</span><span class="o">.</span><span class="n">sunday_drive</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">

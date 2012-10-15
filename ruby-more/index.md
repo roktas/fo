@@ -186,7 +186,7 @@ Ruby'de görünürde herhangi bir sınıfa ait olmayan işlevler `Object` sını
 
 # Sınıf İçinde Değişkenler ve Sabitler
 
-.code: rb_class_variable_experiment/main.rb
+.code: code/rb_class_variable_experiment/main.rb
 
 ---
 
@@ -194,7 +194,7 @@ Ruby'de görünürde herhangi bir sınıfa ait olmayan işlevler `Object` sını
 
 - Çıktı
 
-.code: rb_class_variable_experiment/out
+.code: code/rb_class_variable_experiment/out
 
 ---
 
@@ -276,13 +276,13 @@ Ruby'de nesne değişkenleri miras almadan etkilenmez.
 
 # Meta Programlama
 
-.code: rb_meta_simple_masallah/main.rb /if.+FILE.+==.+0/+1 /end/-1
+.code: code/rb_meta_simple_masallah/main.rb /if.+FILE.+==.+0/+1 /end/-1
 
 ---
 
 # Meta Programlama
 
-.code: rb_meta_simple_masallah/main.rb
+.code: code/rb_meta_simple_masallah/main.rb
 
 <!--
 

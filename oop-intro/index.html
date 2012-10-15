@@ -1723,7 +1723,97 @@ div.slide {
             <header><h1>Yapı</h1></header>
             
             
-            <section><p>.code: c_struct_simple_point/main.c</p></section>
+            <section><p><div class="highlight"><pre><span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+
+<span class="k">struct</span> <span class="n">point</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">point</span> <span class="o">*</span>
+<span class="nf">point_create</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">this</span> <span class="o">=</span>
+                <span class="p">(</span><span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">point</span><span class="p">));</span>
+
+        <span class="n">this</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">this</span><span class="o">-&gt;</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="n">this</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">point_isright</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">this</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">that</span><span class="p">)</span>
+<span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">this</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">that</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">point_isleft</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">this</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">that</span><span class="p">)</span>
+<span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">this</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">that</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">point_isabove</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">this</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">that</span><span class="p">)</span>
+<span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">this</span><span class="o">-&gt;</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">that</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">point_isbelow</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">this</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">that</span><span class="p">)</span>
+<span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">this</span><span class="o">-&gt;</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">that</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">point_isequal</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">this</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">that</span><span class="p">)</span>
+<span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">this</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">==</span> <span class="n">that</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">this</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">==</span> <span class="n">that</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span>
+<span class="nf">point_move</span><span class="p">(</span><span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">this</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">this</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">+=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">this</span><span class="o">-&gt;</span><span class="n">y</span> <span class="o">+=</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span>
+<span class="nf">point_print</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">this</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;(%d,%d)&quot;</span><span class="p">,</span> <span class="n">this</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">,</span> <span class="n">this</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span>
+<span class="nf">point_destroy</span><span class="p">(</span><span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">this</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">point_create</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+        <span class="k">struct</span> <span class="n">point</span> <span class="o">*</span><span class="n">q</span> <span class="o">=</span> <span class="n">point_create</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+
+        <span class="n">point_print</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot; noktası &quot;</span><span class="p">);</span>
+        <span class="n">point_print</span><span class="p">(</span><span class="n">q</span><span class="p">),</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot; noktasının &quot;</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">point_isleft</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="o">?</span> <span class="s">&quot;solunda&quot;</span> <span class="o">:</span> <span class="s">&quot;sağında&quot;</span><span class="p">);</span>
+
+        <span class="n">point_destroy</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+        <span class="n">point_destroy</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1781,7 +1871,75 @@ div.slide {
             <header><h1>Sınıf</h1></header>
             
             
-            <section><p>.code: cpp_class_simple_point/main.cpp</p></section>
+            <section><p><div class="highlight"><pre><span class="cp">#include &lt;cstdio&gt;</span>
+
+<span class="k">class</span> <span class="nc">Point</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+        <span class="kt">int</span> <span class="n">m_x</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">m_y</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+        <span class="n">Point</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">m_x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+                <span class="n">m_y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kt">int</span> <span class="n">x</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">return</span> <span class="n">m_x</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">y</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">return</span> <span class="n">m_y</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kt">bool</span> <span class="n">isRight</span><span class="p">(</span><span class="n">Point</span> <span class="n">other</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">return</span> <span class="n">m_x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="p">.</span><span class="n">x</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="kt">bool</span> <span class="n">isLeft</span><span class="p">(</span><span class="n">Point</span> <span class="n">other</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">return</span> <span class="n">m_x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="p">.</span><span class="n">x</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="kt">bool</span> <span class="n">isAbove</span><span class="p">(</span><span class="n">Point</span> <span class="n">other</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">return</span> <span class="n">m_y</span> <span class="o">&gt;</span> <span class="n">other</span><span class="p">.</span><span class="n">y</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="kt">bool</span> <span class="n">isBelow</span><span class="p">(</span><span class="n">Point</span> <span class="n">other</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">return</span> <span class="n">m_y</span> <span class="o">&lt;</span> <span class="n">other</span><span class="p">.</span><span class="n">y</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="kt">bool</span> <span class="n">isEqual</span><span class="p">(</span><span class="n">Point</span> <span class="n">other</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">return</span> <span class="n">other</span><span class="p">.</span><span class="n">x</span><span class="p">()</span> <span class="o">==</span> <span class="n">m_x</span> <span class="o">&amp;&amp;</span> <span class="n">other</span><span class="p">.</span><span class="n">y</span><span class="p">()</span> <span class="o">==</span> <span class="n">m_y</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kt">void</span> <span class="n">move</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">m_x</span> <span class="o">+=</span> <span class="n">x</span><span class="p">;</span>
+                <span class="n">m_y</span> <span class="o">+=</span> <span class="n">y</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;(%d,%d)&quot;</span><span class="p">,</span> <span class="n">m_x</span><span class="p">,</span> <span class="n">m_y</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">Point</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">q</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+
+        <span class="n">p</span><span class="p">.</span><span class="n">print</span><span class="p">(),</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot; noktası &quot;</span><span class="p">),</span> <span class="n">q</span><span class="p">.</span><span class="n">print</span><span class="p">(),</span> <span class="n">printf</span><span class="p">(</span><span class="s">&quot; noktasının &quot;</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">.</span><span class="n">isLeft</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">?</span> <span class="s">&quot;solunda&quot;</span> <span class="o">:</span> <span class="s">&quot;sağında&quot;</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1839,7 +1997,44 @@ div.slide {
             <header><h1>Sınıf</h1></header>
             
             
-            <section><p>.code: py_class_simple_point/main.py</p></section>
+            <section><p><div class="highlight"><pre><span class="c">#!/usr/bin/python</span>
+<span class="c"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">isright</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+
+    <span class="k">def</span> <span class="nf">isleft</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+
+    <span class="k">def</span> <span class="nf">isabove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">isbelow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">isequal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+    <span class="n">where</span> <span class="o">=</span> <span class="s">&quot;solunda&quot;</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">isleft</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="k">else</span> <span class="s">&quot;sağında&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> noktası </span><span class="si">%s</span><span class="s"> noktasının </span><span class="si">%s</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">where</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1869,7 +2064,40 @@ div.slide {
             <header><h1>İşleç Yüklemesi</h1></header>
             
             
-            <section><p>.code: py_class_overloading_point/main.py</p></section>
+            <section><p><div class="highlight"><pre><span class="c">#!/usr/bin/python</span>
+<span class="c"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&lt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&gt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+    <span class="n">where</span> <span class="o">=</span> <span class="s">&quot;solunda&quot;</span> <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">q</span> <span class="k">else</span> <span class="s">&quot;sağında&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> noktası </span><span class="si">%s</span><span class="s"> noktasının </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">where</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1899,7 +2127,44 @@ div.slide {
             <header><h1>Sınıf Metodları</h1></header>
             
             
-            <section><p>.code: py_class_classmethod_point/main1.py</p></section>
+            <section><p><div class="highlight"><pre><span class="c">#!/usr/bin/python</span>
+<span class="c"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&lt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&gt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">this</span><span class="p">,</span> <span class="n">that</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">that</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+            <span class="n">this</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">that</span><span class="o">.</span><span class="n">y</span>
+        <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">Point</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+        <span class="n">Point</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1929,7 +2194,58 @@ div.slide {
             <header><h1>Sınıf Metodları</h1></header>
             
             
-            <section><p>.code: py_class_classmethod_point/main.py</p></section>
+            <section><p><div class="highlight"><pre><span class="c">#!/usr/bin/python</span>
+<span class="c"># encoding: utf-8</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">ORIGIN</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&lt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&gt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span>
+            <span class="nb">sum</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">),</span>
+            <span class="nb">sum</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">origin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">ORIGIN</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">here</span><span class="p">,</span> <span class="n">there</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">there</span><span class="p">:</span> <span class="n">there</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">here</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">here</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;Noktalar: </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;Toplam noktası: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">Point</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> - </span><span class="si">%s</span><span class="s"> uzaklığı: </span><span class="si">%f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">Point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> - orijin uzaklığı: </span><span class="si">%f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">Point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1959,7 +2275,57 @@ div.slide {
             <header><h1>Miras Alma</h1></header>
             
             
-            <section><p>.code: py_inheritance_simple_circle/main1.py</p></section>
+            <section><p><div class="highlight"><pre><span class="c">#!/usr/bin/python</span>
+<span class="c"># encoding: utf-8</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&lt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&gt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">y</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">(</span><span class="n">Point</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+        <span class="n">Point</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">@</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">Point</span><span class="o">.</span><span class="n">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> çemberinin alanı: </span><span class="si">%f</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> çemberi &quot;</span> <span class="o">%</span> <span class="n">c</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> çemberine dönüştü.&quot;</span> <span class="o">%</span> <span class="n">c</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1989,7 +2355,79 @@ div.slide {
             <header><h1>Miras Alma</h1></header>
             
             
-            <section><p>.code: py_inheritance_simple_circle/main.py</p></section>
+            <section><p><div class="highlight"><pre><span class="c">#!/usr/bin/python</span>
+<span class="c"># encoding: utf-8</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">ORIGIN</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&lt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&gt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">y</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">origin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">ORIGIN</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span>
+            <span class="nb">sum</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">),</span>
+            <span class="nb">sum</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">here</span><span class="p">,</span> <span class="n">there</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">there</span><span class="p">:</span> <span class="n">there</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">here</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">here</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">(</span><span class="n">Point</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Circle</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">@</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="nb">super</span><span class="p">(</span><span class="n">Circle</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__repr__</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">,</span> <span class="s">&quot;Bu şeklin toplanması anlamlı değil&quot;</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> çemberinin alanı: </span><span class="si">%f</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> çemberi &quot;</span> <span class="o">%</span> <span class="n">c</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> çemberine dönüştü.&quot;</span> <span class="o">%</span> <span class="n">c</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2019,7 +2457,92 @@ div.slide {
             <header><h1>Çokbiçimlilik</h1></header>
             
             
-            <section><p>.code: py_polymorphism_simple_shape/main.py</p></section>
+            <section><p><div class="highlight"><pre><span class="c">#!/usr/bin/python</span>
+<span class="c"># encoding: utf-8</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">ORIGIN</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;nokta&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="ow">is</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&lt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&gt;</span> <span class="n">other</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">-(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">y</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">origin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">ORIGIN</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span>
+            <span class="nb">sum</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">),</span>
+            <span class="nb">sum</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">here</span><span class="p">,</span> <span class="n">there</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">there</span><span class="p">:</span> <span class="n">there</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">here</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">here</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">(</span><span class="n">Point</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;çember&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Circle</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">-</span><span class="si">%s</span><span class="s">@(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">,</span> <span class="s">&quot;Bu şeklin toplanması anlamlı değil&quot;</span>
+
+<span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Circle</span><span class="p">):</span>
+    <span class="n">FACTOR</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;kare&quot;</span>
+
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">FACTOR</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">FACTOR</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Circle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">Square</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> şeklinin alanı: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">shape</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2107,7 +2630,64 @@ div.slide {
             <header><h1>Ruby</h1></header>
             
             
-            <section><p>.code: rb_class_simple_point/main1.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="c1"># FIXME Her nitelik için böyle okuyucu mu yazacağız?</span>
+  <span class="k">def</span> <span class="nf">x</span>
+    <span class="vi">@x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">y</span>
+    <span class="vi">@y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">isright</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">isleft</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">isabove</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@y</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">isbelow</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@y</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">isequal</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="vi">@y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="c1"># FIXME Bu metod (şu noktada) ne döner?  Zararı?</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#@y</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="nb">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> noktası </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> noktasının &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">isleft</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="p">?</span> <span class="s2">&quot;solunda&quot;</span> <span class="p">:</span> <span class="s2">&quot;sağında&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="n">main</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2137,7 +2717,63 @@ div.slide {
             <header><h1>Sınıf</h1></header>
             
             
-            <section><p>.code: rb_class_simple_point/main.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span>
+  <span class="c1"># XXX Her nitelik için okuyucu yazmamız gerekmiyor</span>
+  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Ruby&#39;de &quot;doğrulayıcı&quot; (predicator) böyle yazılır</span>
+  <span class="k">def</span> <span class="nf">right?</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">left?</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">above?</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@y</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">below?</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@y</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="c1"># FIXME foo.equal?(bar) yerine foo == bar yazılamaz mı?</span>
+
+  <span class="k">def</span> <span class="nf">equal?</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="vi">@y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="c1"># XXX Taşımadan sonra nesnenin kendisini dön ki</span>
+    <span class="c1"># çağıran ayrı bir atama yapma zorunda kalmasın</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#@y</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="nb">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> noktası </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> noktasının &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">left?</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="p">?</span> <span class="s2">&quot;solunda&quot;</span> <span class="p">:</span> <span class="s2">&quot;sağında&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="n">main</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2167,7 +2803,51 @@ div.slide {
             <header><h1>İşleç Yüklemesi</h1></header>
             
             
-            <section><p>.code: rb_class_overloading_point/main.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#@y</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="nb">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> noktası </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> noktasının &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">p</span> <span class="o">&lt;</span> <span class="n">q</span> <span class="p">?</span> <span class="s2">&quot;solunda&quot;</span> <span class="p">:</span> <span class="s2">&quot;sağında&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="n">main</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2197,7 +2877,65 @@ div.slide {
             <header><h1>Sınıf Metodları</h1></header>
             
             
-            <section><p>.code: rb_class_classmethod_point/main3.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+
+  <span class="no">ORIGIN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="vi">@y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#@y</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Sınıf metodları</span>
+
+  <span class="c1"># FIXME Bu metodda geçen Point DRY değil</span>
+  <span class="k">def</span> <span class="nc">Point</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">this</span><span class="p">,</span> <span class="n">that</span><span class="p">)</span>
+    <span class="no">Point</span><span class="o">.</span><span class="n">new</span> <span class="n">this</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">that</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">this</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">that</span><span class="o">.</span><span class="n">y</span> <span class="c1"># Point&#39;e gerek var mı?</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="nb">puts</span> <span class="no">Point</span><span class="o">.</span><span class="n">add</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="n">main</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2227,7 +2965,64 @@ div.slide {
             <header><h1>Sınıf Metodları</h1></header>
             
             
-            <section><p>.code: rb_class_classmethod_point/main2.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+
+  <span class="no">ORIGIN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="vi">@y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#@y</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># XXX Artık DRY (Point yok)</span>
+  <span class="c1"># FIXME Sadece iki nokta topluyor, nokta sayısını sınırlamasak?</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">this</span><span class="p">,</span> <span class="n">that</span><span class="p">)</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">new</span> <span class="n">this</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">that</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">this</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">that</span><span class="o">.</span><span class="n">y</span> <span class="c1"># FIXME self&#39;e gerek var mı?</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="nb">puts</span> <span class="no">Point</span><span class="o">.</span><span class="n">add</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="n">main</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2257,7 +3052,94 @@ div.slide {
             <header><h1>Sınıf Metodları</h1></header>
             
             
-            <section><p>.code: rb_class_classmethod_point/main1.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+
+  <span class="no">ORIGIN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="vi">@y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#@y</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Sınıf metodları</span>
+
+  <span class="c1"># XXX Sınırsız sayıda nokta topluyor</span>
+  <span class="c1"># FIXME Fakat toplamayı + ile yapsak?</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+    <span class="c1"># XXX new metodunun alıcısı kim?  self</span>
+    <span class="c1"># self burada ne değer alır?  Point (yani sınıf)</span>
+    <span class="kp">new</span> <span class="n">points</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">origin</span>
+    <span class="kp">new</span> <span class="o">*</span><span class="no">ORIGIN</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">distance</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">there</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+    <span class="n">there</span> <span class="o">||=</span> <span class="n">origin</span> <span class="c1"># origin metodunun alıcısı?  self → Point</span>
+    <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">here</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">here</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="c1"># FIXME Sınıf metodlarını böyle her seferinde self. ile mi</span>
+  <span class="c1"># yazacağız.  Pek DRY değil.</span>
+<span class="k">end</span>
+
+<span class="c1"># XXX Array sınıfına bir yama yapıyoruz.  Ruby&#39;de Python&#39;daki gibi</span>
+<span class="c1"># hazır bir &quot;sum&quot; metodu yok, ama bunu yazmak çok kolay.</span>
+<span class="k">class</span> <span class="nc">Array</span>
+  <span class="k">def</span> <span class="nf">sum</span>
+    <span class="c1"># XXX vektörden skalara dönüştürme ihtiyacı varsa</span>
+    <span class="c1"># inject&#39;i hatırlayın</span>
+    <span class="n">inject</span><span class="p">(</span><span class="kp">nil</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">x</span><span class="o">|</span> <span class="n">sum</span> <span class="p">?</span> <span class="n">sum</span><span class="o">+</span><span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="nb">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Noktalar: </span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">r</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Toplam noktası: </span><span class="si">#{</span><span class="no">Point</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> - </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> uzaklığı: </span><span class="si">#{</span><span class="no">Point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="nb">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> - orijin uzaklığı: </span><span class="si">#{</span><span class="no">Point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="nb">p</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="n">main</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2287,7 +3169,90 @@ div.slide {
             <header><h1>Sınıf Metodları</h1></header>
             
             
-            <section><p>.code: rb_class_classmethod_point/main.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+
+  <span class="no">ORIGIN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="c1"># + işlecini overload ederek sınırsız sayıda noktayı da</span>
+  <span class="c1"># toplama olanağına kavuştuk.</span>
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+    <span class="c1"># Nesne metodundan sınıf metodu (origin) nasıl çağrılır?</span>
+    <span class="c1"># Point.origin olabilir ama DRY değil, cevap: self.class</span>
+    <span class="n">other</span> <span class="o">||=</span> <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">origin</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">new</span> <span class="vi">@x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="vi">@y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#@y</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Sınıf metodları</span>
+
+  <span class="c1"># Her seferinde self. yazmak yerine sınıfı yarıp metodu</span>
+  <span class="c1"># içine koyalım.  Böylesi daha DRY</span>
+
+  <span class="c1"># Burada self ne değer alır?  Point</span>
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="k">def</span> <span class="nf">origin</span>
+      <span class="c1"># new metodunun alıcısı kim?  self</span>
+      <span class="c1"># self burada ne değer alır?  Point (yani sınıf)</span>
+      <span class="kp">new</span> <span class="o">*</span><span class="no">ORIGIN</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">there</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+      <span class="n">there</span> <span class="o">||=</span> <span class="n">origin</span>
+      <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">here</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">here</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="nb">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Noktalar: </span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">r</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Toplam noktası: </span><span class="si">#{</span><span class="nb">p</span> <span class="o">+</span> <span class="n">q</span> <span class="o">+</span> <span class="n">r</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> - </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> uzaklığı: </span><span class="si">#{</span><span class="no">Point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="nb">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> - orijin uzaklığı: </span><span class="si">#{</span><span class="no">Point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="nb">p</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="n">main</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2317,7 +3282,104 @@ div.slide {
             <header><h1>Miras Alma</h1></header>
             
             
-            <section><p>.code: rb_inheritance_simple_circle/main2.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+
+  <span class="no">ORIGIN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+    <span class="n">other</span> <span class="o">||=</span> <span class="n">origin</span>
+    <span class="c1"># XXX self.class → Point, ama sadece bu sınıfta!</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">new</span> <span class="vi">@x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="vi">@y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@y</span><span class="si">}</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Sınıf metodları</span>
+
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="k">def</span> <span class="nf">origin</span>
+      <span class="kp">new</span> <span class="o">*</span><span class="no">ORIGIN</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">there</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+      <span class="n">there</span> <span class="o">||=</span> <span class="n">origin</span>
+      <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">here</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">here</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Circle</span> <span class="o">&lt;</span> <span class="no">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:r</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">super</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="c1"># FIXME DRY değil; neden x, y ayrıca geçiyor?</span>
+    <span class="vi">@r</span> <span class="o">=</span> <span class="n">r</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">perimeter</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">area</span>
+    <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="c1"># FIXME Neden x, y?  DRY değil</span>
+    <span class="s2">&quot;</span><span class="si">#@r</span><span class="s2">@(</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># FIXME Point&#39;te overload edilen bazı işleçler</span>
+  <span class="c1"># örneğin +, ==, çocuk sınıfta anlamlı değil.</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="no">Circle</span><span class="o">.</span><span class="n">new</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2"> çemberinin alanı: </span><span class="si">#{</span><span class="n">c</span><span class="o">.</span><span class="n">area</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2"> çemberi </span><span class="si">#{</span><span class="n">c</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span><span class="si">}</span><span class="s2"> çemberine dönüştü&quot;</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="n">main</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2347,7 +3409,104 @@ div.slide {
             <header><h1>Miras Alma</h1></header>
             
             
-            <section><p>.code: rb_inheritance_simple_circle/main1.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+
+  <span class="no">ORIGIN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+    <span class="n">other</span> <span class="o">||=</span> <span class="n">origin</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">new</span> <span class="vi">@x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="vi">@y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@y</span><span class="si">}</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Sınıf metodları</span>
+
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="k">def</span> <span class="nf">origin</span>
+      <span class="kp">new</span> <span class="o">*</span><span class="no">ORIGIN</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">there</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+      <span class="n">there</span> <span class="o">||=</span> <span class="n">origin</span>
+      <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">here</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">here</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Circle</span> <span class="o">&lt;</span> <span class="no">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:r</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">coords</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">super</span> <span class="o">*</span><span class="n">coords</span> <span class="c1"># XXX z,y yok; bu kısım artık DRY</span>
+    <span class="vi">@r</span> <span class="o">=</span> <span class="n">r</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">perimeter</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">area</span>
+    <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
+  <span class="k">end</span>
+
+  <span class="c1"># FIXME DRY ama ekstra satır</span>
+  <span class="k">alias</span> <span class="ss">:super_to_s</span> <span class="ss">:to_s</span>
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;</span><span class="si">#@r</span><span class="s2">@</span><span class="si">#{</span><span class="n">super_to_s</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># FIXME Point&#39;te overload edilen bazı işleçler</span>
+  <span class="c1"># örneğin +, ==, çocuk sınıfta anlamlı değil.</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="no">Circle</span><span class="o">.</span><span class="n">new</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2"> çemberinin alanı: </span><span class="si">#{</span><span class="n">c</span><span class="o">.</span><span class="n">area</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2"> çemberi </span><span class="si">#{</span><span class="n">c</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span><span class="si">}</span><span class="s2"> çemberine dönüştü&quot;</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="n">main</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2377,7 +3536,105 @@ div.slide {
             <header><h1>Miras Alma</h1></header>
             
             
-            <section><p>.code: rb_inheritance_simple_circle/main.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+
+  <span class="no">ORIGIN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+    <span class="n">other</span> <span class="o">||=</span> <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">origin</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">new</span> <span class="vi">@x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="vi">@y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@y</span><span class="si">}</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Sınıf metodları</span>
+
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="k">def</span> <span class="nf">origin</span>
+      <span class="kp">new</span> <span class="o">*</span><span class="no">ORIGIN</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">there</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+      <span class="n">there</span> <span class="o">||=</span> <span class="n">origin</span>
+      <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">here</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">here</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Circle</span> <span class="o">&lt;</span> <span class="no">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:r</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">coords</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">super</span> <span class="o">*</span><span class="n">coords</span>
+    <span class="vi">@r</span> <span class="o">=</span> <span class="n">r</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">perimeter</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">area</span>
+    <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="c1"># XXX Ooooo!  Artık DRY ama kara büyü :-/</span>
+    <span class="s2">&quot;</span><span class="si">#@r</span><span class="s2">@</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">instance_method</span><span class="p">(</span><span class="ss">:to_s</span><span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span><span class="o">.</span><span class="n">call</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># XXX Anlamlı olmayan işleçler şuna benzer bir şey yapılabilir</span>
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="c1"># argümanlarla ilgilenmediğimizden * diyoruz</span>
+    <span class="k">raise</span> <span class="s2">&quot;+ işleci </span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2"> sınıfı için anlamlı değil&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="no">Circle</span><span class="o">.</span><span class="n">new</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2"> çemberinin alanı: </span><span class="si">#{</span><span class="n">c</span><span class="o">.</span><span class="n">area</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2"> çemberi </span><span class="si">#{</span><span class="n">c</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span><span class="si">}</span><span class="s2"> çemberine dönüştü&quot;</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="n">main</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2407,7 +3664,123 @@ div.slide {
             <header><h1>Çokbiçimlilik</h1></header>
             
             
-            <section><p>.code: rb_polymorphism_simple_shape/main.rb</p></section>
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="k">class</span> <span class="nc">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+
+  <span class="no">ORIGIN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+  <span class="no">NAME</span>   <span class="o">=</span> <span class="s1">&#39;nokta&#39;</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+    <span class="n">other</span> <span class="o">||=</span> <span class="n">origin</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">new</span> <span class="vi">@x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="vi">@y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@y</span><span class="si">}</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Sınıf metodları</span>
+
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="k">def</span> <span class="nf">name</span>
+      <span class="no">NAME</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">origin</span>
+      <span class="kp">new</span> <span class="o">*</span><span class="no">ORIGIN</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">there</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+      <span class="n">there</span> <span class="o">||=</span> <span class="n">origin</span>
+      <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">here</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">here</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Circle</span> <span class="o">&lt;</span> <span class="no">Point</span>
+  <span class="kp">attr_reader</span> <span class="ss">:r</span>
+
+  <span class="no">NAME</span>   <span class="o">=</span> <span class="s1">&#39;çember&#39;</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">coords</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">super</span> <span class="o">*</span><span class="n">coords</span>
+    <span class="vi">@r</span> <span class="o">=</span> <span class="n">r</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="s2">&quot;Bu şeklin toplanması anlamı değil&quot;</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">perimeter</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">area</span>
+    <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;</span><span class="si">#@r</span><span class="s2">@(</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="c1"># XXX DRY değil ama okunur</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Square</span> <span class="o">&lt;</span> <span class="no">Circle</span>
+  <span class="no">FACTOR</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+  <span class="no">NAME</span>   <span class="o">=</span> <span class="s1">&#39;kare&#39;</span>
+
+  <span class="k">def</span> <span class="nf">perimeter</span>
+    <span class="mi">4</span> <span class="o">*</span> <span class="no">FACTOR</span> <span class="o">*</span> <span class="nb">self</span><span class="o">.</span><span class="n">r</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">area</span>
+    <span class="p">(</span><span class="no">FACTOR</span> <span class="o">*</span> <span class="nb">self</span><span class="o">.</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="o">[</span><span class="no">Circle</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="no">Square</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">shape</span><span class="o">|</span>
+    <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">shape</span><span class="si">}</span><span class="s2"> şeklinin alanı: </span><span class="si">#{</span><span class="n">shape</span><span class="o">.</span><span class="n">area</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="n">main</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">

@@ -491,7 +491,7 @@ TODO
 
 # Sınıf
 
-.code: rb_class_simple_point/main.rb
+.code: code/rb_class_simple_point/main.rb
 
 ---
 
@@ -550,7 +550,7 @@ Bir nesne için değil ilgili sınıftaki tüm nesneler için anlamlı metodlar�
 
 # Sınıf Metodları
 
-.code: rb_class_classmethod_point/main.rb
+.code: code/rb_class_classmethod_point/main.rb
 
 ---
 
@@ -575,13 +575,13 @@ Bunu yapabilirsek sınıf metodları çözümüne alternatif bir çözümümüz 
 
 # İşleç Yüklemesi
 
-.code: rb_class_overloading_point/main.rb
+.code: code/rb_class_overloading_point/main.rb
 
 ---
 
 # Miras Alma
 
-.code: rb_inheritance_simple_circle/main.rb
+.code: code/rb_inheritance_simple_circle/main.rb
 
 ---
 
@@ -612,7 +612,7 @@ var: Sınıf sabitleri
 
 # Sınıf Değişkenleri
 
-.code: rb_class_variable_simple/main.rb
+.code: code/rb_class_variable_simple/main.rb
 
 ---
 
@@ -631,7 +631,7 @@ Sınıf değişkenleriyle çalışırken bir şeyin farkında olmalıyız:
 
 # Sınıf İçinde Değişkenler ve Sabitler
 
-.code: rb_class_variable_experiment/main.rb
+.code: code/rb_class_variable_experiment/main.rb
 
 ---
 
@@ -639,7 +639,7 @@ Sınıf değişkenleriyle çalışırken bir şeyin farkında olmalıyız:
 
 - Çıktı
 
-.code: rb_class_variable_experiment/out
+.code: code/rb_class_variable_experiment/out
 
 ---
 
@@ -797,7 +797,7 @@ sağlıyor
 Bir gerçeklemeyi uygun sınıflara, sanki o sınıfta yapılan bir gerçeklemeymiş
 gibi, ekleyebiliyoruz.
 
-.code: rb_module_mixins_simple/main.rb /module/ $
+.code: code/rb_module_mixins_simple/main.rb /module/ $
 
 ---
 
@@ -828,19 +828,19 @@ gibi, ekleyebiliyoruz.
 
 # Asciify
 
-.code: rb_module_simple_asciify/main4.rb
+.code: code/rb_module_simple_asciify/main4.rb
 
 ---
 
 # Asciify
 
-.code: rb_module_simple_asciify/main3.rb
+.code: code/rb_module_simple_asciify/main3.rb
 
 ---
 
 # Asciify
 
-.code: rb_module_simple_asciify/main2.rb
+.code: code/rb_module_simple_asciify/main2.rb
 
 ---
 
@@ -848,7 +848,7 @@ gibi, ekleyebiliyoruz.
 
 Çoklu Dil desteği?  Örneğin Türkçe dışında Almanca
 
-.code: rb_module_simple_asciify/main1.rb
+.code: code/rb_module_simple_asciify/main1.rb
 
 ---
 
@@ -865,7 +865,7 @@ gibi, ekleyebiliyoruz.
 
 # Asciify
 
-.code: rb_module_simple_asciify/main.rb
+.code: code/rb_module_simple_asciify/main.rb
 
 ---
 

@@ -1635,7 +1635,61 @@ div.slide {
 <li>Seri Versiyon</li>
 </ul>
 
-<p>.code: c_parallel_pthread_dot/serial.c</p></section>
+<p><div class="highlight"><pre><span class="cm">/* Nokta çarpım seri (klasik) gerçekleme  */</span>
+
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+
+<span class="k">static</span> <span class="kt">int</span> <span class="o">*</span><span class="n">vector_a</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="o">*</span><span class="n">vector_b</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">long</span> <span class="n">dot_product</span><span class="p">;</span>
+
+<span class="cp">#define VECTOR_LENGTH 100000000</span>
+<span class="cp">#define RANDOM_RANGE 100000</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">process</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">long</span> <span class="n">i</span><span class="p">;</span>
+        <span class="kt">long</span> <span class="n">sum</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">VECTOR_LENGTH</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">sum</span> <span class="o">+=</span> <span class="p">(</span><span class="n">vector_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">vector_b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">%</span> <span class="n">RANDOM_RANGE</span><span class="p">;</span>
+        <span class="n">dot_product</span> <span class="o">=</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">long</span> <span class="n">i</span><span class="p">;</span>
+
+        <span class="n">vector_a</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">VECTOR_LENGTH</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+        <span class="n">vector_b</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">VECTOR_LENGTH</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">VECTOR_LENGTH</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">vector_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vector_b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="p">()</span> <span class="o">%</span> <span class="n">RANDOM_RANGE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">report</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Toplam: %ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">dot_product</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">vector_a</span><span class="p">);</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">vector_b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">init</span><span class="p">();</span>
+        <span class="n">process</span><span class="p">();</span>
+        <span class="n">report</span><span class="p">();</span>
+        <span class="n">shutdown</span><span class="p">();</span>
+
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_SUCCESS</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1669,7 +1723,188 @@ div.slide {
 <li>Hatalı Paralel Versiyon</li>
 </ul>
 
-<p>.code: c_parallel_pthread_dot/parallel_error.c</p></section>
+<p><div class="highlight"><pre><span class="cm">/* Evreli nokta çarpımı için hatalı örnek */</span>
+
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;stdint.h&gt;  </span><span class="cm">/* uintptr_t için */</span><span class="cp"></span>
+<span class="cp">#include &lt;pthread.h&gt; </span><span class="cm">/* pthread_* işlevleri için */</span><span class="cp"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Test amaçlı olarak kullanacağımız vektörlerin boyu.</span>
+<span class="cm"> */</span>
+<span class="cp">#define VECTOR_LENGTH 100000000</span>
+<span class="cm">/*</span>
+<span class="cm"> * Tamsayılar hangi aralıkta olsun?</span>
+<span class="cm"> */</span>
+<span class="cp">#define RANDOM_RANGE 100000</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Kaç evre (thread) kullanılsın?</span>
+<span class="cm"> */</span>
+<span class="cp">#define NTHREAD 4</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Test vektörünü her evre başına bir aralık düşürecek şekilde</span>
+<span class="cm"> * bölüyoruz.  İlgili aralık uzunluğu ne olmalı?</span>
+<span class="cm"> */</span>
+<span class="cp">#define VECTOR_LENGTH_PER_THREAD (VECTOR_LENGTH/NTHREAD)</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Test vektörleri.</span>
+<span class="cm"> */</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="o">*</span><span class="n">vector_a</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="o">*</span><span class="n">vector_b</span><span class="p">;</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Sonuç.</span>
+<span class="cm"> */</span>
+<span class="k">static</span> <span class="kt">long</span> <span class="n">dot_product</span><span class="p">;</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Tüm evreler arasında paylaşılan karşılıklı dışlayıcı.</span>
+<span class="cm"> */</span>
+<span class="k">static</span> <span class="n">pthread_mutex_t</span> <span class="n">mutex_dot_product</span><span class="p">;</span>
+
+<span class="cm">/* Test vektörlerini ilkle. */</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span> <span class="kt">long</span> <span class="n">i</span><span class="p">;</span>
+        <span class="cm">/*</span>
+<span class="cm">         * VECTOR_LENGTH uzunluğunda iki tamsayı vektörü oluştur ve</span>
+<span class="cm">         * vektörleri test amaçlı olarak [0, RANDOM_RANGE] aralığında</span>
+<span class="cm">         * rastgele tamsayı değerleriyle doldur.</span>
+<span class="cm">        */</span>
+        <span class="n">vector_a</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">VECTOR_LENGTH</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+        <span class="n">vector_b</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">VECTOR_LENGTH</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">VECTOR_LENGTH</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">vector_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vector_b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="p">()</span> <span class="o">%</span> <span class="n">RANDOM_RANGE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* Test vektörlerinin nokta çarpımını al (bu bir evre). */</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="o">*</span><span class="nf">process</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="cm">/*</span>
+<span class="cm">         * Evre oluşturulurken ilgili evre sırası bir void işaretçide</span>
+<span class="cm">         * taşınarak bu işleve iletiliyor.  Sıra numarasını kullanarak</span>
+<span class="cm">         * vektörlerin hangi aralığında çalışacağımızı belirleyeceğiz.</span>
+<span class="cm">         * Tabii önce void işaretçiden pozitif tamsayıya döünştürmek</span>
+<span class="cm">         * için uygun bir tip tanımlıyoruz.</span>
+<span class="cm">         */</span>
+        <span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">;</span>
+
+        <span class="kt">long</span> <span class="n">i</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">;</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Tip dönüşümü.  Örneğin 4 kanallı çalışıyorsak offset değeri</span>
+<span class="cm">         * sırayla 0, 1, 2, 3 olacak.</span>
+<span class="cm">         */</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uintptr_t</span><span class="p">)</span> <span class="n">arg</span><span class="p">;</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Bu evrenin çalışacağı vektör aralığını, yani başlangıç ve</span>
+<span class="cm">         * bitiş indislerini hesapla.</span>
+<span class="cm">         */</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">offset</span> <span class="o">*</span> <span class="n">VECTOR_LENGTH_PER_THREAD</span><span class="p">;</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="n">VECTOR_LENGTH_PER_THREAD</span><span class="p">;</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * İşlemi yap.  Burada her evre kendi vektör aralığında bağımsız</span>
+<span class="cm">         * şekilde çalışıyor.  Örnek olarak basit bir işlem yapıyoruz:</span>
+<span class="cm">         * elemanları çarp, topla ve ilgili aralığa düşür.  Bir tür</span>
+<span class="cm">         * &quot;nokta çarpımı&quot;.</span>
+<span class="cm">         */</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="cm">/*</span>
+<span class="cm">                * DİKKAT!  Hatalı kod.  Evrelerin ortak erişimine açık</span>
+<span class="cm">                * bir değişkene kardış kullanmadan yazmaya çalışıyoruz.</span>
+<span class="cm">                * Her çalışmada farklı ve rastgele bir sonuç üretilir.</span>
+<span class="cm">                */</span>
+                <span class="n">dot_product</span> <span class="o">+=</span> <span class="p">(</span><span class="n">vector_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">vector_b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">%</span> <span class="n">RANDOM_RANGE</span><span class="p">;</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Evre tamamlandı.  pthread_join bu çağrıyı bekliyor.</span>
+<span class="cm">         */</span>
+        <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/* Sonucu raporla. */</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">report</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Toplam: %ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">dot_product</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/* Test vektörlerini yoket. */</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">vector_a</span><span class="p">);</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">vector_b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="cm">/*</span>
+<span class="cm">         * Daha sonra void işaretçiye dönüştürülecek bir pozitif tamsayı</span>
+<span class="cm">         * gerekiyor.  int veya uint kullanmamalıyız, taşınabilir değil</span>
+<span class="cm">         * ve uyarı üretir.  Bunun yerine stdint.h başlığında tanımlı</span>
+<span class="cm">         * olan özel bir veritipi kullanıyoruz.  Bu basitçe bir pozitif</span>
+<span class="cm">         * tamsayı, öyle ki sorunsuz şekilde void bir işaretçiye</span>
+<span class="cm">         * dönüştürülebilir.</span>
+<span class="cm">         */</span>
+        <span class="kt">uintptr_t</span> <span class="n">i</span><span class="p">;</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Evre dizisi.</span>
+<span class="cm">         */</span>
+        <span class="n">pthread_t</span> <span class="n">threads</span><span class="p">[</span><span class="n">NTHREAD</span><span class="p">];</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Vektörleri oluştur.</span>
+<span class="cm">         */</span>
+        <span class="n">init</span><span class="p">();</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Karşılıklı dışlayıcıyı (&quot;kardış&quot;) hazırla.</span>
+<span class="cm">         */</span>
+        <span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex_dot_product</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Evreleri oluştur ve ilgili işleve bağla.</span>
+<span class="cm">         */</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NTHREAD</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="cm">/* tip dönüşümüne dikkat */</span>
+                <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">process</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="n">i</span><span class="p">);</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Evrelerin tamamlanmasını bekle.</span>
+<span class="cm">         *</span>
+<span class="cm">         * Her evre kendi işlemini yapıyor.  Sonucu almamız için</span>
+<span class="cm">         * katılımcı tüm evrelerin tamamlanmasını beklemeliyiz.</span>
+<span class="cm">         * Evreleri görevlendirildikleri işler için bir yere gönderilen</span>
+<span class="cm">         * ulaklar gibi düşünün.  Bu ulaklar görevleri tamamlandığında</span>
+<span class="cm">         * bir noktada buluşuyorlar (&quot;join&quot;).</span>
+<span class="cm">         */</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NTHREAD</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">pthread_join</span><span class="p">(</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">);</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Sonucu raporla.</span>
+<span class="cm">         */</span>
+        <span class="n">report</span><span class="p">();</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Oluşturulan vektörleri yoket.</span>
+<span class="cm">         */</span>
+        <span class="n">shutdown</span><span class="p">();</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Karşılıklı dışlayıcıyı yoket.</span>
+<span class="cm">         */</span>
+        <span class="n">pthread_mutex_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex_dot_product</span><span class="p">);</span>
+
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_SUCCESS</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1703,7 +1938,216 @@ div.slide {
 <li>Paralel Versiyon</li>
 </ul>
 
-<p>.code: c_parallel_pthread_dot/main.c</p></section>
+<p><div class="highlight"><pre><span class="cm">/* Evrelerle gerçekleştirilen nokta çarpımı  */</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * POSIX Thread&#39;leriyle ilgili okunabilecek bazı kaynaklar:</span>
+<span class="cm"> *</span>
+<span class="cm"> *      http://www.ibm.com/developerworks/linux/library/l-posix1.html</span>
+<span class="cm"> *      https://www.ibm.com/developerworks/linux/library/l-posix2/</span>
+<span class="cm"> *      https://www.ibm.com/developerworks/linux/library/l-posix3/</span>
+<span class="cm"> *      http://www.ibm.com/developerworks/library/l-pthred.html</span>
+<span class="cm"> *      http://greenteapress.com/semaphores/downey08semaphores.pdf</span>
+<span class="cm"> *      http://randu.org/tutorials/threads/</span>
+<span class="cm"> *      http://www.yolinux.com/TUTORIALS/LinuxTutorialPosixThreads.html</span>
+<span class="cm"> *      http://softpixel.com/~cwright/programming/threads/threads.c.php</span>
+<span class="cm"> */</span>
+
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;stdint.h&gt;  </span><span class="cm">/* uintptr_t için */</span><span class="cp"></span>
+<span class="cp">#include &lt;pthread.h&gt; </span><span class="cm">/* pthread_* işlevleri için */</span><span class="cp"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Test amaçlı olarak kullanacağımız vektörlerin boyu.</span>
+<span class="cm"> */</span>
+<span class="cp">#define VECTOR_LENGTH 100000000</span>
+<span class="cm">/*</span>
+<span class="cm"> * Tamsayılar hangi aralıkta olsun?</span>
+<span class="cm"> */</span>
+<span class="cp">#define RANDOM_RANGE 100000</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Kaç evre (thread) kullanılsın?</span>
+<span class="cm"> */</span>
+<span class="cp">#define NTHREAD 4</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Test vektörünü her evre başına bir aralık düşürecek şekilde</span>
+<span class="cm"> * bölüyoruz.  İlgili aralık uzunluğu ne olmalı?</span>
+<span class="cm"> */</span>
+<span class="cp">#define VECTOR_LENGTH_PER_THREAD (VECTOR_LENGTH/NTHREAD)</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Test vektörleri.</span>
+<span class="cm"> */</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="o">*</span><span class="n">vector_a</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="o">*</span><span class="n">vector_b</span><span class="p">;</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Sonuç.</span>
+<span class="cm"> */</span>
+<span class="k">static</span> <span class="kt">long</span> <span class="n">dot_product</span><span class="p">;</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Tüm evreler arasında paylaşılan karşılıklı dışlayıcı.</span>
+<span class="cm"> */</span>
+<span class="k">static</span> <span class="n">pthread_mutex_t</span> <span class="n">mutex_dot_product</span><span class="p">;</span>
+
+<span class="cm">/* Test vektörlerini ilkle. */</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span> <span class="kt">long</span> <span class="n">i</span><span class="p">;</span>
+        <span class="cm">/*</span>
+<span class="cm">         * VECTOR_LENGTH uzunluğunda iki tamsayı vektörü oluştur ve</span>
+<span class="cm">         * vektörleri test amaçlı olarak [0, RANDOM_RANGE] aralığında</span>
+<span class="cm">         * rastgele tamsayı değerleriyle doldur.</span>
+<span class="cm">         */</span>
+        <span class="n">vector_a</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">VECTOR_LENGTH</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+        <span class="n">vector_b</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">VECTOR_LENGTH</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">VECTOR_LENGTH</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">vector_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vector_b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="p">()</span> <span class="o">%</span> <span class="n">RANDOM_RANGE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* Test vektörlerinin nokta çarpımını al (bu bir evre). */</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="o">*</span><span class="nf">process</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="cm">/*</span>
+<span class="cm">         * Evre oluşturulurken ilgili evre sırası bir void işaretçide</span>
+<span class="cm">         * taşınarak bu işleve iletiliyor.  Sıra numarasını kullanarak</span>
+<span class="cm">         * vektörlerin hangi aralığında çalışacağımızı belirleyeceğiz.</span>
+<span class="cm">         * Tabii önce void işaretçiden pozitif tamsayıya döünştürmek</span>
+<span class="cm">         * için uygun bir tip tanımlıyoruz.</span>
+<span class="cm">         */</span>
+        <span class="kt">uintptr_t</span> <span class="n">offset</span><span class="p">;</span>
+
+        <span class="kt">long</span> <span class="n">i</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">;</span>
+        <span class="kt">long</span> <span class="n">sum</span><span class="p">;</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Tip dönüşümü.  Örneğin 4 kanallı çalışıyorsak offset değeri</span>
+<span class="cm">         * sırayla 0, 1, 2, 3 olacak.</span>
+<span class="cm">         */</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uintptr_t</span><span class="p">)</span> <span class="n">arg</span><span class="p">;</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Bu evrenin çalışacağı vektör aralığını, yani başlangıç ve</span>
+<span class="cm">         * bitiş indislerini hesapla.</span>
+<span class="cm">         */</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">offset</span> <span class="o">*</span> <span class="n">VECTOR_LENGTH_PER_THREAD</span><span class="p">;</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="n">VECTOR_LENGTH_PER_THREAD</span><span class="p">;</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * İşlemi yap.  Burada her evre kendi vektör aralığında bağımsız</span>
+<span class="cm">         * şekilde çalışıyor.  Örnek olarak basit bir işlem yapıyoruz:</span>
+<span class="cm">         * elemanları çarp, topla ve ilgili aralığa düşür.  Bir tür</span>
+<span class="cm">         * &quot;nokta çarpımı&quot;.</span>
+<span class="cm">         */</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">start</span><span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">sum</span> <span class="o">+=</span> <span class="p">(</span><span class="n">vector_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">vector_b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">%</span> <span class="n">RANDOM_RANGE</span><span class="p">;</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Bu evre bir sonuç üretti (&quot;nokta çarpımı&quot;).  Bu sonucu toplam</span>
+<span class="cm">         * sonuca ekleyeceğiz.  Fakat aynı anda bir başka evre de bu</span>
+<span class="cm">         * işlemi yapıyor olabilir.  Dolayısıyla sonuç değişkenine</span>
+<span class="cm">         * yazarken diğer evrelerin bu değişkene erişmesini</span>
+<span class="cm">         * engellemeliyiz.  Nasıl?  Bir &quot;kardış&quot; kullanarak.  Karşılıklı</span>
+<span class="cm">         * kilitlemeyi mümkün olan en dar aralıkta, yani &quot;kiritk</span>
+<span class="cm">         * bölge&quot;de yapıyoruz.</span>
+<span class="cm">         */</span>
+        <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex_dot_product</span><span class="p">);</span>
+        <span class="n">dot_product</span> <span class="o">+=</span> <span class="n">sum</span><span class="p">;</span>
+        <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex_dot_product</span><span class="p">);</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Evre tamamlandı.  pthread_join bu çağrıyı bekliyor.</span>
+<span class="cm">         */</span>
+        <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/* Sonucu raporla. */</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">report</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Toplam: %ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">dot_product</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/* Test vektörlerini yoket. */</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">shutdown</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">vector_a</span><span class="p">);</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">vector_b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="cm">/*</span>
+<span class="cm">         * Daha sonra void işaretçiye dönüştürülecek bir pozitif tamsayı</span>
+<span class="cm">         * gerekiyor.  int veya uint kullanmamalıyız, taşınabilir değil</span>
+<span class="cm">         * ve uyarı üretir.  Bunun yerine stdint.h başlığında tanımlı</span>
+<span class="cm">         * olan özel bir veritipi kullanıyoruz.  Bu basitçe bir pozitif</span>
+<span class="cm">         * tamsayı, öyle ki sorunsuz şekilde void bir işaretçiye</span>
+<span class="cm">         * dönüştürülebilir.</span>
+<span class="cm">         */</span>
+        <span class="kt">uintptr_t</span> <span class="n">i</span><span class="p">;</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Evre dizisi.</span>
+<span class="cm">         */</span>
+        <span class="n">pthread_t</span> <span class="n">threads</span><span class="p">[</span><span class="n">NTHREAD</span><span class="p">];</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Vektörleri oluştur.</span>
+<span class="cm">         */</span>
+        <span class="n">init</span><span class="p">();</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Karşılıklı dışlayıcıyı (&quot;kardış&quot;) hazırla.</span>
+<span class="cm">         *</span>
+<span class="cm">         * Kardışı bu işlevle ilklendirmek yerine (alternatif bir yöntem</span>
+<span class="cm">         * olarak) mutex_dot_product değişkeni tanımlandığı yerde</span>
+<span class="cm">         * ilklendirilebilirdi:</span>
+<span class="cm">         *</span>
+<span class="cm">         *      mutex_dot_product = PTHREAD_MUTEX_INITIALIZER;</span>
+<span class="cm">         */</span>
+        <span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex_dot_product</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Evreleri oluştur ve ilgili işleve bağla.</span>
+<span class="cm">         */</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NTHREAD</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="cm">/* tip dönüşümüne dikkat */</span>
+                <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">process</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="n">i</span><span class="p">);</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Evrelerin tamamlanmasını bekle.</span>
+<span class="cm">         *</span>
+<span class="cm">         * Her evre kendi işlemini yapıyor.  Sonucu almamız için</span>
+<span class="cm">         * katılımcı tüm evrelerin tamamlanmasını beklemeliyiz.</span>
+<span class="cm">         * Evreleri görevlendirildikleri işler için bir yere gönderilen</span>
+<span class="cm">         * ulaklar gibi düşünün.  Bu ulaklar görevleri tamamlandığında</span>
+<span class="cm">         * bir noktada buluşuyorlar (&quot;join&quot;).</span>
+<span class="cm">         */</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NTHREAD</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">pthread_join</span><span class="p">(</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">);</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Sonucu raporla.</span>
+<span class="cm">         */</span>
+        <span class="n">report</span><span class="p">();</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Oluşturulan vektörleri yoket.</span>
+<span class="cm">         */</span>
+        <span class="n">shutdown</span><span class="p">();</span>
+
+        <span class="cm">/*</span>
+<span class="cm">         * Karşılıklı dışlayıcıyı yoket.</span>
+<span class="cm">         */</span>
+        <span class="n">pthread_mutex_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex_dot_product</span><span class="p">);</span>
+
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_SUCCESS</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</p></section>
             
           </div>
           <div class="presenter_notes">

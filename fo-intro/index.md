@@ -37,4 +37,33 @@ $ git push origin gh-pages
 
 $ git pull upstream master
 
+# Kurulum
+
+- Debian paketleri
+
+        $ sudo wget -qO /etc/apt/sources.list.d/19.list deb.ondokuz.biz/19.list
+        $ wget -qO- deb.ondokuz.biz/archive.key | sudo apt-key add -
+        $ sudo apt-get update
+        $ sudo apt-get install ruby rake python-landslide-patched python-misaka
+
+# Kullanım
+
+Her folyo depo kökünde bir dizindir.  Folyo metni bu dizindeki `index.md`
+dosyasındadır.
+
+- Yeni bir folyo oluştur
+
+        $ mkdir foo-bar
+        $ $EDITOR foo-bar/index.md
+
+- Folyo derle
+
+        $ rake
+
+- (Henüz eklenmemişse) folyoyu depoya ekle ve kaydet
+
+        $ git add foo-bar
+        $ git commit foo-bar -m "yeni folyo: foo-bar"
+        $ git push
+
 -->

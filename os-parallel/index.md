@@ -14,7 +14,7 @@ Mart 2012
 
 - Seri Versiyon
 
-.code: c_parallel_pthread_dot/serial.c
+.code: code/c_parallel_pthread_dot/serial.c
 
 ---
 
@@ -22,7 +22,7 @@ Mart 2012
 
 - Hatalı Paralel Versiyon
 
-.code: c_parallel_pthread_dot/parallel_error.c
+.code: code/c_parallel_pthread_dot/parallel_error.c
 
 ---
 
@@ -30,4 +30,4 @@ Mart 2012
 
 - Paralel Versiyon
 
-.code: c_parallel_pthread_dot/main.c
+.code: code/c_parallel_pthread_dot/main.c
