@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Folyolar</title>
+    <meta content="Folyolar" name="description" />
+    <meta content="Recai Oktaş" name="author" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <link href="_/57.ico" rel="shortcut icon" />
+    <link href="_/57-icon.png" rel="apple-touch-icon" />
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      } 
+      body {
+        background-color: #f0f0f0;
+        margin-top: 1em;
+        font: 13.34px helvetica, arial, clean, sans-serif;
+        font-size: small;
+        text-align: center;
+      }
+      
+      pre, code {
+        font-family: Monaco, Consolas, monospace;
+      }
+      
+      a {
+        text-decoration: none;
+      }
+      
+      p {
+        margin-top: 0em;
+        margin-bottom: 0.4em;
+      }
+      
+      .site {
+        background-color: white;
+        width: 52em;
+        line-height: 1.5em;
+        margin: 3em auto 2em auto;
+        font-size: 110%;
+        -moz-background-clip: border;
+        -moz-background-inline-policy: continuous;
+        -moz-background-origin: padding;
+        -moz-border-radius: 0.4em 0.4em 0.4em 0.4em;
+        -webkit-background-clip: border;
+        -webkit-background-inline-policy: continuous;
+        -webkit-background-origin: padding;
+        -webkit-border-radius: 0.4em 0.4em 0.4em 0.4em;
+        border: 1px solid #bebebe;
+        padding: 1.5em;
+      }
+      
+      #header, #footer {
+        display: inline-block;
+        width: inherit;
+        text-align: justify;
+      }
+      
+      #header {
+        vertical-align: top;
+        margin-bottom: 2em;
+      }
+      
+      #footer {
+        margin-top: 1em;
+      }
+      
+      #logo {
+        display: inline-block;
+        vertical-align: top;
+        width: 128px;
+        height: 128px;
+      }
+      
+      .text {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0.5em;
+        opacity: 0.9;
+      }
+      .text ul {
+        margin-left: 1.25em;
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+      }
+      
+      .notice {
+        background-color: #ffffe0 !important;
+        -moz-border-radius: 0.4em 0.4em 0.4em 0.4em;
+        -webkit-border-radius: 0.4em 0.4em 0.4em 0.4em;
+      }
+      
+      .dimmed {
+        opacity: 0.5 !important;
+        color: black !important;
+      }
+      
+      .threequarter {
+        float: left;
+        width: 75%;
+      }
+      
+      .right {
+        float: right;
+        padding-right: 0em;
+        margin-right: 0em;
+      }
+      
+      .left {
+        float: left;
+        padding-left: 0em;
+        margin-left: 0em;
+      }
+      
+      .pad {
+        visibility: hidden;
+      }
+      
+      #folios {
+        width: inherit;
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+        margin: 0px;
+        padding: 0px;
+      }
+      
+      ul#folios {
+        list-style: none;
+      }
+      
+      .folio {
+        width: 160px;
+        height: 120px;
+        display: inline-block;
+        margin-bottom: 1.5em;
+        padding: 6px 0 7px 0;
+        background-color: #d7e5f5;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d7e5f5), color-stop(100%, #cbe0f5));
+        background-image: -webkit-linear-gradient(top, #d7e5f5, #cbe0f5);
+        background-image: -moz-linear-gradient(top, #d7e5f5, #cbe0f5);
+        background-image: -ms-linear-gradient(top, #d7e5f5, #cbe0f5);
+        background-image: -o-linear-gradient(top, #d7e5f5, #cbe0f5);
+        background-image: linear-gradient(top, #d7e5f5, #cbe0f5);
+        border-top: 1px solid #abbbcc;
+        border-left: 1px solid #a7b6c7;
+        border-bottom: 1px solid #a1afbf;
+        border-right: 1px solid #a7b6c7;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-box-shadow: inset 0 1px 0 0 white;
+        -moz-box-shadow: inset 0 1px 0 0 white;
+        box-shadow: inset 0 1px 0 0 white;
+        color: black !important;
+        font: normal 14px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+        line-height: 1;
+        text-align: center;
+        text-shadow: 0 1px 1px white;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+      .folio:hover {
+        background: #a90329;
+        background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a90329), color-stop(44%, #8f0222), color-stop(100%, #6d0019));
+        background: -webkit-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+        background: -o-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+        background: -ms-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+        background: linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
+        border-top: 1px solid #9c000d;
+        border-left: 1px solid #9c000d;
+        border-bottom: 1px solid #9c000d;
+        border-right: 1px solid #9c000d;
+        -webkit-box-shadow: inset 0 1px 0 0 #ad4e11;
+        -moz-box-shadow: inset 0 1px 0 0 #ad4e11;
+        box-shadow: inset 0 1px 0 0 #ad4e11;
+        color: white !important;
+        text-shadow: black 1px 1px 4px;
+        cursor: pointer;
+      }
+      .folio span {
+        margin-top: 30%;
+        display: inline-block;
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+      
+    </style>
+    
+      <script type="text/javascript">// Google Analytics start
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-30559967-1']);
+        _gaq.push(['_setDomainName', 'roktas.me']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        // Google Analytics end
+      </script>
+    
+  </head>
+  <body>
+    <div class="site">
+      <div id="header">
+        <div class="text threequarter">
+          <p>
+            
+              Folyoların tam ekran görüntülenmesi önerilir (Google Chrome&#39;da
+              <strong>F11</strong> tuşu).  Yardım için <strong>h</strong> tuşuna basın veya menüyü
+              görüntülemek için fare imlecini kenarlara yaklaştırın.
+            
+          </p> 
+        </div>
+        <div class="right" id="logo">
+          <a href="http://roktas.me" title="http://roktas.me"><img src="_/57.png" /></a>
+        </div>
+      </div>
+      <ul id="folios">
+        <!--| Hücrelerin doğru sıra ve yerleşimde taranması için dolgu ögeleri kullanıyoruz.
+          "column-fill: auto" tüm tarayıcılar tarafından destekleninceye
+          kadar geçici çözüm.-->
+        
+        <li>
+          
+          <a href="fo-intro/index.html"><span class="folio"><span>fo-intro</span></span></a>
+          
+        </li>
+        
+        <li>
+          
+          <a href="oop-rule/index.html"><span class="folio"><span>oop-rule</span></span></a>
+          
+        </li>
+        
+        <li>
+          
+          <a href="ruby-rake/index.html"><span class="folio"><span>ruby-rake</span></span></a>
+          
+        </li>
+        
+        <li>
+          
+          <a href="git-recipe/index.html"><span class="folio"><span>git-recipe</span></span></a>
+          
+        </li>
+        
+        <li>
+          
+          <a href="os-parallel/index.html"><span class="folio"><span>os-parallel</span></span></a>
+          
+        </li>
+        
+        <li>
+          
+          <a href="ruby-recipe/index.html"><span class="folio"><span>ruby-recipe</span></span></a>
+          
+        </li>
+        
+        <li>
+          
+          <a href="node-intro/index.html"><span class="folio"><span>node-intro</span></span></a>
+          
+        </li>
+        
+        <li>
+          
+          <a href="ruby-intro/index.html"><span class="folio"><span>ruby-intro</span></span></a>
+          
+        </li>
+        
+        <li>
+          
+          <a href="web-intro/index.html"><span class="folio"><span>web-intro</span></span></a>
+          
+        </li>
+        
+        <li>
+          
+          <a href="oop-intro/index.html"><span class="folio"><span>oop-intro</span></span></a>
+          
+        </li>
+        
+        <li>
+          
+          <a href="ruby-more/index.html"><span class="folio"><span>ruby-more</span></span></a>
+          
+        </li>
+        
+        <li>
+          
+          <span class="folio pad"><!--dolgu--><span>&nbsp;</span></span>
+          
+        </li>
+        
+      </ul>
+      <div id="footer">
+        <div class="text dimmed"><p>Bu sitede yayınlanan dokümanlar <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC Attribution-ShareAlike 3.0
+          Unported</a> lisansıyla
+        lisanslanmıştır --
+        
+          <a href="https://plus.google.com/101391045956417989620?rel=author">Recai Oktaş</a>
+        
+          </p> 
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

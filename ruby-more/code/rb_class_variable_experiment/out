@@ -1,0 +1,24 @@
+A sınıfı tanımlanıyor
+B < A sınıfı tanımlanıyor (değişiklik yapmadan)
+C < A sınıfı tanımlanıyor (değişiklik yaparak)
+A sınıfından a nesnesi oluşturuluyor
+B sınıfından b nesnesi oluşturuluyor
+C sınıfından c nesnesi oluşturuluyor
+
+A: A
+A::CONSTANT: A_CONSTANT
+A.class_variable: C_class_variable
+A.class_instance_variable: A_class_instance_variable
+a.instance_variable: #<A:0x00000001bc1a28>_instance_variable
+
+B: B
+B::CONSTANT: A_CONSTANT
+B.class_variable: C_class_variable
+B.class_instance_variable: boş
+b.instance_variable: #<B:0x00000001bc18c0>_instance_variable
+
+C: C
+C::CONSTANT: C_CONSTANT
+C.class_variable: C_class_variable
+C.class_instance_variable: C_class_instance_variable
+c.instance_variable: #<C:0x00000001bc17a8>_instance_variable
