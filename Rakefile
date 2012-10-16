@@ -1,5 +1,8 @@
+# encoding: utf-8
+
 require 'find'
 require 'open3'
+require 'set'
 require 'yaml'
 require 'ostruct'
 require 'erb'
@@ -20,7 +23,8 @@ DEFAULTS  = {
   landslide: '/usr/bin/landslide',
   css: '_/default.css',
   js: '_/default.js',
-  template: '_/index.erb',
+  indextemplate: '_/index.erb',
+  foliotemplate: '_/default.erb',
 }
 
 class Hash
@@ -33,6 +37,13 @@ class Hash
 
   def symbolize
     self.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+  end
+end
+
+class String
+  # http://stackoverflow.com/a/5638187
+  def unindent
+    gsub(/^#{self[/\A\s*/]}/, '')
   end
 end
 
@@ -62,6 +73,95 @@ def erbify(infile, outfile, variables)
     f.write ERB.new(template)
       .result(OpenStruct.new(variables).instance_eval { binding })
   end
+end
+
+# Bir dizgiden etiket üret.
+CONJUNCTIONS = Set.new %w(
+  ve veya ama fakat yani
+  ancak ya da ya da dahi
+)
+def labelify(string, sep = '-')
+  result = []
+
+  # Kelimelere ayırıp işle.  Öyle ki...
+  string.gsub(/#{sep}/, ' ').split.each do |word|
+    # hepsi küçük harf
+    word.downcase!
+    # noktalama işaretlerinden sonrasını sil
+    word.gsub!(/[[:punct:]].*$/, '')
+
+    # Bağlaçları pas geç.
+    next if CONJUNCTIONS.include? word
+
+    # OK
+    result << word
+  end
+
+  # '-' ile birşeltir
+  result.join sep
+end
+
+# Bir dizgiden başlık üret.
+def titleize(string)
+  result = []
+
+  string.split.each do |word|
+    word.downcase!
+    result << (CONJUNCTIONS.include?(word) ? word : word.capitalize)
+  end
+
+  result.join ' '
+end
+
+# Verilen bir isim dizisinde bir sonraki ön eki belirle.
+def next_prefix(names)
+  names.sort.reverse.each do |name|
+    if m = name.match(/^(\d+)[^-\d]+$/)
+      return m[1].succ
+    end
+  end
+  ''
+end
+
+# Türkçe karakterleri ASCII eşlerine dönüştür.
+TURKISH = {
+  'ı' =>  'i',
+  'ğ' =>  'g',
+  'ü' =>  'u',
+  'ş' =>  's',
+  'ö' =>  'o',
+  'ç' =>  'c',
+  'İ' =>  'I',
+  'Ğ' =>  'G',
+  'Ü' =>  'U',
+  'Ş' =>  'S',
+  'Ö' =>  'O',
+  'Ç' =>  'C',
+}
+def asciify(string)
+  re = Regexp.new '[' + TURKISH.keys.join + ']'
+  string.gsub(re) { |c| TURKISH[c] }
+end
+
+begin
+  require 'highline/import'
+
+  def evethayir(prompt = 'Devam?', default = true)
+    a = ''
+    s = default ? '[E/h]' : '[e/H]'
+    d = default ? 'e' : 'h'
+    until %w[e h].include? a
+      a = ask("#{prompt} #{s} ") { |q| q.limit = 1; q.case = :downcase }
+      a = d if a.length == 0
+    end
+    a == 'e'
+  end
+
+  def pause(*args)
+    say(*args) if args.size > 0; HighLine::SystemExtensions::get_character
+  end
+rescue LoadError
+  highline_not_installed = true
 end
 
 #
@@ -111,37 +211,46 @@ def itemize(items)
     )
 end
 
+# Yeni kurulumlarda bir ayar dosyası oluştur.
 unless File.exist? PARAMFILE
-  $stderr.puts red("Configuration file not found; creating a default one.")
+  $stderr.puts(
+    "Muhtemelen bu bir yeni kurulum.",
+    "Ayar dosyası bulunamadı; öntanımlı bir dosya oluşturuluyor."
+  )
   File.open(PARAMFILE, 'w') do |f|
     f.write(DEFAULTS.stringify.to_yaml)
   end
-  $stderr.puts red("Please edit #{PARAMFILE}.")
+  $stderr.puts red("Lütfen #{PARAMFILE} dosyasını düzenleyin.")
   abort
 end
 
+# Ayarları öntanımlılarla birleştirerek yükle.
 Param = DEFAULTS.clone.merge YAML.load_file(PARAMFILE).symbolize
 
+# Eksik ayarlar olabilir; kontrol et ve uyar.
 unless (unconfigured = Param.keys.select { |key| Param[key].nil? }).empty?
   $stderr.puts red(
-    "Please supply values for the following parameters in #{PARAMFILE}:"
+    "Lütfen #{PARAMFILE} dosyasında aşağıdaki parametreleri girin:"
   ), "  #{unconfigured}"
   abort
 end
 
+# Landslide kurulu olmalı.
+# FIXME: landslide-patched kontrolü yap.
 unless File.exist? Param[:landslide]
-  $stderr.puts red("#{Landslide} not found.")
+  $stderr.puts red("#{Landslide} bulunmadı.")
   abort
 end
 
-# Css and Js files are not mandatory.
+# Css ve Js dosyaları zorunlu değil.
 [Param[:css], Param[:js]].each do |f|
   unless File.exists? f
     touch f
-    $stderr.puts red("Missing file #{f} created.")
+    $stderr.puts red("Eksik #{f} dosyası oluşturuldu.")
   end
 end
 
+# Folyo dizinlerini tara ve ögeleri belirle.
 Items = []
 FileList['[^_.]*'].select { |path| FileTest.directory?(path) }.each do |dir|
   Find.find(dir) do |path|
@@ -159,7 +268,7 @@ FileList['[^_.]*'].select { |path| FileTest.directory?(path) }.each do |dir|
   end
 end
 
-# Create a file task for each destination.
+# Her öge için bir file görevi oluştur.
 Items.each do |item|
   file item[:destination] => [
     item[:source],
@@ -183,33 +292,111 @@ Items.each do |item|
     ]) do |ok, response, error|
       if not ok
         rm_f item[:destination]
-        $stderr.puts red("landslide error: %s" % error)
+        $stderr.puts red("landslide hatası: %s" % error)
       end
     end
   end
 end
 
+# Hedefler elimizin altında bulunsun.
 destinations = Items.map { | item| item[:destination] }
 
-desc 'Compile folios.'
+desc 'Folyoları derle.'
 task :compile => destinations
 CLEAN.include destinations
 
-file 'index.html'=> [PARAMFILE, Param[:template], *destinations] do
+file 'index.html'=> [PARAMFILE, Param[:indextemplate], *destinations] do
   $stderr.puts green('index')
 
   Param[:items] = itemize(Items)
 
-  erbify(Param[:template], 'index.html', Param)
+  erbify(Param[:indextemplate], 'index.html', Param)
 end
 
-desc 'Index folios.'
+desc 'Folyoları indisle.'
 task :index => 'index.html'
 CLEAN.include 'index.html'
 
-desc 'View index.'
+desc 'İndisi görüntüle.'
 task :view do
   sh 'xdg-open', 'index.html'
+end
+
+desc 'New folio.'
+task :new do
+  # Bu görevde highline kullanıyoruz.
+  if highline_not_installed
+    $stderr.puts "Lütfen highline gem paketini kurun."
+    abort
+  end
+
+  label, title = nil, nil
+
+  # Folyoları sıralamak için numara kullanmış olabiliriz.
+  # Bir sonraki sayıyı belirle
+  prefix = next_prefix(Items.map { |item| item[:label] })
+
+  # Uzun başlıklardan kaçınalım.
+  max = Param[:maxtitlelength] || 24
+
+  loop do
+    ans = ask("Başlık? [konuyu özetleyen birkaç kelime girin] ")
+
+    break if ans.nil? || ans.strip.empty?
+
+    # Numaralandırma varsa ön ek olarak bir sonraki sayı.
+    label = prefix + asciify(labelify(ans))
+    title = titleize(ans)
+
+    break unless evethayir("#{label} isminde bir dizin açılacak.  Devam?")
+
+    if Dir.exists?(label)
+      $stderr.puts red("#{label} isminde bir dizin zaten var.")
+    elsif max >= 0 && label.length > max
+      $stderr.puts red("Daha kısa bir başlık kullanmalısınız.")
+    else
+      break
+    end
+
+    $stderr.puts red("Lütfen tekrar deneyin.")
+  end
+
+  if label
+    puts
+    puts <<-EOF.unindent
+      Şimdi #{label}/index.md kaynak dosyası düzenlenecek.
+
+      Aşağıdaki dizin düzenine uymanızı öneririz:
+
+      - Folyoda kullanılan resimler  → #{label}/media
+      - Folyoda yer alan uzun kodlar → #{label}/code
+
+      Lütfen düzenlemeniz tamamlandıktan sonra folyoyu derlemeyi ve
+      #{label} dizinini depoya eklemeyi unutmayın
+
+          $ rake
+          $ git add #{label}
+          $ git commit #{label} -m "Yeni folyo #{label}"
+          $ git push --all
+
+      Devam etmek için herhangi bir tuşa basın...
+    EOF
+    puts
+    pause
+
+    # Her şey tamamsa dizin düzenini kur.
+    mkdir(label)
+
+    source = "#{label}/index.md"
+    destination = source.ext(".html")
+
+    touch destination
+    Param[:foliotitle] = title
+    erbify(Param[:foliotemplate], source, Param)
+
+    # Düzenlemeye gir.
+    sh ENV['EDITOR'], source
+  end
 end
 
 task :default => [:compile, :index]
