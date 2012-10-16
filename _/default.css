@@ -21,6 +21,10 @@ ul li:before {
   vertical-align: 16%;
   padding-right: 0.4em;
 }
+li ul li:before {
+  content: '\26AB \0020';
+  vertical-align: 3%;
+}
 ul li:first {
   content: ' ';
 }
