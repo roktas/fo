@@ -322,7 +322,7 @@ task :view do
   sh 'xdg-open', 'index.html'
 end
 
-desc 'New folio.'
+desc 'Yeni folyo.'
 task :new do
   # Bu görevde highline kullanıyoruz.
   if highline_not_installed
