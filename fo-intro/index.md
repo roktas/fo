@@ -6,64 +6,196 @@ Recai Oktaş `<roktas@bil.omu.edu.tr>`
 
 [http://roktas.me/](http://roktas.me/)
 
-Temmuz 2012
+Ekim 2012
 
 ---
 
-# Shelr
-
-.shelr: 501b264596608048a40000c5
-
-<!--
-
 # Kurulum
 
-$ git init
-$ touch .gitgnore
-$ git add .
-$ git commit -a -m İlk
-$ git remote add upstream git://github.com/roktas/fo
-$ git pull upstream master
-$ git checkout -b gh-pages
-$ git branch -d master
-$ rake
-$ $EDITOR _/param.yaml
-$ rake
-$ git commit -a -m Yapılandır
-$ git remote add origin git@github.com/[your repo]
-$ git push origin gh-pages
+---
+
+## Ruby Kur
+
+    !sh
+    $ sudo apt-get install ruby1.9.1-full rake
+
+---
+
+## Ruby `1.9` Ayarla
+
+    !sh
+    $ sudo update-alternatives --set ruby /usr/bin/ruby1.9.1
+
+- Folyo inşa sistemi Ruby `1.9` gerektiriyor; bu sistem Ruby `1.8` ile çalışmaz
+
+- Öntanımlı Ruby versiyonunu öğrenmek için
+
+        !sh
+        $ ruby --version
+        ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux]
+
+---
+
+## 19 Depolarını Ekle
+
+    !sh
+    $ sudo wget -qO /etc/apt/sources.list.d/19.list deb.ondokuz.biz/19.list
+    $ wget -qO- deb.ondokuz.biz/archive.key | sudo apt-key add -
+    $ sudo apt-get update
+
+- 19 depolarında özgün Landslide'ın yamalanmış bir sürümü bulunuyor
+
+---
+
+## Landslide Kur
+
+    !sh
+    $ sudo apt-get install python-landslide-patched python-misaka
+
+- Resmi depolardaki `python-landslide` paketi yerine 19 depolarındaki
+  `python-landslide-patched` paketini kullanmalısınız
+
+- Landslide kurulumunu kontrol etmek için
+
+        !sh
+        $ landslide --version
+        landslide patched 1.0.1
+
+---
+
+## Yerelde Depo Oluştur
+
+    !sh
+    $ git init
+    $ touch .gitignore
+    $ git add .
+    $ git commit -a -m İlk
+
+---
+
+## Üst Depodan İlkle
+
+    !sh
+    $ git remote add upstream git://github.com/roktas/fo
+    $ git pull upstream master
+
+- Şablon güncellemelerini de `upstream` kaynağından alacağız
+
+---
+
+## Yayın Dalını Ayarla
+
+    !sh
+    $ git checkout -b gh-pages
+    $ git branch -d master
+
+- Github yayın dalını, yani `gh-pages`'i oluşturuyoruz
+
+---
+
+## Yapılandır
+
+    !sh
+    $ rake
+    $ $EDITOR _/param.yaml
+    $ rake
+    $ git commit -a -m Yapılandır
+
+- `_/param.yaml` dosyasındaki boş alanları dolduruyoruz
+
+---
+
+## Yayınla
+
+    !sh
+    $ git remote add origin git@github.com/[hesap]/[depo]
+    $ git push origin gh-pages
+
+- Önce Github `[hesap]`'ınızda `[depo]` isimli depoyu oluşturuyoruz
+
+---
 
 # Güncelleme
 
-$ git pull upstream master
+---
 
-# Kurulum
+## Güncelle
 
-- Debian paketleri
+    !sh
+    $ git pull upstream master
 
-        $ sudo wget -qO /etc/apt/sources.list.d/19.list deb.ondokuz.biz/19.list
-        $ wget -qO- deb.ondokuz.biz/archive.key | sudo apt-key add -
-        $ sudo apt-get update
-        $ sudo apt-get install ruby rake python-landslide-patched python-misaka
+- Şablonla birlikte gelen (sizin oluşturmadığınız) dosyaları düzenlememelisinz
+
+- Düzenlemeniz halinde birleştirme çakışması ("merge conflict") yaşayabilirsiniz
+
+---
 
 # Kullanım
 
-Her folyo depo kökünde bir dizindir.  Folyo metni bu dizindeki `index.md`
-dosyasındadır.
+---
 
-- Yeni bir folyo oluştur
+## İnşa Sistemi
 
-        $ mkdir foo-bar
-        $ $EDITOR foo-bar/index.md
+Aşağıdaki `rake` işlemlerini yapabilirsiniz
 
-- Folyo derle
+- Yeni folyo oluştur
 
+        !sh
+        $ rake new
+
+- Derle
+
+        !sh
         $ rake
 
-- (Henüz eklenmemişse) folyoyu depoya ekle ve kaydet
+- Folyo İndisini Görüntüle
 
-        $ git add foo-bar
-        $ git commit foo-bar -m "yeni folyo: foo-bar"
-        $ git push
+        !sh
+        $ rake view
 
--->
+- Üretilen Dosyaları Sil
+
+        !sh
+        $ rake clean
+
+---
+
+## Sözdizimi
+
+[Markdown Sözdizimi](]http://daringfireball.net/projects/markdown/syntax)
+kullanacaksınız
+
+- Fakat Markdown'ın çeşitli lehçeleri var
+
+- Folyolarda Markdown'ın [Sundown](https://github.com/vmg/sundown) lehçesi
+  kullanılıyor
+
+- Dikkat etmeniz gereken hususlar diğer sayfalarda özetlendi
+
+---
+
+# Makrolar
+
+---
+
+## Code
+
+`.code: code/echo.c`
+
+.code: code/echo.c
+
+---
+
+## Gist
+
+`.gist: 19`
+
+.gist: 19
+
+---
+
+## Shelr
+
+`.shelr: 501b264596608048a40000c5`
+
+.shelr: 501b264596608048a40000c5

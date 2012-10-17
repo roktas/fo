@@ -1591,7 +1591,7 @@ div.slide {
 
 <p><a href="http://roktas.me/">http://roktas.me/</a></p>
 
-<p>Temmuz 2012</p></section>
+<p>Ekim 2012</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1607,7 +1607,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/2
+              1/20
             </aside>
           </footer>
         </div>
@@ -1618,74 +1618,8 @@ div.slide {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Shelr</h1></header>
+            <header><h1>Kurulum</h1></header>
             
-            
-            <section><p>
-    <iframe
-        border='0'
-        height='80%'
-        id='shelr_record_501b264596608048a40000c5'
-        scrolling='no'
-        src='http://shelr.tv/records/501b264596608048a40000c5/embed'
-        style='border: 0'
-        width='100%'>
-    </iframe>
-    </p>
-
-<!--
-
-# Kurulum
-
-$ git init
-$ touch .gitgnore
-$ git add .
-$ git commit -a -m İlk
-$ git remote add upstream git://github.com/roktas/fo
-$ git pull upstream master
-$ git checkout -b gh-pages
-$ git branch -d master
-$ rake
-$ $EDITOR _/param.yaml
-$ rake
-$ git commit -a -m Yapılandır
-$ git remote add origin git@github.com/[your repo]
-$ git push origin gh-pages
-
-# Güncelleme
-
-$ git pull upstream master
-
-# Kurulum
-
-- Debian paketleri
-
-        $ sudo wget -qO /etc/apt/sources.list.d/19.list deb.ondokuz.biz/19.list
-        $ wget -qO- deb.ondokuz.biz/archive.key | sudo apt-key add -
-        $ sudo apt-get update
-        $ sudo apt-get install ruby rake python-landslide-patched python-misaka
-
-# Kullanım
-
-Her folyo depo kökünde bir dizindir.  Folyo metni bu dizindeki `index.md`
-dosyasındadır.
-
-- Yeni bir folyo oluştur
-
-        $ mkdir foo-bar
-        $ $EDITOR foo-bar/index.md
-
-- Folyo derle
-
-        $ rake
-
-- (Henüz eklenmemişse) folyoyu depoya ekle ve kaydet
-
-        $ git add foo-bar
-        $ git commit foo-bar -m "yeni folyo: foo-bar"
-        $ git push
-
---></section>
             
           </div>
           <div class="presenter_notes">
@@ -1701,7 +1635,684 @@ dosyasındadır.
             </aside>
             
             <aside class="page_number">
-              2/2
+              2/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Ruby Kur</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install ruby1.9.1-full rake
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Ruby <code>1.9</code> Ayarla</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>sudo update-alternatives --set ruby /usr/bin/ruby1.9.1
+</pre></div>
+
+
+<ul>
+<li><p>Folyo inşa sistemi Ruby <code>1.9</code> gerektiriyor; bu sistem Ruby <code>1.8</code> ile çalışmaz</p></li>
+<li><p>Öntanımlı Ruby versiyonunu öğrenmek için</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>ruby --version
+ruby 1.9.3p194 <span class="o">(</span>2012-04-20 revision 35410<span class="o">)</span> <span class="o">[</span>x86_64-linux<span class="o">]</span>
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>19 Depolarını Ekle</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>sudo wget -qO /etc/apt/sources.list.d/19.list deb.ondokuz.biz/19.list
+<span class="nv">$ </span>wget -qO- deb.ondokuz.biz/archive.key | sudo apt-key add -
+<span class="nv">$ </span>sudo apt-get update
+</pre></div>
+
+
+<ul>
+<li>19 depolarında özgün Landslide&#39;ın yamalanmış bir sürümü bulunuyor</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Landslide Kur</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install python-landslide-patched python-misaka
+</pre></div>
+
+
+<ul>
+<li><p>Resmi depolardaki <code>python-landslide</code> paketi yerine 19 depolarındaki
+<code>python-landslide-patched</code> paketini kullanmalısınız</p></li>
+<li><p>Landslide kurulumunu kontrol etmek için</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>landslide --version
+landslide patched 1.0.1
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Yerelde Depo Oluştur</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>git init
+<span class="nv">$ </span>touch .gitignore
+<span class="nv">$ </span>git add .
+<span class="nv">$ </span>git commit -a -m İlk
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Üst Depodan İlkle</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>git remote add upstream git://github.com/roktas/fo
+<span class="nv">$ </span>git pull upstream master
+</pre></div>
+
+
+<ul>
+<li>Şablon güncellemelerini de <code>upstream</code> kaynağından alacağız</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Yayın Dalını Ayarla</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>git checkout -b gh-pages
+<span class="nv">$ </span>git branch -d master
+</pre></div>
+
+
+<ul>
+<li>Github yayın dalını, yani <code>gh-pages</code>&#39;i oluşturuyoruz</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Yapılandır</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>rake
+<span class="nv">$ $EDITOR</span> _/param.yaml
+<span class="nv">$ </span>rake
+<span class="nv">$ </span>git commit -a -m Yapılandır
+</pre></div>
+
+
+<ul>
+<li><code>_/param.yaml</code> dosyasındaki boş alanları dolduruyoruz</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Yayınla</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>git remote add origin git@github.com/<span class="o">[</span>hesap<span class="o">]</span>/<span class="o">[</span>depo<span class="o">]</span>
+<span class="nv">$ </span>git push origin gh-pages
+</pre></div>
+
+
+<ul>
+<li>Önce Github <code>[hesap]</code>&#39;ınızda <code>[depo]</code> isimli depoyu oluşturuyoruz</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Güncelleme</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Güncelle</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>git pull upstream master
+</pre></div>
+
+
+<ul>
+<li><p>Şablonla birlikte gelen (sizin oluşturmadığınız) dosyaları düzenlememelisinz</p></li>
+<li><p>Düzenlemeniz halinde birleştirme çakışması (&ldquo;merge conflict&rdquo;) yaşayabilirsiniz</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Kullanım</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>İnşa Sistemi</h2></header>
+            
+            
+            <section><p>Aşağıdaki <code>rake</code> işlemlerini yapabilirsiniz</p>
+
+<ul>
+<li><p>Yeni folyo oluştur</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>rake new
+</pre></div>
+</li>
+<li><p>Derle</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>rake
+</pre></div>
+</li>
+<li><p>Folyo İndisini Görüntüle</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>rake view
+</pre></div>
+</li>
+<li><p>Üretilen Dosyaları Sil</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>rake clean
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Sözdizimi</h2></header>
+            
+            
+            <section><p><a href="%5Dhttp://daringfireball.net/projects/markdown/syntax">Markdown Sözdizimi</a>
+kullanacaksınız</p>
+
+<ul>
+<li><p>Fakat Markdown&#39;ın çeşitli lehçeleri var</p></li>
+<li><p>Folyolarda Markdown&#39;ın <a href="https://github.com/vmg/sundown">Sundown</a> lehçesi
+kullanılıyor</p></li>
+<li><p>Dikkat etmeniz gereken hususlar diğer sayfalarda özetlendi</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Makrolar</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Code</h2></header>
+            
+            
+            <section><p><code>.code: code/echo.c</code></p>
+
+<p><div class="highlight"><pre><span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;stdio.h&gt;</span>
+
+<span class="cp">#define SEPARATOR &#39; &#39;</span>
+<span class="cp">#define NEWLINE &#39;\n&#39;</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+                        <span class="n">putchar</span><span class="p">(</span><span class="n">SEPARATOR</span><span class="p">);</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="p">};</span>
+        <span class="n">putchar</span><span class="p">(</span><span class="n">NEWLINE</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_SUCCESS</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Gist</h2></header>
+            
+            
+            <section><p><code>.gist: 19</code></p>
+
+<p><script src="https://gist.github.com/19.js?"></script></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: fo-intro/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Shelr</h2></header>
+            
+            
+            <section><p><code>.shelr: 501b264596608048a40000c5</code></p>
+
+<p>
+    <iframe
+        border='0'
+        height='80%'
+        id='shelr_record_501b264596608048a40000c5'
+        scrolling='no'
+        src='http://shelr.tv/records/501b264596608048a40000c5/embed'
+        style='border: 0'
+        width='100%'>
+    </iframe>
+    </p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="fo-intro/index.md">fo-intro/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/20
             </aside>
           </footer>
         </div>
@@ -1722,9 +2333,110 @@ dosyasındadır.
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Shelr</a></th>
+        <th><a href="#slide2">Kurulum</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
+      
+        
+        <tr id="toc-row-3" class="sub">
+          <th><a href="#slide3">Ruby Kur</a></th>
+          <td><a href="#slide3">3</a></td>
+        </tr>
+        
+        <tr id="toc-row-4" class="sub">
+          <th><a href="#slide4">Ruby <code>1.9</code> Ayarla</a></th>
+          <td><a href="#slide4">4</a></td>
+        </tr>
+        
+        <tr id="toc-row-5" class="sub">
+          <th><a href="#slide5">19 Depolarını Ekle</a></th>
+          <td><a href="#slide5">5</a></td>
+        </tr>
+        
+        <tr id="toc-row-6" class="sub">
+          <th><a href="#slide6">Landslide Kur</a></th>
+          <td><a href="#slide6">6</a></td>
+        </tr>
+        
+        <tr id="toc-row-7" class="sub">
+          <th><a href="#slide7">Yerelde Depo Oluştur</a></th>
+          <td><a href="#slide7">7</a></td>
+        </tr>
+        
+        <tr id="toc-row-8" class="sub">
+          <th><a href="#slide8">Üst Depodan İlkle</a></th>
+          <td><a href="#slide8">8</a></td>
+        </tr>
+        
+        <tr id="toc-row-9" class="sub">
+          <th><a href="#slide9">Yayın Dalını Ayarla</a></th>
+          <td><a href="#slide9">9</a></td>
+        </tr>
+        
+        <tr id="toc-row-10" class="sub">
+          <th><a href="#slide10">Yapılandır</a></th>
+          <td><a href="#slide10">10</a></td>
+        </tr>
+        
+        <tr id="toc-row-11" class="sub">
+          <th><a href="#slide11">Yayınla</a></th>
+          <td><a href="#slide11">11</a></td>
+        </tr>
+        
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Güncelleme</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-13" class="sub">
+          <th><a href="#slide13">Güncelle</a></th>
+          <td><a href="#slide13">13</a></td>
+        </tr>
+        
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Kullanım</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-15" class="sub">
+          <th><a href="#slide15">İnşa Sistemi</a></th>
+          <td><a href="#slide15">15</a></td>
+        </tr>
+        
+        <tr id="toc-row-16" class="sub">
+          <th><a href="#slide16">Sözdizimi</a></th>
+          <td><a href="#slide16">16</a></td>
+        </tr>
+        
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Makrolar</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-18" class="sub">
+          <th><a href="#slide18">Code</a></th>
+          <td><a href="#slide18">18</a></td>
+        </tr>
+        
+        <tr id="toc-row-19" class="sub">
+          <th><a href="#slide19">Gist</a></th>
+          <td><a href="#slide19">19</a></td>
+        </tr>
+        
+        <tr id="toc-row-20" class="sub">
+          <th><a href="#slide20">Shelr</a></th>
+          <td><a href="#slide20">20</a></td>
+        </tr>
+        
       
       
     </table>
