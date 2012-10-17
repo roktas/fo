@@ -6,6 +6,6 @@
 
 [http://<%= domain %>/](http://<%= domain %>/)
 
-<%= Time.new.strftime("%d-%m-%Y") %>
+<%= `date +'%B %Y'`.chomp %>
 
 ---
