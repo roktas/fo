@@ -235,9 +235,16 @@ unless (unconfigured = Param.keys.select { |key| Param[key].nil? }).empty?
   abort
 end
 
-# Landslide kurulu olmalı.
-# FIXME: landslide-patched kontrolü yap.
-unless File.exist? Param[:landslide]
+# Landslide (uygun sürümde) kurulu olmalı.
+if  File.exist? Param[:landslide]
+  unless %x(#{Param[:landslide]} --version 2>/dev/null).match(/patched/)
+    $stderr.puts(
+      red("Sisteminizde hatalı bir landslide sürümü kurulu."),
+      red("Lütfen python-landslide-patched paketinin son sürümünü kurun.")
+    )
+    abort
+  end
+else
   $stderr.puts red("#{Landslide} bulunmadı.")
   abort
 end
