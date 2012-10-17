@@ -97,11 +97,14 @@ Ekim 2012
 
     !sh
     $ rake
+    $ git add _/param.yaml
     $ $EDITOR _/param.yaml
     $ rake
     $ git commit -a -m Yapılandır
 
 - `_/param.yaml` dosyasındaki boş alanları dolduruyoruz
+
+- Bir alanı boş bırakmak için `''` girin
 
 ---
 
