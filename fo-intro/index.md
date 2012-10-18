@@ -387,6 +387,8 @@ Liste bir bütünlük göstermeli
 
 Aşağıdaki ögeler sabit genişlikli yazıtipleriyle yazılmalı
 
+- Kod ögeleri (değişkenler, fonksiyon/metod isimleri vb)
+
 - Dosya ve program adları
 
 - Program çıktıları
