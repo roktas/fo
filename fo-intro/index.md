@@ -423,7 +423,7 @@ Doğrusu kalın harflerle yazılanlar
 
 - **herkes** herkez
 
-- **doküman** doküman
+- **doküman** döküman
 
 ---
 
