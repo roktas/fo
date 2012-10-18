@@ -163,6 +163,10 @@ Aşağıdaki `rake` işlemlerini yapabilirsiniz
 
 ---
 
+# Sözdizimi
+
+---
+
 ## Sözdizimi
 
 [Markdown Sözdizimi](]http://daringfireball.net/projects/markdown/syntax)
@@ -174,6 +178,250 @@ kullanacaksınız
   kullanılıyor
 
 - Dikkat etmeniz gereken hususlar diğer sayfalarda özetlendi
+
+---
+
+# Üslup
+
+---
+
+## Başlık
+
+Başlıkları tutarlı olarak aynı biçimde yazın
+
+- İlk harfleri büyük kelimelerden oluşmalı
+
+- Hepsi büyük harf başlıklar kullanmayın
+
+- Sadece ilk harfi büyük başlıklar kullanmayın
+
+---
+
+## Başlık
+
+- Yanlış → "BİR BAŞLIK"
+
+- Yanlış → "Bir başlık"
+
+- Doğru → "Bir Başlık"
+
+---
+
+## Başlık
+
+Başlık satırında taşma olmamalı
+
+- En fazla 28-32 karakter
+
+- İdealde 28'den küçük
+
+- Bu sınırı geçerseniz 28-32 aralığında kalın
+
+---
+
+## Sayfa Düzeni
+
+İçerik yukarıdan aşağıya önem sırasıyla yazılmalı
+
+- Önemli içerik sayfanın üst kısmında olsun
+
+- Daha az önemli içerik alt kısımda
+
+---
+
+## Yanlış
+
+.fx: wrong
+
+- Önemsiz içerik
+
+Önemli içerik
+
+---
+
+## Doğru
+
+.fx: right
+
+Önemli içerik
+
+- Önemsiz içerik
+
+---
+
+## Cümle
+
+Cümle → Bir sayfanın en küçük ögesi
+
+- Sayfa (şekil, tablo ve kod dışında) cümlelerden oluşuyor
+
+- Liste maddeleri de birer cümle
+
+---
+
+## Cümle
+
+Cümleleri tutarlı olarak aynı biçimde yazın
+
+- Büyük harfle başlayın
+
+- Sonda nokta kullanmayın
+
+---
+
+## Cümle
+
+Cümle iki satırı geçmemeli
+
+- En fazla 140-150 karakter
+
+- İdealde 140'tan küçük
+
+- Bu sınırı geçerseniz 140-150 aralığında kalın
+
+---
+
+## Cümle
+
+Cümleler kısa olmalı
+
+- Gereksiz kelimeleri çıkarın
+
+- Cümleleri kurallı yazmak zorunda değilsiniz
+
+- Konuşma üslubunda yazın
+
+---
+
+## Yanlış
+
+.fx: wrong
+
+- Genellikle klavyeyi onparmak kullanan insanların Vim editörüne alışması biraz
+  daha kolaydır.
+
+...
+
+---
+
+## Doğru
+
+.fx: right
+
+- Onparmak klavye kullanıcılarının Vim'e alışmaları daha kolay
+
+...
+
+---
+
+## Paragraf
+
+Paragraf → Noktayla ayrılmış cümleler topluluğu
+
+- **Paragraf kullanmayın!**
+
+- Paragraf içeriğini liste biçiminde yazın
+
+- Paragraftaki her cümle bir liste maddesi
+
+---
+
+## Yanlış
+
+.fx: wrong
+
+Vim alışması ve öğrenmesi gerçekten çok sancılı bir metin editörüdür ama
+alıştıktan sonra, yani içten gelen içgüdü gibi bir hal aldığında (buna `second
+nature` deniyor, yani ellerinizin siz düşünmeden yaptığı işe odaklanması ve
+üzerine düşeni yapması) çalışmayı hızlandırıyor.
+
+---
+
+## Doğru
+
+.fx: right
+
+- Vim alışılması zor bir metin editörü
+
+- Bir kere alıştığınızda çalışmanız çok hızlanır
+
+- Alışmak → Bir tür içgüdü, "Second Nature", geliştirmek
+
+- "Second Nature"?  Ellerinizin siz düşünmeden üzerine düşeni yapması
+
+---
+
+## Liste
+
+Liste → Maddelerden oluşmuş cümleler topluluğu
+
+- Sayfada sunulan fikri bir paragraf olarak kurgulayın
+
+- Paragraftaki cümleleri maddelere dönüştürün
+
+---
+
+## Liste
+
+İç içe listelerden kaçının
+
+- Listeler mümkün olduğunca tek seviyeli olmalı
+
+- İç içe listeler çoğunlukla birden fazla sayfaya dağıtılabilir
+
+---
+
+## Liste
+
+Liste bir bütünlük göstermeli
+
+- Bütünlüğü öne çıkarmak için önce düz bir cümle yazın
+
+- Öyle ki düz cümle liste içeriğini özetlesin
+
+- Liste maddeleriyle düz cümledeki fikri ayrıntılandırın
+
+---
+
+## Sabit Genişlikli Yazıtipi
+
+Aşağıdaki ögeler sabit genişlikli yazıtipleriyle yazılmalı
+
+- Dosya ve program adları
+
+- Program çıktıları
+
+---
+
+## Yazım Kuralları
+
+Türkçe'nin yazım kurallarına uyun
+
+- Türk Dil Kurumunun [Yazım
+  Kılavuzuna](http://www.tdk.gov.tr/index.php?option=com_content&view=category&id=50)
+  sıklıkla başvurun
+
+---
+
+## Sıkça Yapılan Yazım Hataları
+
+- Ayrı yazılması gereken ekler
+
+- Noktalama işaretleri
+
+---
+
+## Hatalı Yazılan Kelimeler
+
+Doğrusu kalın harflerle yazılanlar
+
+- **yalnız** yanlız
+
+- **yanlış** yalnış
+
+- **herkes** herkez
+
+- **doküman** doküman
 
 ---
 
