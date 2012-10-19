@@ -184,7 +184,17 @@ Sadece tek dosya üzerinde de işlem yapabilirsiniz
 
 ## Vim Kısayolları
 
-.
+- `F9`  → Düzenlenmekte olan folyoyu derle
+
+- `F10` → Düzenlenmekte olan folyoyu derle ve görüntüle
+
+Kısayolların kurulumu
+
+- [İlgili eklenti
+  dosyasını](https://github.com/roktas/x/blob/master/etc/vim/ftplugin/markdown.vim)
+  `~/.vim/ftplugin` dizinine kopyalayın
+
+- Bu kısayollar 19/x yapılandırmasında zaten tanımlı
 
 ---
 
