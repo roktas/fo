@@ -1,4 +1,4 @@
-# Folyo Nedir?
+# Folyo
 
 .fx: first
 
@@ -7,6 +7,92 @@ Recai Oktaş `<roktas@bil.omu.edu.tr>`
 [http://roktas.me/](http://roktas.me/)
 
 Ekim 2012
+
+---
+
+# Folyo Nedir?
+
+---
+
+## Bir Doküman Türü
+
+Folyo → Bir doküman türü
+
+- Uydurduğumuz bir terim
+
+- Slayt veya sunu değil folyo
+
+- Bu bir bir doküman türü; kitap, makale gibi
+
+- Genel olarak bir konunun özünü anlatmayı kolaylaştıran bir doküman türü
+
+---
+
+## Öncü Doküman
+
+Daha uzun ve kapsamlı bir doküman türüne hazırlık aşamasında kullanılabilir
+
+- Örneğin bir makale yazarken ana fikri önce folyo biçiminde hazırlayabilirsiniz
+
+- Veya bir kitabın bölümlerini önce bir folyoya dökebilirsiniz
+
+- Yani bu bir öncü doküman
+
+---
+
+## Bilgi Aktarımı
+
+Etkili bir bilgi aktarım aracı
+
+- Öğrendiklerinizi başkalarına aktarmanızı kolaylaştırıyor
+
+- Uzun ve düzenli cümlelerden oluşan bir doküman yazmanız gerekmiyor
+
+- Sunum değeri de taşıdığından okunması, izlenmesi kolay
+
+- Sunum değeri taşıyor fakat sunum değil
+
+---
+
+## İçerik ve Sunum
+
+**Folyo tanım olarak bir sunum aracı değil**
+
+- Kısmen sunum değeri var
+
+- Fakat hiç bir zaman içerik değerinin önünde değil
+
+- Bol efektli, zaman alıcı içeriklerden kaçınıyoruz
+
+- İçerik daha önemli
+
+- Amaç içeriğin kolay şekilde oluşturulması, etkili şekilde aktarılması
+
+- Nasıl?
+
+---
+
+## Folyo Hazırlığı
+
+- Ana fikirleri kısa cümleleler halinde sayfalara böl
+
+- Sayfa sıralamasını değiştirerek fikir akışını düzenle
+
+- Her sayfada cümleleri ayrıntılandır
+
+---
+
+## Basit Araçlar
+
+- Özel bir araca gerek yok
+
+- Çok özel bir dosya biçimi de yok
+
+- Öğrenilmesi çok kolay bir hafif etiketleme dili → Markdown
+
+- Basit bir metin düzenleyici
+
+- Düz metin folyo dosyaları
 
 ---
 
@@ -216,7 +302,7 @@ kullanacaksınız
 
 ---
 
-# Üslup
+# Stil
 
 ---
 
