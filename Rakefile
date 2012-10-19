@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'find'
+require 'pathname'
 require 'open3'
 require 'set'
 require 'yaml'
@@ -73,6 +74,11 @@ def erbify(infile, outfile, variables)
     f.write ERB.new(template)
       .result(OpenStruct.new(variables).instance_eval { binding })
   end
+end
+
+# Verilen göreceli dosya yolunu çalışma dizinine göreceli yap
+def getpath(path)
+  Pathname.new(path).relative? ? File.join(Rake::original_dir, path) : path
 end
 
 # Bir dizgiden etiket üret.
@@ -201,14 +207,47 @@ def pad(array, columns = 4)
   result.each_slice(columns).to_a.transpose.flatten
 end
 
-def itemize(items)
-    pad(
-      items.sort_by do |item|
-        item[:label]
-      end.map do |item|
-        { label: item[:label], file: item[:destination] }
-      end
-    )
+# Folyo indeksi oluştur
+def index(items)
+  pad(
+    items.sort_by do |item|
+      item[:label]
+    end.map do |item|
+      { label: item[:label], file: item[:destination] }
+    end
+  )
+end
+
+# Dosya yolundan inşa bilgilerini oluştur
+def itemize(path)
+  {
+    source: path,
+    destination: path.ext('.html'),
+    directory: File.dirname(path),
+    label: File.dirname(path),
+  }
+end
+
+# Verilen bilgilere göre folyo derle
+def compile(item)
+  $stderr.puts blue(item[:label])
+
+  run(*%W[
+    #{Param[:landslide]}
+      --embed
+      --linenos no
+      --css #{Param[:css]}
+      --js #{Param[:js]}
+      --theme light
+      --destination #{item[:destination]}
+      #{item[:source]}
+  ]) do |ok, response, error|
+    if not ok
+      rm_f item[:destination]
+      $stderr.puts red("landslide hatası: %s" % error)
+      abort
+    end
+  end
 end
 
 # Yeni kurulumlarda bir ayar dosyası oluştur.
@@ -265,12 +304,7 @@ FileList['[^_.]*'].select { |path| FileTest.directory?(path) }.each do |dir|
     if FileTest.directory?(path)
       Find.prune if %w(. _).any? { |prefix| basename[0] == prefix }
     elsif basename == 'index.md' && File.open(path, &:readline).start_with?('#')
-      Items << {
-        source: path,
-        destination: path.ext('.html'),
-        directory: File.dirname(path),
-        label: File.dirname(path),
-      }
+      Items << itemize(path)
     end
   end
 end
@@ -285,23 +319,7 @@ Items.each do |item|
     *FileList["#{item[:directory]}/code/*"],  # code files
     Param[:landslide]
   ] do
-    $stderr.puts blue(item[:label])
-
-    run(*%W[
-      #{Param[:landslide]}
-        --embed
-        --linenos no
-        --css #{Param[:css]}
-        --js #{Param[:js]}
-        --theme light
-        --destination #{item[:destination]}
-        #{item[:source]}
-    ]) do |ok, response, error|
-      if not ok
-        rm_f item[:destination]
-        $stderr.puts red("landslide hatası: %s" % error)
-      end
-    end
+    compile(item)
   end
 end
 
@@ -309,24 +327,43 @@ end
 destinations = Items.map { | item| item[:destination] }
 
 desc 'Folyoları derle.'
-task :compile => destinations
+task :build => destinations
 CLEAN.include destinations
 
 file 'index.html'=> [PARAMFILE, Param[:indextemplate], *destinations] do
   $stderr.puts green('index')
 
-  Param[:items] = itemize(Items)
+  Param[:items] = index(Items)
 
   erbify(Param[:indextemplate], 'index.html', Param)
+end
+
+desc 'Bir folyo derle.'
+task :compile, :path do |t, args|
+  if args[:path]
+    compile(itemize(getpath(args[:path])))
+  else
+    $stderr.puts red("Kullanım: rake compile[<dosya yolu>]")
+    abort
+  end
 end
 
 desc 'Folyoları indisle.'
 task :index => 'index.html'
 CLEAN.include 'index.html'
 
-desc 'İndisi görüntüle.'
-task :view do
-  sh 'xdg-open', 'index.html'
+desc 'Dosya görüntüle (öntanımlı olarak indis).'
+task :view, :path do |t, args|
+  path = if args[:path]
+    itemize(getpath(args[:path]))[:destination]
+  else
+    'index.html'
+  end
+  unless File.exists? path
+    $stderr.puts red("#{path} dosyası bulunamadı; dosyayı derlediniz mi?")
+    fail
+  end
+  sh "xdg-open #{path} >/dev/null"
 end
 
 desc 'Yeni folyo.'
@@ -406,4 +443,4 @@ task :new do
   end
 end
 
-task :default => [:compile, :index]
+task :default => [:build, :index]
