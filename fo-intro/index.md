@@ -163,6 +163,31 @@ Aşağıdaki `rake` işlemlerini yapabilirsiniz
 
 ---
 
+## İnşa Sistemi
+
+Sadece tek dosya üzerinde de işlem yapabilirsiniz
+
+- Bulunulan dizindeki `index.md` dosyasını derle
+
+        !sh
+        $ rake compile[index.md]
+
+- Bu dosyaya ait derlenmiş dosyayı (`index.html`) görüntüle
+
+        !sh
+        $ rake view[index.md]
+
+- Folyoyu Vim ile düzenlerken bu komutlara klavye kısayollarıyla
+  erişebilirsiniz (bk. Vim Kısayolları)
+
+---
+
+## Vim Kısayolları
+
+.
+
+---
+
 # Sözdizimi
 
 ---
