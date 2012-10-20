@@ -97,7 +97,7 @@ Etkili bir bilgi aktarım aracı
 
 ---
 
-#   Kurulum
+#   Kurulum ve Kullanım
 
 ---
 
@@ -206,11 +206,7 @@ Etkili bir bilgi aktarım aracı
 
 ---
 
-#   Güncelleme
-
----
-
-##  Güncelle
+##  Güncelleme
 
         !sh
         $ git pull upstream master
@@ -222,7 +218,15 @@ Etkili bir bilgi aktarım aracı
 
 ---
 
-#   Kullanım
+##  Düzenleme
+
+[Markdown Sözdizimi](]http://daringfireball.net/projects/markdown/syntax)
+kullanacaksınız
+
+*   Fakat Markdown'ın çeşitli lehçeleri var
+
+*   Folyolarda Markdown'ın [Sundown](https://github.com/vmg/sundown) lehçesi
+    kullanılıyor
 
 ---
 
@@ -287,59 +291,7 @@ Kısayolların kurulumu
 
 ---
 
-#   Sözdizimi
-
----
-
-##  Sözdizimi
-
-[Markdown Sözdizimi](]http://daringfireball.net/projects/markdown/syntax)
-kullanacaksınız
-
-*   Fakat Markdown'ın çeşitli lehçeleri var
-
-*   Folyolarda Markdown'ın [Sundown](https://github.com/vmg/sundown) lehçesi
-    kullanılıyor
-
-*   Dikkat etmeniz gereken hususlar diğer sayfalarda özetlendi
-
----
-
 #   Stil
-
----
-
-##  Başlık
-
-Başlıkları tutarlı olarak aynı biçimde yazın
-
-*   İlk harfleri büyük kelimelerden oluşmalı
-
-*   Hepsi büyük harf başlıklar kullanmayın
-
-*   Sadece ilk harfi büyük başlıklar kullanmayın
-
----
-
-##  Başlık
-
-*   Yanlış → "BİR BAŞLIK"
-
-*   Yanlış → "Bir başlık"
-
-*   Doğru → "Bir Başlık"
-
----
-
-##  Başlık
-
-Başlık satırında taşma olmamalı
-
-*   En fazla 28-32 karakter
-
-*   İdealde 28'den küçük
-
-*   Bu sınırı geçerseniz 28-32 aralığında kalın
 
 ---
 
@@ -455,8 +407,8 @@ Paragraf → Noktayla ayrılmış cümleler topluluğu
 .fx: wrong
 
 Vim alışması ve öğrenmesi gerçekten çok sancılı bir metin editörüdür ama
-alıştıktan sonra, yani içten gelen içgüdü gibi bir hal aldığında (buna `second
-nature` deniyor, yani ellerinizin siz düşünmeden yaptığı işe odaklanması ve
+alıştıktan sonra, yani içten gelen içgüdü gibi bir hal aldığında (buna "second
+nature" deniyor, yani ellerinizin siz düşünmeden yaptığı işe odaklanması ve
 üzerine düşeni yapması) çalışmayı hızlandırıyor.
 
 ---
@@ -469,7 +421,7 @@ nature` deniyor, yani ellerinizin siz düşünmeden yaptığı işe odaklanması
 
 *   Bir kere alıştığınızda çalışmanız çok hızlanır
 
-*   Alışmak → Bir tür içgüdü, "Second Nature", geliştirmek
+*   Alışmak, bir türü içgüdü geliştirmek → "Second Nature"
 
 *   "Second Nature"?  Ellerinizin siz düşünmeden üzerine düşeni yapması
 
@@ -507,6 +459,148 @@ Liste bir bütünlük göstermeli
 
 ---
 
+##  Liste
+
+        !text
+        *   Bir madde
+
+        *   İkinci madde
+
+            + Alt madde
+
+            + Başka bir alt madde
+
+        *   Başka bir madde
+
+*   Madde imi olarak birinci seviye listelerde `*`, ikinci seviye listelerde `+`
+    kullanın
+
+---
+
+##  Liste
+
+*   Birinci seviye listelerde madde iminden sonra **3 boşluk** bırakın
+
+*   Maddelerde (varsa) devam paragraflarını 4 boşluk girintiyle yazın
+
+        !text
+        *   Bir madde
+
+            Bu maddenin devamı bir paragraf
+
+        *   İkinci madde
+
+---
+
+##  Başlık
+
+Başlıkları tutarlı olarak aynı biçimde yazın
+
+*   İlk harfleri büyük kelimelerden oluşmalı
+
+*   Hepsi büyük harf başlıklar kullanmayın
+
+*   Sadece ilk harfi büyük başlıklar kullanmayın
+
+---
+
+##  Başlık
+
+*   Yanlış → "BİR BAŞLIK"
+
+*   Yanlış → "Bir başlık"
+
+*   Doğru → "Bir Başlık"
+
+---
+
+##  Başlık
+
+Başlık satırında taşma olmamalı
+
+*   En fazla 28-32 karakter
+
+*   İdealde 28'den küçük
+
+*   Bu sınırı geçerseniz 28-32 aralığında kalın
+
+---
+
+##  Başlık
+
+        !text
+        #<3 boşluk>Bir Başlık
+
+İlk üç seviye başlık iminden sonra 5'nci sütuna kadar boşluk bırakmanızı
+öneririz
+
+*   Daha estetik ve liste imleriyle uyumlu oluyor
+
+*   Fakat şart değil
+
+---
+
+##  Başlık
+
+Bir dosyada en fazla iki seviyeli başlıklandırma kullanın
+
+*   İlk seviye → `#`, ikinci seviye → `##`
+
+*   Üçüncü seviyeye girmeyin
+
+*   Üçüncü seviye folyonun çok büyüdüğünü gösterir
+
+*   Dosyayı bölerek yeni bir düzenleme yapın
+
+---
+
+##  Blok Kod
+
+        !text
+        !ruby
+        puts "Merhaba"
+
+*   Blok kodları daima 8 boşluk girintiyle yazın (sekmeyi 8 boşluğa çevirin)
+
+*   Sözdizimi renklendirmesi için bloğun ilk satırında `!<dil>` ile dil
+    bildirimi yapın
+
+*   Satır numaralarını görüntülemek için `#!<dil>` bildirimini kullanın
+
+        !text
+        #!ruby
+        puts "Merhaba"
+
+---
+
+##  Blok Kod
+
+Uygun dil bildirimi yapmayı unutmayın
+
+*   Kabuk kodları için (Bash'e özgü bir sözdizimi yoksa) `sh` dilini kullanın
+
+*   Etkileşimli kabuk komutları için komut istemini `$` ile belirtin
+
+        !text
+        !sh
+        $ ls
+
+---
+
+##  Blok Kod
+
+Uzun blok kodlardan kaçının
+
+*   Bunun yerine ilgili kodu bir dosyaya yerleştirerek `.code:` makrosuyla içeri
+    aktarın
+
+*   Kod dosyaları için folyo dizininde `code` adında bir alt dizin kullanın
+
+        !text
+        .code: code/echo.c
+
+---
+
 ##  Sabit Genişlikli Yazıtipi
 
 Aşağıdaki ögeler sabit genişlikli yazıtipleriyle yazılmalı
@@ -516,6 +610,47 @@ Aşağıdaki ögeler sabit genişlikli yazıtipleriyle yazılmalı
 *   Dosya ve program adları
 
 *   Program çıktıları
+
+---
+
+##  Resim
+
+        !text
+        ![Resim başlığı](media/resim.png)
+
+*   Resim dosyaları için folyo dizininde `media` adında bir alt dizin kullanın
+
+---
+
+##  Resim
+
+Resimlerin sayfada taşmamasını sağlayın
+
+*   Gerekiyorsa resmi ön işlemeden geçirerek ölçekleyin
+
+*   Resmin yatay uzunluğu dikeyden uzunluğundan daha büyük olmalı
+
+*   `4:3` oranını tercih edin
+
+*   Örneğin `1024x768` geometrili bir resmi `640x480` geometrisine çevirmek için
+
+        !sh
+        $ convert -resize 640 resim-1024.png resim-640.png
+
+---
+
+##  Resim
+
+Resimlerin büyük boyutlu olmamasına dikkat edin
+
+*   Genel olarak 50 kB'ı geçmemeli
+
+*   Çizimler için PNG, gerçek resimler için JPEG biçimlerini tercih edin
+
+*   Resim boyutlarını `pngnq`, `jpegoptim` gibi araçlarla düşürebilirsiniz
+
+*   En önemli küçültme yönteminin resim geometrisini düzenlemek olduğunu
+    unutmayın
 
 ---
 
@@ -551,11 +686,7 @@ Doğrusu kalın harflerle yazılanlar
 
 ---
 
-#   Makrolar
-
----
-
-##  Code
+##   `.code` Makrosu
 
 `.code: code/echo.c`
 
@@ -563,7 +694,7 @@ Doğrusu kalın harflerle yazılanlar
 
 ---
 
-##  Gist
+##   `.gist` Makrosu
 
 `.gist: 19`
 
@@ -571,7 +702,7 @@ Doğrusu kalın harflerle yazılanlar
 
 ---
 
-##  Shelr
+##   `.shelr` Makrosu
 
 `.shelr: 501b264596608048a40000c5`
 
