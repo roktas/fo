@@ -220,13 +220,25 @@ Etkili bir bilgi aktarım aracı
 
 ##  Düzenleme
 
-[Markdown Sözdizimi](]http://daringfireball.net/projects/markdown/syntax)
+[Markdown Sözdizimini](]http://daringfireball.net/projects/markdown/syntax)
 kullanacaksınız
 
-*   Fakat Markdown'ın çeşitli lehçeleri var
+*   Diğer bir [başvuru kaynağı](http://www.markdown-ref.org/)
+
+*   Markdown'ın çeşitli lehçeleri var
 
 *   Folyolarda Markdown'ın [Sundown](https://github.com/vmg/sundown) lehçesi
     kullanılıyor
+
+---
+
+##  Folyo Biçimi
+
+*   Sayfalar için kullanılan ayırıcılar ve bazı makrolar dışında her şey
+    Markdown ile
+
+*   [Bu folyoyu](https://raw.github.com/roktas/fo/gh-pages/fo-intro/index.md)
+    inceleyerek başlayabilirsiniz
 
 ---
 
