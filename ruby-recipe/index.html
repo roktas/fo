@@ -783,7 +783,7 @@ ul li:first {
   content: ' ';
 }
 
-li p { display: inline; }
+li p:first-child { display: inline; }
 li pre { margin-left: 2em; }
 
 a {
@@ -1636,15 +1636,15 @@ div.slide {
             
             <section><p><code>*</code> işleciyle atama yap</p>
 
-<div class="highlight"><pre><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="o">.</span><span class="n">.</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
-<span class="n">a</span> <span class="c1">#=&gt; &#39;A&#39;</span>
-<span class="n">b</span> <span class="c1">#=&gt; &#39;B&#39;</span>
-<span class="n">c</span> <span class="c1">#=&gt; &#39;C&#39;</span>
+<div class="highlight"><pre>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="o">.</span><span class="n">.</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+    <span class="n">a</span> <span class="c1">#=&gt; &#39;A&#39;</span>
+    <span class="n">b</span> <span class="c1">#=&gt; &#39;B&#39;</span>
+    <span class="n">c</span> <span class="c1">#=&gt; &#39;C&#39;</span>
 
-<span class="n">match</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="o">*</span><span class="s2">&quot;Something 981&quot;</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/([A-z]*) ([0-9]*)/</span><span class="p">)</span>
-<span class="n">match</span>  <span class="c1">#=&gt; &quot;Something 981&quot;</span>
-<span class="n">text</span>   <span class="c1">#=&gt; &quot;Something&quot;</span>
-<span class="n">number</span> <span class="c1">#=&gt; &quot;981&quot;</span>
+    <span class="n">match</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="o">*</span><span class="s2">&quot;Something 981&quot;</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/([A-z]*) ([0-9]*)/</span><span class="p">)</span>
+    <span class="n">match</span>  <span class="c1">#=&gt; &quot;Something 981&quot;</span>
+    <span class="n">text</span>   <span class="c1">#=&gt; &quot;Something&quot;</span>
+    <span class="n">number</span> <span class="c1">#=&gt; &quot;981&quot;</span>
 </pre></div>
 </section>
             
@@ -1678,11 +1678,11 @@ div.slide {
             
             <section><p>Düzenli ifadelerde eşleşmeleri topla</p>
 
-<div class="highlight"><pre><span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;Fred Bloggs &lt;fred@bloggs.com&gt;&quot;</span>
-<span class="n">email</span><span class="o">[</span><span class="sr">/&lt;(.*?)&gt;/</span><span class="p">,</span> <span class="mi">1</span><span class="o">]</span> <span class="c1">#=&gt; &quot;fred@bloggs.com&quot;</span>
+<div class="highlight"><pre>    <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;Fred Bloggs &lt;fred@bloggs.com&gt;&quot;</span>
+    <span class="n">email</span><span class="o">[</span><span class="sr">/&lt;(.*?)&gt;/</span><span class="p">,</span> <span class="mi">1</span><span class="o">]</span> <span class="c1">#=&gt; &quot;fred@bloggs.com&quot;</span>
 
-<span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;this is a test&#39;</span>
-<span class="n">string</span><span class="o">[</span><span class="sr">/[aeiou].+?[aeiou]/</span><span class="o">]</span> <span class="c1">#=&gt; &#39;is i&#39;</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;this is a test&#39;</span>
+    <span class="n">string</span><span class="o">[</span><span class="sr">/[aeiou].+?[aeiou]/</span><span class="o">]</span> <span class="c1">#=&gt; &#39;is i&#39;</span>
 </pre></div>
 </section>
             
@@ -1716,11 +1716,11 @@ div.slide {
             
             <section><p>Heterojen bir diziden eleman seç</p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="o">[</span> <span class="o">[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span> <span class="o">]</span><span class="p">,</span> <span class="ss">:c</span><span class="p">,</span> <span class="o">[</span><span class="ss">:d</span><span class="p">,</span> <span class="ss">:f</span><span class="o">]</span> <span class="o">]</span>
-<span class="n">a</span> <span class="c1">#=&gt; :a</span>
-<span class="n">b</span> <span class="c1">#=&gt; :b</span>
-<span class="n">c</span> <span class="c1">#=&gt; :c</span>
-<span class="n">d</span> <span class="c1">#=&gt; [:d, :f]</span>
+<div class="highlight"><pre>    <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="o">[</span> <span class="o">[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span> <span class="o">]</span><span class="p">,</span> <span class="ss">:c</span><span class="p">,</span> <span class="o">[</span><span class="ss">:d</span><span class="p">,</span> <span class="ss">:f</span><span class="o">]</span> <span class="o">]</span>
+    <span class="n">a</span> <span class="c1">#=&gt; :a</span>
+    <span class="n">b</span> <span class="c1">#=&gt; :b</span>
+    <span class="n">c</span> <span class="c1">#=&gt; :c</span>
+    <span class="n">d</span> <span class="c1">#=&gt; [:d, :f]</span>
 </pre></div>
 </section>
             
@@ -1754,7 +1754,7 @@ div.slide {
             
             <section><p>Değişken ilklendirmesini atlayarak atama yap</p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="n">a</span> <span class="o">||=</span> <span class="o">[]</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s1">&#39;test&#39;</span>
+<div class="highlight"><pre>    <span class="p">(</span><span class="n">a</span> <span class="o">||=</span> <span class="o">[]</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s1">&#39;test&#39;</span>
 </pre></div>
 </section>
             
@@ -1788,15 +1788,15 @@ div.slide {
             
             <section><p>Değişken <em>ilklendirilmemişse</em> ilkle</p>
 
-<div class="highlight"><pre><span class="n">path</span> <span class="o">||=</span> <span class="s2">&quot;/usr/bin&quot;</span>
-<span class="c1"># unless path then path = &quot;/usr/bin&quot;</span>
+<div class="highlight"><pre>    <span class="n">path</span> <span class="o">||=</span> <span class="s2">&quot;/usr/bin&quot;</span>
+    <span class="c1"># unless path then path = &quot;/usr/bin&quot;</span>
 </pre></div>
 
 
 <p>Değişken <em>ilklendirilmişse</em> ekle</p>
 
-<div class="highlight"><pre><span class="n">string</span> <span class="o">&amp;&amp;=</span> <span class="n">string</span> <span class="o">+</span> <span class="s2">&quot;suffix&quot;</span>
-<span class="c1"># if string then string = string + &quot;suffix&quot;</span>
+<div class="highlight"><pre>    <span class="n">string</span> <span class="o">&amp;&amp;=</span> <span class="n">string</span> <span class="o">+</span> <span class="s2">&quot;suffix&quot;</span>
+    <span class="c1"># if string then string = string + &quot;suffix&quot;</span>
 </pre></div>
 </section>
             
@@ -1830,9 +1830,9 @@ div.slide {
             
             <section><p>Tekil veya çoğul (dizi) değeri alabilecek bir değişkenle döngü kur</p>
 
-<div class="highlight"><pre><span class="o">[*</span><span class="n">v</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="o">|</span>
-  <span class="c1"># ...</span>
-<span class="k">end</span>
+<div class="highlight"><pre>    <span class="o">[*</span><span class="n">v</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="o">|</span>
+    <span class="c1"># ...</span>
+    <span class="k">end</span>
 </pre></div>
 </section>
             
@@ -1866,14 +1866,14 @@ div.slide {
             
             <section><p><code>and</code> ve <code>or</code> tek satırlıkları</p>
 
-<div class="highlight"><pre><span class="n">queue</span> <span class="o">=</span> <span class="o">[]</span>
-<span class="sx">%w{hello x world}</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">word</span><span class="o">|</span>
-  <span class="n">queue</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="ow">and</span> <span class="nb">puts</span> <span class="s2">&quot;Added to queue&quot;</span> <span class="k">unless</span> <span class="n">word</span><span class="o">.</span><span class="n">length</span> <span class="o">&lt;</span>  <span class="mi">2</span>
-<span class="k">end</span>
-<span class="n">queue</span>
-<span class="c1">#=&gt; Added to queue</span>
-<span class="c1">#=&gt; Added to queue</span>
-<span class="c1">#=&gt; [&quot;hello&quot;, &quot;world&quot;]</span>
+<div class="highlight"><pre>    <span class="n">queue</span> <span class="o">=</span> <span class="o">[]</span>
+    <span class="sx">%w{hello x world}</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">word</span><span class="o">|</span>
+      <span class="n">queue</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="ow">and</span> <span class="nb">puts</span> <span class="s2">&quot;Added to queue&quot;</span> <span class="k">unless</span> <span class="n">word</span><span class="o">.</span><span class="n">length</span> <span class="o">&lt;</span>  <span class="mi">2</span>
+    <span class="k">end</span>
+    <span class="n">queue</span>
+    <span class="c1">#=&gt; Added to queue</span>
+    <span class="c1">#=&gt; Added to queue</span>
+    <span class="c1">#=&gt; [&quot;hello&quot;, &quot;world&quot;]</span>
 </pre></div>
 </section>
             
@@ -1908,16 +1908,16 @@ div.slide {
             <section><p><code>case</code> deyimlerinde <code>Proc</code> kullanılabilir (Ruby 1.9&#39;da <code>Proc#===</code> ile
 <code>Proc#call</code> eşdeğerdir)</p>
 
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">multiple_of</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span>
-  <span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">product</span><span class="o">|</span> <span class="n">product</span><span class="o">.</span><span class="n">modulo</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span><span class="o">.</span><span class="n">zero?</span> <span class="p">}</span>
-<span class="k">end</span>
+<div class="highlight"><pre>    <span class="k">def</span> <span class="nf">multiple_of</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span>
+      <span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">product</span><span class="o">|</span> <span class="n">product</span><span class="o">.</span><span class="n">modulo</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span><span class="o">.</span><span class="n">zero?</span> <span class="p">}</span>
+    <span class="k">end</span>
 
-<span class="k">case</span> <span class="n">number</span>
-  <span class="k">when</span> <span class="n">multiple_of</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="nb">puts</span> <span class="s2">&quot;Multiple of 3&quot;</span>
-  <span class="k">when</span> <span class="n">multiple_of</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-    <span class="nb">puts</span> <span class="s2">&quot;Multiple of 7&quot;</span>
-<span class="k">end</span>
+    <span class="k">case</span> <span class="n">number</span>
+    <span class="k">when</span> <span class="n">multiple_of</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+      <span class="nb">puts</span> <span class="s2">&quot;Multiple of 3&quot;</span>
+    <span class="k">when</span> <span class="n">multiple_of</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+      <span class="nb">puts</span> <span class="s2">&quot;Multiple of 7&quot;</span>
+    <span class="k">end</span>
 </pre></div>
 </section>
             
@@ -1951,15 +1951,15 @@ div.slide {
             
             <section><p>Aralık kullanarak dizi ilkle</p>
 
-<div class="highlight"><pre><span class="n">numbers</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span>
-<span class="c1">#=&gt; [0, 1, 2, 3, 4, 5]</span>
+<div class="highlight"><pre>    <span class="n">numbers</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span>
+    <span class="c1">#=&gt; [0, 1, 2, 3, 4, 5]</span>
 </pre></div>
 
 
 <p>Veya</p>
 
-<div class="highlight"><pre><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span>
-<span class="c1">#=&gt; [0, 1, 2, 3, 4, 5]</span>
+<div class="highlight"><pre>    <span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span>
+    <span class="c1">#=&gt; [0, 1, 2, 3, 4, 5]</span>
 </pre></div>
 </section>
             
@@ -1993,11 +1993,11 @@ div.slide {
             
             <section><p>Eşboyutlu iki diziden sözlük üret</p>
 
-<div class="highlight"><pre><span class="n">keys</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">,</span> <span class="ss">:z</span><span class="o">]</span>
-<span class="n">values</span> <span class="o">=</span> <span class="o">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">,</span> <span class="mi">789</span><span class="o">]</span>
+<div class="highlight"><pre>    <span class="n">keys</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">,</span> <span class="ss">:z</span><span class="o">]</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="o">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">,</span> <span class="mi">789</span><span class="o">]</span>
 
-<span class="no">Hash</span><span class="o">[</span><span class="n">keys</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">]</span>
-<span class="c1">#=&gt; {:x=&gt;123, :y=&gt;456, :z=&gt;789}</span>
+    <span class="no">Hash</span><span class="o">[</span><span class="n">keys</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">]</span>
+    <span class="c1">#=&gt; {:x=&gt;123, :y=&gt;456, :z=&gt;789}</span>
 </pre></div>
 </section>
             
@@ -2031,9 +2031,9 @@ div.slide {
             
             <section><p>Sözlükten &ldquo;anahtar, değer&rdquo; çiftleri dizisi üret</p>
 
-<div class="highlight"><pre><span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
-<span class="o">[*</span><span class="n">h</span><span class="o">]</span>
-<span class="c1">#=&gt; [[:name, &quot;Fred&quot;], [:age, 93], [:gender, :male]]</span>
+<div class="highlight"><pre>    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+    <span class="o">[*</span><span class="n">h</span><span class="o">]</span>
+    <span class="c1">#=&gt; [[:name, &quot;Fred&quot;], [:age, 93], [:gender, :male]]</span>
 </pre></div>
 </section>
             
@@ -2067,15 +2067,15 @@ div.slide {
             
             <section><p>Dizi veya sözlükten değerler seç</p>
 
-<div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="sx">%w{a b c d e f g h}</span>
-<span class="n">required</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="o">]</span>
-<span class="n">a</span><span class="o">.</span><span class="n">values_at</span><span class="p">(</span><span class="o">*</span><span class="n">required</span><span class="p">)</span>
-<span class="c1">#=&gt; [&quot;a&quot;, &quot;f&quot;, &quot;g&quot;]</span>
+<div class="highlight"><pre>    <span class="n">a</span> <span class="o">=</span> <span class="sx">%w{a b c d e f g h}</span>
+    <span class="n">required</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="o">]</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">values_at</span><span class="p">(</span><span class="o">*</span><span class="n">required</span><span class="p">)</span>
+    <span class="c1">#=&gt; [&quot;a&quot;, &quot;f&quot;, &quot;g&quot;]</span>
 
-<span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
-<span class="n">required</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:age</span><span class="p">,</span> <span class="ss">:name</span><span class="o">]</span>
-<span class="n">h</span><span class="o">.</span><span class="n">values_at</span><span class="p">(</span><span class="o">*</span><span class="n">required</span><span class="p">)</span>
-<span class="c1">#=&gt; [ 93, &quot;Fred&quot; ]</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+    <span class="n">required</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:age</span><span class="p">,</span> <span class="ss">:name</span><span class="o">]</span>
+    <span class="n">h</span><span class="o">.</span><span class="n">values_at</span><span class="p">(</span><span class="o">*</span><span class="n">required</span><span class="p">)</span>
+    <span class="c1">#=&gt; [ 93, &quot;Fred&quot; ]</span>
 </pre></div>
 </section>
             
@@ -2109,11 +2109,11 @@ div.slide {
             
             <section><p>Çift sayıda elemana sahip bir diziden sözlük oluştur</p>
 
-<div class="highlight"><pre><span class="n">fruit</span> <span class="o">=</span> <span class="o">[</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span><span class="s2">&quot;yellow&quot;</span> <span class="o">]</span>
-<span class="c1">#=&gt; [&quot;apple&quot;, &quot;red&quot;, &quot;banana&quot;, &quot;yellow&quot;]</span>
+<div class="highlight"><pre>    <span class="n">fruit</span> <span class="o">=</span> <span class="o">[</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span><span class="s2">&quot;yellow&quot;</span> <span class="o">]</span>
+    <span class="c1">#=&gt; [&quot;apple&quot;, &quot;red&quot;, &quot;banana&quot;, &quot;yellow&quot;]</span>
 
-<span class="no">Hash</span><span class="o">[*</span><span class="n">fruit</span><span class="o">]</span>
-<span class="c1">#=&gt; {&quot;apple&quot;=&gt;&quot;red&quot;, &quot;banana&quot;=&gt;&quot;yellow&quot;}</span>
+    <span class="no">Hash</span><span class="o">[*</span><span class="n">fruit</span><span class="o">]</span>
+    <span class="c1">#=&gt; {&quot;apple&quot;=&gt;&quot;red&quot;, &quot;banana&quot;=&gt;&quot;yellow&quot;}</span>
 </pre></div>
 </section>
             
@@ -2147,12 +2147,12 @@ div.slide {
             
             <section><p>Bir nesne dizisindeki niteliklerden dizi oluştur</p>
 
-<div class="highlight"><pre><span class="n">shapes</span> <span class="o">=</span> <span class="o">[]</span>
-<span class="n">shapes</span> <span class="o">&lt;&lt;</span> <span class="no">Rectangle</span><span class="o">.</span><span class="n">new</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>
-<span class="n">shapes</span> <span class="o">&lt;&lt;</span> <span class="no">Square</span><span class="o">.</span><span class="n">new</span> <span class="mi">4</span>
-<span class="n">shapes</span> <span class="o">&lt;&lt;</span> <span class="no">Circle</span><span class="o">.</span><span class="n">new</span> <span class="mi">7</span>
+<div class="highlight"><pre>    <span class="n">shapes</span> <span class="o">=</span> <span class="o">[]</span>
+    <span class="n">shapes</span> <span class="o">&lt;&lt;</span> <span class="no">Rectangle</span><span class="o">.</span><span class="n">new</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>
+    <span class="n">shapes</span> <span class="o">&lt;&lt;</span> <span class="no">Square</span><span class="o">.</span><span class="n">new</span> <span class="mi">4</span>
+    <span class="n">shapes</span> <span class="o">&lt;&lt;</span> <span class="no">Circle</span><span class="o">.</span><span class="n">new</span> <span class="mi">7</span>
 
-<span class="n">areas</span> <span class="o">=</span> <span class="n">shapes</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:area</span><span class="p">)</span>
+    <span class="n">areas</span> <span class="o">=</span> <span class="n">shapes</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:area</span><span class="p">)</span>
 </pre></div>
 </section>
             
@@ -2186,14 +2186,14 @@ div.slide {
             
             <section><p>Sözlük değerlerini öntanımlı olarak ayarla</p>
 
-<div class="highlight"><pre><span class="n">parties</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="o">|</span><span class="nb">hash</span><span class="p">,</span> <span class="n">key</span><span class="o">|</span> <span class="nb">hash</span><span class="o">[</span><span class="n">key</span><span class="o">]</span> <span class="o">=</span> <span class="o">[]</span> <span class="p">}</span>
-<span class="n">parties</span><span class="o">[</span><span class="s2">&quot;Summer party&quot;</span><span class="o">]</span>
-<span class="c1">#=&gt; []</span>
+<div class="highlight"><pre>    <span class="n">parties</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="o">|</span><span class="nb">hash</span><span class="p">,</span> <span class="n">key</span><span class="o">|</span> <span class="nb">hash</span><span class="o">[</span><span class="n">key</span><span class="o">]</span> <span class="o">=</span> <span class="o">[]</span> <span class="p">}</span>
+    <span class="n">parties</span><span class="o">[</span><span class="s2">&quot;Summer party&quot;</span><span class="o">]</span>
+    <span class="c1">#=&gt; []</span>
 
-<span class="n">parties</span><span class="o">[</span><span class="s2">&quot;Summer party&quot;</span><span class="o">]</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Joe&quot;</span>
-<span class="c1">#=&gt; {&quot;Summer party&quot;=&gt; [&quot;Joe&quot;]}</span>
-<span class="n">parties</span><span class="o">[</span><span class="s2">&quot;Other party&quot;</span><span class="o">]</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Jane&quot;</span>
-<span class="c1">#=&gt; {&quot;Summer party&quot;=&gt;[&quot;Joe&quot;], &quot;Other party&quot;=&gt;&quot;Jane&quot;}</span>
+    <span class="n">parties</span><span class="o">[</span><span class="s2">&quot;Summer party&quot;</span><span class="o">]</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Joe&quot;</span>
+    <span class="c1">#=&gt; {&quot;Summer party&quot;=&gt; [&quot;Joe&quot;]}</span>
+    <span class="n">parties</span><span class="o">[</span><span class="s2">&quot;Other party&quot;</span><span class="o">]</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Jane&quot;</span>
+    <span class="c1">#=&gt; {&quot;Summer party&quot;=&gt;[&quot;Joe&quot;], &quot;Other party&quot;=&gt;&quot;Jane&quot;}</span>
 </pre></div>
 </section>
             
@@ -2227,23 +2227,23 @@ div.slide {
             
             <section><p>Metodlarda son argüman sözlük ise kıvrık parantez gerekmez</p>
 
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">,</span> <span class="n">h</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span>
-<span class="k">end</span>
+<div class="highlight"><pre>    <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+      <span class="nb">puts</span> <span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">,</span> <span class="n">h</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span>
+    <span class="k">end</span>
 
-<span class="n">dump</span><span class="p">(</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">)</span>
+    <span class="n">dump</span><span class="p">(</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Veya</p>
 
-<div class="highlight"><pre><span class="n">dump</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span>
+<div class="highlight"><pre>    <span class="n">dump</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span>
 </pre></div>
 
 
 <p>En güzeli! (Ruby 1.9.x notasyonu)</p>
 
-<div class="highlight"><pre><span class="n">dump</span> <span class="nb">name</span><span class="p">:</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="mi">93</span>
+<div class="highlight"><pre>    <span class="n">dump</span> <span class="nb">name</span><span class="p">:</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="mi">93</span>
 </pre></div>
 </section>
             
@@ -2277,14 +2277,14 @@ div.slide {
             
             <section><p>Yapısı diziye, başarımı sözlüğe benzer bir veriyapısı: &ldquo;küme&rdquo;</p>
 
-<div class="highlight"><pre><span class="n">set</span> <span class="o">=</span> <span class="no">Set</span><span class="o">.</span><span class="n">new</span> <span class="sx">%w(foo bar baz)</span>
+<div class="highlight"><pre>    <span class="n">set</span> <span class="o">=</span> <span class="no">Set</span><span class="o">.</span><span class="n">new</span> <span class="sx">%w(foo bar baz)</span>
 </pre></div>
 
 
 <p>Hızlı aramalar için sözlüğe yakın bir başarıma sahip</p>
 
-<div class="highlight"><pre><span class="n">set</span><span class="o">.</span><span class="n">include?</span> <span class="s1">&#39;foo&#39;</span>
-<span class="c1">#=&gt; true</span>
+<div class="highlight"><pre>    <span class="n">set</span><span class="o">.</span><span class="n">include?</span> <span class="s1">&#39;foo&#39;</span>
+    <span class="c1">#=&gt; true</span>
 </pre></div>
 </section>
             
@@ -2318,23 +2318,23 @@ div.slide {
             
             <section><p>Metod gövdelerinde <code>rescue</code> bloklarını <code>begin</code>, <code>end</code> kullanmadan yaz</p>
 
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">func</span>
-  <span class="k">begin</span>
-    <span class="c1"># ...</span>
-  <span class="k">rescue</span>
-    <span class="c1"># ...</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<div class="highlight"><pre>    <span class="k">def</span> <span class="nf">func</span>
+    <span class="k">begin</span>
+      <span class="c1"># ...</span>
+    <span class="k">rescue</span>
+      <span class="c1"># ...</span>
+    <span class="k">end</span>
+    <span class="k">end</span>
 </pre></div>
 
 
 <p>Yerine</p>
 
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">func</span>
-  <span class="c1"># ...</span>
-<span class="k">rescue</span>
-  <span class="c1"># ...</span>
-<span class="k">end</span>
+<div class="highlight"><pre>    <span class="k">def</span> <span class="nf">func</span>
+      <span class="c1"># ...</span>
+    <span class="k">rescue</span>
+      <span class="c1"># ...</span>
+    <span class="k">end</span>
 </pre></div>
 </section>
             
@@ -2368,9 +2368,9 @@ div.slide {
             
             <section><p><code>rescue</code> tek satırlığı</p>
 
-<div class="highlight"><pre><span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">10</span> <span class="p">}</span>
-<span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">].</span><span class="n">downcase</span>                         <span class="c1">#=&gt; ERROR</span>
-<span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">].</span><span class="n">downcase</span> <span class="k">rescue</span> <span class="s2">&quot;No name&quot;</span>        <span class="c1">#=&gt; &quot;No name&quot;</span>
+<div class="highlight"><pre>    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">10</span> <span class="p">}</span>
+    <span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">].</span><span class="n">downcase</span>                         <span class="c1">#=&gt; ERROR</span>
+    <span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">].</span><span class="n">downcase</span> <span class="k">rescue</span> <span class="s2">&quot;No name&quot;</span>        <span class="c1">#=&gt; &quot;No name&quot;</span>
 </pre></div>
 </section>
             
@@ -2404,13 +2404,13 @@ div.slide {
             
             <section><p>Hata ayıklamada üretilen istisnayı geri takip et</p>
 
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">do_division_by_zero</span><span class="p">;</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">0</span><span class="p">;</span> <span class="k">end</span>
+<div class="highlight"><pre>    <span class="k">def</span> <span class="nf">do_division_by_zero</span><span class="p">;</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">0</span><span class="p">;</span> <span class="k">end</span>
 
-<span class="k">begin</span>
-  <span class="n">do_division_by_zero</span>
-<span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">exception</span>
-  <span class="nb">puts</span> <span class="n">exception</span><span class="o">.</span><span class="n">backtrace</span>
-<span class="k">end</span>
+    <span class="k">begin</span>
+      <span class="n">do_division_by_zero</span>
+    <span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">exception</span>
+      <span class="nb">puts</span> <span class="n">exception</span><span class="o">.</span><span class="n">backtrace</span>
+    <span class="k">end</span>
 </pre></div>
 </section>
             
@@ -2444,10 +2444,10 @@ div.slide {
             
             <section><p>Ebeveyn metodda minör değişiklik</p>
 
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-  <span class="k">super</span>
-  <span class="nb">puts</span> <span class="s2">&quot;hello!&quot;</span>
-<span class="k">end</span>
+<div class="highlight"><pre>    <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+      <span class="k">super</span>
+      <span class="nb">puts</span> <span class="s2">&quot;hello!&quot;</span>
+    <span class="k">end</span>
 </pre></div>
 
 
@@ -2483,11 +2483,11 @@ div.slide {
             
             <section><p>Betiğin hem program hem de modül olarak davranabilmesini sağla</p>
 
-<div class="highlight"><pre><span class="c1"># module</span>
+<div class="highlight"><pre>    <span class="c1"># module</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
-  <span class="c1"># program</span>
-<span class="k">end</span>
+    <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+      <span class="c1"># program</span>
+    <span class="k">end</span>
 </pre></div>
 </section>
             
@@ -2521,8 +2521,8 @@ div.slide {
             
             <section><p>Gerçel sayıları biçimle</p>
 
-<div class="highlight"><pre><span class="n">money</span> <span class="o">=</span> <span class="mi">9</span><span class="o">.</span><span class="mi">5</span>
-<span class="s2">&quot;%.2f&quot;</span> <span class="o">%</span> <span class="n">money</span> <span class="c1">#=&gt; &quot;9.50&quot;</span>
+<div class="highlight"><pre>    <span class="n">money</span> <span class="o">=</span> <span class="mi">9</span><span class="o">.</span><span class="mi">5</span>
+    <span class="s2">&quot;%.2f&quot;</span> <span class="o">%</span> <span class="n">money</span> <span class="c1">#=&gt; &quot;9.50&quot;</span>
 </pre></div>
 </section>
             

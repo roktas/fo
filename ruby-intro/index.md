@@ -1,4 +1,4 @@
-# Ruby - Giriş
+#   Ruby - Giriş
 
 .fx: first
 
@@ -10,87 +10,86 @@ Mart 2012
 
 ---
 
-# Ruby
+#   Ruby
 
-- Genel amaçlı, nesne yönelimli bir programlama dili
+*   Genel amaçlı, nesne yönelimli bir programlama dili
 
-- Tasarımcısı: Yukihiro "Matz" Matsumoto
+*   Tasarımcısı: Yukihiro "Matz" Matsumoto
 
-- Çıkış tarihi: 1995
+*   Çıkış tarihi: 1995
 
 ![ruby](media/ruby.svg)
 
 ---
 
-# Temeller
+#   Temeller
 
 ---
 
-# İlk Kod
+#   İlk Kod
 
-    !!ruby
-    sum = 0
-    i = 1
+        #!ruby
+        sum = 0
+        i = 1
 
-    while i <= 10 do
-      sum += i*i
-      i = i + 1
-    end
+        while i <= 10 do
+          sum += i*i
+          i = i + 1
+        end
 
     puts "Kareler toplamı #{sum}"
 
-- Deyimler satır sonlarıyla ayrılıyor
+*   Deyimler satır sonlarıyla ayrılıyor
 
-- Bloklar `do ... end` ile ayrılıyor
+*   Bloklar `do ... end` ile ayrılıyor
 
-- İşlev çağrılarında (`puts`) parantezler zorunlu değil (satır 9)
+*   İşlev çağrılarında (`puts`) parantezler zorunlu değil (satır 9)
 
-- Dizgi içinde `#{...}` ile değer (satır 9)
-
----
-
-# İşlevler (Metodlar)
-
-    !!ruby
-    def sum(upper)
-      result, i = 0, 1
-      while i <= upper do
-        result += i*i
-        i += 1
-      end
-
-      return result
-    end
-
-    puts "Kareler toplamı #{sum(10)}"
-
-- İşlevler (metodlar) `def ... end` ile
-
-- Paralel atamalar yapılabilir (satır 2)
-
-- `#{...}` içinde herhangi bir Ruby ifadesi kullanılabilir (satır 11)
+*   Dizgi içinde `#{...}` ile değer (satır 9)
 
 ---
 
-# Deyim/İfade
+#   İşlevler (Metodlar)
+
+        #!ruby
+        def sum(upper)
+          result, i = 0, 1
+          while i <= upper do
+            result += i*i
+            i += 1
+          end
+          return result
+        end
+
+        puts "Kareler toplamı #{sum(10)}"
+
+*   İşlevler (metodlar) `def ... end` ile
+
+*   Paralel atamalar yapılabilir (satır 2)
+
+*   `#{...}` içinde herhangi bir Ruby ifadesi kullanılabilir (satır 11)
+
+---
+
+#   Deyim/İfade
 
 Ruby'de deyim (statement) ve ifade (expression) ayrımı yok
 
-- Her şey çalışma anında değerlendirilen ("evaluate" edilen) bir ifade
+*   Her şey çalışma anında değerlendirilen ("evaluate" edilen) bir ifade
 
-- İki tamsayı nesnesiyle kurulan ve `2` değerini dönen bir ifade
+*   İki tamsayı nesnesiyle kurulan ve `2` değerini dönen bir ifade
 
         !irb
         irb(main):001:0> 1 + 1
         => 2
 
-- Bu da bir ifade (nesne kendisini dönüyor)
+*   Bu da bir ifade (nesne kendisini dönüyor)
 
         !irb
         irb(main):002:0> 1
         => 1
 
-- Sabit bir nesne (`1`) yerine değişken kullanmak da aynı
+*   Sabit bir nesne (`1`) yerine değişken kullanmak da aynı
 
         !irb
         irb(main):003:0> i = 1
@@ -100,9 +99,9 @@ Ruby'de deyim (statement) ve ifade (expression) ayrımı yok
 
 ---
 
-# Deyim/İfade
+#   Deyim/İfade
 
-- Görüntülenenle ifade değerini karıştırmayın
+*   Görüntülenenle ifade değerini karıştırmayın
 
         !irb
         irb(main):001:0> puts 1
@@ -111,93 +110,93 @@ Ruby'de deyim (statement) ve ifade (expression) ayrımı yok
 
 `nil` nedir?
 
-- Yokluğu ifade ediyor
+*   Yokluğu ifade ediyor
 
-- Python'da `None`, C'de `null` gibi
+*   Python'da `None`, C'de `null` gibi
 
-- Örnekte `puts` metodu `nil` değeri dönüyor
+*   Örnekte `puts` metodu `nil` değeri dönüyor
 
-- Fakat `puts` metodu `1` değerini görüntülüyor
+*   Fakat `puts` metodu `1` değerini görüntülüyor
 
 ---
 
-# İfadeler
+#   İfadeler
 
 Her şeyin bir ifade olması neden önemli?
 
-    !ruby
-    flag =
-      if x == 0
-        false
-      else
-        true
-      end
+        !ruby
+        flag =
+          if x == 0
+            false
+          else
+            true
+          end
 
-- Bu kodu basitçe şöyle yazabilirdiniz
+*   Bu kodu basitçe şöyle yazabilirdiniz
 
         !ruby
         flag = x == 0
 
 ---
 
-# Doğru/Yanlış
+#   Doğru/Yanlış
 
-    !ruby
-    if x == 0
-      false
-    else
-      true
-    end
+        !ruby
+        if x == 0
+          false
+        else
+          true
+        end
 
 `0` değeri zaten `false` değil mi?  Hayır, Ruby'de değil.
 
 **Ruby'de sadece `false` ve `nil` "yanlış"; kalan her şey "doğru"**
 
-    !irb
-    irb(main):001:0> nil and true
-    => false
-    irb(main):002:0> 0  and true
-    => true
-    irb(main):003:0> [] and true
-    => true
-    irb(main):004:0> "" and true
-    => true
-    irb(main):005:0> -1 and true
-    => true
+        !irb
+        irb(main):001:0> nil and true
+        => false
+        irb(main):002:0> 0  and true
+        => true
+        irb(main):003:0> [] and true
+        => true
+        irb(main):004:0> "" and true
+        => true
+        irb(main):005:0> -1 and true
+        => true
 
 ---
 
-# Dönüş Değerleri
+#   Dönüş Değerleri
 
-    !!ruby
-    def sum(upper)
-      result, i = 0, 1
-      while i <= upper do
-        result += i*i
-        i += 1
-      end
-      result
-    end
+        #!ruby
+        def sum(upper)
+          result, i = 0, 1
+          while i <= upper do
+            result += i*i
+            i += 1
+          end
+          result
+        end
 
-    puts "Kareler toplamı #{sum(10)}"
+        puts "Kareler toplamı #{sum(10)}"
 
 İşlevlerde açık `return` gerekmiyor (satır 7).  Neden?
 
-- Ruby'de deyim/ifade ayrımı yok; sadece değişkenin ismini yazmak yeterli
+*   Ruby'de deyim/ifade ayrımı yok; sadece değişkenin ismini yazmak yeterli
 
-- Metodda son satır bir ifade; kendisi de bir ifade olan metod çağrısının
-  değeri
+*   Metodda son satır bir ifade; kendisi de bir ifade olan metod çağrısının
+    değeri
 
 ---
 
-# Nesneler
+#   Nesneler
 
-- Ruby'de hemen her şey akıllı bir "nesne"
+*   Ruby'de hemen her şey akıllı bir "nesne"
 
-- Uygun metodlarla uyararak nesnelerin istediğiniz davranışı göstermesini
-  sağlayabilirsiniz
+*   Uygun metodlarla uyararak nesnelerin istediğiniz davranışı göstermesini
+    sağlayabilirsiniz
 
-- Dizgiler birer nesne
+*   Dizgiler birer nesne
 
         !irb
         irb(main):001:0> "This is a test".length
@@ -205,7 +204,7 @@ Her şeyin bir ifade olması neden önemli?
         irb(main):002:0> "This is a test".upcase
         => THIS IS A TEST
 
-- **Sayılar da öyle**
+*   **Sayılar da öyle**
 
         !irb
         irb(main):003:0> 3.times { puts "Test" }
@@ -216,18 +215,18 @@ Her şeyin bir ifade olması neden önemli?
 
 ---
 
-# Bloklar
+#   Bloklar
 
-- `3` bir tamsayı nesnesi, `times` bu nesnenin bir metodu
+*   `3` bir tamsayı nesnesi, `times` bu nesnenin bir metodu
 
-- Öyle ki bu metoda hangi eylemi tekrarlayacağını bildirebiliyorsunuz
+*   Öyle ki bu metoda hangi eylemi tekrarlayacağını bildirebiliyorsunuz
 
-- Nasıl?  Eylemi gerçekleyen bir kod bloğuyla
+*   Nasıl?  Eylemi gerçekleyen bir kod bloğuyla
 
         !ruby
         { puts "Test" }
 
-- Kod bloklarını `{...}` yerine `do ... end` ile de yazabiliriz
+*   Kod bloklarını `{...}` yerine `do ... end` ile de yazabiliriz
 
         !ruby
         3.times do
@@ -236,207 +235,207 @@ Her şeyin bir ifade olması neden önemli?
 
 Kodlama stili:
 
-- Tek satırlık bloklarda kıvrık parantezler
+*   Tek satırlık bloklarda kıvrık parantezler
 
-- Birden fazla satıra yayılan kod blokları için `do ... end`
+*   Birden fazla satıra yayılan kod blokları için `do ... end`
 
 ---
 
-# Bloklar
+#   Bloklar
 
 Bir işleve eylemde ihtiyaç duyacağı bilgileri argümanlar üzerinden
 geçirebiliriz.
 
-    !ruby
-    puts "Test"
+        !ruby
+        puts "Test"
 
-- `puts`: Neyi görüntüleyeyim?
+*   `puts`: Neyi görüntüleyeyim?
 
-- Çağıran: "Test" dizgisini
+*   Çağıran: "Test" dizgisini
 
 Aynı diyaloğu `times` için kurgulayalım.
 
-- `times`: **kaç** defa **ne** yapacağım?
+*   `times`: **kaç** defa **ne** yapacağım?
 
 Ama bu soru hatalı.
 
-- `times` metodu uyarılırken **kaç** defa bilgisi zaten mevcut
+*   `times` metodu uyarılırken **kaç** defa bilgisi zaten mevcut
 
         !ruby
         3.times ...
 
-- Diyalog `times` ile değil `3` tamsayı nesnesi arasında gerçekleşmeli
+*   Diyalog `times` ile değil `3` tamsayı nesnesi arasında gerçekleşmeli
 
 ---
 
-# Bloklar
+#   Bloklar
 
 Diyalog:
 
-- `3`: Ne istiyorsun?
+*   `3`: Ne istiyorsun?
 
-- Çağıran: Sen **defa** (yani 3 defa) bir şey yapmanı.
+*   Çağıran: Sen **defa** (yani 3 defa) bir şey yapmanı.
 
-- `3`: Tamam, ben **defa** ne yapacağım?
+*   `3`: Tamam, ben **defa** ne yapacağım?
 
-- Çağıran: `puts "Test"` ("Test" dizgisini görüntüle).
+*   Çağıran: `puts "Test"` ("Test" dizgisini görüntüle).
 
 Sonuçlar:
 
-- Nesnelere sadece veri değil eylem de bildirilebiliyor
+*   Nesnelere sadece veri değil eylem de bildirilebiliyor
 
-- Bu sayede çeşitlenebilir davranışlar elde edebiliyoruz
+*   Bu sayede çeşitlenebilir davranışlar elde edebiliyoruz
 
-- Tekrarlama eylemiyle (`times`), tekrarlanacak eylemi (`puts "Test"`)
-  ayırıyoruz
+*   Tekrarlama eylemiyle (`times`), tekrarlanacak eylemi (`puts "Test"`)
+    ayırıyoruz
 
-- `times` bir metod, `puts "Test"` ise bu metoda geçirilen bir blok
+*   `times` bir metod, `puts "Test"` ise bu metoda geçirilen bir blok
 
 ---
 
-# Döngüler
+#   Döngüler
 
 Ruby'de döngüleri (tamsayı, dizgi, aralık, dizi, sözlük gibi) nesneler üzerinden
 uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.
 
-    !!ruby
-    def sum(upper)
-      result = 0
-      (1..upper).each do |i|
-        result += i*i
-      end
-      result
-    end
+        #!ruby
+        def sum(upper)
+          result = 0
+          (1..upper).each do |i|
+            result += i*i
+          end
+          result
+        end
 
-    puts "Kareler toplamı #{sum(10)}"
+        puts "Kareler toplamı #{sum(10)}"
 
-- Bu örnekte `(1..10)` bir aralık ("range") nesnesi
+*   Bu örnekte `(1..10)` bir aralık ("range") nesnesi
 
-- Toplama eylemini (bir blok) bu nesnenin `each` metoduna geçiriyoruz
+*   Toplama eylemini (bir blok) bu nesnenin `each` metoduna geçiriyoruz
 
 ---
 
-# Döngüler
+#   Döngüler
 
 **Döngüleri `for` ile kurmayın**
 
-    !ruby
-    result = 0
-    for i in (1..10) do
-      result += i*i
-    end
+        !ruby
+        result = 0
+        for i in (1..10) do
+          result += i*i
+        end
 
-yerine
+        yerine
 
-    !ruby
-    result = 0
-    (1..10).each do |i|
-      result += i*i
-    end
+        !ruby
+        result = 0
+        (1..10).each do |i|
+          result += i*i
+        end
 
-- Ruby'de `for` deyimi hemen hemen daima bir gerçekleme kusuru
+*   Ruby'de `for` deyimi hemen hemen daima bir gerçekleme kusuru
 
-- Bu durum daha nadir olarak `while` için de geçerli
+*   Bu durum daha nadir olarak `while` için de geçerli
 
 ---
 
-# Diziler
+#   Diziler
 
-    !ruby
-    a = []
-    a.push("Word")
+        !ruby
+        a = []
+        a.push("Word")
 
 Veya daha şık olanı:
 
-    !ruby
-    a = []
-    a << "Word"
+        !ruby
+        a = []
+        a << "Word"
 
 ---
 
-# Diziler
+#   Diziler
 
-    !ruby
-    a = [1, 2, 3]
-    a.each do |e|
-      puts e
-    end
+        !ruby
+        a = [1, 2, 3]
+        a.each do |e|
+          puts e
+        end
 
 İndisler?
 
-    !ruby
-    a = [1, 2, 3]
-    a.each_with_index do |e, i|
-      puts "#{i}: #{e}"
-    end
+        !ruby
+        a = [1, 2, 3]
+        a.each_with_index do |e, i|
+          puts "#{i}: #{e}"
+        end
 
 ---
 
-# Diziler
+#   Diziler
 
-    !ruby
-    a = []
-    puts "a is empty" if a.empty?
+        !ruby
+        a = []
+        puts "a is empty" if a.empty?
 
-    a = [1, 2, 3]
-    a.include?("x") #=> false
-    a.include?(3)   #=> true
+        a = [1, 2, 3]
+        a.include?("x") #=> false
+        a.include?(3)   #=> true
 
 ---
 
-# Sözlükler
+#   Sözlükler
 
-    !ruby
-    person = { "name" => "Fred", "age" => 20, "gender" => "male" }
+        !ruby
+        person = { "name" => "Fred", "age" => 20, "gender" => "male" }
 
 Fakat anahtarları (çoğu zaman) şöyle yazıyoruz (bazen değerler de öyle):
 
-    !ruby
-    person = { :name => "Fred", :age => 20, :gender => :male }
+        !ruby
+        person = { :name => "Fred", :age => 20, :gender => :male }
 
-- `"name"` bir dizgi (`String`)
+*   `"name"` bir dizgi (`String`)
 
-- `:name` ise bir sembol (`Symbol`)
+*   `:name` ise bir sembol (`Symbol`)
 
 ---
 
-# Semboller
+#   Semboller
 
-- Değiştirilmez bir dizgi gibi
+*   Değiştirilmez bir dizgi gibi
 
-- Pek çok işlemde daha hızlı ve güvenli
+*   Pek çok işlemde daha hızlı ve güvenli
 
 TODO
 
 ---
 
-# Sözlükler
+#   Sözlükler
 
-    !ruby
-    person = { :name => "Fred", :age => 20, :gender => :male }
+        !ruby
+        person = { :name => "Fred", :age => 20, :gender => :male }
 
-    puts person[:age]       #=> 20
-    person.has_key? :age    #=> true
-    puts person[:weight]    #=> nil
-    person.has_key? :weight #=> false
+        puts person[:age]       #=> 20
+        person.has_key? :age    #=> true
+        puts person[:weight]    #=> nil
+        person.has_key? :weight #=> false
 
-    person.each do |key, value|
-      puts "#{key}: #{value}"
-    end
+        person.each do |key, value|
+        puts "#{key}: #{value}"
+        end
 
-    if person[:gender] == :male && (person[:age] < 18 || person[:age] > 85)
-      puts "A very young or old man"
-    end
+        if person[:gender] == :male && (person[:age] < 18 || person[:age] > 85)
+          puts "A very young or old man"
+        end
 
 ---
 
-# Dosya İşlemleri
+#   Dosya İşlemleri
 
 "Eylem blokları" bakış açısını uygulayın
 
-- Dosya tutamacı nesnesi al
+*   Dosya tutamacı nesnesi al
 
-- Nesneyle bir şeyler yap, örneğin satırları görüntüle
+*   Nesneyle bir şeyler yap, örneğin satırları görüntüle
 
         !ruby
         File.open(filename) do |f|
@@ -445,7 +444,7 @@ TODO
           end
         end
 
-- Satır numaralarını da ister misiniz?
+*   Satır numaralarını da ister misiniz?
 
         !ruby
         File.open(filename) do |f|
@@ -456,59 +455,59 @@ TODO
 
 ---
 
-# Tek Satırlıklar
+#   Tek Satırlıklar
 
 Başa dönelim...
 
-- Ruby'nin standart kitaplığı çok zengindir
+*   Ruby'nin standart kitaplığı çok zengindir
 
-- Kendi icat ettiğiniz bir çözümü gerçeklemeden önce kitaplığa bakın
+*   Kendi icat ettiğiniz bir çözümü gerçeklemeden önce kitaplığa bakın
 
-- İşinize yarayacak pek çok parça bulabilirsiniz
+*   İşinize yarayacak pek çok parça bulabilirsiniz
 
         !ruby
         puts "Kareler toplamı #{(1..10).inject { |sum, i| sum + i*i }}"
 
-- `inject`?  Daha sonra...
+*   `inject`?  Daha sonra...
 
 ---
 
-# Nesne Yönelimli Programlama
+#   Nesne Yönelimli Programlama
 
 ---
 
-# Sınıf ve Nesne
+#   Sınıf ve Nesne
 
 TODO
 
 ---
 
-# Nesne Nitelikleri
+#   Nesne Nitelikleri
 
 TODO
 
 ---
 
-# Sınıf
+#   Sınıf
 
 .code: code/rb_class_simple_point/main.rb
 
 ---
 
-# Sınıf Metodları
+#   Sınıf Metodları
 
 Bir nesne için değil ilgili sınıftaki tüm nesneler için anlamlı metodları nasıl
-  tanımlayacağız?
+tanımlayacağız?
 
-- `Point` için örnek: noktaların toplanması (`add`)
+*   `Point` için örnek: noktaların toplanması (`add`)
 
-- `Point` için örnek: noktalar arası uzaklık (`distance`)
+*   `Point` için örnek: noktalar arası uzaklık (`distance`)
 
 ---
 
-# Sınıf Metodları
+#   Sınıf Metodları
 
-- Nesne metodları bu ihtiyaca şık bir cevap vermiyor
+*   Nesne metodları bu ihtiyaca şık bir cevap vermiyor
 
         !ruby
         class Point
@@ -524,47 +523,47 @@ Bir nesne için değil ilgili sınıftaki tüm nesneler için anlamlı metodlar�
         # veya
         t = q.add(p)
 
-- Tüm nesneleri ilgilendiren bir eylemin özel bir nesne üzerinden uyarılması çok
-  **anlamlı** değil
+*   Tüm nesneleri ilgilendiren bir eylemin özel bir nesne üzerinden uyarılması
+    çok **anlamlı** değil
 
-- Eylemin `Point` sınıfı üzerinden uyarılması daha anlamlı
+*   Eylemin `Point` sınıfı üzerinden uyarılması daha anlamlı
 
         !ruby
         t = Point.add(p, q)
 
 ---
 
-# Sınıf Metodları
+#   Sınıf Metodları
 
-- Bir başka örnek: orijin noktasını veren bir metod
+*   Bir başka örnek: orijin noktasını veren bir metod
 
         !ruby
         o = Point.origin # (0, 0) nokta nesnesi
 
-- Bu metodun bir nokta nesnesi üzerinde uyarılması anlamlı değil
+*   Bu metodun bir nokta nesnesi üzerinde uyarılması anlamlı değil
 
         !ruby
         o = p.origin # (0, 0) nokta nesnesi
 
 ---
 
-# Sınıf Metodları
+#   Sınıf Metodları
 
 .code: code/rb_class_classmethod_point/main.rb
 
 ---
 
-# İşleç Yüklemesi
+#   İşleç Yüklemesi
 
 İşleçleri birer metod gibi kullanabilir miyiz?
 
-- Bu zaten yapılıyor
+*   Bu zaten yapılıyor
 
         !ruby
         i = 3 + 5
         s = "hello " + "world"
 
-- Örneğin iki noktanın toplanması basitçe şöyle olsa:
+*   Örneğin iki noktanın toplanması basitçe şöyle olsa:
 
         !ruby
         t = p + q
@@ -573,88 +572,88 @@ Bunu yapabilirsek sınıf metodları çözümüne alternatif bir çözümümüz 
 
 ---
 
-# İşleç Yüklemesi
+#   İşleç Yüklemesi
 
 .code: code/rb_class_overloading_point/main.rb
 
 ---
 
-# Miras Alma
+#   Miras Alma
 
 .code: code/rb_inheritance_simple_circle/main.rb
 
 ---
 
-# Sınıf Değişkenleri
+#   Sınıf Değişkenleri
 
 Bir nesne için değil ilgili sınıftaki tüm nesneler için anlamlı değerleri nasıl
 temsil edeceğiz?
 
-- `Point` için örnek: kaç tane nokta oluşturuldu?
+*   `Point` için örnek: kaç tane nokta oluşturuldu?
 
 Benzer bir soruyu metodlar için de sormuştuk?
 
-- Bir nesne için değil ilgili sınıftaki tüm nesneler için anlamlı metodları
-  nasıl tanımlayacağız?
+*   Bir nesne için değil ilgili sınıftaki tüm nesneler için anlamlı metodları
+    nasıl tanımlayacağız?
 
-- `Point` için örnek: noktaların toplanması (`add`)
+*   `Point` için örnek: noktaların toplanması (`add`)
 
 Tüm nesneler için anlamlı değerler eğer bir sabit ise buna zaten bir çözümümüz
-var: Sınıf sabitleri
+var → Sınıf sabitleri
 
-    !ruby
-    class Point
-      ORIGIN = 0, 0
-      ...
-    end
+        !ruby
+        class Point
+          ORIGIN = 0, 0
+          ...
+        end
 
 ---
 
-# Sınıf Değişkenleri
+#   Sınıf Değişkenleri
 
 .code: code/rb_class_variable_simple/main.rb
 
 ---
 
-# Sınıf Değişkenleri
+#   Sınıf Değişkenleri
 
 Sınıf değişkenleriyle çalışırken bir şeyin farkında olmalıyız:
 
-- Sınıf değişkenleri tüm mirasçı sınıflar tarafından erişilebilir ve
-  **değiştirilebilir**
+*   Sınıf değişkenleri tüm mirasçı sınıflar tarafından erişilebilir ve
+    **değiştirilebilir**
 
-- Sınıf değişkenleri bir tür sınıf kapsamlı **genel değişken** olarak davranır
+*   Sınıf değişkenleri bir tür sınıf kapsamlı **genel değişken** olarak davranır
 
-- Genel değişkenlerin sorunlarını biliyorsunuz
+*   Genel değişkenlerin sorunlarını biliyorsunuz
 
 ---
 
-# Sınıf İçinde Değişkenler ve Sabitler
+#   Sınıf İçinde Değişkenler ve Sabitler
 
 .code: code/rb_class_variable_experiment/main.rb
 
 ---
 
-# Sınıf İçinde Değişkenler ve Sabitler
+#   Sınıf İçinde Değişkenler ve Sabitler
 
-- Çıktı
+*   Çıktı
 
 .code: code/rb_class_variable_experiment/out
 
 ---
 
-# Sınıf İçinde Değişkenler ve Sabitler
+#   Sınıf İçinde Değişkenler ve Sabitler
 
 Sonuçlar:
 
-- Sınıf sabitleri çocuk sınıfta değiştirilmediği sürece ebeveyn'deki değerini
-  alıyor
+*   Sınıf sabitleri çocuk sınıfta değiştirilmediği sürece ebeveyn'deki değerini
+    alıyor
 
-- Sınıf değişkenleri çocuk sınıflarda değiştirilebiliyor
+*   Sınıf değişkenleri çocuk sınıflarda değiştirilebiliyor
 
-- Sınıf nesne değişkenleri çocuk sınıflara miras edilmiyor
+*   Sınıf nesne değişkenleri çocuk sınıflara miras edilmiyor
 
-- Sınıf nesne değişkenleri için nitelik erişimcileri tanımlanabiliyor
+*   Sınıf nesne değişkenleri için nitelik erişimcileri tanımlanabiliyor
 
         !ruby
         class A
@@ -668,84 +667,64 @@ Sonuçlar:
 
 ---
 
-# Modüller
+#   Modüller
 
 Ruby'nin modüler programlama için "sınıf"larla birlikte sunduğu diğer imkan
 
-    !ruby
-    module A
-      def self.meth
-        ...
-      end
-    end
+        !ruby
+        module A
+          def self.meth
+            ...
+          end
+        end
 
-    A.meth
+        A.meth
 
 İki önemli amaca hizmet ediyor:
 
-- İsim uzayını düzenliyor
+*   İsim uzayını düzenliyor
 
-- "Katıştırma" ("Mixins") tekniğiyle gerçeklemelerin paylaşılmasını sağlıyor
+*   "Katıştırma" ("Mixins") tekniğiyle gerçeklemelerin paylaşılmasını sağlıyor
 
 ---
 
-# İsim Uzayı
+#   İsim Uzayı
 
-- `sin` metodu `Math` modülünde tanımlı
+*   `sin` metodu `Math` modülünde tanımlı
 
         !ruby
         x = Math.sin(0)
 
 Bu sayede:
 
-- Kod okunurluğu artıyor:  modül ismi metod ismiyle sınırlı anlamı pekiştiriyor
+*   Kod okunurluğu artıyor:  modül ismi metod ismiyle sınırlı anlamı
+    pekiştiriyor
 
-- İsim çakışmaları önleniyor: `sin` isimli bir metod yazdığımızı varsayın?
+*   İsim çakışmaları önleniyor: `sin` isimli bir metod yazdığımızı varsayın?
 
 ---
 
-# İsim Uzayı
+#   İsim Uzayı
 
 `sin`: "sinus", "sin" (günah)?
 
-    !ruby
-    def sin(context)
-      $stderr.puts "Hatalı bir eylem gerçekleşti: #{context}"
-    end
+        !ruby
+        def sin(context)
+          $stderr.puts "Hatalı bir eylem gerçekleşti: #{context}"
+        end
 
-    ...
+        ...
 
-    x = Math.sin(teta) > 0.5
-    if x > 0.5
-      sin("hatalı aralıkta değer üretildi: #{x}")
-    end
+        x = Math.sin(teta) > 0.5
+        if x > 0.5
+          sin("hatalı aralıkta değer üretildi: #{x}")
+        end
 
 ---
 
-# İsim Uzayı
+#   İsim Uzayı
 
 `sin`: "sinus", "sin" (günah)?
-
-    !ruby
-    module Log
-      ...
-      def self.sin(context)
-        $stderr.puts "Hatalı bir eylem gerçekleşti: #{context}"
-      end
-    end
-
-    x = Math.sin(teta) > 0.5
-    if x > 0.5
-      Log.sin("hatalı aralıkta değer üretildi: #{x}")
-    end
-
-- `Log` modül isminin anlamı pekiştirdiğine dikkat edin
-
----
-
-# İsim Uzayı
-
-- `log.rb` dosyası
 
         !ruby
         module Log
@@ -755,7 +734,28 @@ Bu sayede:
           end
         end
 
-- Müşteri kodu (`log.rb` modül yollarında tanımlı)
+        x = Math.sin(teta) > 0.5
+        if x > 0.5
+          Log.sin("hatalı aralıkta değer üretildi: #{x}")
+        end
+
+*   `Log` modül isminin anlamı pekiştirdiğine dikkat edin
+
+---
+
+#   İsim Uzayı
+
+*   `log.rb` dosyası
+
+        !ruby
+        module Log
+          ...
+          def self.sin(context)
+            $stderr.puts "Hatalı bir eylem gerçekleşti: #{context}"
+          end
+        end
+
+*   Müşteri kodu (`log.rb` modül yollarında tanımlı)
 
         !ruby
         require 'log'
@@ -767,32 +767,32 @@ Bu sayede:
 
 ---
 
-# Katıştırma
+#   Katıştırma
 
 Gerçeklemenin seçtiğiniz bir isim uzayına yerleştirilmesini (katıştırılmasını)
 sağlıyor
 
-    !ruby
-    require 'log'
+        !ruby
+        require 'log'
 
-    include 'Math' # Mixin
+        include 'Math' # Mixin
 
-    x = sin(teta) > 0.5
-    if x > 0.5
-      Log.sin("hatalı aralıkta değer üretildi: #{x}")
-    end
+        x = sin(teta) > 0.5
+        if x > 0.5
+          Log.sin("hatalı aralıkta değer üretildi: #{x}")
+        end
 
-- Katıştırma `include` ile gerçekleşiyor
+*   Katıştırma `include` ile gerçekleşiyor
 
-- Artık `sin` ismi genel kapsama taşındı
+*   Artık `sin` ismi genel kapsama taşındı
 
-- Fakat bizim `sin` gerçeklememiz hala `Log` isim uzayında
+*   Fakat bizim `sin` gerçeklememiz hala `Log` isim uzayında
 
-- Bize ait `sin` metodu bir modülde bulunmasaydı isim çakışması olacaktı
+*   Bize ait `sin` metodu bir modülde bulunmasaydı isim çakışması olacaktı
 
 ---
 
-# Katıştırma
+#   Katıştırma
 
 Bir gerçeklemeyi uygun sınıflara, sanki o sınıfta yapılan bir gerçeklemeymiş
 gibi, ekleyebiliyoruz.
@@ -801,50 +801,50 @@ gibi, ekleyebiliyoruz.
 
 ---
 
-# Katıştırma
+#   Katıştırma
 
 Çok güçlü bir araç
 
-- Kod paylaşımı için "miras alma" dışında bir yöntem sunuyor
+*   Kod paylaşımı için "miras alma" dışında bir yöntem sunuyor
 
-- Bu yöntem NYP'de genel olarak "komposizyon" olarak da bilinir
+*   Bu yöntem NYP'de genel olarak "komposizyon" olarak da bilinir
 
-- Bazı dillerde var olan "çoklu miras alma" ("multiple inheritance") özelliğini
-  "katıştırma" ile taklit edebilirsiniz
+*   Bazı dillerde var olan "çoklu miras alma" ("multiple inheritance")
+    özelliğini "katıştırma" ile taklit edebilirsiniz
 
 **Mümkün olan her yerde "katıştırma"yı "miras alma"ya tercih edin**
 
 ---
 
-# Asciify
+#   Asciify
 
-- Türkçe karakterleri ASCII eşseslileriyle değiştirelim, öyle ki
+*   Türkçe karakterleri ASCII eşseslileriyle değiştirelim, öyle ki
 
         Türkçe => Turkce
 
-- "Ascii"leştir → "Asciify"
+*   "Ascii"leştir → "Asciify"
 
 ---
 
-# Asciify
+#   Asciify
 
 .code: code/rb_module_simple_asciify/main4.rb
 
 ---
 
-# Asciify
+#   Asciify
 
 .code: code/rb_module_simple_asciify/main3.rb
 
 ---
 
-# Asciify
+#   Asciify
 
 .code: code/rb_module_simple_asciify/main2.rb
 
 ---
 
-# Asciify
+#   Asciify
 
 Çoklu Dil desteği?  Örneğin Türkçe dışında Almanca
 
@@ -852,32 +852,32 @@ gibi, ekleyebiliyoruz.
 
 ---
 
-# Asciify
+#   Asciify
 
-- Kod çok uzadı ve karışıklaştı
+*   Kod çok uzadı ve karışıklaştı
 
-- Modülün kimliği belirsiz
+*   Modülün kimliği belirsiz
 
-- Çünkü böyle bir modülü açık bir ihtiyaç üzerine değil "genelleştirme" adına
-  yaptık
+*   Çünkü böyle bir modülü açık bir ihtiyaç üzerine değil "genelleştirme" adına
+    yaptık
 
 ---
 
-# Asciify
+#   Asciify
 
 .code: code/rb_module_simple_asciify/main.rb
 
 ---
 
-# Asciify
+#   Asciify
 
-- Bir parça "genellik" iyidir
+*   Bir parça "genellik" iyidir
 
-- Fakat bu "genelleme"nin maliyeti yüksekse iyi düşünün
+*   Fakat bu "genelleme"nin maliyeti yüksekse iyi düşünün
 
-- Tam olarak neye ihtiyaç duyuyoruz?
+*   Tam olarak neye ihtiyaç duyuyoruz?
 
-- Bugünün ihtiyacını karşıla, maliyetli genellemeyi yarın ki ihtiyaca bırak
+*   Bugünün ihtiyacını karşıla, maliyetli genellemeyi yarın ki ihtiyaca bırak
 
 Modül tasarımı zordur.  Modülün kimliği açık şekilde tanımlı olmalı.
 

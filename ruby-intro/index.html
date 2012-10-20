@@ -783,7 +783,7 @@ ul li:first {
   content: ' ';
 }
 
-li p { display: inline; }
+li p:first-child { display: inline; }
 li pre { margin-left: 2em; }
 
 a {
@@ -1698,17 +1698,25 @@ div.slide {
             <header><h1>İlk Kod</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+            <section><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="k">do</span>
-  <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
-  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="k">end</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="k">do</span>
+      <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+      <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">end</span>
 
 <span class="nb">puts</span> <span class="s2">&quot;Kareler toplamı </span><span class="si">#{</span><span class="n">sum</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
-
+</td></tr></table>
 
 <ul>
 <li><p>Deyimler satır sonlarıyla ayrılıyor</p></li>
@@ -1745,19 +1753,27 @@ div.slide {
             <header><h1>İşlevler (Metodlar)</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
-  <span class="n">result</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-  <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">upper</span> <span class="k">do</span>
-    <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-  <span class="k">end</span>
+            <section><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
+      <span class="n">result</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+      <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">upper</span> <span class="k">do</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">end</span>
+      <span class="k">return</span> <span class="n">result</span>
+    <span class="k">end</span>
 
-  <span class="k">return</span> <span class="n">result</span>
-<span class="k">end</span>
-
-<span class="nb">puts</span> <span class="s2">&quot;Kareler toplamı </span><span class="si">#{</span><span class="n">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nb">puts</span> <span class="s2">&quot;Kareler toplamı </span><span class="si">#{</span><span class="n">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
-
+</td></tr></table>
 
 <ul>
 <li><p>İşlevler (metodlar) <code>def ... end</code> ile</p></li>
@@ -1896,12 +1912,12 @@ div.slide {
             
             <section><p>Her şeyin bir ifade olması neden önemli?</p>
 
-<div class="highlight"><pre><span class="n">flag</span> <span class="o">=</span>
-  <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span>
-    <span class="kp">false</span>
-  <span class="k">else</span>
-    <span class="kp">true</span>
-  <span class="k">end</span>
+<div class="highlight"><pre>    <span class="n">flag</span> <span class="o">=</span>
+      <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="kp">false</span>
+      <span class="k">else</span>
+        <span class="kp">true</span>
+      <span class="k">end</span>
 </pre></div>
 
 
@@ -1941,11 +1957,11 @@ div.slide {
             <header><h1>Doğru/Yanlış</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span>
-  <span class="kp">false</span>
-<span class="k">else</span>
-  <span class="kp">true</span>
-<span class="k">end</span>
+            <section><div class="highlight"><pre>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span>
+      <span class="kp">false</span>
+    <span class="k">else</span>
+      <span class="kp">true</span>
+    <span class="k">end</span>
 </pre></div>
 
 
@@ -1953,16 +1969,16 @@ div.slide {
 
 <p><strong>Ruby&#39;de sadece <code>false</code> ve <code>nil</code> &ldquo;yanlış&rdquo;; kalan her şey &ldquo;doğru&rdquo;</strong></p>
 
-<div class="highlight"><pre><span class="gp">irb(main):001:0&gt; </span><span class="kp">nil</span> <span class="ow">and</span> <span class="kp">true</span>
-<span class="go">=&gt; false</span>
-<span class="gp">irb(main):002:0&gt; </span><span class="mi">0</span>  <span class="ow">and</span> <span class="kp">true</span>
-<span class="go">=&gt; true</span>
-<span class="gp">irb(main):003:0&gt; </span><span class="o">[]</span> <span class="ow">and</span> <span class="kp">true</span>
-<span class="go">=&gt; true</span>
-<span class="gp">irb(main):004:0&gt; </span><span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="kp">true</span>
-<span class="go">=&gt; true</span>
-<span class="gp">irb(main):005:0&gt; </span><span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="kp">true</span>
-<span class="go">=&gt; true</span>
+<div class="highlight"><pre><span class="go">    irb(main):001:0&gt; nil and true</span>
+<span class="go">    =&gt; false</span>
+<span class="go">    irb(main):002:0&gt; 0  and true</span>
+<span class="go">    =&gt; true</span>
+<span class="go">    irb(main):003:0&gt; [] and true</span>
+<span class="go">    =&gt; true</span>
+<span class="go">    irb(main):004:0&gt; &quot;&quot; and true</span>
+<span class="go">    =&gt; true</span>
+<span class="go">    irb(main):005:0&gt; -1 and true</span>
+<span class="go">    =&gt; true</span>
 </pre></div>
 </section>
             
@@ -1994,18 +2010,27 @@ div.slide {
             <header><h1>Dönüş Değerleri</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
-  <span class="n">result</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-  <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">upper</span> <span class="k">do</span>
-    <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-  <span class="k">end</span>
-  <span class="n">result</span>
-<span class="k">end</span>
+            <section><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
+      <span class="n">result</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+      <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">upper</span> <span class="k">do</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">end</span>
+      <span class="n">result</span>
+    <span class="k">end</span>
 
-<span class="nb">puts</span> <span class="s2">&quot;Kareler toplamı </span><span class="si">#{</span><span class="n">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nb">puts</span> <span class="s2">&quot;Kareler toplamı </span><span class="si">#{</span><span class="n">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
-
+</td></tr></table>
 
 <p>İşlevlerde açık <code>return</code> gerekmiyor (satır 7).  Neden?</p>
 
@@ -2149,7 +2174,7 @@ sağlayabilirsiniz</p></li>
             <section><p>Bir işleve eylemde ihtiyaç duyacağı bilgileri argümanlar üzerinden
 geçirebiliriz.</p>
 
-<div class="highlight"><pre><span class="nb">puts</span> <span class="s2">&quot;Test&quot;</span>
+<div class="highlight"><pre>    <span class="nb">puts</span> <span class="s2">&quot;Test&quot;</span>
 </pre></div>
 
 
@@ -2161,7 +2186,7 @@ geçirebiliriz.</p>
 <p>Aynı diyaloğu <code>times</code> için kurgulayalım.</p>
 
 <ul>
-<li><code>times</code>: <strong>kaç</strong> defa <strong>ne</strong> yapacağım?</li>
+<li>  <code>times</code>: <strong>kaç</strong> defa <strong>ne</strong> yapacağım?</li>
 </ul>
 
 <p>Ama bu soru hatalı.</p>
@@ -2253,17 +2278,25 @@ ayırıyoruz</p></li>
             <section><p>Ruby&#39;de döngüleri (tamsayı, dizgi, aralık, dizi, sözlük gibi) nesneler üzerinden
 uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.</p>
 
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
-  <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.upper</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-    <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
-  <span class="k">end</span>
-  <span class="n">result</span>
-<span class="k">end</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.upper</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+      <span class="k">end</span>
+      <span class="n">result</span>
+    <span class="k">end</span>
 
-<span class="nb">puts</span> <span class="s2">&quot;Kareler toplamı </span><span class="si">#{</span><span class="n">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nb">puts</span> <span class="s2">&quot;Kareler toplamı </span><span class="si">#{</span><span class="n">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
-
+</td></tr></table>
 
 <ul>
 <li><p>Bu örnekte <code>(1..10)</code> bir aralık (&ldquo;range&rdquo;) nesnesi</p></li>
@@ -2300,19 +2333,18 @@ uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.</p>
             
             <section><p><strong>Döngüleri <code>for</code> ile kurmayın</strong></p>
 
-<div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="p">)</span> <span class="k">do</span>
-  <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
-<span class="k">end</span>
-</pre></div>
+<div class="highlight"><pre>    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="p">)</span> <span class="k">do</span>
+      <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+    <span class="k">end</span>
 
+    <span class="n">yerine</span>
 
-<p>yerine</p>
-
-<div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-  <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
-<span class="k">end</span>
+    <span class="o">!</span><span class="n">ruby</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+      <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+    <span class="k">end</span>
 </pre></div>
 
 
@@ -2349,15 +2381,15 @@ uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.</p>
             <header><h1>Diziler</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="o">[]</span>
-<span class="n">a</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s2">&quot;Word&quot;</span><span class="p">)</span>
+            <section><div class="highlight"><pre>    <span class="n">a</span> <span class="o">=</span> <span class="o">[]</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s2">&quot;Word&quot;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Veya daha şık olanı:</p>
 
-<div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="o">[]</span>
-<span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Word&quot;</span>
+<div class="highlight"><pre>    <span class="n">a</span> <span class="o">=</span> <span class="o">[]</span>
+    <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Word&quot;</span>
 </pre></div>
 </section>
             
@@ -2389,19 +2421,19 @@ uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.</p>
             <header><h1>Diziler</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
-<span class="n">a</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="n">e</span>
-<span class="k">end</span>
+            <section><div class="highlight"><pre>    <span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span>
+      <span class="nb">puts</span> <span class="n">e</span>
+    <span class="k">end</span>
 </pre></div>
 
 
 <p>İndisler?</p>
 
-<div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
-<span class="n">a</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">end</span>
+<div class="highlight"><pre>    <span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
+      <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">end</span>
 </pre></div>
 </section>
             
@@ -2433,12 +2465,12 @@ uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.</p>
             <header><h1>Diziler</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="o">[]</span>
-<span class="nb">puts</span> <span class="s2">&quot;a is empty&quot;</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">empty?</span>
+            <section><div class="highlight"><pre>    <span class="n">a</span> <span class="o">=</span> <span class="o">[]</span>
+    <span class="nb">puts</span> <span class="s2">&quot;a is empty&quot;</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">empty?</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
-<span class="n">a</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1">#=&gt; false</span>
-<span class="n">a</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="c1">#=&gt; true</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1">#=&gt; false</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="c1">#=&gt; true</span>
 </pre></div>
 </section>
             
@@ -2470,13 +2502,13 @@ uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.</p>
             <header><h1>Sözlükler</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;gender&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;male&quot;</span> <span class="p">}</span>
+            <section><div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;gender&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;male&quot;</span> <span class="p">}</span>
 </pre></div>
 
 
 <p>Fakat anahtarları (çoğu zaman) şöyle yazıyoruz (bazen değerler de öyle):</p>
 
-<div class="highlight"><pre><span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+<div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
 </pre></div>
 
 
@@ -2548,20 +2580,20 @@ uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.</p>
             <header><h1>Sözlükler</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+            <section><div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
 
-<span class="nb">puts</span> <span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span>       <span class="c1">#=&gt; 20</span>
-<span class="n">person</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:age</span>    <span class="c1">#=&gt; true</span>
-<span class="nb">puts</span> <span class="n">person</span><span class="o">[</span><span class="ss">:weight</span><span class="o">]</span>    <span class="c1">#=&gt; nil</span>
-<span class="n">person</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:weight</span> <span class="c1">#=&gt; false</span>
+    <span class="nb">puts</span> <span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span>       <span class="c1">#=&gt; 20</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:age</span>    <span class="c1">#=&gt; true</span>
+    <span class="nb">puts</span> <span class="n">person</span><span class="o">[</span><span class="ss">:weight</span><span class="o">]</span>    <span class="c1">#=&gt; nil</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:weight</span> <span class="c1">#=&gt; false</span>
 
-<span class="n">person</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">end</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+    <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">end</span>
 
-<span class="k">if</span> <span class="n">person</span><span class="o">[</span><span class="ss">:gender</span><span class="o">]</span> <span class="o">==</span> <span class="ss">:male</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span> <span class="o">&lt;</span> <span class="mi">18</span> <span class="o">||</span> <span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span> <span class="o">&gt;</span> <span class="mi">85</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">&quot;A very young or old man&quot;</span>
-<span class="k">end</span>
+    <span class="k">if</span> <span class="n">person</span><span class="o">[</span><span class="ss">:gender</span><span class="o">]</span> <span class="o">==</span> <span class="ss">:male</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span> <span class="o">&lt;</span> <span class="mi">18</span> <span class="o">||</span> <span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span> <span class="o">&gt;</span> <span class="mi">85</span><span class="p">)</span>
+      <span class="nb">puts</span> <span class="s2">&quot;A very young or old man&quot;</span>
+    <span class="k">end</span>
 </pre></div>
 </section>
             
@@ -2861,7 +2893,7 @@ uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.</p>
             
             
             <section><p>Bir nesne için değil ilgili sınıftaki tüm nesneler için anlamlı metodları nasıl
-  tanımlayacağız?</p>
+tanımlayacağız?</p>
 
 <ul>
 <li><p><code>Point</code> için örnek: noktaların toplanması (<code>add</code>)</p></li>
@@ -2913,8 +2945,8 @@ uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.</p>
 <span class="n">t</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">p</span><span class="p">)</span>
 </pre></div>
 </li>
-<li><p>Tüm nesneleri ilgilendiren bir eylemin özel bir nesne üzerinden uyarılması çok
-<strong>anlamlı</strong> değil</p></li>
+<li><p>Tüm nesneleri ilgilendiren bir eylemin özel bir nesne üzerinden uyarılması
+çok <strong>anlamlı</strong> değil</p></li>
 <li><p>Eylemin <code>Point</code> sınıfı üzerinden uyarılması daha anlamlı</p>
 
 <div class="highlight"><pre><span class="n">t</span> <span class="o">=</span> <span class="no">Point</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
@@ -3356,7 +3388,7 @@ uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.</p>
 temsil edeceğiz?</p>
 
 <ul>
-<li><code>Point</code> için örnek: kaç tane nokta oluşturuldu?</li>
+<li>  <code>Point</code> için örnek: kaç tane nokta oluşturuldu?</li>
 </ul>
 
 <p>Benzer bir soruyu metodlar için de sormuştuk?</p>
@@ -3368,12 +3400,12 @@ nasıl tanımlayacağız?</p></li>
 </ul>
 
 <p>Tüm nesneler için anlamlı değerler eğer bir sabit ise buna zaten bir çözümümüz
-var: Sınıf sabitleri</p>
+var → Sınıf sabitleri</p>
 
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">Point</span>
-  <span class="no">ORIGIN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-<span class="k">end</span>
+<div class="highlight"><pre>    <span class="k">class</span> <span class="nc">Point</span>
+      <span class="no">ORIGIN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+      <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+    <span class="k">end</span>
 </pre></div>
 </section>
             
@@ -3605,7 +3637,7 @@ var: Sınıf sabitleri</p>
             
             
             <section><ul>
-<li>Çıktı</li>
+<li>  Çıktı</li>
 </ul>
 
 <p><div class="highlight"><pre>A sınıfı tanımlanıyor
@@ -3714,13 +3746,13 @@ alıyor</p></li>
             
             <section><p>Ruby&#39;nin modüler programlama için &ldquo;sınıf&quot;larla birlikte sunduğu diğer imkan</p>
 
-<div class="highlight"><pre><span class="k">module</span> <span class="nn">A</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">meth</span>
-    <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<div class="highlight"><pre>    <span class="k">module</span> <span class="nn">A</span>
+      <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">meth</span>
+        <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
 
-<span class="n">A</span><span class="o">.</span><span class="n">meth</span>
+    <span class="n">A</span><span class="o">.</span><span class="n">meth</span>
 </pre></div>
 
 
@@ -3770,7 +3802,8 @@ alıyor</p></li>
 <p>Bu sayede:</p>
 
 <ul>
-<li><p>Kod okunurluğu artıyor:  modül ismi metod ismiyle sınırlı anlamı pekiştiriyor</p></li>
+<li><p>Kod okunurluğu artıyor:  modül ismi metod ismiyle sınırlı anlamı
+pekiştiriyor</p></li>
 <li><p>İsim çakışmaları önleniyor: <code>sin</code> isimli bir metod yazdığımızı varsayın?</p></li>
 </ul></section>
             
@@ -3804,16 +3837,16 @@ alıyor</p></li>
             
             <section><p><code>sin</code>: &ldquo;sinus&rdquo;, &ldquo;sin&rdquo; (günah)?</p>
 
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
-  <span class="vg">$stderr</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;Hatalı bir eylem gerçekleşti: </span><span class="si">#{</span><span class="n">context</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">end</span>
+<div class="highlight"><pre>    <span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+      <span class="vg">$stderr</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;Hatalı bir eylem gerçekleşti: </span><span class="si">#{</span><span class="n">context</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">end</span>
 
-<span class="o">.</span><span class="n">.</span><span class="o">.</span>
+    <span class="o">.</span><span class="n">.</span><span class="o">.</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
-  <span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatalı aralıkta değer üretildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">end</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+      <span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatalı aralıkta değer üretildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">end</span>
 </pre></div>
 </section>
             
@@ -3847,22 +3880,22 @@ alıyor</p></li>
             
             <section><p><code>sin</code>: &ldquo;sinus&rdquo;, &ldquo;sin&rdquo; (günah)?</p>
 
-<div class="highlight"><pre><span class="k">module</span> <span class="nn">Log</span>
-  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
-    <span class="vg">$stderr</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;Hatalı bir eylem gerçekleşti: </span><span class="si">#{</span><span class="n">context</span><span class="si">}</span><span class="s2">&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<div class="highlight"><pre>    <span class="k">module</span> <span class="nn">Log</span>
+      <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+      <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+        <span class="vg">$stderr</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;Hatalı bir eylem gerçekleşti: </span><span class="si">#{</span><span class="n">context</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
-  <span class="no">Log</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatalı aralıkta değer üretildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">end</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+      <span class="no">Log</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatalı aralıkta değer üretildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">end</span>
 </pre></div>
 
 
 <ul>
-<li><code>Log</code> modül isminin anlamı pekiştirdiğine dikkat edin</li>
+<li>  <code>Log</code> modül isminin anlamı pekiştirdiğine dikkat edin</li>
 </ul></section>
             
           </div>
@@ -3947,14 +3980,14 @@ alıyor</p></li>
             <section><p>Gerçeklemenin seçtiğiniz bir isim uzayına yerleştirilmesini (katıştırılmasını)
 sağlıyor</p>
 
-<div class="highlight"><pre><span class="nb">require</span> <span class="s1">&#39;log&#39;</span>
+<div class="highlight"><pre>    <span class="nb">require</span> <span class="s1">&#39;log&#39;</span>
 
-<span class="kp">include</span> <span class="s1">&#39;Math&#39;</span> <span class="c1"># Mixin</span>
+    <span class="kp">include</span> <span class="s1">&#39;Math&#39;</span> <span class="c1"># Mixin</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
-  <span class="no">Log</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatalı aralıkta değer üretildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">end</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+      <span class="no">Log</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatalı aralıkta değer üretildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">end</span>
 </pre></div>
 
 
@@ -4049,8 +4082,8 @@ gibi, ekleyebiliyoruz.</p>
 <ul>
 <li><p>Kod paylaşımı için &ldquo;miras alma&rdquo; dışında bir yöntem sunuyor</p></li>
 <li><p>Bu yöntem NYP&#39;de genel olarak &ldquo;komposizyon&rdquo; olarak da bilinir</p></li>
-<li><p>Bazı dillerde var olan &ldquo;çoklu miras alma&rdquo; (&ldquo;multiple inheritance&rdquo;) özelliğini
-&ldquo;katıştırma&rdquo; ile taklit edebilirsiniz</p></li>
+<li><p>Bazı dillerde var olan &ldquo;çoklu miras alma&rdquo; (&ldquo;multiple inheritance&rdquo;)
+özelliğini &ldquo;katıştırma&rdquo; ile taklit edebilirsiniz</p></li>
 </ul>
 
 <p><strong>Mümkün olan her yerde &ldquo;katıştırma&quot;yı &quot;miras alma&quot;ya tercih edin</strong></p></section>

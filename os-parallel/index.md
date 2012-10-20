@@ -1,4 +1,4 @@
-# OS - Paralel Programlama
+#   OS - Paralel Programlama
 
 .fx: first
 
@@ -10,24 +10,24 @@ Mart 2012
 
 ---
 
-# Pthread - Nokta Çarpımı
+#   Pthread - Nokta Çarpımı
 
-- Seri Versiyon
+*   Seri Versiyon
 
 .code: code/c_parallel_pthread_dot/serial.c
 
 ---
 
-# Pthread - Nokta Çarpımı
+#   Pthread - Nokta Çarpımı
 
-- Hatalı Paralel Versiyon
+*   Hatalı Paralel Versiyon
 
 .code: code/c_parallel_pthread_dot/parallel_error.c
 
 ---
 
-# Pthread - Nokta Çarpımı
+#   Pthread - Nokta Çarpımı
 
-- Paralel Versiyon
+*   Paralel Versiyon
 
 .code: code/c_parallel_pthread_dot/main.c

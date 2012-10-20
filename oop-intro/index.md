@@ -1,4 +1,4 @@
-# NYP - Giriş
+#   NYP - Giriş
 
 .fx: first
 
@@ -10,166 +10,166 @@ Ocak 2012
 
 ---
 
-# Bir "nokta"nın hikayesi...
+#   Bir "nokta"nın hikayesi...
 
 ![Nokta](media/point.png)
 
 ---
 
-# NYP
+#   NYP
 
-1. Veri Sarmalama
+1.  Veri Sarmalama
 
-2. Miras Alma
+2.  Miras Alma
 
-3. Çokbiçimlilik
-
----
-
-# C
+3.  Çokbiçimlilik
 
 ---
 
-# Yapı
+#   C
+
+---
+
+#   Yapı
 
 .code: code/c_struct_simple_point/main.c
 
 ---
 
 
-# C++
+#   C++
 
 ---
 
-# Sınıf
+#   Sınıf
 
 .code: code/cpp_class_simple_point/main.cpp
 
 ---
 
-# Python
+#   Python
 
 ---
 
-# Sınıf
+#   Sınıf
 
 .code: code/py_class_simple_point/main.py
 
 ---
 
-# İşleç Yüklemesi
+#   İşleç Yüklemesi
 
 .code: code/py_class_overloading_point/main.py
 
 ---
 
-# Sınıf Metodları
+#   Sınıf Metodları
 
 .code: code/py_class_classmethod_point/main1.py
 
 ---
 
-# Sınıf Metodları
+#   Sınıf Metodları
 
 .code: code/py_class_classmethod_point/main.py
 
 ---
 
-# Miras Alma
+#   Miras Alma
 
 .code: code/py_inheritance_simple_circle/main1.py
 
 ---
 
-# Miras Alma
+#   Miras Alma
 
 .code: code/py_inheritance_simple_circle/main.py
 
 ---
 
-# Çokbiçimlilik
+#   Çokbiçimlilik
 
 .code: code/py_polymorphism_simple_shape/main.py
 
 ---
 
-# Ruby
+#   Ruby
 
 ---
 
-# Ruby
+#   Ruby
 
 [http://www.ruby-lang.org/tr/downloads/](http://www.ruby-lang.org/tr/downloads/)
 
 ---
 
-# Ruby
+#   Ruby
 
 .code: code/rb_class_simple_point/main1.rb
 
 ---
 
-# Sınıf
+#   Sınıf
 
 .code: code/rb_class_simple_point/main.rb
 
 ---
 
-# İşleç Yüklemesi
+#   İşleç Yüklemesi
 
 .code: code/rb_class_overloading_point/main.rb
 
 ---
 
-# Sınıf Metodları
+#   Sınıf Metodları
 
 .code: code/rb_class_classmethod_point/main3.rb
 
 ---
 
-# Sınıf Metodları
+#   Sınıf Metodları
 
 .code: code/rb_class_classmethod_point/main2.rb
 
 ---
 
-# Sınıf Metodları
+#   Sınıf Metodları
 
 .code: code/rb_class_classmethod_point/main1.rb
 
 ---
 
-# Sınıf Metodları
+#   Sınıf Metodları
 
 .code: code/rb_class_classmethod_point/main.rb
 
 ---
 
-# Miras Alma
+#   Miras Alma
 
 .code: code/rb_inheritance_simple_circle/main2.rb
 
 ---
 
-# Miras Alma
+#   Miras Alma
 
 .code: code/rb_inheritance_simple_circle/main1.rb
 
 ---
 
-# Miras Alma
+#   Miras Alma
 
 .code: code/rb_inheritance_simple_circle/main.rb
 
 ---
 
-# Çokbiçimlilik
+#   Çokbiçimlilik
 
 .code: code/rb_polymorphism_simple_shape/main.rb
 
 ---
 
-# Dil Karşılaştırmaları
+#   Dil Karşılaştırmaları
 
 [http://hyperpolyglot.org/scripting](http://hyperpolyglot.org/scripting)
 

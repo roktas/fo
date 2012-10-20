@@ -783,7 +783,7 @@ ul li:first {
   content: ' ';
 }
 
-li p { display: inline; }
+li p:first-child { display: inline; }
 li pre { margin-left: 2em; }
 
 a {
@@ -1702,7 +1702,8 @@ div.slide {
             <section><p>Daha uzun ve kapsamlı bir doküman türüne hazırlık aşamasında kullanılabilir</p>
 
 <ul>
-<li><p>Örneğin bir makale yazarken ana fikri önce folyo biçiminde hazırlayabilirsiniz</p></li>
+<li><p>Örneğin bir makale yazarken ana fikri önce folyo biçiminde
+hazırlayabilirsiniz</p></li>
 <li><p>Veya bir kitabın bölümlerini önce bir folyoya dökebilirsiniz</p></li>
 <li><p>Yani bu bir öncü doküman</p></li>
 </ul></section>
@@ -1909,7 +1910,7 @@ div.slide {
             <header><h2>Ruby Kur</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install ruby1.9.1-full rake
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>sudo apt-get install ruby1.9.1-full rake
 </pre></div>
 </section>
             
@@ -1946,7 +1947,8 @@ div.slide {
 
 
 <ul>
-<li><p>Folyo inşa sistemi Ruby <code>1.9</code> gerektiriyor; bu sistem Ruby <code>1.8</code> ile çalışmaz</p></li>
+<li><p>Folyo inşa sistemi Ruby <code>1.9</code> gerektiriyor; bu sistem Ruby <code>1.8</code> ile
+çalışmaz</p></li>
 <li><p>Öntanımlı Ruby versiyonunu öğrenmek için</p>
 
 <div class="highlight"><pre><span class="nv">$ </span>ruby --version
@@ -1983,14 +1985,14 @@ ruby 1.9.3p194 <span class="o">(</span>2012-04-20 revision 35410<span class="o">
             <header><h2>19 Depolarını Ekle</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>sudo wget -qO /etc/apt/sources.list.d/19.list deb.ondokuz.biz/19.list
-<span class="nv">$ </span>wget -qO- deb.ondokuz.biz/archive.key | sudo apt-key add -
-<span class="nv">$ </span>sudo apt-get update
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>sudo wget -qO /etc/apt/sources.list.d/19.list deb.ondokuz.biz/19.list
+    <span class="nv">$ </span>wget -qO- deb.ondokuz.biz/archive.key | sudo apt-key add -
+    <span class="nv">$ </span>sudo apt-get update
 </pre></div>
 
 
 <ul>
-<li>19 depolarında özgün Landslide&#39;ın yamalanmış bir sürümü bulunuyor</li>
+<li>  19 depolarında özgün Landslide&#39;ın yamalanmış bir sürümü bulunuyor</li>
 </ul></section>
             
           </div>
@@ -2021,7 +2023,7 @@ ruby 1.9.3p194 <span class="o">(</span>2012-04-20 revision 35410<span class="o">
             <header><h2>Landslide Kur</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install python-landslide-patched python-misaka
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>sudo apt-get install python-landslide-patched python-misaka
 </pre></div>
 
 
@@ -2064,10 +2066,10 @@ landslide patched 1.0.1
             <header><h2>Yerelde Depo Oluştur</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>git init
-<span class="nv">$ </span>touch .gitignore
-<span class="nv">$ </span>git add .
-<span class="nv">$ </span>git commit -a -m İlk
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>git init
+    <span class="nv">$ </span>touch .gitignore
+    <span class="nv">$ </span>git add .
+    <span class="nv">$ </span>git commit -a -m İlk
 </pre></div>
 </section>
             
@@ -2099,13 +2101,13 @@ landslide patched 1.0.1
             <header><h2>Üst Depodan İlkle</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>git remote add upstream git://github.com/roktas/fo
-<span class="nv">$ </span>git pull upstream master
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>git remote add upstream git://github.com/roktas/fo
+    <span class="nv">$ </span>git pull upstream master
 </pre></div>
 
 
 <ul>
-<li>Şablon güncellemelerini de <code>upstream</code> kaynağından alacağız</li>
+<li>  Şablon güncellemelerini de <code>upstream</code> kaynağından alacağız</li>
 </ul></section>
             
           </div>
@@ -2136,13 +2138,13 @@ landslide patched 1.0.1
             <header><h2>Yayın Dalını Ayarla</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>git checkout -b gh-pages
-<span class="nv">$ </span>git branch -d master
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>git checkout -b gh-pages
+    <span class="nv">$ </span>git branch -d master
 </pre></div>
 
 
 <ul>
-<li>Github yayın dalını, yani <code>gh-pages</code>&#39;i oluşturuyoruz</li>
+<li>  Github yayın dalını, yani <code>gh-pages</code>&#39;i oluşturuyoruz</li>
 </ul></section>
             
           </div>
@@ -2173,11 +2175,11 @@ landslide patched 1.0.1
             <header><h2>Yapılandır</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>rake
-<span class="nv">$ </span>git add _/param.yaml
-<span class="nv">$ $EDITOR</span> _/param.yaml
-<span class="nv">$ </span>rake
-<span class="nv">$ </span>git commit -a -m Yapılandır
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>rake
+    <span class="nv">$ </span>git add _/param.yaml
+    <span class="nv">$ $EDITOR</span> _/param.yaml
+    <span class="nv">$ </span>rake
+    <span class="nv">$ </span>git commit -a -m Yapılandır
 </pre></div>
 
 
@@ -2214,13 +2216,13 @@ landslide patched 1.0.1
             <header><h2>Yayınla</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>git remote add origin git@github.com/<span class="o">[</span>hesap<span class="o">]</span>/<span class="o">[</span>depo<span class="o">]</span>
-<span class="nv">$ </span>git push origin gh-pages
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>git remote add origin git@github.com/<span class="o">[</span>hesap<span class="o">]</span>/<span class="o">[</span>depo<span class="o">]</span>
+    <span class="nv">$ </span>git push origin gh-pages
 </pre></div>
 
 
 <ul>
-<li>Önce Github <code>[hesap]</code>&#39;ınızda <code>[depo]</code> isimli depoyu oluşturuyoruz</li>
+<li>  Önce Github <code>[hesap]</code>&#39;ınızda <code>[depo]</code> isimli depoyu oluşturuyoruz</li>
 </ul></section>
             
           </div>
@@ -2279,13 +2281,14 @@ landslide patched 1.0.1
             <header><h2>Güncelle</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>git pull upstream master
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>git pull upstream master
 </pre></div>
 
 
 <ul>
 <li><p>Şablonla birlikte gelen (sizin oluşturmadığınız) dosyaları düzenlememelisinz</p></li>
-<li><p>Düzenlemeniz halinde birleştirme çakışması (&ldquo;merge conflict&rdquo;) yaşayabilirsiniz</p></li>
+<li><p>Düzenlemeniz halinde birleştirme çakışması (&ldquo;merge conflict&rdquo;)
+yaşayabilirsiniz</p></li>
 </ul></section>
             
           </div>
@@ -2721,7 +2724,7 @@ kullanılıyor</p></li>
             
             <section>
 <ul>
-<li>Önemsiz içerik</li>
+<li>  Önemsiz içerik</li>
 </ul>
 
 <p>Önemli içerik</p></section>
@@ -2758,7 +2761,7 @@ kullanılıyor</p></li>
 <p>Önemli içerik</p>
 
 <ul>
-<li>Önemsiz içerik</li>
+<li>  Önemsiz içerik</li>
 </ul></section>
             
           </div>
@@ -2933,8 +2936,8 @@ kullanılıyor</p></li>
             
             <section>
 <ul>
-<li>Genellikle klavyeyi onparmak kullanan insanların Vim editörüne alışması biraz
-daha kolaydır.</li>
+<li>  Genellikle klavyeyi onparmak kullanan insanların Vim editörüne alışması
+biraz daha kolaydır.</li>
 </ul>
 
 <p>&hellip;</p></section>
@@ -2969,7 +2972,7 @@ daha kolaydır.</li>
             
             <section>
 <ul>
-<li>Onparmak klavye kullanıcılarının Vim&#39;e alışmaları daha kolay</li>
+<li>  Onparmak klavye kullanıcılarının Vim&#39;e alışmaları daha kolay</li>
 </ul>
 
 <p>&hellip;</p></section>
@@ -3253,7 +3256,7 @@ nature</code> deniyor, yani ellerinizin siz düşünmeden yaptığı işe odakla
             <section><p>Türkçe&#39;nin yazım kurallarına uyun</p>
 
 <ul>
-<li>Türk Dil Kurumunun <a href="http://www.tdk.gov.tr/index.php?option=com_content&amp;view=category&amp;id=50">Yazım
+<li>  Türk Dil Kurumunun <a href="http://www.tdk.gov.tr/index.php?option=com_content&amp;view=category&amp;id=50">Yazım
 Kılavuzuna</a>
 sıklıkla başvurun</li>
 </ul></section>

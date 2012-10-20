@@ -783,7 +783,7 @@ ul li:first {
   content: ' ';
 }
 
-li p { display: inline; }
+li p:first-child { display: inline; }
 li pre { margin-left: 2em; }
 
 a {
@@ -1687,18 +1687,18 @@ isimlendirilmiş.</p></li>
 </li>
 </ul>
 
-<p>İsteğe bağlı olarak.</p>
+<p>İsteğe bağlı olarak:</p>
 
 <ul>
 <li><p>Npm paketi yayımlamak için geliştirici hesabı ekle:</p>
 
 <div class="highlight"><pre><span class="nv">$ </span>npm adduser
 </pre></div>
-</li>
-</ul>
+
 
 <p>Kullanıcı adının (<code>Username</code>) münkünse Unix sistemlerde her zaman
-  kullandığınız ad olmasına dikkat edin.</p></section>
+kullandığınız ad olmasına dikkat edin.</p></li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1882,8 +1882,8 @@ isimlendirilmiş.</p></li>
             
             
             <section><ul>
-<li><p>Node uygulamasının bağımlılıklarını <code>package.json</code> dosyasında <code>&quot;dependencies&quot;</code>
-anahtarında tutuyoruz.</p>
+<li><p>Node uygulamasının bağımlılıklarını <code>package.json</code> dosyasında
+<code>&quot;dependencies&quot;</code> anahtarında tutuyoruz.</p>
 
 <div class="highlight"><pre><span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;coffee-script&quot;</span><span class="o">:</span> <span class="s2">&quot;~1.2&quot;</span> <span class="p">},</span>
 </pre></div>
@@ -1967,7 +1967,8 @@ anahtarında tutuyoruz.</p>
 <li><p>Sanal makineler <code>*.no.de</code> isim uzayında</p></li>
 <li><p>Uygulama deposu sanal makine ev dizininde <code>repo</code> altında</p></li>
 <li><p>Npm bağımlılıkları her git gönderiminde otomatik olarak yönetiliyor</p></li>
-<li><p>Npm dışındaki yazılımlar Solaris&#39;e özgü <code>pkgin</code> paket yöneticisi ile kuruluyor</p></li>
+<li><p>Npm dışındaki yazılımlar Solaris&#39;e özgü <code>pkgin</code> paket yöneticisi ile
+kuruluyor</p></li>
 <li><p>Maksimum 5 adet veritabanı oluşturulabiliyor (MySQL, PostgreSQL, MongoDB vb)</p></li>
 </ul></section>
             
@@ -2003,8 +2004,8 @@ anahtarında tutuyoruz.</p>
 <li><p>Kayıt ol: <a href="http://no.de">http://no.de</a></p></li>
 <li><p>SSH anahtarı yükle</p></li>
 <li><p>Yeni makine iste: Servis çok yüklüyken hemen makine verilmeyebilir.
-Aralıklarla bir kaç kez istemek gerekiyor.  Makine adını bu dokümanda <code>JOYENT</code>
-değişkeninde tutuyoruz.</p>
+Aralıklarla bir kaç kez istemek gerekiyor.  Makine adını bu dokümanda
+<code>JOYENT</code> değişkeninde tutuyoruz.</p>
 
 <div class="highlight"><pre><span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Makine adı (örnek &#39;foo.no.de&#39;)? &quot;</span> JOYENT
 </pre></div>
@@ -2098,8 +2099,8 @@ değişkeninde tutuyoruz.</p>
             
             
             <section><ul>
-<li><p>Depoyu ayarla (hub gibi git alias&#39;ları etkin olabileceğinden git için açık yol
-verildi)</p>
+<li><p>Depoyu ayarla (hub gibi git alias&#39;ları etkin olabileceğinden git için açık
+yol verildi)</p>
 
 <div class="highlight"><pre><span class="nv">$ </span>/usr/bin/git remote add joyent <span class="nv">$JOYENT</span>:repo
 </pre></div>
@@ -2180,7 +2181,8 @@ etkinleştiriyor ve npm ile eksik paketleri kuruyor.</p></section>
 <ul>
 <li><p>Halihazırda <code>version</code> dışındaki anahtarlar dikkate alınmıyor.</p></li>
 <li><p>Yereldeki testlerle Joyent&#39;teki testlerin eşgüdümlü olmasını sağlamak için
-sürüm numarasının yerelde kullandığınız Node ile uyumlu olmasına dikkat edin.</p></li>
+sürüm numarasının yerelde kullandığınız Node ile uyumlu olmasına dikkat
+edin.</p></li>
 <li><p>Joyent&#39;te kullanılabilir Node sürümlerini öğrenmek için:</p>
 
 <div class="highlight"><pre><span class="o">[</span>joyent<span class="o">]</span><span class="nv">$ </span>cat /opt/nodejs/NODE-BUILDS
@@ -2221,6 +2223,10 @@ sürüm numarasının yerelde kullandığınız Node ile uyumlu olmasına dikkat
             <section><ul>
 <li><p>Uygulama ayarları için <code>node-service/profile</code> dosyası kullanılıyor.</p></li>
 <li><p>Örneğin <code>GITHUB_API_KEY</code> gibi bir değişkeni bu bu dosyaya ekleyin:</p>
+
+<pre><code>GITHUB_API_KEY=&#39;...&#39;
+</code></pre></li>
+<li><p>Daha sonra uygulamada bu değişkene şu şekilde ulaşın:</p>
 
 <div class="highlight"><pre><span class="nx">key</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">GITHUB_API_KEY</span><span class="p">;</span>
 </pre></div>

@@ -783,7 +783,7 @@ ul li:first {
   content: ' ';
 }
 
-li p { display: inline; }
+li p:first-child { display: inline; }
 li pre { margin-left: 2em; }
 
 a {
@@ -1928,25 +1928,35 @@ olarak yorumlanmalıdır.</p>
 <li><p>Örnekte 4&#39;ncü satırda <code>bar</code> niteliğine yazılmaz; <code>baz</code> metodunda yerel bir
 <code>bar</code> değişkeni üretilir</p>
 
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span>
   <span class="kp">attr_writer</span> <span class="ss">:bar</span>
   <span class="k">def</span> <span class="nf">baz</span>
     <span class="n">bar</span> <span class="o">=</span> <span class="mi">19</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
-</li>
+</td></tr></table></li>
 <li><p>Nitelik yazıcısının doğru şekilde çözülmesi için <code>self</code> ile açık niteleme
 yapın</p>
 
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span>
   <span class="kp">attr_writer</span> <span class="ss">:bar</span>
   <span class="k">def</span> <span class="nf">baz</span>
     <span class="nb">self</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="mi">19</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
-</li>
+</td></tr></table></li>
 </ul></section>
             
           </div>
@@ -1978,21 +1988,33 @@ yapın</p>
             
             
             <section><ul>
-<li><p>Nitelik erişimcisinde özel bir lojik olmadığı sürece en doğrusu <code>@</code> ile açıkça
-niteleme yapın</p>
+<li><p>Nitelik erişimcisinde özel bir lojik olmadığı sürece en doğrusu <code>@</code> ile
+açıkça niteleme yapın</p>
 
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span>
   <span class="kp">attr_writer</span> <span class="ss">:bar</span>
   <span class="k">def</span> <span class="nf">baz</span>
     <span class="vi">@bar</span> <span class="o">=</span> <span class="mi">19</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
-</li>
+</td></tr></table></li>
 <li><p>Nitelik erişimcisinde (okuyucu veya yazıcı farketmez) özel bir erişim lojiği
 varsa <code>self</code> kullanın</p>
 
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span>
   <span class="k">def</span> <span class="nf">bar</span><span class="o">=</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
     <span class="n">value</span><span class="o">*</span><span class="n">value</span>
   <span class="k">end</span>
@@ -2001,7 +2023,7 @@ varsa <code>self</code> kullanın</p>
   <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
-</li>
+</td></tr></table></li>
 </ul></section>
             
           </div>
@@ -2165,7 +2187,7 @@ varsa <code>self</code> kullanın</p>
             
             
             <section><ul>
-<li>Çıktı</li>
+<li>  Çıktı</li>
 </ul>
 
 <p><div class="highlight"><pre>A sınıfı tanımlanıyor
@@ -2273,10 +2295,10 @@ alıyor</p></li>
             
             
             <section><ul>
-<li><p>Bir sınıf gövdesi içinde <code>@@var</code> değişkenleri sınıf kapsamında geçerli bir tür
-global değişken olarak davranır</p></li>
-<li><p>Sınıf değişkenleri o sınıftan miras alan tüm çocuk sınıflarca erişilebilir ve
-değiştirilebilir</p></li>
+<li><p>Bir sınıf gövdesi içinde <code>@@var</code> değişkenleri sınıf kapsamında geçerli bir
+tür global değişken olarak davranır</p></li>
+<li><p>Sınıf değişkenleri o sınıftan miras alan tüm çocuk sınıflarca erişilebilir
+ve değiştirilebilir</p></li>
 <li><p>Bu &ldquo;global değişken&rdquo; etkisi isteniyorsa sınıf değişkenleri doğru çözümdür</p></li>
 <li><p>Sadece ilgili sınıfa ait bir değişken isteniyorsa &ldquo;sınıf nesne değişkenleri&rdquo;
 kullanılmalı</p></li>
@@ -2315,8 +2337,8 @@ kullanılmalı</p></li>
 değişkenleri nesne nitelik değişkeni <strong>değildir</strong></p></li>
 <li><p>Bu değişkenler sınıf kapsamında anlamlı &ldquo;sınıf nesnesi&rdquo; değişkenleridir ve
 nadiren işe yarar</p></li>
-<li><p>Sınıf değişkenlerindeki &ldquo;global değişken&rdquo; etkisinin istenmediği durumlarda bu
-değişkenler kullanılabilir</p></li>
+<li><p>Sınıf değişkenlerindeki &ldquo;global değişken&rdquo; etkisinin istenmediği durumlarda
+bu değişkenler kullanılabilir</p></li>
 </ul></section>
             
           </div>
@@ -2385,8 +2407,8 @@ değişkenler kullanılabilir</p></li>
             
             
             <section><ul>
-<li><p>Pek çok dilden farklı olarak; <code>ARGV[0]</code> komut satırında program isminden sonra
-gelen ilk argümanı gösterir, program ismini değil</p></li>
+<li><p>Pek çok dilden farklı olarak; <code>ARGV[0]</code> komut satırında program isminden
+sonra gelen ilk argümanı gösterir, program ismini değil</p></li>
 <li><p>Program ismi için <code>$0</code> değişkenini kullanın</p></li>
 </ul></section>
             

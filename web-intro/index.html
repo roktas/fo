@@ -783,7 +783,7 @@ ul li:first {
   content: ' ';
 }
 
-li p { display: inline; }
+li p:first-child { display: inline; }
 li pre { margin-left: 2em; }
 
 a {
@@ -1664,9 +1664,9 @@ div.slide {
             
             <section><p>CSS dosyaları &ldquo;kurallar&quot;dan (&quot;rules&rdquo;) oluşuyor</p>
 
-<pre><code>&lt;seçici&gt; {
-  özellik: değer;
-}
+<pre><code>    &lt;seçici&gt; {
+            özellik: değer;
+    }
 </code></pre></section>
             
           </div>

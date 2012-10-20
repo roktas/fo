@@ -1,4 +1,4 @@
-# Web - Giriş
+#   Web - Giriş
 
 .fx: first
 
@@ -10,39 +10,39 @@ Nisan 2012
 
 ---
 
-# CSS
+#   CSS
 
 ---
 
-# Kurallar
+#   Kurallar
 
 CSS dosyaları "kurallar"dan ("rules") oluşuyor
 
-    <seçici> {
-      özellik: değer;
-    }
+        <seçici> {
+                özellik: değer;
+        }
 
 ---
 
-# Seçiciler
+#   Seçiciler
 
 Seçici ("selector") bir tip, sınıf veya id seçiyor
 
-- Tip seçici: `p` etiketlerini yani paragrafları seç
+*   Tip seçici: `p` etiketlerini yani paragrafları seç
 
         !css
         p {
           ...
         }
 
-- Sınıf ("class") seçici: `foo` sınıflı elemanları seç
+*   Sınıf ("class") seçici: `foo` sınıflı elemanları seç
 
         !css
         .foo {
           ...
         }
 
-- Id ("id") seçici: `baz` id'li elemanları seç
+*   Id ("id") seçici: `baz` id'li elemanları seç
 
         !css
         #baz {
@@ -51,12 +51,12 @@ Seçici ("selector") bir tip, sınıf veya id seçiyor
 
 ---
 
-# Seçiciler
+#   Seçiciler
 
 Birden fazla seçiciyi virgülle gruplayarak tek bir kural oluşturabiliyoruz
 
-- `foo` ve `bar` sınıflarını (her ikisini) seç ve font boyutunu `16px` olarak
-  ayarla
+*   `foo` ve `bar` sınıflarını (her ikisini) seç ve font boyutunu `16px` olarak
+    ayarla
 
         !css
         .foo, .bar {
@@ -65,8 +65,8 @@ Birden fazla seçiciyi virgülle gruplayarak tek bir kural oluşturabiliyoruz
 
 Soldan sağa sırayla seçiciyi özelleştirmek mümkün
 
-- `foo` sınıfı içindeki **tüm** `bar` sınıflı elemanlar içindeki **tüm**
-  paragrafları seç ve font boyutunu `16px` olarak ayarla
+*   `foo` sınıfı içindeki **tüm** `bar` sınıflı elemanlar içindeki **tüm**
+    paragrafları seç ve font boyutunu `16px` olarak ayarla
 
         !css
         .foo .bar p {
@@ -75,55 +75,55 @@ Soldan sağa sırayla seçiciyi özelleştirmek mümkün
 
 ---
 
-# Seçiciler
+#   Seçiciler
 
 Seçicilerle gruplama yapmak dışında çeşitli kombinasyonlar da kurulabiliyor
 
-- Sırasız listelerdeki tüm maddelerin metin rengini kırmızı yap
+*   Sırasız listelerdeki tüm maddelerin metin rengini kırmızı yap
 
         !css
         ul li { color: red; }
 
-- Sırasız listelerde ilk seviye maddelerin metin rengini kırmızı yap
+*   Sırasız listelerde ilk seviye maddelerin metin rengini kırmızı yap
 
         !css
         ul > li { color: red; }
 
-- Sırasız listelerden sonra gelen ilk paragrafların metin rengini kırmızı yap
+*   Sırasız listelerden sonra gelen ilk paragrafların metin rengini kırmızı yap
 
         !css
         ul + p { color: red; }
 
-- Sırasız listelerden sonra gelen **tüm** paragrafların metin rengini kırmızı
-  yap
+*   Sırasız listelerden sonra gelen **tüm** paragrafların metin rengini kırmızı
+    yap
 
         !css
         ul ~  p { color: red; }
 
 ---
 
-# Kural Öncelikleri
+#   Kural Öncelikleri
 
 TODO
 
 ---
 
-# Sınıf mı, Id mi?
+#   Sınıf mı, Id mi?
 
 TODO
 
 ---
 
-# Seçiciler
+#   Seçiciler
 
 [Daha fazlası](http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/)
 
 ---
 
-# HTML
+#   HTML
 
 ---
 
-# JavaScript
+#   JavaScript
 
 ---

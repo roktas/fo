@@ -1,4 +1,4 @@
-# Ruby - Rake
+#   Rake
 
 .fx: first
 
@@ -10,37 +10,37 @@ Mayıs 2012
 
 ---
 
-# Tarifler
+#   Tarifler
 
 ---
 
-# `sh`
+#   `sh`
 
 Kabuk komutlarını `sh` ile çalıştır
 
-    !ruby
-    sh %[bir kabuk komutu]
-    # sh "bir kabuk komutu"
+        !ruby
+        sh %[bir kabuk komutu]
+        # sh "bir kabuk komutu"
 
 Yönlendirme/borulama yoksa komutu dizi olarak ver
 
-    !ruby
-    sh *%w[bir kabuk komutu]
-    # sh 'bir', 'kabuk', 'komutu'
+        !ruby
+        sh *%w[bir kabuk komutu]
+        # sh 'bir', 'kabuk', 'komutu'
 
 Bu yöntemin başarımı daha yüksektir
 
 ---
 
-# `sh`
+#   `sh`
 
 Komutun çıkış kodu ve çıktısı kullanılabilir
 
-    !ruby
-    sh *%w[bir kabuk komutu] do |ok, res|
-      if ok
-        puts res
-      else
-        puts "hata: #{res.exitstatus}"
-      end
-    end
+        !ruby
+        sh *%w[bir kabuk komutu] do |ok, res|
+        if ok
+                puts res
+        else
+                puts "hata: #{res.exitstatus}"
+        end
+        end

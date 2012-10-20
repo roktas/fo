@@ -783,7 +783,7 @@ ul li:first {
   content: ' ';
 }
 
-li p { display: inline; }
+li p:first-child { display: inline; }
 li pre { margin-left: 2em; }
 
 a {
@@ -1628,7 +1628,7 @@ div.slide {
       
       <!-- slide source: git-recipe/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Merge</h1></header>
@@ -1637,20 +1637,19 @@ div.slide {
             <section><ul>
 <li><p>Merge conflict varsa:</p>
 
-<pre><code>git merge --abort
-</code></pre></li>
-</ul>
+<div class="highlight"><pre><span class="nv">$ </span>git merge --abort
+</pre></div>
 
-<p>(Öncesinde depo temiz durumda olmalı.  Bu komut pull için de geçerli)</p>
 
-<ul>
+<p>(Öncesinde depo temiz durumda olmalı.  Bu komut pull için de geçerli)</p></li>
 <li><p>Merge ayarları</p>
 
-<pre><code>git config branch.&lt;branch&gt;.mergeoptions &quot;-Xsubtree=&#39;foo&#39;&quot;
-</code></pre></li>
+<div class="highlight"><pre><span class="nv">$ </span>git config branch.&lt;branch&gt;.mergeoptions <span class="s2">&quot;-Xsubtree=&#39;foo&#39;&quot;</span>
+</pre></div>
+</li>
 <li><p><code>--squash</code> ile tek komit halinde alınır</p></li>
 <li><p>TODO <code>--ff</code>, <code>--no-ff</code> konusu</p></li>
-<li><p>-s theirs ile onlarınkini al, -s ours ile bizimki</p></li>
+<li><p><code>-s theirs</code> ile onlarınkini al, <code>-s ours</code> ile bizimki</p></li>
 </ul></section>
             
           </div>
@@ -1675,27 +1674,26 @@ div.slide {
       
       <!-- slide source: git-recipe/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Pull</h1></header>
             
             
             <section><ul>
-<li><p>Ortaklaşa komitlenen bir dalda &ldquo;göndermeden önce yerel kopyayı güncelleyeyim&rdquo;
-için şu tavsiye ediliyor:</p>
+<li><p>Ortaklaşa komitlenen bir dalda &ldquo;göndermeden önce yerel kopyayı
+güncelleyeyim&rdquo; için şu tavsiye ediliyor:</p>
 
-<pre><code>git pull --rebase
-</code></pre></li>
-</ul>
+<div class="highlight"><pre><span class="nv">$ </span>git pull --rebase
+</pre></div>
 
-<p><a href="http://stackoverflow.com/questions/2472254/when-should-i-use-git-pull-rebase">http://stackoverflow.com/questions/2472254/when-should-i-use-git-pull-rebase</a></p>
 
-<ul>
+<p><a href="http://stackoverflow.com/questions/2472254/when-should-i-use-git-pull-rebase">http://stackoverflow.com/questions/2472254/when-should-i-use-git-pull-rebase</a></p></li>
 <li><p>Uzakta ne değişti?</p>
 
-<pre><code>git diff origin/master
-</code></pre></li>
+<div class="highlight"><pre><span class="nv">$ </span>git diff origin/master
+</pre></div>
+</li>
 </ul></section>
             
           </div>

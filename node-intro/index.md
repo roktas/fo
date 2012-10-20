@@ -1,4 +1,4 @@
-# Node - Giriş
+#   Node - Giriş
 
 .fx: first
 
@@ -10,55 +10,55 @@ Mart 2012
 
 ---
 
-# Geliştirme Ortamı Kurulumu
+#   Geliştirme Ortamı Kurulumu
 
-- Npm dışındaki temel paketleri kur:
+*   Npm dışındaki temel paketleri kur:
 
         !sh
         $ sudo apt-get install nodejs coffeescript libjs-coffeescript
 
-- Debian'da coffeescript paketi, cakephp paketi ile birlikte gelen `cake` ile
-  çakışıyor.
+*   Debian'da coffeescript paketi, cakephp paketi ile birlikte gelen `cake` ile
+    çakışıyor.
 
-- Bu nedenle coffeescript ile gelen `cake`, `cake.coffeescript` olarak
-  isimlendirilmiş.
+*   Bu nedenle coffeescript ile gelen `cake`, `cake.coffeescript` olarak
+    isimlendirilmiş.
 
-- cakephp kullanmıyorsanız aşağıdaki sembolik bağ düzenlemesini yap.
+*   cakephp kullanmıyorsanız aşağıdaki sembolik bağ düzenlemesini yap.
 
         !sh
         $ sudo ln -s /usr/bin/cake.coffeescript /usr/bin/cake
 
 ---
 
-# Geliştirme Ortamı Kurulumu
+#   Geliştirme Ortamı Kurulumu
 
-- Npm'i özel olarak kur:
+*   Npm'i özel olarak kur:
 
         !sh
         $ wget -qO- http://npmjs.org/install.sh | sudo sh
 
-İsteğe bağlı olarak.
+İsteğe bağlı olarak:
 
-- Npm paketi yayımlamak için geliştirici hesabı ekle:
+*   Npm paketi yayımlamak için geliştirici hesabı ekle:
 
         !sh
         $ npm adduser
 
-  Kullanıcı adının (`Username`) münkünse Unix sistemlerde her zaman
-  kullandığınız ad olmasına dikkat edin.
+    Kullanıcı adının (`Username`) münkünse Unix sistemlerde her zaman
+    kullandığınız ad olmasına dikkat edin.
 
 ---
 
-# İlk Uygulama
+#   İlk Uygulama
 
-- Depo oluştur
+*   Depo oluştur
 
         !sh
         $ read -p "Github hesabı? " ACCOUNT
         $ read -p "Uygulama adı? " APP
         $ echo "$APP deposunu Github hesabınızda oluşturun"
 
-- Depoyu ilkle
+*   Depoyu ilkle
 
         !sh
         $ mkdir $APP
@@ -68,9 +68,9 @@ Mart 2012
 
 ---
 
-# İlk Uygulama
+#   İlk Uygulama
 
--  Dizin kökünde `server.js`'i oluştur
+*   Dizin kökünde `server.js`'i oluştur
 
         !sh
         $ cat >server.js<<-EOF
@@ -84,7 +84,7 @@ Mart 2012
         server.listen(process.env.PORT || 8001);
         EOF
 
-- Depoyu gönder
+*   Depoyu gönder
 
         !sh
         $ git add .
@@ -94,9 +94,9 @@ Mart 2012
 
 ---
 
-# CoffeeScript Kullanımı
+#   CoffeeScript Kullanımı
 
-- Dizin kökünde (`server.js`) yerine `server.coffee`'yi, oluştur
+*   Dizin kökünde (`server.js`) yerine `server.coffee`'yi, oluştur
 
         !sh
         $ cat >server.coffee<<-EOF
@@ -109,33 +109,33 @@ Mart 2012
         .listen(process.env.PORT || 8081)
         EOF
 
-- `package.json`'a coffeescript bağımlılığını ekle
+*   `package.json`'a coffeescript bağımlılığını ekle
 
         !javascript
         "dependencies": { ..., "coffee-script": "~1.2" }
 
-- `package.json`'da uygulama kurulduktan sonra derleme yapılmasını iste
+*   `package.json`'da uygulama kurulduktan sonra derleme yapılmasını iste
 
         !javascript
         "postinstall": "coffee -b -c ."
 
 ---
 
-# Npm Paket Yönetimi
+#   Npm Paket Yönetimi
 
-- Node uygulamasının bağımlılıklarını `package.json` dosyasında `"dependencies"`
-  anahtarında tutuyoruz.
+*   Node uygulamasının bağımlılıklarını `package.json` dosyasında
+    `"dependencies"` anahtarında tutuyoruz.
 
         !javascript
         "dependencies": { "coffee-script": "~1.2" },
 
-- Paketleri yerelde kurmak ve `package.json`'a eklemek için:
+*   Paketleri yerelde kurmak ve `package.json`'a eklemek için:
 
         !sh
         $ npm install coffee-script --save
 
-- Paketler uygulama dizinine `node_modules` dizinine kuruluyor.  Bu dizini
-  `.gitignore`'a eklemeyi unutmayın:
+*   Paketler uygulama dizinine `node_modules` dizinine kuruluyor.  Bu dizini
+    `.gitignore`'a eklemeyi unutmayın:
 
         !sh
         $ echo /node_modules/ >>.gitignore
@@ -144,44 +144,45 @@ Bk. [Npm dokümanları](http://npmjs.org/doc/json.html)
 
 ---
 
-# Joyent
+#   Joyent
 
 ---
 
-# Joyent
+#   Joyent
 
 Node'ı geliştirenler (Joyent) tarafından sunulan bir barındırma hizmeti.
 
-- İşletim sistemi olarak Solaris kullanılıyor
+*   İşletim sistemi olarak Solaris kullanılıyor
 
-- Kabuk erişimi yapılabilir; 5 GiB disk, 128 MB bellekli sanal makineler
+*   Kabuk erişimi yapılabilir; 5 GiB disk, 128 MB bellekli sanal makineler
 
-- Sanal makineler `*.no.de` isim uzayında
+*   Sanal makineler `*.no.de` isim uzayında
 
-- Uygulama deposu sanal makine ev dizininde `repo` altında
+*   Uygulama deposu sanal makine ev dizininde `repo` altında
 
-- Npm bağımlılıkları her git gönderiminde otomatik olarak yönetiliyor
+*   Npm bağımlılıkları her git gönderiminde otomatik olarak yönetiliyor
 
-- Npm dışındaki yazılımlar Solaris'e özgü `pkgin` paket yöneticisi ile kuruluyor
+*   Npm dışındaki yazılımlar Solaris'e özgü `pkgin` paket yöneticisi ile
+    kuruluyor
 
-- Maksimum 5 adet veritabanı oluşturulabiliyor (MySQL, PostgreSQL, MongoDB vb)
+*   Maksimum 5 adet veritabanı oluşturulabiliyor (MySQL, PostgreSQL, MongoDB vb)
 
 ---
 
-# Başlangıç
+#   Başlangıç
 
-- Kayıt ol: [http://no.de](http://no.de)
+*   Kayıt ol: [http://no.de](http://no.de)
 
-- SSH anahtarı yükle
+*   SSH anahtarı yükle
 
-- Yeni makine iste: Servis çok yüklüyken hemen makine verilmeyebilir.
-  Aralıklarla bir kaç kez istemek gerekiyor.  Makine adını bu dokümanda `JOYENT`
-  değişkeninde tutuyoruz.
+*   Yeni makine iste: Servis çok yüklüyken hemen makine verilmeyebilir.
+    Aralıklarla bir kaç kez istemek gerekiyor.  Makine adını bu dokümanda
+    `JOYENT` değişkeninde tutuyoruz.
 
         !sh
         $ read -p "Makine adı (örnek 'foo.no.de')? " JOYENT
 
-- Yerelde SSH ayarlarını yap
+*   Yerelde SSH ayarlarını yap
 
         !sh
         $ cat >>~/.ssh/config <<-EOF
@@ -194,19 +195,19 @@ Node'ı geliştirenler (Joyent) tarafından sunulan bir barındırma hizmeti.
 
 ---
 
-# Başlangıç
+#   Başlangıç
 
-- SSH girişini ayarla
+*   SSH girişini ayarla
 
         !sh
         $ ssh-copy-id $JOYENT
 
-- Test et
+*   Test et
 
         !sh
         $ ssh $JOYENT
 
-- Depoyu hazırla
+*   Depoyu hazırla
 
         !sh
         $ echo "node-service" >>.gitignore
@@ -214,15 +215,15 @@ Node'ı geliştirenler (Joyent) tarafından sunulan bir barındırma hizmeti.
 
 ---
 
-# Başlangıç
+#   Başlangıç
 
-- Depoyu ayarla (hub gibi git alias'ları etkin olabileceğinden git için açık yol
-  verildi)
+*   Depoyu ayarla (hub gibi git alias'ları etkin olabileceğinden git için açık
+    yol verildi)
 
         !sh
         $ /usr/bin/git remote add joyent $JOYENT:repo
 
-- Uygulamayı konuşlandır
+*   Uygulamayı konuşlandır
 
         !sh
         $ git push joyent master
@@ -233,24 +234,25 @@ Bk. [İlk Node uygulaması](http://roktas.me/FIXME)
 
 ---
 
-# Npm paketleri nasıl yönetiliyor?
+#   Npm paketleri nasıl yönetiliyor?
 
 Joyent beklenildiği gibi `package.json`'daki değişiklikleri her gönderimde
 etkinleştiriyor ve npm ile eksik paketleri kuruyor.
 
 ---
 
-# Node sürümünü nasıl ayarlıyoruz?
+#   Node sürümünü nasıl ayarlıyoruz?
 
 Joyent'te kullanılacak Node sürümünü `config.json` dosyasında `{ "version":
 "v0.6.12" }` şeklinde belirtebilirsiniz.
 
-- Halihazırda `version` dışındaki anahtarlar dikkate alınmıyor.
+*   Halihazırda `version` dışındaki anahtarlar dikkate alınmıyor.
 
-- Yereldeki testlerle Joyent'teki testlerin eşgüdümlü olmasını sağlamak için
-  sürüm numarasının yerelde kullandığınız Node ile uyumlu olmasına dikkat edin.
+*   Yereldeki testlerle Joyent'teki testlerin eşgüdümlü olmasını sağlamak için
+    sürüm numarasının yerelde kullandığınız Node ile uyumlu olmasına dikkat
+    edin.
 
-- Joyent'te kullanılabilir Node sürümlerini öğrenmek için:
+*   Joyent'te kullanılabilir Node sürümlerini öğrenmek için:
 
         !sh
         [joyent]$ cat /opt/nodejs/NODE-BUILDS
@@ -260,32 +262,32 @@ Bk. [Joyent dokümanları](http://wiki.joyent.com/display/node/Setting+the+Node.
 
 ---
 
-# Uygulama nasıl ayarlanıyor?
+#   Uygulama nasıl ayarlanıyor?
 
-- Uygulama ayarları için `node-service/profile` dosyası kullanılıyor.
+*   Uygulama ayarları için `node-service/profile` dosyası kullanılıyor.
 
-- Örneğin `GITHUB_API_KEY` gibi bir değişkeni bu bu dosyaya ekleyin:
+*   Örneğin `GITHUB_API_KEY` gibi bir değişkeni bu bu dosyaya ekleyin:
 
         GITHUB_API_KEY='...'
 
-- Daha sonra uygulamada bu değişkene şu şekilde ulaşın:
+*   Daha sonra uygulamada bu değişkene şu şekilde ulaşın:
 
         !javascript
         key = process.env.GITHUB_API_KEY;
 
 ---
 
-# Ekstra yazılımları nasıl kuruyoruz?
+#   Ekstra yazılımları nasıl kuruyoruz?
 
-- Uygulamaların ihtiyaç duyacağı (npm paketleri dışındaki) yazılımları `pkgin`
-  ile kuruyoruz (`sudo` hakkı gerekmiyor).
+*   Uygulamaların ihtiyaç duyacağı (npm paketleri dışındaki) yazılımları `pkgin`
+    ile kuruyoruz (`sudo` hakkı gerekmiyor).
 
-- Örneğin Redis'i kurmak için:
+*   Örneğin Redis'i kurmak için:
 
         !sh
         [joyent]$ pkgin install redis
 
-- Örneğin Ruby'yi (sürüm 1.9) kurmak için:
+*   Örneğin Ruby'yi (sürüm 1.9) kurmak için:
 
         !sh
         [joyent]$ pkgin install ruby19-base
@@ -294,23 +296,23 @@ Bk. [Joyent dokümanları](http://wiki.joyent.com/display/node/Node.js+SmartMach
 
 ---
 
-# Servis günlüğünü nasıl görüyoruz?
+#   Servis günlüğünü nasıl görüyoruz?
 
-- Sanal makineye girerek:
+*   Sanal makineye girerek:
 
         !sh
         [joyent]$ node-service-log
 
-- Veya yerelde:
+*   Veya yerelde:
 
         !sh
         $ ssh $JOYENT node-service-log
 
 ---
 
-# Servis günlüğünü nasıl görüyoruz?
+#   Servis günlüğünü nasıl görüyoruz?
 
-- Depo kökünde aşağıdaki içerikte bir `Cakefile` oluşturun
+*   Depo kökünde aşağıdaki içerikte bir `Cakefile` oluşturun
 
         !coffeescript
         HOST  = '...' # Sunucu
@@ -328,32 +330,32 @@ Bk. [Joyent dokümanları](http://wiki.joyent.com/display/node/Node.js+SmartMach
             "/var/svc/log/site-node-service:default.log"
           )
 
-- Artık SSH ile uzak makineye geçerek işlem yapmak yerine
+*   Artık SSH ile uzak makineye geçerek işlem yapmak yerine
 
         !sh
         $ cake log
 
 ---
 
-# Uçbirim düzgün değil?
+#   Uçbirim düzgün değil?
 
 Yereldeki `TERM` ortam değişkeninin etkin olmamasını sağlayın
 
-- Sanal makineye girerek:
+*   Sanal makineye girerek:
 
         !sh
         [joyent]$ echo "TERM=xterm-color" >>~/.ssh/environment
 
 ---
 
-# `sudo` nasıl?
+#   `sudo` nasıl?
 
-- Sanal makineye `admin` olarak girin
+*   Sanal makineye `admin` olarak girin
 
         !sh
         $ ssh admin@$JOYENT
 
-- `node` kullanıcısını `sudoers`a ekleyin (aşağıdaki satır gibi olmalı)
+*   `node` kullanıcısını `sudoers`a ekleyin (aşağıdaki satır gibi olmalı)
 
         !sh
         User_Alias ADMINS = admin,node

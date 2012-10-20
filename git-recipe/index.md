@@ -1,4 +1,4 @@
-# Git - Tarifler
+#   Git - Tarifler
 
 .fx: first
 
@@ -10,35 +10,39 @@ Nisan 2012
 
 ---
 
-# Merge
+#   Merge
 
-- Merge conflict varsa:
+*   Merge conflict varsa:
 
-        git merge --abort
+        !sh
+        $ git merge --abort
 
-  (Öncesinde depo temiz durumda olmalı.  Bu komut pull için de geçerli)
+    (Öncesinde depo temiz durumda olmalı.  Bu komut pull için de geçerli)
 
-- Merge ayarları
+*   Merge ayarları
 
-        git config branch.<branch>.mergeoptions "-Xsubtree='foo'"
+        !sh
+        $ git config branch.<branch>.mergeoptions "-Xsubtree='foo'"
 
-- `--squash` ile tek komit halinde alınır
+*   `--squash` ile tek komit halinde alınır
 
-- TODO `--ff`, `--no-ff` konusu
+*   TODO `--ff`, `--no-ff` konusu
 
-- -s theirs ile onlarınkini al, -s ours ile bizimki
+*   `-s theirs` ile onlarınkini al, `-s ours` ile bizimki
 
 ---
 
-# Pull
+#   Pull
 
-- Ortaklaşa komitlenen bir dalda "göndermeden önce yerel kopyayı güncelleyeyim"
-  için şu tavsiye ediliyor:
+*   Ortaklaşa komitlenen bir dalda "göndermeden önce yerel kopyayı
+    güncelleyeyim" için şu tavsiye ediliyor:
 
-        git pull --rebase
+        !sh
+        $ git pull --rebase
 
-  http://stackoverflow.com/questions/2472254/when-should-i-use-git-pull-rebase
+    http://stackoverflow.com/questions/2472254/when-should-i-use-git-pull-rebase
 
-- Uzakta ne değişti?
+*   Uzakta ne değişti?
 
-        git diff origin/master
+        !sh
+        $ git diff origin/master
