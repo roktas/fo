@@ -234,11 +234,13 @@ kullanacaksınız
 
 ##  Folyo Biçimi
 
+[Bu folyoyu](https://raw.github.com/roktas/fo/gh-pages/fo-intro/index.md)
+inceleyerek başlayabilirsiniz
+
 *   Sayfalar için kullanılan ayırıcılar ve bazı makrolar dışında her şey
     Markdown ile
 
-*   [Bu folyoyu](https://raw.github.com/roktas/fo/gh-pages/fo-intro/index.md)
-    inceleyerek başlayabilirsiniz
+*   Lehçe farklılıklarına dikkat edin
 
 ---
 
