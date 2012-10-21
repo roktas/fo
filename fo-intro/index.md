@@ -571,6 +571,10 @@ Bir dosyada en fazla iki seviyeli başlıklandırma kullanın
 
 *   Blok kodları daima 8 boşluk girintiyle yazın (sekmeyi 8 boşluğa çevirin)
 
+*   8 boşluk kuralı düz paragraf ve birinci seviye listeler için geçerli
+
+*   İkinci seviyeden itibaren her seviyede girintiyi 8 boşluk arttırın
+
 *   Sözdizimi renklendirmesi için bloğun ilk satırında `!<dil>` ile dil
     bildirimi yapın
 
@@ -616,7 +620,7 @@ Aşağıdaki ögeler sabit genişlikli yazıtipleriyle yazılmalı
 
 *   Kod ögeleri (değişkenler, fonksiyon/metod isimleri vb)
 
-*   Dosya ve program adları
+*   Dosya/dizin ve program adları
 
 *   Program çıktıları
 
@@ -677,6 +681,8 @@ Türkçe'nin yazım kurallarına uyun
 
 *   Ayrı yazılması gereken ekler
 
+*   Bitişik yazılması gereken ekler
+
 *   Noktalama işaretleri
 
 ---
@@ -692,6 +698,10 @@ Doğrusu kalın harflerle yazılanlar
 *   **herkes** herkez
 
 *   **doküman** döküman
+
+---
+
+#   Makrolar
 
 ---
 
