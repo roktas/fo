@@ -136,8 +136,9 @@ Etkili bir bilgi aktarım aracı
         !sh
         $ sudo apt-get install python-landslide-patched
 
-*   Resmi depolardaki `python-landslide` paketi yerine 19 depolarındaki
-    `python-landslide-patched` paketini kullanmalısınız
+*   Paket ismine dikkat → `python-landslide-patched`
+
+*   Resmi depolardaki `python-landslide` paketini **kurmayın**
 
 *   Landslide kurulumunu kontrol et
 
