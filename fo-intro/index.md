@@ -104,7 +104,7 @@ Etkili bir bilgi aktarım aracı
 
 ---
 
-##  Ruby `1.9` Ayarla
+##  Ruby Ayarla
 
     !sh
     $ sudo update-alternatives --set ruby /usr/bin/ruby1.9.1
