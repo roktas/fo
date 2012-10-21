@@ -22,7 +22,7 @@ Folyo → Bir doküman türü
 
 *   Slayt veya sunu değil folyo
 
-*   Bu bir bir doküman türü; kitap, makale gibi
+*   Bu bir doküman türü; kitap, makale gibi
 
 *   Genel olarak bir konunun özünü anlatmayı kolaylaştıran bir doküman türü
 
@@ -37,7 +37,7 @@ Daha uzun ve kapsamlı bir doküman türüne hazırlık aşamasında kullanılab
 
 *   Veya bir kitabın bölümlerini önce bir folyoya dökebilirsiniz
 
-*   Yani bu bir öncü doküman
+*   Bir öncü doküman
 
 ---
 
@@ -89,7 +89,7 @@ Etkili bir bilgi aktarım aracı
 
 *   Çok özel bir dosya biçimi de yok
 
-*   Öğrenilmesi çok kolay bir hafif etiketleme dili → Markdown
+*   Öğrenilmesi kolay bir hafif etiketleme dili → Markdown
 
 *   Basit bir metin düzenleyici
 
@@ -143,7 +143,7 @@ Etkili bir bilgi aktarım aracı
 *   Resmi depolardaki `python-landslide` paketi yerine 19 depolarındaki
     `python-landslide-patched` paketini kullanmalısınız
 
-*   Landslide kurulumunu kontrol etmek için
+*   Landslide kurulumunu kontrol et
 
         !sh
         $ landslide --version
@@ -238,7 +238,7 @@ kullanacaksınız
 inceleyerek başlayabilirsiniz
 
 *   Sayfalar için kullanılan ayırıcılar ve bazı makrolar dışında her şey
-    Markdown ile
+    Markdown
 
 *   Lehçe farklılıklarına dikkat edin
 
@@ -253,17 +253,17 @@ Aşağıdaki `rake` işlemlerini yapabilirsiniz
         !sh
         $ rake new
 
-*   Derle
+*   İnşa et
 
         !sh
         $ rake
 
-*   Folyo İndisini Görüntüle
+*   Folyo indisini görüntüle
 
         !sh
         $ rake view
 
-*   Üretilen Dosyaları Sil
+*   Üretilen dosyaları sil
 
         !sh
         $ rake clean
@@ -284,16 +284,15 @@ Sadece tek dosya üzerinde de işlem yapabilirsiniz
         !sh
         $ rake view[index.md]
 
-*   Folyoyu Vim ile düzenlerken bu komutlara klavye kısayollarıyla
-    erişebilirsiniz (bk. Vim Kısayolları)
+*   Vim ile düzenlerken komutlara klavye kısayollarıyla erişebilirsiniz
 
 ---
 
 ##  Vim Kısayolları
 
-*   `F9`  → Düzenlenmekte olan folyoyu derle
+*   `F9`  → Folyoyu derle
 
-*   `F10` → Düzenlenmekte olan folyoyu derle ve görüntüle
+*   `F10` → Folyoyu derle ve görüntüle
 
 Kısayolların kurulumu
 
@@ -571,8 +570,8 @@ Bir dosyada en fazla iki seviyeli başlıklandırma kullanın
 ##  Blok Kod
 
         !text
-        !ruby
-        puts "Merhaba"
+        <8 boşluk> !ruby
+        <8 boşluk> puts "Merhaba"
 
 *   Blok kodları daima 8 boşluk girintiyle yazın (sekmeyi 8 boşluğa çevirin)
 
@@ -605,7 +604,7 @@ Uygun dil bildirimi yapmayı unutmayın
 
 Uzun blok kodlardan kaçının
 
-*   Bunun yerine ilgili kodu bir dosyaya yerleştirerek `.code:` makrosuyla içeri
+*   Bunun yerine ilgili kodu bir dosyaya yerleştirerek `.code` makrosuyla içeri
     aktarın
 
 *   Kod dosyaları için folyo dizininde `code` adında bir alt dizin kullanın
