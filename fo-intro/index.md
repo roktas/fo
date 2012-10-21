@@ -26,7 +26,7 @@ Folyo → Bir doküman türü
 
 ##  Öncü Doküman
 
-Daha uzun ve kapsamlı bir doküman türüne hazırlık aşamasında kullanılabilir
+Daha uzun ve kapsamlı bir doküman türüne hazırlık
 
 *   Örneğin bir makale yazarken ana fikri önce folyo biçiminde
     hazırlayabilirsiniz
@@ -34,6 +34,16 @@ Daha uzun ve kapsamlı bir doküman türüne hazırlık aşamasında kullanılab
 *   Veya bir kitabın bölümlerini önce bir folyoya dökebilirsiniz
 
 *   Bir öncü doküman
+
+---
+
+##  Bilgi Notları
+
+Öğrenme süreçlerinde alınan bilgi notları
+
+*   Etkili bir not alma aracı
+
+*   Folyoyu çalışma notlarını kaydetmek için kullanabilirsiniz
 
 ---
 
@@ -93,7 +103,7 @@ Etkili bir bilgi aktarım aracı
 
 ---
 
-#   Kurulum ve Kullanım
+#   Kurulum
 
 ---
 
@@ -145,6 +155,31 @@ Etkili bir bilgi aktarım aracı
         !sh
         $ landslide --version
         landslide patched 1.0.1
+
+---
+
+##  Diğer Sistemler
+
+**Debian tabanlı bir Linux dağıtımı (ör. Ubuntu) kullandığınızı varsayıyoruz**
+
+Farklı bir sistem (ör. Fedora, FreeBSD, Mac OS X, Windows) kullanıyorsanız
+aşağıdaki koşulları sağlamalısınız
+
+*   Python
+
+*   `pip` → Python paket yöneticisi
+
+*   Ruby `1.9`
+
+Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
+"Yapılandırma" bölümü ile devam edin
+
+        !sh
+        $ pip install  https://github.com/00010011/landslide/zipball/master
+
+---
+
+#   Yapılandırma
 
 ---
 
@@ -212,6 +247,10 @@ Etkili bir bilgi aktarım aracı
 
 *   Düzenlemeniz halinde birleştirme çakışması ("merge conflict")
     yaşayabilirsiniz
+
+---
+
+#   Kullanım
 
 ---
 
