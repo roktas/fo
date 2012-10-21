@@ -605,7 +605,7 @@ Uygun dil bildirimi yapmayı unutmayın
 
 Uzun blok kodlardan kaçının
 
-*   Bunun yerine ilgili kodu bir dosyaya yerleştirerek `.code` makrosuyla içeri
+*   Bunun yerine ilgili kodu bir dosyaya yerleştirerek `code` makrosuyla içeri
     aktarın
 
 *   Kod dosyaları için folyo dizininde `code` adında bir alt dizin kullanın
@@ -706,7 +706,7 @@ Doğrusu kalın harflerle yazılanlar
 
 ---
 
-##   `.code` Makrosu
+##   `code` Makrosu
 
 `.code: code/echo.c`
 
@@ -714,7 +714,7 @@ Doğrusu kalın harflerle yazılanlar
 
 ---
 
-##   `.gist` Makrosu
+##   `gist` Makrosu
 
 `.gist: 19`
 
@@ -722,7 +722,7 @@ Doğrusu kalın harflerle yazılanlar
 
 ---
 
-##   `.shelr` Makrosu
+##   `shelr` Makrosu
 
 `.shelr: 501b264596608048a40000c5`
 
