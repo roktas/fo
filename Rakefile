@@ -21,7 +21,7 @@ DEFAULTS  = {
   googleanalytics: '',
   googleplus: '',
   brand: 'default',
-  landslide: '/usr/bin/landslide',
+  landslide: %x(which landslide).chomp,
   css: '_/default.css',
   js: '_/default.js',
   indextemplate: '_/index.erb',
