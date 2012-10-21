@@ -706,7 +706,7 @@ Doğrusu kalın harflerle yazılanlar
 
 ---
 
-##   `code` Makrosu
+##   `code`
 
 `.code: code/echo.c`
 
@@ -714,7 +714,7 @@ Doğrusu kalın harflerle yazılanlar
 
 ---
 
-##   `gist` Makrosu
+##   `gist`
 
 `.gist: 19`
 
@@ -722,7 +722,7 @@ Doğrusu kalın harflerle yazılanlar
 
 ---
 
-##   `shelr` Makrosu
+##   `shelr`
 
 `.shelr: 501b264596608048a40000c5`
 
