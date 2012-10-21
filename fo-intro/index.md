@@ -10,10 +10,6 @@ Ekim 2012
 
 ---
 
-#   Folyo Nedir?
-
----
-
 ##  Bir Doküman Türü
 
 Folyo → Bir doküman türü
