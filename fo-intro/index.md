@@ -134,7 +134,7 @@ Etkili bir bilgi aktarım aracı
 ##  Landslide Kur
 
         !sh
-        $ sudo apt-get install python-landslide-patched python-misaka
+        $ sudo apt-get install python-landslide-patched
 
 *   Resmi depolardaki `python-landslide` paketi yerine 19 depolarındaki
     `python-landslide-patched` paketini kullanmalısınız
