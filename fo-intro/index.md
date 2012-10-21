@@ -120,14 +120,14 @@ Etkili bir bilgi aktarım aracı
 
 ---
 
-##  19 Depolarını Ekle
+##  Paket Depolarını Ekle
 
         !sh
         $ sudo wget -qO /etc/apt/sources.list.d/19.list deb.ondokuz.biz/19.list
         $ wget -qO- deb.ondokuz.biz/archive.key | sudo apt-key add -
         $ sudo apt-get update
 
-*   19 depolarında özgün Landslide'ın yamalanmış bir sürümü bulunuyor
+*   19 depolarında Landslide'ın yamalanmış bir sürümü bulunuyor
 
 ---
 
