@@ -4,7 +4,7 @@
 
 Recai Oktaş `<roktas@bil.omu.edu.tr>`
 
-[http://roktas.me/](http://roktas.me/)
+http://roktas.me/
 
 Mart 2012
 

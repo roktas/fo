@@ -4,7 +4,7 @@
 
 Recai Oktaş `<roktas@bil.omu.edu.tr>`
 
-[http://roktas.me/](http://roktas.me/)
+http://roktas.me/
 
 Mart 2012
 
@@ -171,7 +171,7 @@ Node'ı geliştirenler (Joyent) tarafından sunulan bir barındırma hizmeti.
 
 #   Başlangıç
 
-*   Kayıt ol: [http://no.de](http://no.de)
+*   Kayıt ol: http://no.de
 
 *   SSH anahtarı yükle
 
