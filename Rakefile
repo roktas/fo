@@ -24,6 +24,7 @@ DEFAULTS  = {
   landslide: %x(which landslide).chomp,
   css: '_/default.css',
   js: '_/default.js',
+  theme: 'light',
   indextemplate: '_/index.erb',
   foliotemplate: '_/default.erb',
 }
@@ -238,7 +239,7 @@ def compile(item)
       --linenos no
       --css #{Param[:css]}
       --js #{Param[:js]}
-      --theme light
+      --theme #{Param[:theme]}
       --destination #{item[:destination]}
       #{item[:source]}
   ]) do |ok, response, error|
