@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta id="viewport" name="viewport" content="user-scalable=no" />
-    <title>Node - Giriş</title>
+    <title>Node - Giri&#351;</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -1600,14 +1600,11 @@ div.slide {
         <div class="slide first">
           <div class="inner">
             
-            <header><h1>Node - Giriş</h1></header>
+            <header><h1>Node - Giri&#351;</h1></header>
             
             
-            <section>
-<p>Recai Oktaş <code>&lt;roktas@bil.omu.edu.tr&gt;</code></p>
-
+            <section><p>Recai Okta&#351; <code>&lt;roktas@bil.omu.edu.tr&gt;</code></p>
 <p><a href="http://roktas.me/">http://roktas.me/</a></p>
-
 <p>Mart 2012</p></section>
             
           </div>
@@ -1635,23 +1632,29 @@ div.slide {
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Geliştirme Ortamı Kurulumu</h1></header>
+            <header><h1>Geli&#351;tirme Ortam&#305; Kurulumu</h1></header>
             
             
             <section><ul>
-<li><p>Npm dışındaki temel paketleri kur:</p>
-
+<li>
+<p>Npm d&#305;&#351;&#305;ndaki temel paketleri kur:</p>
 <div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install nodejs coffeescript libjs-coffeescript
 </pre></div>
-</li>
-<li><p>Debian&#39;da coffeescript paketi, cakephp paketi ile birlikte gelen <code>cake</code> ile
-çakışıyor.</p></li>
-<li><p>Bu nedenle coffeescript ile gelen <code>cake</code>, <code>cake.coffeescript</code> olarak
-isimlendirilmiş.</p></li>
-<li><p>cakephp kullanmıyorsanız aşağıdaki sembolik bağ düzenlemesini yap.</p>
 
+</li>
+<li>
+<p>Debian&rsquo;da coffeescript paketi, cakephp paketi ile birlikte gelen <code>cake</code> ile
+    &ccedil;ak&#305;&#351;&#305;yor.</p>
+</li>
+<li>
+<p>Bu nedenle coffeescript ile gelen <code>cake</code>, <code>cake.coffeescript</code> olarak
+    isimlendirilmi&#351;.</p>
+</li>
+<li>
+<p>cakephp kullanm&#305;yorsan&#305;z a&#351;a&#287;&#305;daki sembolik ba&#287; d&uuml;zenlemesini yap.</p>
 <div class="highlight"><pre><span class="nv">$ </span>sudo ln -s /usr/bin/cake.coffeescript /usr/bin/cake
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -1680,28 +1683,27 @@ isimlendirilmiş.</p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Geliştirme Ortamı Kurulumu</h1></header>
+            <header><h1>Geli&#351;tirme Ortam&#305; Kurulumu</h1></header>
             
             
             <section><ul>
-<li><p>Npm&#39;i özel olarak kur:</p>
-
+<li>
+<p>Npm&rsquo;i &ouml;zel olarak kur:</p>
 <div class="highlight"><pre><span class="nv">$ </span>wget -qO- http://npmjs.org/install.sh | sudo sh
 </pre></div>
+
 </li>
 </ul>
-
-<p>İsteğe bağlı olarak:</p>
-
+<p>&#304;ste&#287;e ba&#287;l&#305; olarak:</p>
 <ul>
-<li><p>Npm paketi yayımlamak için geliştirici hesabı ekle:</p>
-
+<li>
+<p>Npm paketi yay&#305;mlamak i&ccedil;in geli&#351;tirici hesab&#305; ekle:</p>
 <div class="highlight"><pre><span class="nv">$ </span>npm adduser
 </pre></div>
 
-
-<p>Kullanıcı adının (<code>Username</code>) münkünse Unix sistemlerde her zaman
-kullandığınız ad olmasına dikkat edin.</p></li>
+<p>Kullan&#305;c&#305; ad&#305;n&#305;n (<code>Username</code>) m&uuml;nk&uuml;nse Unix sistemlerde her zaman
+kulland&#305;&#287;&#305;n&#305;z ad olmas&#305;na dikkat edin.</p>
+</li>
 </ul></section>
             
           </div>
@@ -1726,27 +1728,29 @@ kullandığınız ad olmasına dikkat edin.</p></li>
       
       <!-- slide source: node-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
-            <header><h1>İlk Uygulama</h1></header>
+            <header><h1>&#304;lk Uygulama</h1></header>
             
             
             <section><ul>
-<li><p>Depo oluştur</p>
-
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Github hesabı? &quot;</span> ACCOUNT
-<span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Uygulama adı? &quot;</span> APP
-<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;$APP deposunu Github hesabınızda oluşturun&quot;</span>
-</pre></div>
+<li>
+<p>Depo olu&#351;tur</p>
+<pre><code>!sh
+$ read -p "Github hesab&#305;? " ACCOUNT
+$ read -p "Uygulama ad&#305;? " APP
+$ echo "$APP deposunu Github hesab&#305;n&#305;zda olu&#351;turun"
+</code></pre>
 </li>
-<li><p>Depoyu ilkle</p>
-
-<div class="highlight"><pre><span class="nv">$ </span>mkdir <span class="nv">$APP</span>
-<span class="nv">$ </span>git init
-<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;node_modules&quot;</span> &gt;&gt;.gitignore
-<span class="nv">$ </span>touch README.md
-</pre></div>
+<li>
+<p>Depoyu ilkle</p>
+<pre><code>!sh
+$ mkdir $APP
+$ git init
+$ echo "node_modules" &gt;&gt;.gitignore
+$ touch README.md
+</code></pre>
 </li>
 </ul></section>
             
@@ -1775,12 +1779,12 @@ kullandığınız ad olmasına dikkat edin.</p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>İlk Uygulama</h1></header>
+            <header><h1>&#304;lk Uygulama</h1></header>
             
             
             <section><ul>
-<li><p>Dizin kökünde <code>server.js</code>&#39;i oluştur</p>
-
+<li>
+<p>Dizin k&ouml;k&uuml;nde <code>server.js</code>&lsquo;i olu&#351;tur</p>
 <div class="highlight"><pre><span class="nv">$ </span>cat &gt;server.js<span class="s">&lt;&lt;-EOF</span>
 <span class="s">var http = require(&#39;http&#39;);</span>
 
@@ -1792,14 +1796,16 @@ kullandığınız ad olmasına dikkat edin.</p></li>
 <span class="s">server.listen(process.env.PORT || 8001);</span>
 <span class="s">EOF</span>
 </pre></div>
-</li>
-<li><p>Depoyu gönder</p>
 
+</li>
+<li>
+<p>Depoyu g&ouml;nder</p>
 <div class="highlight"><pre><span class="nv">$ </span>git add .
 <span class="nv">$ </span>git commit -a -m ilk
 <span class="nv">$ </span>git remote add origin git@github.com/<span class="nv">$ACCOUNT</span>/<span class="nv">$APP</span>
 <span class="nv">$ </span>git push origin master
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -1828,12 +1834,12 @@ kullandığınız ad olmasına dikkat edin.</p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>CoffeeScript Kullanımı</h1></header>
+            <header><h1>CoffeeScript Kullan&#305;m&#305;</h1></header>
             
             
             <section><ul>
-<li><p>Dizin kökünde (<code>server.js</code>) yerine <code>server.coffee</code>&#39;yi, oluştur</p>
-
+<li>
+<p>Dizin k&ouml;k&uuml;nde (<code>server.js</code>) yerine <code>server.coffee</code>&lsquo;yi, olu&#351;tur</p>
 <div class="highlight"><pre><span class="nv">$ </span>cat &gt;server.coffee<span class="s">&lt;&lt;-EOF</span>
 <span class="s">http = require &#39;http&#39;</span>
 
@@ -1844,16 +1850,19 @@ kullandığınız ad olmasına dikkat edin.</p></li>
 <span class="s">.listen(process.env.PORT || 8081)</span>
 <span class="s">EOF</span>
 </pre></div>
-</li>
-<li><p><code>package.json</code>&#39;a coffeescript bağımlılığını ekle</p>
 
+</li>
+<li>
+<p><code>package.json</code>&lsquo;a coffeescript ba&#287;&#305;ml&#305;l&#305;&#287;&#305;n&#305; ekle</p>
 <div class="highlight"><pre><span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="p">...,</span> <span class="s2">&quot;coffee-script&quot;</span><span class="o">:</span> <span class="s2">&quot;~1.2&quot;</span> <span class="p">}</span>
 </pre></div>
-</li>
-<li><p><code>package.json</code>&#39;da uygulama kurulduktan sonra derleme yapılmasını iste</p>
 
+</li>
+<li>
+<p><code>package.json</code>&lsquo;da uygulama kurulduktan sonra derleme yap&#305;lmas&#305;n&#305; iste</p>
 <div class="highlight"><pre><span class="s2">&quot;postinstall&quot;</span><span class="o">:</span> <span class="s2">&quot;coffee -b -c .&quot;</span>
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -1882,30 +1891,32 @@ kullandığınız ad olmasına dikkat edin.</p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Npm Paket Yönetimi</h1></header>
+            <header><h1>Npm Paket Y&ouml;netimi</h1></header>
             
             
             <section><ul>
-<li><p>Node uygulamasının bağımlılıklarını <code>package.json</code> dosyasında
-<code>&quot;dependencies&quot;</code> anahtarında tutuyoruz.</p>
-
+<li>
+<p>Node uygulamas&#305;n&#305;n ba&#287;&#305;ml&#305;l&#305;klar&#305;n&#305; <code>package.json</code> dosyas&#305;nda
+    <code>"dependencies"</code> anahtar&#305;nda tutuyoruz.</p>
 <div class="highlight"><pre><span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;coffee-script&quot;</span><span class="o">:</span> <span class="s2">&quot;~1.2&quot;</span> <span class="p">},</span>
 </pre></div>
-</li>
-<li><p>Paketleri yerelde kurmak ve <code>package.json</code>&#39;a eklemek için:</p>
 
+</li>
+<li>
+<p>Paketleri yerelde kurmak ve <code>package.json</code>&lsquo;a eklemek i&ccedil;in:</p>
 <div class="highlight"><pre><span class="nv">$ </span>npm install coffee-script --save
 </pre></div>
-</li>
-<li><p>Paketler uygulama dizinine <code>node_modules</code> dizinine kuruluyor.  Bu dizini
-<code>.gitignore</code>&#39;a eklemeyi unutmayın:</p>
 
+</li>
+<li>
+<p>Paketler uygulama dizinine <code>node_modules</code> dizinine kuruluyor.  Bu dizini
+    <code>.gitignore</code>&lsquo;a eklemeyi unutmay&#305;n:</p>
 <div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> /node_modules/ &gt;&gt;.gitignore
 </pre></div>
+
 </li>
 </ul>
-
-<p>Bk. <a href="http://npmjs.org/doc/json.html">Npm dokümanları</a></p></section>
+<p>Bk. <a href="http://npmjs.org/doc/json.html">Npm dok&uuml;manlar&#305;</a></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1963,17 +1974,30 @@ kullandığınız ad olmasına dikkat edin.</p></li>
             <header><h1>Joyent</h1></header>
             
             
-            <section><p>Node&#39;ı geliştirenler (Joyent) tarafından sunulan bir barındırma hizmeti.</p>
-
+            <section><p>Node&rsquo;&#305; geli&#351;tirenler (Joyent) taraf&#305;ndan sunulan bir bar&#305;nd&#305;rma hizmeti.</p>
 <ul>
-<li><p>İşletim sistemi olarak Solaris kullanılıyor</p></li>
-<li><p>Kabuk erişimi yapılabilir; 5 GiB disk, 128 MB bellekli sanal makineler</p></li>
-<li><p>Sanal makineler <code>*.no.de</code> isim uzayında</p></li>
-<li><p>Uygulama deposu sanal makine ev dizininde <code>repo</code> altında</p></li>
-<li><p>Npm bağımlılıkları her git gönderiminde otomatik olarak yönetiliyor</p></li>
-<li><p>Npm dışındaki yazılımlar Solaris&#39;e özgü <code>pkgin</code> paket yöneticisi ile
-kuruluyor</p></li>
-<li><p>Maksimum 5 adet veritabanı oluşturulabiliyor (MySQL, PostgreSQL, MongoDB vb)</p></li>
+<li>
+<p>&#304;&#351;letim sistemi olarak Solaris kullan&#305;l&#305;yor</p>
+</li>
+<li>
+<p>Kabuk eri&#351;imi yap&#305;labilir; 5 GiB disk, 128 MB bellekli sanal makineler</p>
+</li>
+<li>
+<p>Sanal makineler <code>*.no.de</code> isim uzay&#305;nda</p>
+</li>
+<li>
+<p>Uygulama deposu sanal makine ev dizininde <code>repo</code> alt&#305;nda</p>
+</li>
+<li>
+<p>Npm ba&#287;&#305;ml&#305;l&#305;klar&#305; her git g&ouml;nderiminde otomatik olarak y&ouml;netiliyor</p>
+</li>
+<li>
+<p>Npm d&#305;&#351;&#305;ndaki yaz&#305;l&#305;mlar Solaris&rsquo;e &ouml;zg&uuml; <code>pkgin</code> paket y&ouml;neticisi ile
+    kuruluyor</p>
+</li>
+<li>
+<p>Maksimum 5 adet veritaban&#305; olu&#351;turulabiliyor (MySQL, PostgreSQL, MongoDB vb)</p>
+</li>
 </ul></section>
             
           </div>
@@ -1998,32 +2022,38 @@ kuruluyor</p></li>
       
       <!-- slide source: node-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
-            <header><h1>Başlangıç</h1></header>
+            <header><h1>Ba&#351;lang&#305;&ccedil;</h1></header>
             
             
             <section><ul>
-<li><p>Kayıt ol: <a href="http://no.de">http://no.de</a></p></li>
-<li><p>SSH anahtarı yükle</p></li>
-<li><p>Yeni makine iste: Servis çok yüklüyken hemen makine verilmeyebilir.
-Aralıklarla bir kaç kez istemek gerekiyor.  Makine adını bu dokümanda
-<code>JOYENT</code> değişkeninde tutuyoruz.</p>
-
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Makine adı (örnek &#39;foo.no.de&#39;)? &quot;</span> JOYENT
-</pre></div>
+<li>
+<p>Kay&#305;t ol: <a href="http://no.de">http://no.de</a></p>
 </li>
-<li><p>Yerelde SSH ayarlarını yap</p>
-
-<div class="highlight"><pre><span class="nv">$ </span>cat &gt;&gt;~/.ssh/config <span class="s">&lt;&lt;-EOF</span>
-<span class="s">Host $JOYENT</span>
-<span class="s">        HostName $JOYENT</span>
-<span class="s">        Port 62420</span>
-<span class="s">        User node</span>
-<span class="s">        ForwardAgent yes</span>
-<span class="s">EOF</span>
-</pre></div>
+<li>
+<p>SSH anahtar&#305; y&uuml;kle</p>
+</li>
+<li>
+<p>Yeni makine iste: Servis &ccedil;ok y&uuml;kl&uuml;yken hemen makine verilmeyebilir.
+    Aral&#305;klarla bir ka&ccedil; kez istemek gerekiyor.  Makine ad&#305;n&#305; bu dok&uuml;manda
+    <code>JOYENT</code> de&#287;i&#351;keninde tutuyoruz.</p>
+<pre><code>!sh
+$ read -p "Makine ad&#305; (&ouml;rnek 'foo.no.de')? " JOYENT
+</code></pre>
+</li>
+<li>
+<p>Yerelde SSH ayarlar&#305;n&#305; yap</p>
+<pre><code>!sh
+$ cat &gt;&gt;~/.ssh/config &lt;&lt;-EOF
+Host $JOYENT
+        HostName $JOYENT
+        Port 62420
+        User node
+        ForwardAgent yes
+EOF
+</code></pre>
 </li>
 </ul></section>
             
@@ -2052,25 +2082,28 @@ Aralıklarla bir kaç kez istemek gerekiyor.  Makine adını bu dokümanda
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Başlangıç</h1></header>
+            <header><h1>Ba&#351;lang&#305;&ccedil;</h1></header>
             
             
             <section><ul>
-<li><p>SSH girişini ayarla</p>
-
+<li>
+<p>SSH giri&#351;ini ayarla</p>
 <div class="highlight"><pre><span class="nv">$ </span>ssh-copy-id <span class="nv">$JOYENT</span>
 </pre></div>
-</li>
-<li><p>Test et</p>
 
+</li>
+<li>
+<p>Test et</p>
 <div class="highlight"><pre><span class="nv">$ </span>ssh <span class="nv">$JOYENT</span>
 </pre></div>
-</li>
-<li><p>Depoyu hazırla</p>
 
+</li>
+<li>
+<p>Depoyu haz&#305;rla</p>
 <div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;node-service&quot;</span> &gt;&gt;.gitignore
 <span class="nv">$ </span>git commit .gitignore -m <span class="s2">&quot;gitignore Joyent&quot;</span>
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -2099,26 +2132,26 @@ Aralıklarla bir kaç kez istemek gerekiyor.  Makine adını bu dokümanda
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Başlangıç</h1></header>
+            <header><h1>Ba&#351;lang&#305;&ccedil;</h1></header>
             
             
             <section><ul>
-<li><p>Depoyu ayarla (hub gibi git alias&#39;ları etkin olabileceğinden git için açık
-yol verildi)</p>
-
+<li>
+<p>Depoyu ayarla (hub gibi git alias&rsquo;lar&#305; etkin olabilece&#287;inden git i&ccedil;in a&ccedil;&#305;k
+    yol verildi)</p>
 <div class="highlight"><pre><span class="nv">$ </span>/usr/bin/git remote add joyent <span class="nv">$JOYENT</span>:repo
 </pre></div>
-</li>
-<li><p>Uygulamayı konuşlandır</p>
 
+</li>
+<li>
+<p>Uygulamay&#305; konu&#351;land&#305;r</p>
 <div class="highlight"><pre><span class="nv">$ </span>git push joyent master
 </pre></div>
+
 </li>
 </ul>
-
-<p>Bk. <a href="http://wiki.joyent.com/display/node/Getting+Started+with+a+Node.js+Development+SmartMachine">Joyent dokümanları</a></p>
-
-<p>Bk. <a href="http://roktas.me/FIXME">İlk Node uygulaması</a></p></section>
+<p>Bk. <a href="http://wiki.joyent.com/display/node/Getting+Started+with+a+Node.js+Development+SmartMachine">Joyent dok&uuml;manlar&#305;</a></p>
+<p>Bk. <a href="http://roktas.me/FIXME">&#304;lk Node uygulamas&#305;</a></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2145,11 +2178,11 @@ yol verildi)</p>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Npm paketleri nasıl yönetiliyor?</h1></header>
+            <header><h1>Npm paketleri nas&#305;l y&ouml;netiliyor?</h1></header>
             
             
-            <section><p>Joyent beklenildiği gibi <code>package.json</code>&#39;daki değişiklikleri her gönderimde
-etkinleştiriyor ve npm ile eksik paketleri kuruyor.</p></section>
+            <section><p>Joyent beklenildi&#287;i gibi <code>package.json</code>&lsquo;daki de&#287;i&#351;iklikleri her g&ouml;nderimde
+etkinle&#351;tiriyor ve npm ile eksik paketleri kuruyor.</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2176,25 +2209,28 @@ etkinleştiriyor ve npm ile eksik paketleri kuruyor.</p></section>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Node sürümünü nasıl ayarlıyoruz?</h1></header>
+            <header><h1>Node s&uuml;r&uuml;m&uuml;n&uuml; nas&#305;l ayarl&#305;yoruz?</h1></header>
             
             
-            <section><p>Joyent&#39;te kullanılacak Node sürümünü <code>config.json</code> dosyasında <code>{ &quot;version&quot;:
-&quot;v0.6.12&quot; }</code> şeklinde belirtebilirsiniz.</p>
-
+            <section><p>Joyent&rsquo;te kullan&#305;lacak Node s&uuml;r&uuml;m&uuml;n&uuml; <code>config.json</code> dosyas&#305;nda <code>{ "version":
+"v0.6.12" }</code> &#351;eklinde belirtebilirsiniz.</p>
 <ul>
-<li><p>Halihazırda <code>version</code> dışındaki anahtarlar dikkate alınmıyor.</p></li>
-<li><p>Yereldeki testlerle Joyent&#39;teki testlerin eşgüdümlü olmasını sağlamak için
-sürüm numarasının yerelde kullandığınız Node ile uyumlu olmasına dikkat
-edin.</p></li>
-<li><p>Joyent&#39;te kullanılabilir Node sürümlerini öğrenmek için:</p>
-
+<li>
+<p>Halihaz&#305;rda <code>version</code> d&#305;&#351;&#305;ndaki anahtarlar dikkate al&#305;nm&#305;yor.</p>
+</li>
+<li>
+<p>Yereldeki testlerle Joyent&rsquo;teki testlerin e&#351;g&uuml;d&uuml;ml&uuml; olmas&#305;n&#305; sa&#287;lamak i&ccedil;in
+    s&uuml;r&uuml;m numaras&#305;n&#305;n yerelde kulland&#305;&#287;&#305;n&#305;z Node ile uyumlu olmas&#305;na dikkat
+    edin.</p>
+</li>
+<li>
+<p>Joyent&rsquo;te kullan&#305;labilir Node s&uuml;r&uuml;mlerini &ouml;&#287;renmek i&ccedil;in:</p>
 <div class="highlight"><pre><span class="o">[</span>joyent<span class="o">]</span><span class="nv">$ </span>cat /opt/nodejs/NODE-BUILDS
 </pre></div>
+
 </li>
 </ul>
-
-<p>Bk. <a href="http://wiki.joyent.com/display/node/Setting+the+Node.js+Version">Joyent dokümanları</a></p></section>
+<p>Bk. <a href="http://wiki.joyent.com/display/node/Setting+the+Node.js+Version">Joyent dok&uuml;manlar&#305;</a></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2221,19 +2257,23 @@ edin.</p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Uygulama nasıl ayarlanıyor?</h1></header>
+            <header><h1>Uygulama nas&#305;l ayarlan&#305;yor?</h1></header>
             
             
             <section><ul>
-<li><p>Uygulama ayarları için <code>node-service/profile</code> dosyası kullanılıyor.</p></li>
-<li><p>Örneğin <code>GITHUB_API_KEY</code> gibi bir değişkeni bu bu dosyaya ekleyin:</p>
-
-<pre><code>GITHUB_API_KEY=&#39;...&#39;
-</code></pre></li>
-<li><p>Daha sonra uygulamada bu değişkene şu şekilde ulaşın:</p>
-
+<li>
+<p>Uygulama ayarlar&#305; i&ccedil;in <code>node-service/profile</code> dosyas&#305; kullan&#305;l&#305;yor.</p>
+</li>
+<li>
+<p>&Ouml;rne&#287;in <code>GITHUB_API_KEY</code> gibi bir de&#287;i&#351;keni bu bu dosyaya ekleyin:</p>
+<pre><code>GITHUB_API_KEY='...'
+</code></pre>
+</li>
+<li>
+<p>Daha sonra uygulamada bu de&#287;i&#351;kene &#351;u &#351;ekilde ula&#351;&#305;n:</p>
 <div class="highlight"><pre><span class="nx">key</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">GITHUB_API_KEY</span><span class="p">;</span>
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -2262,25 +2302,28 @@ edin.</p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Ekstra yazılımları nasıl kuruyoruz?</h1></header>
+            <header><h1>Ekstra yaz&#305;l&#305;mlar&#305; nas&#305;l kuruyoruz?</h1></header>
             
             
             <section><ul>
-<li><p>Uygulamaların ihtiyaç duyacağı (npm paketleri dışındaki) yazılımları <code>pkgin</code>
-ile kuruyoruz (<code>sudo</code> hakkı gerekmiyor).</p></li>
-<li><p>Örneğin Redis&#39;i kurmak için:</p>
-
+<li>
+<p>Uygulamalar&#305;n ihtiya&ccedil; duyaca&#287;&#305; (npm paketleri d&#305;&#351;&#305;ndaki) yaz&#305;l&#305;mlar&#305; <code>pkgin</code>
+    ile kuruyoruz (<code>sudo</code> hakk&#305; gerekmiyor).</p>
+</li>
+<li>
+<p>&Ouml;rne&#287;in Redis&rsquo;i kurmak i&ccedil;in:</p>
 <div class="highlight"><pre><span class="o">[</span>joyent<span class="o">]</span><span class="nv">$ </span>pkgin install redis
 </pre></div>
-</li>
-<li><p>Örneğin Ruby&#39;yi (sürüm 1.9) kurmak için:</p>
 
+</li>
+<li>
+<p>&Ouml;rne&#287;in Ruby&rsquo;yi (s&uuml;r&uuml;m 1.9) kurmak i&ccedil;in:</p>
 <div class="highlight"><pre><span class="o">[</span>joyent<span class="o">]</span><span class="nv">$ </span>pkgin install ruby19-base
 </pre></div>
+
 </li>
 </ul>
-
-<p>Bk. <a href="http://wiki.joyent.com/display/node/Node.js+SmartMachine+FAQ">Joyent dokümanları</a></p></section>
+<p>Bk. <a href="http://wiki.joyent.com/display/node/Node.js+SmartMachine+FAQ">Joyent dok&uuml;manlar&#305;</a></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2307,19 +2350,21 @@ ile kuruyoruz (<code>sudo</code> hakkı gerekmiyor).</p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Servis günlüğünü nasıl görüyoruz?</h1></header>
+            <header><h1>Servis g&uuml;nl&uuml;&#287;&uuml;n&uuml; nas&#305;l g&ouml;r&uuml;yoruz?</h1></header>
             
             
             <section><ul>
-<li><p>Sanal makineye girerek:</p>
-
+<li>
+<p>Sanal makineye girerek:</p>
 <div class="highlight"><pre><span class="o">[</span>joyent<span class="o">]</span><span class="nv">$ </span>node-service-log
 </pre></div>
-</li>
-<li><p>Veya yerelde:</p>
 
+</li>
+<li>
+<p>Veya yerelde:</p>
 <div class="highlight"><pre><span class="nv">$ </span>ssh <span class="nv">$JOYENT</span> node-service-log
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -2345,35 +2390,37 @@ ile kuruyoruz (<code>sudo</code> hakkı gerekmiyor).</p></li>
       
       <!-- slide source: node-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
-            <header><h1>Servis günlüğünü nasıl görüyoruz?</h1></header>
+            <header><h1>Servis g&uuml;nl&uuml;&#287;&uuml;n&uuml; nas&#305;l g&ouml;r&uuml;yoruz?</h1></header>
             
             
             <section><ul>
-<li><p>Depo kökünde aşağıdaki içerikte bir <code>Cakefile</code> oluşturun</p>
+<li>
+<p>Depo k&ouml;k&uuml;nde a&#351;a&#287;&#305;daki i&ccedil;erikte bir <code>Cakefile</code> olu&#351;turun</p>
+<pre><code>!coffeescript
+HOST  = '...' # Sunucu
+LINES = 40    # Ka&ccedil; sat&#305;r?
 
-<div class="highlight"><pre><span class="nv">HOST  = </span><span class="s">&#39;...&#39;</span> <span class="c1"># Sunucu</span>
-<span class="nv">LINES = </span><span class="mi">40</span>    <span class="c1"># Kaç satır?</span>
+runcmd = (cmd) -&gt;
+  {exec}  = require 'child_process'
+  exec cmd, (err, stdout, stderr) -&gt;
+    throw err if err
+    console.log stdout + stderr
 
-<span class="nv">runcmd = </span><span class="nf">(cmd) -&gt;</span>
-  <span class="p">{</span><span class="nx">exec</span><span class="p">}</span>  <span class="o">=</span> <span class="nx">require</span> <span class="s">&#39;child_process&#39;</span>
-  <span class="nx">exec</span> <span class="nx">cmd</span><span class="p">,</span> <span class="nf">(err, stdout, stderr) -&gt;</span>
-    <span class="k">throw</span> <span class="nx">err</span> <span class="k">if</span> <span class="nx">err</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">stdout</span> <span class="o">+</span> <span class="nx">stderr</span>
-
-<span class="nx">task</span> <span class="s">&#39;log&#39;</span><span class="p">,</span> <span class="s">&#39;sunucu günlüğünü görüntüle&#39;</span><span class="p">,</span> <span class="o">-&gt;</span>
-  <span class="nx">runcmd</span><span class="p">(</span>
-    <span class="s">&quot;ssh </span><span class="si">#{</span><span class="nx">HOST</span><span class="si">}</span><span class="s"> tail -n </span><span class="si">#{</span><span class="nx">LINES</span><span class="si">}</span><span class="s"> &quot;</span> <span class="o">+</span>
-    <span class="s">&quot;/var/svc/log/site-node-service:default.log&quot;</span>
-  <span class="p">)</span>
-</pre></div>
+task 'log', 'sunucu g&uuml;nl&uuml;&#287;&uuml;n&uuml; g&ouml;r&uuml;nt&uuml;le', -&gt;
+  runcmd(
+    "ssh #{HOST} tail -n #{LINES} " +
+    "/var/svc/log/site-node-service:default.log"
+  )
+</code></pre>
 </li>
-<li><p>Artık SSH ile uzak makineye geçerek işlem yapmak yerine</p>
-
-<div class="highlight"><pre><span class="nv">$ </span>cake log
-</pre></div>
+<li>
+<p>Art&#305;k SSH ile uzak makineye ge&ccedil;erek i&#351;lem yapmak yerine</p>
+<pre><code>!sh
+$ cake log
+</code></pre>
 </li>
 </ul></section>
             
@@ -2402,16 +2449,16 @@ ile kuruyoruz (<code>sudo</code> hakkı gerekmiyor).</p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Uçbirim düzgün değil?</h1></header>
+            <header><h1>U&ccedil;birim d&uuml;zg&uuml;n de&#287;il?</h1></header>
             
             
-            <section><p>Yereldeki <code>TERM</code> ortam değişkeninin etkin olmamasını sağlayın</p>
-
+            <section><p>Yereldeki <code>TERM</code> ortam de&#287;i&#351;keninin etkin olmamas&#305;n&#305; sa&#287;lay&#305;n</p>
 <ul>
-<li><p>Sanal makineye girerek:</p>
-
+<li>
+<p>Sanal makineye girerek:</p>
 <div class="highlight"><pre><span class="o">[</span>joyent<span class="o">]</span><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;TERM=xterm-color&quot;</span> &gt;&gt;~/.ssh/environment
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -2440,19 +2487,21 @@ ile kuruyoruz (<code>sudo</code> hakkı gerekmiyor).</p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1><code>sudo</code> nasıl?</h1></header>
+            <header><h1><code>sudo</code> nas&#305;l?</h1></header>
             
             
             <section><ul>
-<li><p>Sanal makineye <code>admin</code> olarak girin</p>
-
+<li>
+<p>Sanal makineye <code>admin</code> olarak girin</p>
 <div class="highlight"><pre><span class="nv">$ </span>ssh admin@<span class="nv">$JOYENT</span>
 </pre></div>
-</li>
-<li><p><code>node</code> kullanıcısını <code>sudoers</code>a ekleyin (aşağıdaki satır gibi olmalı)</p>
 
+</li>
+<li>
+<p><code>node</code> kullan&#305;c&#305;s&#305;n&#305; <code>sudoers</code>a ekleyin (a&#351;a&#287;&#305;daki sat&#305;r gibi olmal&#305;)</p>
 <div class="highlight"><pre>User_Alias <span class="nv">ADMINS</span> <span class="o">=</span> admin,node
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -2485,43 +2534,43 @@ ile kuruyoruz (<code>sudo</code> hakkı gerekmiyor).</p></li>
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Node - Giriş</a></th>
+        <th><a href="#slide1">Node - Giri&#351;</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Geliştirme Ortamı Kurulumu</a></th>
+        <th><a href="#slide2">Geli&#351;tirme Ortam&#305; Kurulumu</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
       
       <tr id="toc-row-3">
-        <th><a href="#slide3">Geliştirme Ortamı Kurulumu</a></th>
+        <th><a href="#slide3">Geli&#351;tirme Ortam&#305; Kurulumu</a></th>
         <td><a href="#slide3">3</a></td>
       </tr>
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">İlk Uygulama</a></th>
+        <th><a href="#slide4">&#304;lk Uygulama</a></th>
         <td><a href="#slide4">4</a></td>
       </tr>
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">İlk Uygulama</a></th>
+        <th><a href="#slide5">&#304;lk Uygulama</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">CoffeeScript Kullanımı</a></th>
+        <th><a href="#slide6">CoffeeScript Kullan&#305;m&#305;</a></th>
         <td><a href="#slide6">6</a></td>
       </tr>
       
       
       <tr id="toc-row-7">
-        <th><a href="#slide7">Npm Paket Yönetimi</a></th>
+        <th><a href="#slide7">Npm Paket Y&ouml;netimi</a></th>
         <td><a href="#slide7">7</a></td>
       </tr>
       
@@ -2539,67 +2588,67 @@ ile kuruyoruz (<code>sudo</code> hakkı gerekmiyor).</p></li>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">Başlangıç</a></th>
+        <th><a href="#slide10">Ba&#351;lang&#305;&ccedil;</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">Başlangıç</a></th>
+        <th><a href="#slide11">Ba&#351;lang&#305;&ccedil;</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Başlangıç</a></th>
+        <th><a href="#slide12">Ba&#351;lang&#305;&ccedil;</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">Npm paketleri nasıl yönetiliyor?</a></th>
+        <th><a href="#slide13">Npm paketleri nas&#305;l y&ouml;netiliyor?</a></th>
         <td><a href="#slide13">13</a></td>
       </tr>
       
       
       <tr id="toc-row-14">
-        <th><a href="#slide14">Node sürümünü nasıl ayarlıyoruz?</a></th>
+        <th><a href="#slide14">Node s&uuml;r&uuml;m&uuml;n&uuml; nas&#305;l ayarl&#305;yoruz?</a></th>
         <td><a href="#slide14">14</a></td>
       </tr>
       
       
       <tr id="toc-row-15">
-        <th><a href="#slide15">Uygulama nasıl ayarlanıyor?</a></th>
+        <th><a href="#slide15">Uygulama nas&#305;l ayarlan&#305;yor?</a></th>
         <td><a href="#slide15">15</a></td>
       </tr>
       
       
       <tr id="toc-row-16">
-        <th><a href="#slide16">Ekstra yazılımları nasıl kuruyoruz?</a></th>
+        <th><a href="#slide16">Ekstra yaz&#305;l&#305;mlar&#305; nas&#305;l kuruyoruz?</a></th>
         <td><a href="#slide16">16</a></td>
       </tr>
       
       
       <tr id="toc-row-17">
-        <th><a href="#slide17">Servis günlüğünü nasıl görüyoruz?</a></th>
+        <th><a href="#slide17">Servis g&uuml;nl&uuml;&#287;&uuml;n&uuml; nas&#305;l g&ouml;r&uuml;yoruz?</a></th>
         <td><a href="#slide17">17</a></td>
       </tr>
       
       
       <tr id="toc-row-18">
-        <th><a href="#slide18">Servis günlüğünü nasıl görüyoruz?</a></th>
+        <th><a href="#slide18">Servis g&uuml;nl&uuml;&#287;&uuml;n&uuml; nas&#305;l g&ouml;r&uuml;yoruz?</a></th>
         <td><a href="#slide18">18</a></td>
       </tr>
       
       
       <tr id="toc-row-19">
-        <th><a href="#slide19">Uçbirim düzgün değil?</a></th>
+        <th><a href="#slide19">U&ccedil;birim d&uuml;zg&uuml;n de&#287;il?</a></th>
         <td><a href="#slide19">19</a></td>
       </tr>
       
       
       <tr id="toc-row-20">
-        <th><a href="#slide20"><code>sudo</code> nasıl?</a></th>
+        <th><a href="#slide20"><code>sudo</code> nas&#305;l?</a></th>
         <td><a href="#slide20">20</a></td>
       </tr>
       

@@ -144,7 +144,7 @@ Etkili bir bilgi aktarım aracı
 ##  Landslide Kur
 
         !sh
-        $ sudo apt-get install python-landslide-patched
+        $ sudo apt-get install python-landslide-patched python-markdown-extra
 
 *   Paket ismine dikkat → `python-landslide-patched`
 
