@@ -1,4 +1,4 @@
-/* begin presentation.css */
+/* begin default.css */
 
 ul li {
   list-style: none;
@@ -161,4 +161,156 @@ div.slide {
 /* Pygments */
 .err { border: 0px; }
 
-/* end presentation.css */
+/* Definition lists */
+
+dl {
+  margin-top: 20px;
+  padding: 8px;
+}
+
+dt, dd {
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+dt {
+  display: inline;
+  padding: 8px;
+  color: white;
+  background-color: #9c000d;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  margin-right: 12px;
+}
+
+dd {
+  margin-right: 30px;
+  margin: 20px;
+  padding: 20px;
+  color: #666;
+  -moz-border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px #d1d1d1;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 0 1px 2px #d1d1d1;
+  background: #fafafa;
+  border: #ccc 1px solid;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px #d1d1d1;
+}
+
+dd p {
+  margin: 0px;
+  padding: 0px;
+}
+
+/*
+ * Tables
+ *
+ * http://johnsardine.com/freebies/dl-html-css/simple-little-tab/
+ */
+
+div.slide .inner table {
+  margin: 20px;
+  color: #666;
+  -moz-border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px #d1d1d1;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 0 1px 2px #d1d1d1;
+  background: #eaebec;
+  border: #ccc 1px solid;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px #d1d1d1;
+  text-shadow: 1px 1px 0px #fff;
+  font-size: 20px;
+}
+
+div.slide .inner table tr.even td {
+  background: #f6f6f6;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+  background: -moz-linear-gradient(top, #f8f8f8, #f6f6f6);
+}
+
+div.slide .inner table th {
+  padding: 21px 25px 22px 25px;
+  border-bottom: 1px solid #e0e0e0; border-top: 1px solid #fafafa;
+  background: #ededed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+  background: -moz-linear-gradient(top, #ededed, #ebebeb);
+}
+
+div.slide .inner table th:first-child {
+  padding-left: 20px;
+  text-align: left
+}
+
+div.slide .inner table a:visited {
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none
+}
+
+div.slide .inner table a:active,
+div.slide .inner table a:hover {
+  color: #bd5a35;
+  text-decoration: underline
+}
+
+div.slide .inner table a:link {
+  color: #666;
+  font-weight: bold;
+  text-decoration: none
+}
+
+div.slide .inner table tr {
+  padding-left: 20px;
+  text-align: center
+}
+
+div.slide .inner table tr:first-child th:first-child {
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+div.slide .inner table tr:first-child th:last-child {
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+div.slide .inner table tr:last-child td {    border-bottom: 0 }
+
+div.slide .inner table tr:last-child td:first-child {
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+div.slide .inner table tr:last-child td:last-child {
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+div.slide .inner table tr:hover td {
+  background: #f2f2f2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+  background: -moz-linear-gradient(top, #f2f2f2, #f0f0f0);
+}
+
+div.slide .inner table tr td {
+  padding: 18px;
+  border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; border-top: 1px solid #ffffff;
+  background: #fafafa;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+  background: -moz-linear-gradient(top, #fbfbfb, #fafafa);
+}
+
+div.slide .inner table tr td:first-child {
+  padding-left: 20px;
+  border-left: 0;
+  text-align: left
+}
+
+/* end default.css */
