@@ -1789,14 +1789,14 @@ div.slide .inner table tr td:first-child {
             
             <section><p><code>*</code> i&#351;leciyle atama yap</p>
 <div class="highlight"><pre>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="o">.</span><span class="n">.</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
-    <span class="n">a</span> <span class="c1">#=&gt; &#39;A&#39;</span>
-    <span class="n">b</span> <span class="c1">#=&gt; &#39;B&#39;</span>
-    <span class="n">c</span> <span class="c1">#=&gt; &#39;C&#39;</span>
+    <span class="n">a</span> <span class="c1">#=&amp;gt; &#39;A&#39;</span>
+    <span class="n">b</span> <span class="c1">#=&amp;gt; &#39;B&#39;</span>
+    <span class="n">c</span> <span class="c1">#=&amp;gt; &#39;C&#39;</span>
 
     <span class="n">match</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="o">*</span><span class="s2">&quot;Something 981&quot;</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/([A-z]*) ([0-9]*)/</span><span class="p">)</span>
-    <span class="n">match</span>  <span class="c1">#=&gt; &quot;Something 981&quot;</span>
-    <span class="n">text</span>   <span class="c1">#=&gt; &quot;Something&quot;</span>
-    <span class="n">number</span> <span class="c1">#=&gt; &quot;981&quot;</span>
+    <span class="n">match</span>  <span class="c1">#=&amp;gt; &quot;Something 981&quot;</span>
+    <span class="n">text</span>   <span class="c1">#=&amp;gt; &quot;Something&quot;</span>
+    <span class="n">number</span> <span class="c1">#=&amp;gt; &quot;981&quot;</span>
 </pre></div>
 </section>
             
@@ -1829,11 +1829,11 @@ div.slide .inner table tr td:first-child {
             
             
             <section><p>D&uuml;zenli ifadelerde e&#351;le&#351;meleri topla</p>
-<div class="highlight"><pre>    <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;Fred Bloggs &lt;fred@bloggs.com&gt;&quot;</span>
-    <span class="n">email</span><span class="o">[</span><span class="sr">/&lt;(.*?)&gt;/</span><span class="p">,</span> <span class="mi">1</span><span class="o">]</span> <span class="c1">#=&gt; &quot;fred@bloggs.com&quot;</span>
+<div class="highlight"><pre>    <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;Fred Bloggs &amp;lt;fred@bloggs.com&amp;gt;&quot;</span>
+    <span class="n">email</span><span class="o">[</span><span class="sr">/&amp;lt;(.*?)&amp;gt;/</span><span class="p">,</span> <span class="mi">1</span><span class="o">]</span> <span class="c1">#=&amp;gt; &quot;fred@bloggs.com&quot;</span>
 
     <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;this is a test&#39;</span>
-    <span class="n">string</span><span class="o">[</span><span class="sr">/[aeiou].+?[aeiou]/</span><span class="o">]</span> <span class="c1">#=&gt; &#39;is i&#39;</span>
+    <span class="n">string</span><span class="o">[</span><span class="sr">/[aeiou].+?[aeiou]/</span><span class="o">]</span> <span class="c1">#=&amp;gt; &#39;is i&#39;</span>
 </pre></div>
 </section>
             
@@ -1867,10 +1867,10 @@ div.slide .inner table tr td:first-child {
             
             <section><p>Heterojen bir diziden eleman se&ccedil;</p>
 <div class="highlight"><pre>    <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="o">[</span> <span class="o">[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span> <span class="o">]</span><span class="p">,</span> <span class="ss">:c</span><span class="p">,</span> <span class="o">[</span><span class="ss">:d</span><span class="p">,</span> <span class="ss">:f</span><span class="o">]</span> <span class="o">]</span>
-    <span class="n">a</span> <span class="c1">#=&gt; :a</span>
-    <span class="n">b</span> <span class="c1">#=&gt; :b</span>
-    <span class="n">c</span> <span class="c1">#=&gt; :c</span>
-    <span class="n">d</span> <span class="c1">#=&gt; [:d, :f]</span>
+    <span class="n">a</span> <span class="c1">#=&amp;gt; :a</span>
+    <span class="n">b</span> <span class="c1">#=&amp;gt; :b</span>
+    <span class="n">c</span> <span class="c1">#=&amp;gt; :c</span>
+    <span class="n">d</span> <span class="c1">#=&amp;gt; [:d, :f]</span>
 </pre></div>
 </section>
             
@@ -1903,7 +1903,7 @@ div.slide .inner table tr td:first-child {
             
             
             <section><p>De&#287;i&#351;ken ilklendirmesini atlayarak atama yap</p>
-<div class="highlight"><pre>    <span class="p">(</span><span class="n">a</span> <span class="o">||=</span> <span class="o">[]</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s1">&#39;test&#39;</span>
+<div class="highlight"><pre>    <span class="p">(</span><span class="n">a</span> <span class="o">||=</span> <span class="o">[]</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s1">&#39;test&#39;</span>
 </pre></div>
 </section>
             
@@ -1941,7 +1941,7 @@ div.slide .inner table tr td:first-child {
 </pre></div>
 
 <p>De&#287;i&#351;ken <em>ilklendirilmi&#351;se</em> ekle</p>
-<div class="highlight"><pre>    <span class="n">string</span> <span class="o">&amp;&amp;=</span> <span class="n">string</span> <span class="o">+</span> <span class="s2">&quot;suffix&quot;</span>
+<div class="highlight"><pre>    <span class="n">string</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">=</span> <span class="n">string</span> <span class="o">+</span> <span class="s2">&quot;suffix&quot;</span>
     <span class="c1"># if string then string = string + &quot;suffix&quot;</span>
 </pre></div>
 </section>
@@ -2012,12 +2012,12 @@ div.slide .inner table tr td:first-child {
             <section><p><code>and</code> ve <code>or</code> tek sat&#305;rl&#305;klar&#305;</p>
 <div class="highlight"><pre>    <span class="n">queue</span> <span class="o">=</span> <span class="o">[]</span>
     <span class="sx">%w{hello x world}</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">word</span><span class="o">|</span>
-      <span class="n">queue</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="ow">and</span> <span class="nb">puts</span> <span class="s2">&quot;Added to queue&quot;</span> <span class="k">unless</span> <span class="n">word</span><span class="o">.</span><span class="n">length</span> <span class="o">&lt;</span>  <span class="mi">2</span>
+      <span class="n">queue</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">word</span> <span class="ow">and</span> <span class="nb">puts</span> <span class="s2">&quot;Added to queue&quot;</span> <span class="k">unless</span> <span class="n">word</span><span class="o">.</span><span class="n">length</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span>  <span class="mi">2</span>
     <span class="k">end</span>
     <span class="n">queue</span>
-    <span class="c1">#=&gt; Added to queue</span>
-    <span class="c1">#=&gt; Added to queue</span>
-    <span class="c1">#=&gt; [&quot;hello&quot;, &quot;world&quot;]</span>
+    <span class="c1">#=&amp;gt; Added to queue</span>
+    <span class="c1">#=&amp;gt; Added to queue</span>
+    <span class="c1">#=&amp;gt; [&quot;hello&quot;, &quot;world&quot;]</span>
 </pre></div>
 </section>
             
@@ -2094,12 +2094,12 @@ div.slide .inner table tr td:first-child {
             
             <section><p>Aral&#305;k kullanarak dizi ilkle</p>
 <div class="highlight"><pre>    <span class="n">numbers</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span>
-    <span class="c1">#=&gt; [0, 1, 2, 3, 4, 5]</span>
+    <span class="c1">#=&amp;gt; [0, 1, 2, 3, 4, 5]</span>
 </pre></div>
 
 <p>Veya</p>
 <div class="highlight"><pre>    <span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span>
-    <span class="c1">#=&gt; [0, 1, 2, 3, 4, 5]</span>
+    <span class="c1">#=&amp;gt; [0, 1, 2, 3, 4, 5]</span>
 </pre></div>
 </section>
             
@@ -2136,7 +2136,7 @@ div.slide .inner table tr td:first-child {
     <span class="n">values</span> <span class="o">=</span> <span class="o">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">,</span> <span class="mi">789</span><span class="o">]</span>
 
     <span class="no">Hash</span><span class="o">[</span><span class="n">keys</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">]</span>
-    <span class="c1">#=&gt; {:x=&gt;123, :y=&gt;456, :z=&gt;789}</span>
+    <span class="c1">#=&amp;gt; {:x=&amp;gt;123, :y=&amp;gt;456, :z=&amp;gt;789}</span>
 </pre></div>
 </section>
             
@@ -2169,9 +2169,9 @@ div.slide .inner table tr td:first-child {
             
             
             <section><p>S&ouml;zl&uuml;kten &ldquo;anahtar, de&#287;er&rdquo; &ccedil;iftleri dizisi &uuml;ret</p>
-<div class="highlight"><pre>    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+<div class="highlight"><pre>    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="ss">:male</span> <span class="p">}</span>
     <span class="o">[*</span><span class="n">h</span><span class="o">]</span>
-    <span class="c1">#=&gt; [[:name, &quot;Fred&quot;], [:age, 93], [:gender, :male]]</span>
+    <span class="c1">#=&amp;gt; [[:name, &quot;Fred&quot;], [:age, 93], [:gender, :male]]</span>
 </pre></div>
 </section>
             
@@ -2207,12 +2207,12 @@ div.slide .inner table tr td:first-child {
 <div class="highlight"><pre>    <span class="n">a</span> <span class="o">=</span> <span class="sx">%w{a b c d e f g h}</span>
     <span class="n">required</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="o">]</span>
     <span class="n">a</span><span class="o">.</span><span class="n">values_at</span><span class="p">(</span><span class="o">*</span><span class="n">required</span><span class="p">)</span>
-    <span class="c1">#=&gt; [&quot;a&quot;, &quot;f&quot;, &quot;g&quot;]</span>
+    <span class="c1">#=&amp;gt; [&quot;a&quot;, &quot;f&quot;, &quot;g&quot;]</span>
 
-    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="ss">:male</span> <span class="p">}</span>
     <span class="n">required</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:age</span><span class="p">,</span> <span class="ss">:name</span><span class="o">]</span>
     <span class="n">h</span><span class="o">.</span><span class="n">values_at</span><span class="p">(</span><span class="o">*</span><span class="n">required</span><span class="p">)</span>
-    <span class="c1">#=&gt; [ 93, &quot;Fred&quot; ]</span>
+    <span class="c1">#=&amp;gt; [ 93, &quot;Fred&quot; ]</span>
 </pre></div>
 </section>
             
@@ -2246,10 +2246,10 @@ div.slide .inner table tr td:first-child {
             
             <section><p>&Ccedil;ift say&#305;da elemana sahip bir diziden s&ouml;zl&uuml;k olu&#351;tur</p>
 <div class="highlight"><pre>    <span class="n">fruit</span> <span class="o">=</span> <span class="o">[</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span><span class="s2">&quot;yellow&quot;</span> <span class="o">]</span>
-    <span class="c1">#=&gt; [&quot;apple&quot;, &quot;red&quot;, &quot;banana&quot;, &quot;yellow&quot;]</span>
+    <span class="c1">#=&amp;gt; [&quot;apple&quot;, &quot;red&quot;, &quot;banana&quot;, &quot;yellow&quot;]</span>
 
     <span class="no">Hash</span><span class="o">[*</span><span class="n">fruit</span><span class="o">]</span>
-    <span class="c1">#=&gt; {&quot;apple&quot;=&gt;&quot;red&quot;, &quot;banana&quot;=&gt;&quot;yellow&quot;}</span>
+    <span class="c1">#=&amp;gt; {&quot;apple&quot;=&amp;gt;&quot;red&quot;, &quot;banana&quot;=&amp;gt;&quot;yellow&quot;}</span>
 </pre></div>
 </section>
             
@@ -2283,11 +2283,11 @@ div.slide .inner table tr td:first-child {
             
             <section><p>Bir nesne dizisindeki niteliklerden dizi olu&#351;tur</p>
 <div class="highlight"><pre>    <span class="n">shapes</span> <span class="o">=</span> <span class="o">[]</span>
-    <span class="n">shapes</span> <span class="o">&lt;&lt;</span> <span class="no">Rectangle</span><span class="o">.</span><span class="n">new</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>
-    <span class="n">shapes</span> <span class="o">&lt;&lt;</span> <span class="no">Square</span><span class="o">.</span><span class="n">new</span> <span class="mi">4</span>
-    <span class="n">shapes</span> <span class="o">&lt;&lt;</span> <span class="no">Circle</span><span class="o">.</span><span class="n">new</span> <span class="mi">7</span>
+    <span class="n">shapes</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="no">Rectangle</span><span class="o">.</span><span class="n">new</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>
+    <span class="n">shapes</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="no">Square</span><span class="o">.</span><span class="n">new</span> <span class="mi">4</span>
+    <span class="n">shapes</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="no">Circle</span><span class="o">.</span><span class="n">new</span> <span class="mi">7</span>
 
-    <span class="n">areas</span> <span class="o">=</span> <span class="n">shapes</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:area</span><span class="p">)</span>
+    <span class="n">areas</span> <span class="o">=</span> <span class="n">shapes</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="ss">:area</span><span class="p">)</span>
 </pre></div>
 </section>
             
@@ -2322,12 +2322,12 @@ div.slide .inner table tr td:first-child {
             <section><p>S&ouml;zl&uuml;k de&#287;erlerini &ouml;ntan&#305;ml&#305; olarak ayarla</p>
 <div class="highlight"><pre>    <span class="n">parties</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="o">|</span><span class="nb">hash</span><span class="p">,</span> <span class="n">key</span><span class="o">|</span> <span class="nb">hash</span><span class="o">[</span><span class="n">key</span><span class="o">]</span> <span class="o">=</span> <span class="o">[]</span> <span class="p">}</span>
     <span class="n">parties</span><span class="o">[</span><span class="s2">&quot;Summer party&quot;</span><span class="o">]</span>
-    <span class="c1">#=&gt; []</span>
+    <span class="c1">#=&amp;gt; []</span>
 
-    <span class="n">parties</span><span class="o">[</span><span class="s2">&quot;Summer party&quot;</span><span class="o">]</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Joe&quot;</span>
-    <span class="c1">#=&gt; {&quot;Summer party&quot;=&gt; [&quot;Joe&quot;]}</span>
-    <span class="n">parties</span><span class="o">[</span><span class="s2">&quot;Other party&quot;</span><span class="o">]</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Jane&quot;</span>
-    <span class="c1">#=&gt; {&quot;Summer party&quot;=&gt;[&quot;Joe&quot;], &quot;Other party&quot;=&gt;&quot;Jane&quot;}</span>
+    <span class="n">parties</span><span class="o">[</span><span class="s2">&quot;Summer party&quot;</span><span class="o">]</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s2">&quot;Joe&quot;</span>
+    <span class="c1">#=&amp;gt; {&quot;Summer party&quot;=&amp;gt; [&quot;Joe&quot;]}</span>
+    <span class="n">parties</span><span class="o">[</span><span class="s2">&quot;Other party&quot;</span><span class="o">]</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s2">&quot;Jane&quot;</span>
+    <span class="c1">#=&amp;gt; {&quot;Summer party&quot;=&amp;gt;[&quot;Joe&quot;], &quot;Other party&quot;=&amp;gt;&quot;Jane&quot;}</span>
 </pre></div>
 </section>
             
@@ -2364,11 +2364,11 @@ div.slide .inner table tr td:first-child {
       <span class="nb">puts</span> <span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">,</span> <span class="n">h</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span>
     <span class="k">end</span>
 
-    <span class="n">dump</span><span class="p">(</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">)</span>
+    <span class="n">dump</span><span class="p">(</span><span class="ss">:name</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">93</span><span class="p">)</span>
 </pre></div>
 
 <p>Veya</p>
-<div class="highlight"><pre>    <span class="n">dump</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span>
+<div class="highlight"><pre>    <span class="n">dump</span> <span class="ss">:name</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">93</span>
 </pre></div>
 
 <p>En g&uuml;zeli! (Ruby 1.9.x notasyonu)</p>
@@ -2410,7 +2410,7 @@ div.slide .inner table tr td:first-child {
 
 <p>H&#305;zl&#305; aramalar i&ccedil;in s&ouml;zl&uuml;&#287;e yak&#305;n bir ba&#351;ar&#305;ma sahip</p>
 <div class="highlight"><pre>    <span class="n">set</span><span class="o">.</span><span class="n">include?</span> <span class="s1">&#39;foo&#39;</span>
-    <span class="c1">#=&gt; true</span>
+    <span class="c1">#=&amp;gt; true</span>
 </pre></div>
 </section>
             
@@ -2490,9 +2490,9 @@ div.slide .inner table tr td:first-child {
             
             
             <section><p><code>rescue</code> tek sat&#305;rl&#305;&#287;&#305;</p>
-<div class="highlight"><pre>    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">10</span> <span class="p">}</span>
-    <span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">].</span><span class="n">downcase</span>                         <span class="c1">#=&gt; ERROR</span>
-    <span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">].</span><span class="n">downcase</span> <span class="k">rescue</span> <span class="s2">&quot;No name&quot;</span>        <span class="c1">#=&gt; &quot;No name&quot;</span>
+<div class="highlight"><pre>    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:age</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">10</span> <span class="p">}</span>
+    <span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">].</span><span class="n">downcase</span>                         <span class="c1">#=&amp;gt; ERROR</span>
+    <span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">].</span><span class="n">downcase</span> <span class="k">rescue</span> <span class="s2">&quot;No name&quot;</span>        <span class="c1">#=&amp;gt; &quot;No name&quot;</span>
 </pre></div>
 </section>
             
@@ -2529,7 +2529,7 @@ div.slide .inner table tr td:first-child {
 
     <span class="k">begin</span>
       <span class="n">do_division_by_zero</span>
-    <span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">exception</span>
+    <span class="k">rescue</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">exception</span>
       <span class="nb">puts</span> <span class="n">exception</span><span class="o">.</span><span class="n">backtrace</span>
     <span class="k">end</span>
 </pre></div>
@@ -2639,7 +2639,7 @@ div.slide .inner table tr td:first-child {
             
             <section><p>Ger&ccedil;el say&#305;lar&#305; bi&ccedil;imle</p>
 <div class="highlight"><pre>    <span class="n">money</span> <span class="o">=</span> <span class="mi">9</span><span class="o">.</span><span class="mi">5</span>
-    <span class="s2">&quot;%.2f&quot;</span> <span class="o">%</span> <span class="n">money</span> <span class="c1">#=&gt; &quot;9.50&quot;</span>
+    <span class="s2">&quot;%.2f&quot;</span> <span class="o">%</span> <span class="n">money</span> <span class="c1">#=&amp;gt; &quot;9.50&quot;</span>
 </pre></div>
 </section>
             

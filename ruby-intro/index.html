@@ -1850,23 +1850,31 @@ div.slide .inner table tr td:first-child {
       
       <!-- slide source: ruby-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>&#304;lk Kod</h1></header>
             
             
-            <section><pre><code>    #!ruby
-    sum = 0
-    i = 1
+            <section><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 
-    while i &lt;= 10 do
-      sum += i*i
-      i = i + 1
-    end
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">10</span> <span class="k">do</span>
+      <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+      <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">end</span>
 
-puts "Kareler toplam&#305; #{sum}"
-</code></pre>
+<span class="nb">puts</span> <span class="s2">&quot;Kareler toplam&amp;#305; </span><span class="si">#{</span><span class="n">sum</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</td></tr></table>
 <ul>
 <li>
 <p>Deyimler sat&#305;r sonlar&#305;yla ayr&#305;l&#305;yor</p>
@@ -1904,24 +1912,33 @@ puts "Kareler toplam&#305; #{sum}"
       
       <!-- slide source: ruby-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>&#304;&#351;levler (Metodlar)</h1></header>
             
             
-            <section><pre><code>    #!ruby
-    def sum(upper)
-      result, i = 0, 1
-      while i &lt;= upper do
-        result += i*i
-        i += 1
-      end
-      return result
-    end
+            <section><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
+      <span class="n">result</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+      <span class="k">while</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">upper</span> <span class="k">do</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">end</span>
+      <span class="k">return</span> <span class="n">result</span>
+    <span class="k">end</span>
 
-    puts "Kareler toplam&#305; #{sum(10)}"
-</code></pre>
+    <span class="nb">puts</span> <span class="s2">&quot;Kareler toplam&amp;#305; </span><span class="si">#{</span><span class="n">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</td></tr></table>
 <ul>
 <li>
 <p>&#304;&#351;levler (metodlar) <code>def ... end</code> ile</p>
@@ -1969,24 +1986,24 @@ puts "Kareler toplam&#305; #{sum}"
 </li>
 <li>
 <p>&#304;ki tamsay&#305; nesnesiyle kurulan ve <code>2</code> de&#287;erini d&ouml;nen bir ifade</p>
-<div class="highlight"><pre><span class="gp">irb(main):001:0&gt; </span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="go">=&gt; 2</span>
+<div class="highlight"><pre><span class="go">irb(main):001:0&amp;gt; 1 + 1</span>
+<span class="go">=&amp;gt; 2</span>
 </pre></div>
 
 </li>
 <li>
 <p>Bu da bir ifade (nesne kendisini d&ouml;n&uuml;yor)</p>
-<div class="highlight"><pre><span class="gp">irb(main):002:0&gt; </span><span class="mi">1</span>
-<span class="go">=&gt; 1</span>
+<div class="highlight"><pre><span class="go">irb(main):002:0&amp;gt; 1</span>
+<span class="go">=&amp;gt; 1</span>
 </pre></div>
 
 </li>
 <li>
 <p>Sabit bir nesne (<code>1</code>) yerine de&#287;i&#351;ken kullanmak da ayn&#305;</p>
-<div class="highlight"><pre><span class="gp">irb(main):003:0&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="go">=&gt; 1</span>
-<span class="gp">irb(main):004:0&gt; </span><span class="n">i</span>
-<span class="go">=&gt; 1</span>
+<div class="highlight"><pre><span class="go">irb(main):003:0&amp;gt; i = 1</span>
+<span class="go">=&amp;gt; 1</span>
+<span class="go">irb(main):004:0&amp;gt; i</span>
+<span class="go">=&amp;gt; 1</span>
 </pre></div>
 
 </li>
@@ -2023,9 +2040,9 @@ puts "Kareler toplam&#305; #{sum}"
             <section><ul>
 <li>
 <p>G&ouml;r&uuml;nt&uuml;lenenle ifade de&#287;erini kar&#305;&#351;t&#305;rmay&#305;n</p>
-<div class="highlight"><pre><span class="gp">irb(main):001:0&gt; </span><span class="nb">puts</span> <span class="mi">1</span>
+<div class="highlight"><pre><span class="go">irb(main):001:0&amp;gt; puts 1</span>
 <span class="go">1</span>
-<span class="go">=&gt; nil</span>
+<span class="go">=&amp;gt; nil</span>
 </pre></div>
 
 </li>
@@ -2129,16 +2146,16 @@ puts "Kareler toplam&#305; #{sum}"
 
 <p><code>0</code> de&#287;eri zaten <code>false</code> de&#287;il mi?  Hay&#305;r, Ruby&rsquo;de de&#287;il.</p>
 <p><strong>Ruby&rsquo;de sadece <code>false</code> ve <code>nil</code> &ldquo;yanl&#305;&#351;&rdquo;; kalan her &#351;ey &ldquo;do&#287;ru&rdquo;</strong></p>
-<div class="highlight"><pre><span class="go">    irb(main):001:0&gt; nil and true</span>
-<span class="go">    =&gt; false</span>
-<span class="go">    irb(main):002:0&gt; 0  and true</span>
-<span class="go">    =&gt; true</span>
-<span class="go">    irb(main):003:0&gt; [] and true</span>
-<span class="go">    =&gt; true</span>
-<span class="go">    irb(main):004:0&gt; &quot;&quot; and true</span>
-<span class="go">    =&gt; true</span>
-<span class="go">    irb(main):005:0&gt; -1 and true</span>
-<span class="go">    =&gt; true</span>
+<div class="highlight"><pre><span class="go">    irb(main):001:0&amp;gt; nil and true</span>
+<span class="go">    =&amp;gt; false</span>
+<span class="go">    irb(main):002:0&amp;gt; 0  and true</span>
+<span class="go">    =&amp;gt; true</span>
+<span class="go">    irb(main):003:0&amp;gt; [] and true</span>
+<span class="go">    =&amp;gt; true</span>
+<span class="go">    irb(main):004:0&amp;gt; &quot;&quot; and true</span>
+<span class="go">    =&amp;gt; true</span>
+<span class="go">    irb(main):005:0&amp;gt; -1 and true</span>
+<span class="go">    =&amp;gt; true</span>
 </pre></div>
 </section>
             
@@ -2164,24 +2181,33 @@ puts "Kareler toplam&#305; #{sum}"
       
       <!-- slide source: ruby-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>D&ouml;n&uuml;&#351; De&#287;erleri</h1></header>
             
             
-            <section><pre><code>    #!ruby
-    def sum(upper)
-      result, i = 0, 1
-      while i &lt;= upper do
-        result += i*i
-        i += 1
-      end
-      result
-    end
+            <section><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
+      <span class="n">result</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+      <span class="k">while</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">upper</span> <span class="k">do</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">end</span>
+      <span class="n">result</span>
+    <span class="k">end</span>
 
-    puts "Kareler toplam&#305; #{sum(10)}"
-</code></pre>
+    <span class="nb">puts</span> <span class="s2">&quot;Kareler toplam&amp;#305; </span><span class="si">#{</span><span class="n">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</td></tr></table>
 <p>&#304;&#351;levlerde a&ccedil;&#305;k <code>return</code> gerekmiyor (sat&#305;r 7).  Neden?</p>
 <ul>
 <li>
@@ -2231,20 +2257,20 @@ puts "Kareler toplam&#305; #{sum}"
 </li>
 <li>
 <p>Dizgiler birer nesne</p>
-<div class="highlight"><pre><span class="gp">irb(main):001:0&gt; </span><span class="s2">&quot;This is a test&quot;</span><span class="o">.</span><span class="n">length</span>
-<span class="go">=&gt; 14</span>
-<span class="gp">irb(main):002:0&gt; </span><span class="s2">&quot;This is a test&quot;</span><span class="o">.</span><span class="n">upcase</span>
-<span class="go">=&gt; THIS IS A TEST</span>
+<div class="highlight"><pre><span class="go">irb(main):001:0&amp;gt; &quot;This is a test&quot;.length</span>
+<span class="go">=&amp;gt; 14</span>
+<span class="go">irb(main):002:0&amp;gt; &quot;This is a test&quot;.upcase</span>
+<span class="go">=&amp;gt; THIS IS A TEST</span>
 </pre></div>
 
 </li>
 <li>
 <p><strong>Say&#305;lar da &ouml;yle</strong></p>
-<div class="highlight"><pre><span class="gp">irb(main):003:0&gt; </span><span class="mi">3</span><span class="o">.</span><span class="n">times</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s2">&quot;Test&quot;</span> <span class="p">}</span>
+<div class="highlight"><pre><span class="go">irb(main):003:0&amp;gt; 3.times { puts &quot;Test&quot; }</span>
 <span class="go">Test</span>
 <span class="go">Test</span>
 <span class="go">Test</span>
-<span class="go">=&gt; 3</span>
+<span class="go">=&amp;gt; 3</span>
 </pre></div>
 
 </li>
@@ -2450,7 +2476,7 @@ ge&ccedil;irebiliriz.</p>
       
       <!-- slide source: ruby-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>D&ouml;ng&uuml;ler</h1></header>
@@ -2458,17 +2484,25 @@ ge&ccedil;irebiliriz.</p>
             
             <section><p>Ruby&rsquo;de d&ouml;ng&uuml;leri (tamsay&#305;, dizgi, aral&#305;k, dizi, s&ouml;zl&uuml;k gibi) nesneler &uuml;zerinden
 uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kurun.</p>
-<pre><code>    #!ruby
-    def sum(upper)
-      result = 0
-      (1..upper).each do |i|
-        result += i*i
-      end
-      result
-    end
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.upper</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+      <span class="k">end</span>
+      <span class="n">result</span>
+    <span class="k">end</span>
 
-    puts "Kareler toplam&#305; #{sum(10)}"
-</code></pre>
+    <span class="nb">puts</span> <span class="s2">&quot;Kareler toplam&amp;#305; </span><span class="si">#{</span><span class="n">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</td></tr></table>
 <ul>
 <li>
 <p>Bu &ouml;rnekte <code>(1..10)</code> bir aral&#305;k (&ldquo;range&rdquo;) nesnesi</p>
@@ -2564,7 +2598,7 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
 
 <p>Veya daha &#351;&#305;k olan&#305;:</p>
 <div class="highlight"><pre>    <span class="n">a</span> <span class="o">=</span> <span class="o">[]</span>
-    <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Word&quot;</span>
+    <span class="n">a</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s2">&quot;Word&quot;</span>
 </pre></div>
 </section>
             
@@ -2642,8 +2676,8 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
     <span class="nb">puts</span> <span class="s2">&quot;a is empty&quot;</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">empty?</span>
 
     <span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
-    <span class="n">a</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1">#=&gt; false</span>
-    <span class="n">a</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="c1">#=&gt; true</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1">#=&amp;gt; false</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="c1">#=&amp;gt; true</span>
 </pre></div>
 </section>
             
@@ -2675,11 +2709,11 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
             <header><h1>S&ouml;zl&uuml;kler</h1></header>
             
             
-            <section><div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;gender&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;male&quot;</span> <span class="p">}</span>
+            <section><div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;gender&quot;</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s2">&quot;male&quot;</span> <span class="p">}</span>
 </pre></div>
 
 <p>Fakat anahtarlar&#305; (&ccedil;o&#287;u zaman) &#351;&ouml;yle yaz&#305;yoruz (bazen de&#287;erler de &ouml;yle):</p>
-<div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+<div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="ss">:male</span> <span class="p">}</span>
 </pre></div>
 
 <ul>
@@ -2757,18 +2791,18 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
             <header><h1>S&ouml;zl&uuml;kler</h1></header>
             
             
-            <section><div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+            <section><div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="ss">:male</span> <span class="p">}</span>
 
-    <span class="nb">puts</span> <span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span>       <span class="c1">#=&gt; 20</span>
-    <span class="n">person</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:age</span>    <span class="c1">#=&gt; true</span>
-    <span class="nb">puts</span> <span class="n">person</span><span class="o">[</span><span class="ss">:weight</span><span class="o">]</span>    <span class="c1">#=&gt; nil</span>
-    <span class="n">person</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:weight</span> <span class="c1">#=&gt; false</span>
+    <span class="nb">puts</span> <span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span>       <span class="c1">#=&amp;gt; 20</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:age</span>    <span class="c1">#=&amp;gt; true</span>
+    <span class="nb">puts</span> <span class="n">person</span><span class="o">[</span><span class="ss">:weight</span><span class="o">]</span>    <span class="c1">#=&amp;gt; nil</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:weight</span> <span class="c1">#=&amp;gt; false</span>
 
     <span class="n">person</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
     <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">end</span>
 
-    <span class="k">if</span> <span class="n">person</span><span class="o">[</span><span class="ss">:gender</span><span class="o">]</span> <span class="o">==</span> <span class="ss">:male</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span> <span class="o">&lt;</span> <span class="mi">18</span> <span class="o">||</span> <span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span> <span class="o">&gt;</span> <span class="mi">85</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">person</span><span class="o">[</span><span class="ss">:gender</span><span class="o">]</span> <span class="o">==</span> <span class="ss">:male</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="p">(</span><span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">18</span> <span class="o">||</span> <span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">85</span><span class="p">)</span>
       <span class="nb">puts</span> <span class="s2">&quot;A very young or old man&quot;</span>
     <span class="k">end</span>
 </pre></div>
@@ -2851,7 +2885,7 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
       
       <!-- slide source: ruby-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Tek Sat&#305;rl&#305;klar</h1></header>
@@ -2867,9 +2901,9 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
 </li>
 <li>
 <p>&#304;&#351;inize yarayacak pek &ccedil;ok par&ccedil;a bulabilirsiniz</p>
-<pre><code>!ruby
-puts "Kareler toplam&#305; #{(1..10).inject { |sum, i| sum + i*i }}"
-</code></pre>
+<div class="highlight"><pre><span class="nb">puts</span> <span class="s2">&quot;Kareler toplam&amp;#305; </span><span class="si">#{</span><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">inject</span> <span class="p">{</span> <span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="si">}</span><span class="s2">}&quot;</span>
+</pre></div>
+
 </li>
 <li>
 <p><code>inject</code>?  Daha sonra&hellip;</p>
@@ -3909,7 +3943,7 @@ c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instanc
 <p>S&#305;n&#305;f nesne de&#287;i&#351;kenleri i&ccedil;in nitelik eri&#351;imcileri tan&#305;mlanabiliyor</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">A</span>
   <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+  <span class="k">class</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="nb">self</span>
     <span class="kp">attr</span> <span class="ss">:class_instance_variable</span>
   <span class="k">end</span>
 <span class="k">end</span>
@@ -4037,25 +4071,25 @@ c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instanc
       
       <!-- slide source: ruby-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>&#304;sim Uzay&#305;</h1></header>
             
             
             <section><p><code>sin</code>: &ldquo;sinus&rdquo;, &ldquo;sin&rdquo; (g&uuml;nah)?</p>
-<pre><code>    !ruby
-    def sin(context)
-      $stderr.puts "Hatal&#305; bir eylem ger&ccedil;ekle&#351;ti: #{context}"
-    end
+<div class="highlight"><pre>    <span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+      <span class="vg">$stderr</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;Hatal&amp;#305; bir eylem ger&amp;ccedil;ekle&amp;#351;ti: </span><span class="si">#{</span><span class="n">context</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">end</span>
 
-    ...
+    <span class="o">.</span><span class="n">.</span><span class="o">.</span>
 
-    x = Math.sin(teta) &gt; 0.5
-    if x &gt; 0.5
-      sin("hatal&#305; aral&#305;kta de&#287;er &uuml;retildi: #{x}")
-    end
-</code></pre></section>
+    <span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+      <span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatal&amp;#305; aral&amp;#305;kta de&amp;#287;er &amp;uuml;retildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">end</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -4079,26 +4113,26 @@ c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instanc
       
       <!-- slide source: ruby-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>&#304;sim Uzay&#305;</h1></header>
             
             
             <section><p><code>sin</code>: &ldquo;sinus&rdquo;, &ldquo;sin&rdquo; (g&uuml;nah)?</p>
-<pre><code>    !ruby
-    module Log
-      ...
-      def self.sin(context)
-        $stderr.puts "Hatal&#305; bir eylem ger&ccedil;ekle&#351;ti: #{context}"
-      end
-    end
+<div class="highlight"><pre>    <span class="k">module</span> <span class="nn">Log</span>
+      <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+      <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+        <span class="vg">$stderr</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;Hatal&amp;#305; bir eylem ger&amp;ccedil;ekle&amp;#351;ti: </span><span class="si">#{</span><span class="n">context</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
 
-    x = Math.sin(teta) &gt; 0.5
-    if x &gt; 0.5
-      Log.sin("hatal&#305; aral&#305;kta de&#287;er &uuml;retildi: #{x}")
-    end
-</code></pre>
+    <span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+      <span class="no">Log</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatal&amp;#305; aral&amp;#305;kta de&amp;#287;er &amp;uuml;retildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">end</span>
+</pre></div>
+
 <ul>
 <li><code>Log</code> mod&uuml;l isminin anlam&#305; peki&#351;tirdi&#287;ine dikkat edin</li>
 </ul></section>
@@ -4125,7 +4159,7 @@ c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instanc
       
       <!-- slide source: ruby-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>&#304;sim Uzay&#305;</h1></header>
@@ -4134,25 +4168,25 @@ c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instanc
             <section><ul>
 <li>
 <p><code>log.rb</code> dosyas&#305;</p>
-<pre><code>!ruby
-module Log
-  ...
-  def self.sin(context)
-    $stderr.puts "Hatal&#305; bir eylem ger&ccedil;ekle&#351;ti: #{context}"
-  end
-end
-</code></pre>
+<div class="highlight"><pre><span class="k">module</span> <span class="nn">Log</span>
+  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+    <span class="vg">$stderr</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;Hatal&amp;#305; bir eylem ger&amp;ccedil;ekle&amp;#351;ti: </span><span class="si">#{</span><span class="n">context</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
 </li>
 <li>
 <p>M&uuml;&#351;teri kodu (<code>log.rb</code> mod&uuml;l yollar&#305;nda tan&#305;ml&#305;)</p>
-<pre><code>!ruby
-require 'log'
+<div class="highlight"><pre><span class="nb">require</span> <span class="s1">&#39;log&#39;</span>
 
-x = Math.sin(teta) &gt; 0.5
-if x &gt; 0.5
-  Log.sin("hatal&#305; aral&#305;kta de&#287;er &uuml;retildi: #{x}")
-end
-</code></pre>
+<span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+  <span class="no">Log</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatal&amp;#305; aral&amp;#305;kta de&amp;#287;er &amp;uuml;retildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -4178,7 +4212,7 @@ end
       
       <!-- slide source: ruby-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Kat&#305;&#351;t&#305;rma</h1></header>
@@ -4186,16 +4220,16 @@ end
             
             <section><p>Ger&ccedil;eklemenin se&ccedil;ti&#287;iniz bir isim uzay&#305;na yerle&#351;tirilmesini (kat&#305;&#351;t&#305;r&#305;lmas&#305;n&#305;)
 sa&#287;l&#305;yor</p>
-<pre><code>    !ruby
-    require 'log'
+<div class="highlight"><pre>    <span class="nb">require</span> <span class="s1">&#39;log&#39;</span>
 
-    include 'Math' # Mixin
+    <span class="kp">include</span> <span class="s1">&#39;Math&#39;</span> <span class="c1"># Mixin</span>
 
-    x = sin(teta) &gt; 0.5
-    if x &gt; 0.5
-      Log.sin("hatal&#305; aral&#305;kta de&#287;er &uuml;retildi: #{x}")
-    end
-</code></pre>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+      <span class="no">Log</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatal&amp;#305; aral&amp;#305;kta de&amp;#287;er &amp;uuml;retildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">end</span>
+</pre></div>
+
 <ul>
 <li>
 <p>Kat&#305;&#351;t&#305;rma <code>include</code> ile ger&ccedil;ekle&#351;iyor</p>

@@ -1880,7 +1880,7 @@ kulland&#305;&#287;&#305;n&#305;z ad olmas&#305;na dikkat edin.</p>
       
       <!-- slide source: node-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>&#304;lk Uygulama</h1></header>
@@ -1889,20 +1889,20 @@ kulland&#305;&#287;&#305;n&#305;z ad olmas&#305;na dikkat edin.</p>
             <section><ul>
 <li>
 <p>Depo olu&#351;tur</p>
-<pre><code>!sh
-$ read -p "Github hesab&#305;? " ACCOUNT
-$ read -p "Uygulama ad&#305;? " APP
-$ echo "$APP deposunu Github hesab&#305;n&#305;zda olu&#351;turun"
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Github hesab&amp;#305;? &quot;</span> ACCOUNT
+<span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Uygulama ad&amp;#305;? &quot;</span> APP
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;$APP deposunu Github hesab&amp;#305;n&amp;#305;zda olu&amp;#351;turun&quot;</span>
+</pre></div>
+
 </li>
 <li>
 <p>Depoyu ilkle</p>
-<pre><code>!sh
-$ mkdir $APP
-$ git init
-$ echo "node_modules" &gt;&gt;.gitignore
-$ touch README.md
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span>mkdir <span class="nv">$APP</span>
+<span class="nv">$ </span>git init
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;node_modules&quot;</span> &amp;gt;&amp;gt;.gitignore
+<span class="nv">$ </span>touch README.md
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -1937,16 +1937,16 @@ $ touch README.md
             <section><ul>
 <li>
 <p>Dizin k&ouml;k&uuml;nde <code>server.js</code>&lsquo;i olu&#351;tur</p>
-<div class="highlight"><pre><span class="nv">$ </span>cat &gt;server.js<span class="s">&lt;&lt;-EOF</span>
-<span class="s">var http = require(&#39;http&#39;);</span>
+<div class="highlight"><pre><span class="nv">$ </span>cat &amp;gt;server.js&amp;lt;&amp;lt;-EOF
+var <span class="nv">http</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;http&#39;</span><span class="o">)</span>;
 
-<span class="s">var server = http.createServer(function (req, res) {</span>
-<span class="s">     res.writeHead(200, { &quot;Content-Type&quot;: &quot;text/plain&quot; })</span>
-<span class="s">     res.end(&quot;Hello world\n&quot;);</span>
-<span class="s">});</span>
+var <span class="nv">server</span> <span class="o">=</span> http.createServer<span class="o">(</span><span class="k">function</span> <span class="o">(</span>req, res<span class="o">)</span> <span class="o">{</span>
+     res.writeHead<span class="o">(</span>200, <span class="o">{</span> <span class="s2">&quot;Content-Type&quot;</span>: <span class="s2">&quot;text/plain&quot;</span> <span class="o">})</span>
+     res.end<span class="o">(</span><span class="s2">&quot;Hello world\n&quot;</span><span class="o">)</span>;
+<span class="o">})</span>;
 
-<span class="s">server.listen(process.env.PORT || 8001);</span>
-<span class="s">EOF</span>
+server.listen<span class="o">(</span>process.env.PORT <span class="o">||</span> 8001<span class="o">)</span>;
+EOF
 </pre></div>
 
 </li>
@@ -1992,15 +1992,15 @@ $ touch README.md
             <section><ul>
 <li>
 <p>Dizin k&ouml;k&uuml;nde (<code>server.js</code>) yerine <code>server.coffee</code>&lsquo;yi, olu&#351;tur</p>
-<div class="highlight"><pre><span class="nv">$ </span>cat &gt;server.coffee<span class="s">&lt;&lt;-EOF</span>
-<span class="s">http = require &#39;http&#39;</span>
+<div class="highlight"><pre><span class="nv">$ </span>cat &amp;gt;server.coffee&amp;lt;&amp;lt;-EOF
+<span class="nv">http</span> <span class="o">=</span> require <span class="s1">&#39;http&#39;</span>
 
-<span class="s">http.createServer (req, res) -&gt;</span>
-<span class="s">  res.writeHead 200,</span>
-<span class="s">    &#39;Content-Type&#39;: &#39;text/plain&#39;</span>
-<span class="s">  res.end &quot;Hello world!&quot;</span>
-<span class="s">.listen(process.env.PORT || 8081)</span>
-<span class="s">EOF</span>
+http.createServer <span class="o">(</span>req, res<span class="o">)</span> -&amp;gt;
+  res.writeHead 200,
+    <span class="s1">&#39;Content-Type&#39;</span>: <span class="s1">&#39;text/plain&#39;</span>
+  res.end <span class="s2">&quot;Hello world!&quot;</span>
+.listen<span class="o">(</span>process.env.PORT <span class="o">||</span> 8081<span class="o">)</span>
+EOF
 </pre></div>
 
 </li>
@@ -2063,7 +2063,7 @@ $ touch README.md
 <li>
 <p>Paketler uygulama dizinine <code>node_modules</code> dizinine kuruluyor.  Bu dizini
     <code>.gitignore</code>&lsquo;a eklemeyi unutmay&#305;n:</p>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> /node_modules/ &gt;&gt;.gitignore
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> /node_modules/ &amp;gt;&amp;gt;.gitignore
 </pre></div>
 
 </li>
@@ -2174,7 +2174,7 @@ $ touch README.md
       
       <!-- slide source: node-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Ba&#351;lang&#305;&ccedil;</h1></header>
@@ -2191,21 +2191,21 @@ $ touch README.md
 <p>Yeni makine iste: Servis &ccedil;ok y&uuml;kl&uuml;yken hemen makine verilmeyebilir.
     Aral&#305;klarla bir ka&ccedil; kez istemek gerekiyor.  Makine ad&#305;n&#305; bu dok&uuml;manda
     <code>JOYENT</code> de&#287;i&#351;keninde tutuyoruz.</p>
-<pre><code>!sh
-$ read -p "Makine ad&#305; (&ouml;rnek 'foo.no.de')? " JOYENT
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Makine ad&amp;#305; (&amp;ouml;rnek &#39;foo.no.de&#39;)? &quot;</span> JOYENT
+</pre></div>
+
 </li>
 <li>
 <p>Yerelde SSH ayarlar&#305;n&#305; yap</p>
-<pre><code>!sh
-$ cat &gt;&gt;~/.ssh/config &lt;&lt;-EOF
-Host $JOYENT
-        HostName $JOYENT
+<div class="highlight"><pre><span class="nv">$ </span>cat &amp;gt;&amp;gt;~/.ssh/config &amp;lt;&amp;lt;-EOF
+Host <span class="nv">$JOYENT</span>
+        HostName <span class="nv">$JOYENT</span>
         Port 62420
         User node
         ForwardAgent yes
 EOF
-</code></pre>
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -2252,7 +2252,7 @@ EOF
 </li>
 <li>
 <p>Depoyu haz&#305;rla</p>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;node-service&quot;</span> &gt;&gt;.gitignore
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;node-service&quot;</span> &amp;gt;&amp;gt;.gitignore
 <span class="nv">$ </span>git commit .gitignore -m <span class="s2">&quot;gitignore Joyent&quot;</span>
 </pre></div>
 
@@ -2542,7 +2542,7 @@ etkinle&#351;tiriyor ve npm ile eksik paketleri kuruyor.</p></section>
       
       <!-- slide source: node-intro/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Servis g&uuml;nl&uuml;&#287;&uuml;n&uuml; nas&#305;l g&ouml;r&uuml;yoruz?</h1></header>
@@ -2551,28 +2551,28 @@ etkinle&#351;tiriyor ve npm ile eksik paketleri kuruyor.</p></section>
             <section><ul>
 <li>
 <p>Depo k&ouml;k&uuml;nde a&#351;a&#287;&#305;daki i&ccedil;erikte bir <code>Cakefile</code> olu&#351;turun</p>
-<pre><code>!coffeescript
-HOST  = '...' # Sunucu
-LINES = 40    # Ka&ccedil; sat&#305;r?
+<div class="highlight"><pre><span class="nv">HOST  = </span><span class="s">&#39;...&#39;</span> <span class="c1"># Sunucu</span>
+<span class="nv">LINES = </span><span class="mi">40</span>    <span class="c1"># Ka&amp;ccedil; sat&amp;#305;r?</span>
 
-runcmd = (cmd) -&gt;
-  {exec}  = require 'child_process'
-  exec cmd, (err, stdout, stderr) -&gt;
-    throw err if err
-    console.log stdout + stderr
+<span class="nv">runcmd = </span><span class="p">(</span><span class="nx">cmd</span><span class="p">)</span> <span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span>
+  <span class="p">{</span><span class="nx">exec</span><span class="p">}</span>  <span class="o">=</span> <span class="nx">require</span> <span class="s">&#39;child_process&#39;</span>
+  <span class="nx">exec</span> <span class="nx">cmd</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">stdout</span><span class="p">,</span> <span class="nx">stderr</span><span class="p">)</span> <span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span>
+    <span class="k">throw</span> <span class="nx">err</span> <span class="k">if</span> <span class="nx">err</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">stdout</span> <span class="o">+</span> <span class="nx">stderr</span>
 
-task 'log', 'sunucu g&uuml;nl&uuml;&#287;&uuml;n&uuml; g&ouml;r&uuml;nt&uuml;le', -&gt;
-  runcmd(
-    "ssh #{HOST} tail -n #{LINES} " +
-    "/var/svc/log/site-node-service:default.log"
-  )
-</code></pre>
+<span class="nx">task</span> <span class="s">&#39;log&#39;</span><span class="p">,</span> <span class="s">&#39;sunucu g&amp;uuml;nl&amp;uuml;&amp;#287;&amp;uuml;n&amp;uuml; g&amp;ouml;r&amp;uuml;nt&amp;uuml;le&#39;</span><span class="p">,</span> <span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span>
+  <span class="nx">runcmd</span><span class="p">(</span>
+    <span class="s">&quot;ssh </span><span class="si">#{</span><span class="nx">HOST</span><span class="si">}</span><span class="s"> tail -n </span><span class="si">#{</span><span class="nx">LINES</span><span class="si">}</span><span class="s"> &quot;</span> <span class="o">+</span>
+    <span class="s">&quot;/var/svc/log/site-node-service:default.log&quot;</span>
+  <span class="p">)</span>
+</pre></div>
+
 </li>
 <li>
 <p>Art&#305;k SSH ile uzak makineye ge&ccedil;erek i&#351;lem yapmak yerine</p>
-<pre><code>!sh
-$ cake log
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span>cake log
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -2608,7 +2608,7 @@ $ cake log
 <ul>
 <li>
 <p>Sanal makineye girerek:</p>
-<div class="highlight"><pre><span class="o">[</span>joyent<span class="o">]</span><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;TERM=xterm-color&quot;</span> &gt;&gt;~/.ssh/environment
+<div class="highlight"><pre><span class="o">[</span>joyent<span class="o">]</span><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;TERM=xterm-color&quot;</span> &amp;gt;&amp;gt;~/.ssh/environment
 </pre></div>
 
 </li>
