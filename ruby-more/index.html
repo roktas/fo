@@ -968,7 +968,7 @@ dd p {
  * http://johnsardine.com/freebies/dl-html-css/simple-little-tab/
  */
 
-div.slide .inner table {
+div.slide table:not(.highlighttable) {
   margin: 20px;
   color: #666;
   -moz-border-radius: 3px;
@@ -983,13 +983,13 @@ div.slide .inner table {
   font-size: 20px;
 }
 
-div.slide .inner table tr.even td {
+div.slide table:not(.highlighttable) tr.even td {
   background: #f6f6f6;
   background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
   background: -moz-linear-gradient(top, #f8f8f8, #f6f6f6);
 }
 
-div.slide .inner table th {
+div.slide table:not(.highlighttable) th {
   padding: 21px 25px 22px 25px;
   border-bottom: 1px solid #e0e0e0; border-top: 1px solid #fafafa;
   background: #ededed;
@@ -997,67 +997,67 @@ div.slide .inner table th {
   background: -moz-linear-gradient(top, #ededed, #ebebeb);
 }
 
-div.slide .inner table th:first-child {
+div.slide table:not(.highlighttable) th:first-child {
   padding-left: 20px;
   text-align: left
 }
 
-div.slide .inner table a:visited {
+div.slide table:not(.highlighttable) a:visited {
   color: #999999;
   font-weight: bold;
   text-decoration: none
 }
 
-div.slide .inner table a:active,
-div.slide .inner table a:hover {
+div.slide table:not(.highlighttable) a:active,
+div.slide table:not(.highlighttable) a:hover {
   color: #bd5a35;
   text-decoration: underline
 }
 
-div.slide .inner table a:link {
+div.slide table:not(.highlighttable) a:link {
   color: #666;
   font-weight: bold;
   text-decoration: none
 }
 
-div.slide .inner table tr {
+div.slide table:not(.highlighttable) tr {
   padding-left: 20px;
   text-align: center
 }
 
-div.slide .inner table tr:first-child th:first-child {
+div.slide table:not(.highlighttable) tr:first-child th:first-child {
   -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
 }
 
-div.slide .inner table tr:first-child th:last-child {
+div.slide table:not(.highlighttable) tr:first-child th:last-child {
   -moz-border-radius-topright: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
 
-div.slide .inner table tr:last-child td {    border-bottom: 0 }
+div.slide table:not(.highlighttable) tr:last-child td {    border-bottom: 0 }
 
-div.slide .inner table tr:last-child td:first-child {
+div.slide table:not(.highlighttable) tr:last-child td:first-child {
   -moz-border-radius-bottomleft: 3px;
   -webkit-border-bottom-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
-div.slide .inner table tr:last-child td:last-child {
+div.slide table:not(.highlighttable) tr:last-child td:last-child {
   -moz-border-radius-bottomright: 3px;
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
 
-div.slide .inner table tr:hover td {
+div.slide table:not(.highlighttable) tr:hover td {
   background: #f2f2f2;
   background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
   background: -moz-linear-gradient(top, #f2f2f2, #f0f0f0);
 }
 
-div.slide .inner table tr td {
+div.slide table:not(.highlighttable) tr td {
   padding: 18px;
   border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; border-top: 1px solid #ffffff;
   background: #fafafa;
@@ -1065,7 +1065,7 @@ div.slide .inner table tr td {
   background: -moz-linear-gradient(top, #fbfbfb, #fafafa);
 }
 
-div.slide .inner table tr td:first-child {
+div.slide table:not(.highlighttable) tr td:first-child {
   padding-left: 20px;
   border-left: 0;
   text-align: left
@@ -1831,23 +1831,23 @@ div.slide .inner table tr td:first-child {
 </li>
 <li>
 <p>Kalan her &#351;ey &ldquo;do&#287;ru&rdquo; de&#287;er &uuml;retir</p>
-<div class="highlight"><pre><span class="kp">nil</span> <span class="ow">and</span> <span class="kp">true</span> <span class="c1">#=&amp;gt; false</span>
+<div class="highlight"><pre><span class="kp">nil</span> <span class="ow">and</span> <span class="kp">true</span> <span class="c1">#=&gt; false</span>
 
-<span class="mi">0</span>  <span class="ow">and</span> <span class="kp">true</span>  <span class="c1">#=&amp;gt; true</span>
-<span class="o">[]</span> <span class="ow">and</span> <span class="kp">true</span>  <span class="c1">#=&amp;gt; true</span>
-<span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="kp">true</span>  <span class="c1">#=&amp;gt; true</span>
-<span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="kp">true</span>  <span class="c1">#=&amp;gt; true</span>
+<span class="mi">0</span>  <span class="ow">and</span> <span class="kp">true</span>  <span class="c1">#=&gt; true</span>
+<span class="o">[]</span> <span class="ow">and</span> <span class="kp">true</span>  <span class="c1">#=&gt; true</span>
+<span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="kp">true</span>  <span class="c1">#=&gt; true</span>
+<span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="kp">true</span>  <span class="c1">#=&gt; true</span>
 </pre></div>
 
 </li>
 <li>
 <p>&#304;pucu: Bir nesneyi mant&#305;ksal bir de&#287;ere &ccedil;evirmek i&ccedil;in <code>!!</code> i&#351;lecini kullan&#305;n</p>
-<div class="highlight"><pre><span class="o">!!</span> <span class="kp">nil</span> <span class="c1">#=&amp;gt; false</span>
+<div class="highlight"><pre><span class="o">!!</span> <span class="kp">nil</span> <span class="c1">#=&gt; false</span>
 
-<span class="o">!!</span> <span class="mi">0</span>   <span class="c1">#=&amp;gt; true</span>
-<span class="o">!!</span> <span class="o">[]</span>  <span class="c1">#=&amp;gt; true</span>
-<span class="o">!!</span> <span class="s2">&quot;&quot;</span>  <span class="c1">#=&amp;gt; true</span>
-<span class="o">!!</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1">#=&amp;gt; true</span>
+<span class="o">!!</span> <span class="mi">0</span>   <span class="c1">#=&gt; true</span>
+<span class="o">!!</span> <span class="o">[]</span>  <span class="c1">#=&gt; true</span>
+<span class="o">!!</span> <span class="s2">&quot;&quot;</span>  <span class="c1">#=&gt; true</span>
+<span class="o">!!</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1">#=&gt; true</span>
 </pre></div>
 
 </li>
@@ -1888,8 +1888,8 @@ div.slide .inner table tr td:first-child {
 <div class="highlight"><pre><span class="n">y</span> <span class="o">=</span> <span class="kp">false</span>
 <span class="n">z</span> <span class="o">=</span> <span class="kp">true</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="ow">or</span> <span class="n">z</span> <span class="c1">#=&amp;gt; true</span>
-<span class="n">x</span>          <span class="c1">#=&amp;gt; false</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="ow">or</span> <span class="n">z</span> <span class="c1">#=&gt; true</span>
+<span class="n">x</span>          <span class="c1">#=&gt; false</span>
 </pre></div>
 
 </li>
@@ -1959,13 +1959,13 @@ olarak yorumlanmal&#305;d&#305;r.</p>
 <ul>
 <li>
 <p>Bu <strong>&ccedil;o&#287;unlukla</strong> al&#305;c&#305; nesnede bir &#351;eylerin de&#287;i&#351;tirildi&#287;i manas&#305;na gelir</p>
-<div class="highlight"><pre><span class="s2">&quot;foo&quot;</span><span class="o">.</span><span class="n">delete!</span> <span class="c1">#=&amp;gt; &quot;f&quot;</span>
+<div class="highlight"><pre><span class="s2">&quot;foo&quot;</span><span class="o">.</span><span class="n">delete!</span> <span class="c1">#=&gt; &quot;f&quot;</span>
 </pre></div>
 
 </li>
 <li>
 <p>Metod ismi zaten bunu anlat&#305;yorsa <code>!</code> son ekine gerek yoktur</p>
-<div class="highlight"><pre><span class="nb">hash</span><span class="o">.</span><span class="n">update</span> <span class="ss">:foo</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s2">&quot;bar&quot;</span>
+<div class="highlight"><pre><span class="nb">hash</span><span class="o">.</span><span class="n">update</span> <span class="ss">:foo</span> <span class="o">=&gt;</span> <span class="s2">&quot;bar&quot;</span>
 </pre></div>
 
 </li>
@@ -2003,13 +2003,13 @@ olarak yorumlanmal&#305;d&#305;r.</p>
 <ul>
 <li>
 <p>Hata halinde istisna &uuml;retme</p>
-<div class="highlight"><pre><span class="n">u</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">create</span> <span class="ss">:login</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s2">&quot;joe&quot;</span>
+<div class="highlight"><pre><span class="n">u</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">create</span> <span class="ss">:login</span> <span class="o">=&gt;</span> <span class="s2">&quot;joe&quot;</span>
 </pre></div>
 
 </li>
 <li>
 <p>Hata halinde istisna &uuml;ret</p>
-<div class="highlight"><pre><span class="n">u</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">create!</span> <span class="ss">:login</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s2">&quot;joe&quot;</span>
+<div class="highlight"><pre><span class="n">u</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">create!</span> <span class="ss">:login</span> <span class="o">=&gt;</span> <span class="s2">&quot;joe&quot;</span>
 </pre></div>
 
 </li>
@@ -2049,8 +2049,8 @@ olarak yorumlanmal&#305;d&#305;r.</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span>
 <span class="k">end</span>
 
-<span class="no">Foo</span><span class="o">.</span><span class="n">class</span> <span class="c1">#=&amp;gt; Class &amp;lt; Module</span>
-<span class="no">Foo</span><span class="o">.</span><span class="n">instance_of?</span> <span class="no">Class</span> <span class="c1">#=&amp;gt; true</span>
+<span class="no">Foo</span><span class="o">.</span><span class="n">class</span> <span class="c1">#=&gt; Class &lt; Module</span>
+<span class="no">Foo</span><span class="o">.</span><span class="n">instance_of?</span> <span class="no">Class</span> <span class="c1">#=&gt; true</span>
 </pre></div>
 
 </li>
@@ -2431,7 +2431,7 @@ c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instanc
 <p>S&#305;n&#305;f nesne de&#287;i&#351;kenleri i&ccedil;in nitelik eri&#351;imcileri tan&#305;mlanabiliyor</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">A</span>
   <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-  <span class="k">class</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="nb">self</span>
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
     <span class="kp">attr</span> <span class="ss">:class_instance_variable</span>
   <span class="k">end</span>
 <span class="k">end</span>

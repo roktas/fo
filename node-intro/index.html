@@ -968,7 +968,7 @@ dd p {
  * http://johnsardine.com/freebies/dl-html-css/simple-little-tab/
  */
 
-div.slide .inner table {
+div.slide table:not(.highlighttable) {
   margin: 20px;
   color: #666;
   -moz-border-radius: 3px;
@@ -983,13 +983,13 @@ div.slide .inner table {
   font-size: 20px;
 }
 
-div.slide .inner table tr.even td {
+div.slide table:not(.highlighttable) tr.even td {
   background: #f6f6f6;
   background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
   background: -moz-linear-gradient(top, #f8f8f8, #f6f6f6);
 }
 
-div.slide .inner table th {
+div.slide table:not(.highlighttable) th {
   padding: 21px 25px 22px 25px;
   border-bottom: 1px solid #e0e0e0; border-top: 1px solid #fafafa;
   background: #ededed;
@@ -997,67 +997,67 @@ div.slide .inner table th {
   background: -moz-linear-gradient(top, #ededed, #ebebeb);
 }
 
-div.slide .inner table th:first-child {
+div.slide table:not(.highlighttable) th:first-child {
   padding-left: 20px;
   text-align: left
 }
 
-div.slide .inner table a:visited {
+div.slide table:not(.highlighttable) a:visited {
   color: #999999;
   font-weight: bold;
   text-decoration: none
 }
 
-div.slide .inner table a:active,
-div.slide .inner table a:hover {
+div.slide table:not(.highlighttable) a:active,
+div.slide table:not(.highlighttable) a:hover {
   color: #bd5a35;
   text-decoration: underline
 }
 
-div.slide .inner table a:link {
+div.slide table:not(.highlighttable) a:link {
   color: #666;
   font-weight: bold;
   text-decoration: none
 }
 
-div.slide .inner table tr {
+div.slide table:not(.highlighttable) tr {
   padding-left: 20px;
   text-align: center
 }
 
-div.slide .inner table tr:first-child th:first-child {
+div.slide table:not(.highlighttable) tr:first-child th:first-child {
   -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
 }
 
-div.slide .inner table tr:first-child th:last-child {
+div.slide table:not(.highlighttable) tr:first-child th:last-child {
   -moz-border-radius-topright: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
 
-div.slide .inner table tr:last-child td {    border-bottom: 0 }
+div.slide table:not(.highlighttable) tr:last-child td {    border-bottom: 0 }
 
-div.slide .inner table tr:last-child td:first-child {
+div.slide table:not(.highlighttable) tr:last-child td:first-child {
   -moz-border-radius-bottomleft: 3px;
   -webkit-border-bottom-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
-div.slide .inner table tr:last-child td:last-child {
+div.slide table:not(.highlighttable) tr:last-child td:last-child {
   -moz-border-radius-bottomright: 3px;
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
 
-div.slide .inner table tr:hover td {
+div.slide table:not(.highlighttable) tr:hover td {
   background: #f2f2f2;
   background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
   background: -moz-linear-gradient(top, #f2f2f2, #f0f0f0);
 }
 
-div.slide .inner table tr td {
+div.slide table:not(.highlighttable) tr td {
   padding: 18px;
   border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; border-top: 1px solid #ffffff;
   background: #fafafa;
@@ -1065,7 +1065,7 @@ div.slide .inner table tr td {
   background: -moz-linear-gradient(top, #fbfbfb, #fafafa);
 }
 
-div.slide .inner table tr td:first-child {
+div.slide table:not(.highlighttable) tr td:first-child {
   padding-left: 20px;
   border-left: 0;
   text-align: left
@@ -1889,9 +1889,9 @@ kulland&#305;&#287;&#305;n&#305;z ad olmas&#305;na dikkat edin.</p>
             <section><ul>
 <li>
 <p>Depo olu&#351;tur</p>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Github hesab&amp;#305;? &quot;</span> ACCOUNT
-<span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Uygulama ad&amp;#305;? &quot;</span> APP
-<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;$APP deposunu Github hesab&amp;#305;n&amp;#305;zda olu&amp;#351;turun&quot;</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Github hesabı? &quot;</span> ACCOUNT
+<span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Uygulama adı? &quot;</span> APP
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;$APP deposunu Github hesabınızda oluşturun&quot;</span>
 </pre></div>
 
 </li>
@@ -1899,7 +1899,7 @@ kulland&#305;&#287;&#305;n&#305;z ad olmas&#305;na dikkat edin.</p>
 <p>Depoyu ilkle</p>
 <div class="highlight"><pre><span class="nv">$ </span>mkdir <span class="nv">$APP</span>
 <span class="nv">$ </span>git init
-<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;node_modules&quot;</span> &amp;gt;&amp;gt;.gitignore
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;node_modules&quot;</span> &gt;&gt;.gitignore
 <span class="nv">$ </span>touch README.md
 </pre></div>
 
@@ -1937,16 +1937,16 @@ kulland&#305;&#287;&#305;n&#305;z ad olmas&#305;na dikkat edin.</p>
             <section><ul>
 <li>
 <p>Dizin k&ouml;k&uuml;nde <code>server.js</code>&lsquo;i olu&#351;tur</p>
-<div class="highlight"><pre><span class="nv">$ </span>cat &amp;gt;server.js&amp;lt;&amp;lt;-EOF
-var <span class="nv">http</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;http&#39;</span><span class="o">)</span>;
+<div class="highlight"><pre><span class="nv">$ </span>cat &gt;server.js<span class="s">&lt;&lt;-EOF</span>
+<span class="s">var http = require(&#39;http&#39;);</span>
 
-var <span class="nv">server</span> <span class="o">=</span> http.createServer<span class="o">(</span><span class="k">function</span> <span class="o">(</span>req, res<span class="o">)</span> <span class="o">{</span>
-     res.writeHead<span class="o">(</span>200, <span class="o">{</span> <span class="s2">&quot;Content-Type&quot;</span>: <span class="s2">&quot;text/plain&quot;</span> <span class="o">})</span>
-     res.end<span class="o">(</span><span class="s2">&quot;Hello world\n&quot;</span><span class="o">)</span>;
-<span class="o">})</span>;
+<span class="s">var server = http.createServer(function (req, res) {</span>
+<span class="s">     res.writeHead(200, { &quot;Content-Type&quot;: &quot;text/plain&quot; })</span>
+<span class="s">     res.end(&quot;Hello world\n&quot;);</span>
+<span class="s">});</span>
 
-server.listen<span class="o">(</span>process.env.PORT <span class="o">||</span> 8001<span class="o">)</span>;
-EOF
+<span class="s">server.listen(process.env.PORT || 8001);</span>
+<span class="s">EOF</span>
 </pre></div>
 
 </li>
@@ -1992,15 +1992,15 @@ EOF
             <section><ul>
 <li>
 <p>Dizin k&ouml;k&uuml;nde (<code>server.js</code>) yerine <code>server.coffee</code>&lsquo;yi, olu&#351;tur</p>
-<div class="highlight"><pre><span class="nv">$ </span>cat &amp;gt;server.coffee&amp;lt;&amp;lt;-EOF
-<span class="nv">http</span> <span class="o">=</span> require <span class="s1">&#39;http&#39;</span>
+<div class="highlight"><pre><span class="nv">$ </span>cat &gt;server.coffee<span class="s">&lt;&lt;-EOF</span>
+<span class="s">http = require &#39;http&#39;</span>
 
-http.createServer <span class="o">(</span>req, res<span class="o">)</span> -&amp;gt;
-  res.writeHead 200,
-    <span class="s1">&#39;Content-Type&#39;</span>: <span class="s1">&#39;text/plain&#39;</span>
-  res.end <span class="s2">&quot;Hello world!&quot;</span>
-.listen<span class="o">(</span>process.env.PORT <span class="o">||</span> 8081<span class="o">)</span>
-EOF
+<span class="s">http.createServer (req, res) -&gt;</span>
+<span class="s">  res.writeHead 200,</span>
+<span class="s">    &#39;Content-Type&#39;: &#39;text/plain&#39;</span>
+<span class="s">  res.end &quot;Hello world!&quot;</span>
+<span class="s">.listen(process.env.PORT || 8081)</span>
+<span class="s">EOF</span>
 </pre></div>
 
 </li>
@@ -2063,7 +2063,7 @@ EOF
 <li>
 <p>Paketler uygulama dizinine <code>node_modules</code> dizinine kuruluyor.  Bu dizini
     <code>.gitignore</code>&lsquo;a eklemeyi unutmay&#305;n:</p>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> /node_modules/ &amp;gt;&amp;gt;.gitignore
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> /node_modules/ &gt;&gt;.gitignore
 </pre></div>
 
 </li>
@@ -2191,19 +2191,19 @@ EOF
 <p>Yeni makine iste: Servis &ccedil;ok y&uuml;kl&uuml;yken hemen makine verilmeyebilir.
     Aral&#305;klarla bir ka&ccedil; kez istemek gerekiyor.  Makine ad&#305;n&#305; bu dok&uuml;manda
     <code>JOYENT</code> de&#287;i&#351;keninde tutuyoruz.</p>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Makine ad&amp;#305; (&amp;ouml;rnek &#39;foo.no.de&#39;)? &quot;</span> JOYENT
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">read</span> -p <span class="s2">&quot;Makine adı (örnek &#39;foo.no.de&#39;)? &quot;</span> JOYENT
 </pre></div>
 
 </li>
 <li>
 <p>Yerelde SSH ayarlar&#305;n&#305; yap</p>
-<div class="highlight"><pre><span class="nv">$ </span>cat &amp;gt;&amp;gt;~/.ssh/config &amp;lt;&amp;lt;-EOF
-Host <span class="nv">$JOYENT</span>
-        HostName <span class="nv">$JOYENT</span>
-        Port 62420
-        User node
-        ForwardAgent yes
-EOF
+<div class="highlight"><pre><span class="nv">$ </span>cat &gt;&gt;~/.ssh/config <span class="s">&lt;&lt;-EOF</span>
+<span class="s">Host $JOYENT</span>
+<span class="s">        HostName $JOYENT</span>
+<span class="s">        Port 62420</span>
+<span class="s">        User node</span>
+<span class="s">        ForwardAgent yes</span>
+<span class="s">EOF</span>
 </pre></div>
 
 </li>
@@ -2252,7 +2252,7 @@ EOF
 </li>
 <li>
 <p>Depoyu haz&#305;rla</p>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;node-service&quot;</span> &amp;gt;&amp;gt;.gitignore
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;node-service&quot;</span> &gt;&gt;.gitignore
 <span class="nv">$ </span>git commit .gitignore -m <span class="s2">&quot;gitignore Joyent&quot;</span>
 </pre></div>
 
@@ -2552,15 +2552,15 @@ etkinle&#351;tiriyor ve npm ile eksik paketleri kuruyor.</p></section>
 <li>
 <p>Depo k&ouml;k&uuml;nde a&#351;a&#287;&#305;daki i&ccedil;erikte bir <code>Cakefile</code> olu&#351;turun</p>
 <div class="highlight"><pre><span class="nv">HOST  = </span><span class="s">&#39;...&#39;</span> <span class="c1"># Sunucu</span>
-<span class="nv">LINES = </span><span class="mi">40</span>    <span class="c1"># Ka&amp;ccedil; sat&amp;#305;r?</span>
+<span class="nv">LINES = </span><span class="mi">40</span>    <span class="c1"># Kaç satır?</span>
 
-<span class="nv">runcmd = </span><span class="p">(</span><span class="nx">cmd</span><span class="p">)</span> <span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span>
+<span class="nv">runcmd = </span><span class="nf">(cmd) -&gt;</span>
   <span class="p">{</span><span class="nx">exec</span><span class="p">}</span>  <span class="o">=</span> <span class="nx">require</span> <span class="s">&#39;child_process&#39;</span>
-  <span class="nx">exec</span> <span class="nx">cmd</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">stdout</span><span class="p">,</span> <span class="nx">stderr</span><span class="p">)</span> <span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span>
+  <span class="nx">exec</span> <span class="nx">cmd</span><span class="p">,</span> <span class="nf">(err, stdout, stderr) -&gt;</span>
     <span class="k">throw</span> <span class="nx">err</span> <span class="k">if</span> <span class="nx">err</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">stdout</span> <span class="o">+</span> <span class="nx">stderr</span>
 
-<span class="nx">task</span> <span class="s">&#39;log&#39;</span><span class="p">,</span> <span class="s">&#39;sunucu g&amp;uuml;nl&amp;uuml;&amp;#287;&amp;uuml;n&amp;uuml; g&amp;ouml;r&amp;uuml;nt&amp;uuml;le&#39;</span><span class="p">,</span> <span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span>
+<span class="nx">task</span> <span class="s">&#39;log&#39;</span><span class="p">,</span> <span class="s">&#39;sunucu günlüğünü görüntüle&#39;</span><span class="p">,</span> <span class="o">-&gt;</span>
   <span class="nx">runcmd</span><span class="p">(</span>
     <span class="s">&quot;ssh </span><span class="si">#{</span><span class="nx">HOST</span><span class="si">}</span><span class="s"> tail -n </span><span class="si">#{</span><span class="nx">LINES</span><span class="si">}</span><span class="s"> &quot;</span> <span class="o">+</span>
     <span class="s">&quot;/var/svc/log/site-node-service:default.log&quot;</span>
@@ -2608,7 +2608,7 @@ etkinle&#351;tiriyor ve npm ile eksik paketleri kuruyor.</p></section>
 <ul>
 <li>
 <p>Sanal makineye girerek:</p>
-<div class="highlight"><pre><span class="o">[</span>joyent<span class="o">]</span><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;TERM=xterm-color&quot;</span> &amp;gt;&amp;gt;~/.ssh/environment
+<div class="highlight"><pre><span class="o">[</span>joyent<span class="o">]</span><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;TERM=xterm-color&quot;</span> &gt;&gt;~/.ssh/environment
 </pre></div>
 
 </li>
