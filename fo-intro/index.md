@@ -741,7 +741,69 @@ Doğrusu kalın harflerle yazılanlar
 
 ---
 
+#   Ekstralar
+
+---
+
+##  Markdown Ekstraları
+
+Standart Markdown sözdizimine yapılan bazı eklemeler var
+
+*   Tablo, tanım listesi, dipnot gibi
+
+*   Bu ekstralar her Markdown lehçesinde bulunmuyor
+
+Değiştirilmiş Landslide'da desteklenen Markdown lehçeleri
+
+*   Python Misaka (Sundown)
+
+*   Python Markdown
+
+---
+
+##  Tablo
+
+Ayrıştıcılar → Python Misaka ve Python Markdown
+
+Dağıtım  |  Paket Biçimi  |  Paket Yöneticisi
+---------|----------------|------------------
+Debian   | `deb`          | APT
+Ubuntu   | `deb`          | APT
+Fedora   | `rpm`          | Yum
+Pardus   | `pisi`         | Pisi
+
+---
+
+##  Tanım Listesi
+
+Ayrıştıcılar → Python Markdown
+
+bir terim
+:   Bu bir terim tanımı.  Tanım gövdesinde diğer bloklar kullanılabilir.
+
+    *   Liste maddesi
+
+    *   Bir başka liste maddesi
+
+    *   Kod öbeği içeren bir liste maddesi
+
+            !sh
+            $ ls
+
+---
+
 #   Makrolar
+
+---
+
+#   Makrolar
+
+Folyo'larda Landslide makroları kullanabilirsiniz
+
+        .<makro adı>: [<makro argümanları>...]
+
+
+Bazı makrolar sadece değiştirilmiş Landslide'da
 
 ---
 
