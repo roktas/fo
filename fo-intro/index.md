@@ -753,7 +753,7 @@ Standart Markdown sözdizimine yapılan bazı eklemeler var
 
 *   Bu ekstralar her Markdown lehçesinde bulunmuyor
 
-Değiştirilmiş Landslide'da desteklenen Markdown lehçeleri
+Değiştirilmiş Landslide'da desteklenen Markdown ayrıştıcıları
 
 *   Python Misaka (Sundown)
 
@@ -763,8 +763,6 @@ Değiştirilmiş Landslide'da desteklenen Markdown lehçeleri
 
 ##  Tablo
 
-Ayrıştıcılar → Python Misaka ve Python Markdown
-
 Dağıtım  |  Paket Biçimi  |  Paket Yöneticisi
 ---------|----------------|------------------
 Debian   | `deb`          | APT
@@ -772,11 +770,11 @@ Ubuntu   | `deb`          | APT
 Fedora   | `rpm`          | Yum
 Pardus   | `pisi`         | Pisi
 
+Desteklenen ayrıştıcılar → Python Misaka ve Python Markdown
+
 ---
 
 ##  Tanım Listesi
-
-Ayrıştıcılar → Python Markdown
 
 bir terim
 :   Bu bir terim tanımı.  Tanım gövdesinde diğer bloklar kullanılabilir.
@@ -789,6 +787,8 @@ bir terim
 
             !sh
             $ ls
+
+Desteklenen ayrıştıcılar → Python Markdown
 
 ---
 
