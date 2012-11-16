@@ -231,7 +231,7 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
 ##  Yayınla
 
         !sh
-        $ git remote add origin git@github.com/[hesap]/[depo]
+        $ git remote add origin git@github.com:[hesap]/[depo]
         $ git push origin gh-pages
 
 *   Önce Github `[hesap]`'ınızda `[depo]` isimli depoyu oluşturuyoruz
