@@ -1687,6 +1687,12 @@ div.slide table:not(.highlighttable) tr td:first-child {
         if (window.screen.availWidth < 1280 || top != self) {
             hiddenContext = true;
         }
+	// show navigator only on touch screens without iframes
+	if ('ontouchstart' in document.documentElement && top == self) {
+		var list = document.getElementsByClassName('navigator');
+		for (var i = 0, el; el = list[i]; i++)
+			el.style.display = '';
+	}
 
         document.addEventListener('keyup', checkModifierKeyUp, false);
         document.addEventListener('keydown', handleBodyKeyDown, false);
@@ -1728,7 +1734,7 @@ div.slide table:not(.highlighttable) tr td:first-child {
 <body>
   <div id="blank"></div>
 
-  <nav id="left">
+  <nav class="navigator" id="left" style="display: none;">
     <menu id="top">
       <button title="Previous slide" id="prev" class="prev">«</button>
       <button title="Next slide" id="next" class="next">»</button>
