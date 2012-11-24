@@ -366,7 +366,7 @@ Kısayolların kurulumu
 
 ##  Doğru
 
-.fx: right
+.fx: correct
 
 Önemli içerik
 
@@ -431,7 +431,7 @@ Cümleler kısa olmalı
 
 ##  Doğru
 
-.fx: right
+.fx: correct
 
 *   Onparmak klavye kullanıcılarının Vim'e alışmaları daha kolay
 
@@ -464,7 +464,7 @@ nature" deniyor, yani ellerinizin siz düşünmeden yaptığı işe odaklanması
 
 ##  Doğru
 
-.fx: right
+.fx: correct
 
 *   Vim alışılması zor bir metin editörü
 
