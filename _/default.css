@@ -59,7 +59,7 @@ pre, .gist .gist-file .gist-data {
 }
 
 code {
-  background: #ffffff;
+  background: #ebebeb;
   padding: 0.1em;
   padding-right: 0.15em;
   border-top-right-radius: 0.2em;
@@ -84,7 +84,7 @@ div.slides, body.expose div.slides.nocontext {
 }
 
 div.slide {
-  background-color: white;
+  background: white;
   border-top-right-radius: 15px;
   -moz-border-radius-topright: 15px;
   -webkit-border-top-right-radius: 15px;
@@ -133,7 +133,7 @@ div.slide {
   color: #9c000d;
 }
 
-.slide.right {
+.slide.correct {
   background: #a2dcc1;
   border: 1px solid #eee;
   border-radius: 20px;
@@ -142,6 +142,7 @@ div.slide {
 
 .slide.first {
   text-align: center;
+  background: #eee;
 }
 .slide.first header {
   color: #9c000d;
