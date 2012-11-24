@@ -758,6 +758,12 @@ div.slide div.presenter_notes {
       <style type="text/css" media="screen, projection">
         /* begin default.css */
 
+body {
+  background: -moz-radial-gradient(#f0f0f0, #bebebe);
+  background: -webkit-radial-gradient(#f0f0f0, #bebebe);
+  background-color: transparent;
+}
+
 ul li {
   list-style: none;
   list-style-type: none;
@@ -831,22 +837,24 @@ pre, pre code {
   background: none;
 }
 
+div.slides, body.expose div.slides.nocontext {
+  background-color: inherit;
+}
+
 div.slide {
-  background: -webkit-gradient(linear, left bottom, left top, from(#eee), to(#eaeaea));
-  background-color: #eee;
-  background: -moz-linear-gradient(bottom, #eee, #eaeaea);
-  border-top-right-radius: 20px;
-  -moz-border-radius-topright: 20px;
-  -webkit-border-top-right-radius: 20px;
+  background-color: white;
+  border-top-right-radius: 15px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-top-right-radius: 15px;
   border-bottom-left-radius: 2px;
-  -moz-border-radius-bottomleft: 20px;
-  -webkit-border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
-  -moz-border-radius-topleft: 20px;
-  -webkit-border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  -moz-border-radius-bottomright: 20px;
-  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-radius-bottomleft: 15px;
+  -webkit-border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  -webkit-border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  -moz-border-radius-bottomright: 15px;
+  -webkit-border-bottom-right-radius: 15px;
 }
 
 ::-webkit-scrollbar-thumb {
