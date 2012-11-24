@@ -1691,9 +1691,12 @@ div.slide table:not(.highlighttable) tr td:first-child {
             currentSlideNo = Number(window.location.hash.replace('#slide', ''));
         }
 
-        // hide context on small screens and iframes
+        // handle small screens and iframes
         if (window.screen.availWidth < 1280 || top != self) {
+	    // no context
             hiddenContext = true;
+	    // no background
+	    (document.body || document.getElementsByTagName('body')[0]).style.background = 'none';
         }
 	// show navigator only on touch screens without iframes
 	if ('ontouchstart' in document.documentElement && top == self) {
