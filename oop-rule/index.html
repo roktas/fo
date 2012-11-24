@@ -1696,7 +1696,9 @@ div.slide table:not(.highlighttable) tr td:first-child {
 	    // no context
             hiddenContext = true;
 	    // no background
-	    (document.body || document.getElementsByTagName('body')[0]).style.background = 'none';
+	    var body = document.body || document.getElementsByTagName('body')[0];
+	    body.style.background = '';
+	    body.style.background-color = '';
         }
 	// show navigator only on touch screens without iframes
 	if ('ontouchstart' in document.documentElement && top == self) {
