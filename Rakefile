@@ -233,16 +233,27 @@ end
 def compile(item)
   $stderr.puts blue(item[:label])
 
-  run(*%W[
-    #{Param[:landslide]}
-      --embed
-      --linenos no
-      --css #{Param[:css]}
-      --js #{Param[:js]}
-      --theme #{Param[:theme]}
-      --destination #{item[:destination]}
-      #{item[:source]}
-  ]) do |ok, response, error|
+  # Komut satırını hazırla
+  cmdline = [Param[:landslide]]
+
+  [:css, :js].each do |key|
+    Param[key].each do |e|
+      cmdline << "--#{key}"
+      cmdline << e
+    end
+  end
+
+  %W[
+    --embed
+    --linenos no
+    --theme #{Param[:theme]}
+    --destination #{item[:destination]}
+    #{item[:source]}
+  ].each do |e|
+    cmdline << e
+  end
+
+  run(*cmdline) do |ok, response, error|
     if not ok
       rm_f item[:destination]
       $stderr.puts red("landslide hatası: %s" % error)
@@ -266,6 +277,10 @@ end
 
 # Ayarları öntanımlılarla birleştirerek yükle.
 Param = DEFAULTS.clone.merge YAML.load_file(PARAMFILE).symbolize
+# css ve js seçenekleri birer dizi olmalı
+[:css, :js].each do |key|
+  Param[key] = Param[key].is_a?(Array) ? Param[key] : Param[key].split
+end
 
 # Eksik ayarlar olabilir; kontrol et ve uyar.
 unless (unconfigured = Param.keys.select { |key| Param[key].nil? }).empty?
@@ -290,10 +305,12 @@ else
 end
 
 # Css ve Js dosyaları zorunlu değil.
-[Param[:css], Param[:js]].each do |f|
-  unless File.exists? f
-    touch f
-    $stderr.puts red("Eksik #{f} dosyası oluşturuldu.")
+[Param[:css], Param[:js]].each do |files|
+  files.each do |f|
+    unless File.exists? f
+      touch f
+      $stderr.puts red("Eksik #{f} dosyası oluşturuldu.")
+    end
   end
 end
 
@@ -314,8 +331,8 @@ end
 Items.each do |item|
   file item[:destination] => [
     item[:source],
-    Param[:css],
-    Param[:js],
+    *Param[:css],
+    *Param[:js],
     *FileList["#{item[:directory]}/media/*"], # media files, i.e. images
     *FileList["#{item[:directory]}/code/*"],  # code files
     Param[:landslide]
