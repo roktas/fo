@@ -1,0 +1,22 @@
+body {
+  background: -moz-radial-gradient(#f0f0f0, #bebebe);
+  background: -webkit-radial-gradient(#f0f0f0, #bebebe);
+  background-color: transparent;
+}
+
+code {
+  background: #ebebeb;
+}
+
+div.slides, body.expose div.slides.nocontext {
+  background-color: inherit;
+}
+
+div.slide {
+  background: white;
+}
+
+.slide.first {
+  background: #eee;
+}
+

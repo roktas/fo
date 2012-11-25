@@ -9,5 +9,5 @@ intro: ''
 googleanalytics: UA-30559967-1
 googleplus: '101391045956417989620'
 landslide: /usr/bin/landslide
-css: _/default.css
+css: _/default.css _/local.css
 js: _/default.js
