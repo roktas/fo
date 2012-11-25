@@ -758,12 +758,6 @@ div.slide div.presenter_notes {
       <style type="text/css" media="screen, projection">
         /* begin default.css */
 
-body {
-  background: -moz-radial-gradient(#f0f0f0, #bebebe);
-  background: -webkit-radial-gradient(#f0f0f0, #bebebe);
-  background-color: transparent;
-}
-
 ul li {
   list-style: none;
   list-style-type: none;
@@ -817,7 +811,7 @@ pre, .gist .gist-file .gist-data {
 }
 
 code {
-  background: #ebebeb;
+  background: #ffffff;
   padding: 0.1em;
   padding-right: 0.15em;
   border-top-right-radius: 0.2em;
@@ -837,12 +831,10 @@ pre, pre code {
   background: none;
 }
 
-div.slides, body.expose div.slides.nocontext {
-  background-color: inherit;
-}
-
 div.slide {
-  background: white;
+  background: -webkit-gradient(linear, left bottom, left top, from(#eee), to(#eaeaea));
+  background-color: #eee;
+  background: -moz-linear-gradient(bottom, #eee, #eaeaea);
   border-top-right-radius: 15px;
   -moz-border-radius-topright: 15px;
   -webkit-border-top-right-radius: 15px;
@@ -900,7 +892,6 @@ div.slide {
 
 .slide.first {
   text-align: center;
-  background: #eee;
 }
 .slide.first header {
   color: #9c000d;
@@ -1084,6 +1075,34 @@ div.slide table:not(.highlighttable) tr td:first-child {
 }
 
 /* end default.css */
+
+      </style>
+      
+    
+      
+      <style type="text/css" media="screen, projection">
+        body {
+  background: -moz-radial-gradient(#f0f0f0, #bebebe);
+  background: -webkit-radial-gradient(#f0f0f0, #bebebe);
+  background-color: transparent;
+}
+
+code {
+  background: #ebebeb;
+}
+
+div.slides, body.expose div.slides.nocontext {
+  background-color: inherit;
+}
+
+div.slide {
+  background: white;
+}
+
+.slide.first {
+  background: #eee;
+}
+
 
       </style>
       
