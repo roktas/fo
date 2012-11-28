@@ -468,7 +468,7 @@ task :update do
     sh "git remote add upstream git://github.com/roktas/fo.git"
     sh "git pull --no-edit upstream master"
   end
-#  sh "sudo sh -c 'apt-get update && apt-get install python-landslide-patched'"
+  sh "sudo sh -c 'apt-get update && apt-get install python-landslide-patched'"
   Rake::Task["default"].invoke
 end
 
