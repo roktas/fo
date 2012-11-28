@@ -461,4 +461,10 @@ task :new do
   end
 end
 
+desc "Güncelle."
+task :update do
+  sh "git pull upstream master"
+  sh "sudo sh -c 'apt-get update && apt-get install python-landslide-patched'"
+end
+
 task :default => [:build, :index]
