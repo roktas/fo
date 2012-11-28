@@ -463,8 +463,13 @@ end
 
 desc "Güncelle."
 task :update do
-  sh "git pull upstream master"
-  sh "sudo sh -c 'apt-get update && apt-get install python-landslide-patched'"
+  if %x(git config remote.upstream.url).chomp.empty? &&
+     %x(git config remote.origin.url).chomp !~ %r{[:/]roktas/fo.git}
+    sh "git remote add upstream git://github.com/roktas/fo.git"
+    sh "git pull --no-edit upstream master"
+  end
+#  sh "sudo sh -c 'apt-get update && apt-get install python-landslide-patched'"
+  Rake::Task["default"].invoke
 end
 
 task :default => [:build, :index]
