@@ -248,6 +248,14 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
 *   Düzenlemeniz halinde birleştirme çakışması ("merge conflict")
     yaşayabilirsiniz
 
+*   Güncelleme için Rake `update` görevini kullanmanız önerilir
+
+        !sh
+        $ rake update
+
+    Bu görev depoyu güncellemeye ilave olarak, Landslide paketini ve gerekiyorsa
+    tüm folyoları günceller
+
 ---
 
 #   Kullanım
