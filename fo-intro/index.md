@@ -264,7 +264,7 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
 
 ##  Düzenleme
 
-[Markdown Sözdizimini](]http://daringfireball.net/projects/markdown/syntax)
+[Markdown Sözdizimini](http://daringfireball.net/projects/markdown/syntax)
 kullanacaksınız
 
 *   Diğer bir [başvuru kaynağı](http://www.markdown-ref.org/)
