@@ -106,7 +106,7 @@ Ocak 2012
 
 #   Çok Biçimlilik
 
-Diğer bir çokbiçimlilik örneği
+Diğer bir çok biçimlilik örneği
 
         !javascript
         var these = [19, "19"];
@@ -134,8 +134,7 @@ Diğer bir çokbiçimlilik örneği
 
 *   Davranışı sergileyen nesnelere ortak bir isim veriyoruz →  `shape` (şekil)
 
-*   Davranışı sergileyen nesnenin kimliğini ayrıntılı bilmemiz gerekmiyor →
-    `Circle`, `Square`
+*   Nesnenin kimliğini ayrıntılı bilmemiz gerekmiyor → `Circle`, `Square`
 
 ---
 
