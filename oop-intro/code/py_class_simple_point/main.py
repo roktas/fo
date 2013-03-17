@@ -24,7 +24,7 @@ class Point:
         self.x += x
         self.y += y
 
-    def __repr__(self):
+    def __str__(self):
         return "(%s,%s)" % (self.x, self.y)
 
 def main():

@@ -20,7 +20,7 @@ class Point(object):
     def __ge__(self, other):
         return self > other or self == other
 
-    def __repr__(self):
+    def __str__(self):
         return "(%s,%s)" % (self.x, self.y)
 
     def move(self, x, y):
@@ -47,8 +47,8 @@ class Circle(Point):
     def __init__(self, x, y, r):
         super(Circle, self).__init__(x, y)
         self.r = r
-    def __repr__(self):
-        return "%s@%s" % (self.r, super(Circle, self).__repr__())
+    def __str__(self):
+        return "%s@%s" % (self.r, super(Circle, self).__str__())
 
     def perimeter(self):
         return 2 * math.pi * self.r

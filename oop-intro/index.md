@@ -306,12 +306,27 @@ Arayüz ve Çok biçimlilik birbiriyle yakından ilintili
 
 ---
 
+#   Kartlar
+
+
+🂡       🂱       🃁       🃑
+🂢       🂲       🃂       🃒
+🂣       🂳       🃃       🃓
+🂤       🂴       🃄       🃔
+🂥       🂵       🃅       🃕
+🂦       🂶       🃆       🃖
+🂧       🂷       🃇       🃗
+🂨       🂸       🃈       🃘
+🂩       🂹       🃉       🃙
+🂪       🂺       🃊       🃚
+🂫       🂻       🃋       🃛
+🂬       🂼       🃌       🃜
+🂭       🂽       🃍       🃝
+🂮       🂾       🃎       🃞
+
+
+---
+
 #   Dil Karşılaştırmaları
 
 [http://hyperpolyglot.org/scripting](http://hyperpolyglot.org/scripting)
-
-<!--
-
-TODO operator overloading bir tür (implicit) polymorphism
-
--->

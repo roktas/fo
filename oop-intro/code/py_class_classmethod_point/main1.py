@@ -16,7 +16,7 @@ class Point(object):
     def __ge__(self, other):
         return self > other or self == other
 
-    def __repr__(self):
+    def __str__(self):
         return "(%s,%s)" % (self.x, self.y)
 
     @classmethod
