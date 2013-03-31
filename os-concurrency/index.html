@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta id="viewport" name="viewport" content="user-scalable=no" />
-    <title>OS - Paralel Programlama</title>
+    <title>OS - Ayn&#305; Andal&#305;k</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -1792,7 +1792,7 @@ div.slide {
         <div class="slide first">
           <div class="inner">
             
-            <header><h1>OS - Paralel Programlama</h1></header>
+            <header><h1>OS - Ayn&#305; Andal&#305;k</h1></header>
             
             
             <section><p>Recai Okta&#351; <code>&lt;roktas@bil.omu.edu.tr&gt;</code></p>
@@ -1813,7 +1813,88 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/4
+              1/5
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: os-parallel/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Pthread</h1></header>
+            
+            
+            <section><p><div class="highlight"><pre><span class="cm">/*</span>
+<span class="cm"> *</span>
+<span class="cm"> * Pthread kitaplığıyla &quot;Merhaba Dünya&quot; örneği</span>
+<span class="cm"> *</span>
+<span class="cm"> * cc -lpthread ... şeklinde derleyin</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+
+<span class="cp">#include &lt;pthread.h&gt;</span>
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;stdint.h&gt;</span>
+
+<span class="cp">#define NUMBER_OF_THREADS 10</span>
+
+<span class="kt">void</span> <span class="o">*</span>
+<span class="nf">print_hello_world</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">tid</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="cm">/* This function prints the thread&#39;s identifier and then exits. */</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Merhaba Dünya [evre: %d]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="kt">intptr_t</span><span class="p">)</span><span class="n">tid</span><span class="p">);</span>
+        <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+        <span class="n">pthread_t</span> <span class="n">threads</span><span class="p">[</span><span class="n">NUMBER_OF_THREADS</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">status</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUMBER_OF_THREADS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Evre %d oluşturuluyor [main işlevi]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">print_hello_world</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)(</span><span class="kt">intptr_t</span><span class="p">)</span><span class="n">i</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;Hata pthread_create: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">);</span>
+                        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">)</span> <span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUMBER_OF_THREADS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="n">pthread_join</span><span class="p">(</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;Hata pthread_join: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">);</span>
+                        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">)</span> <span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_SUCCESS</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="os-parallel/index.md">os-parallel/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/5
             </aside>
           </footer>
         </div>
@@ -1900,7 +1981,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              2/4
+              3/5
             </aside>
           </footer>
         </div>
@@ -2114,7 +2195,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              3/4
+              4/5
             </aside>
           </footer>
         </div>
@@ -2356,7 +2437,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              4/4
+              5/5
             </aside>
           </footer>
         </div>
@@ -2371,13 +2452,13 @@ div.slide {
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">OS - Paralel Programlama</a></th>
+        <th><a href="#slide1">OS - Ayn&#305; Andal&#305;k</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Pthread - Nokta &Ccedil;arp&#305;m&#305;</a></th>
+        <th><a href="#slide2">Pthread</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
@@ -2391,6 +2472,12 @@ div.slide {
       <tr id="toc-row-4">
         <th><a href="#slide4">Pthread - Nokta &Ccedil;arp&#305;m&#305;</a></th>
         <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Pthread - Nokta &Ccedil;arp&#305;m&#305;</a></th>
+        <td><a href="#slide5">5</a></td>
       </tr>
       
       

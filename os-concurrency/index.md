@@ -1,4 +1,4 @@
-#   OS - Paralel Programlama
+#   OS - Aynı Andalık
 
 .fx: first
 
@@ -7,6 +7,12 @@ Recai Oktaş `<roktas@bil.omu.edu.tr>`
 http://roktas.me/
 
 Mart 2012
+
+---
+
+#   Pthread
+
+.code: code/c_pthread_hello/main.c
 
 ---
 
