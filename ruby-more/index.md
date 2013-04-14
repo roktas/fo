@@ -283,17 +283,3 @@ Ruby'de nesne değişkenleri miras almadan etkilenmez.
 #   Meta Programlama
 
 .code: code/rb_meta_simple_masallah/main.rb
-
-<!--
-
-TODO attrwriter'larla ilgi bilen'e gelen soru
-TODO private semantiği (diğer dillerden farklı)
-TODO class const inheritance semantiği (her class'ta ayrı sabit)
-TODO class variable (class global) ile class instance variable
-TODO class << self sentaksı, eigenclass'ı açmak
-TODO new bir private metod, ayrıca factory metod trick'ine bak
-TODO sembolleri biraz açıkla
-TODO respond_to ve is_a? tavsiyesi
-TODO case ... when String olayı
-
--->

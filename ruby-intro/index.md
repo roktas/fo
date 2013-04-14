@@ -880,12 +880,3 @@ gibi, ekleyebiliyoruz.
 *   Bugünün ihtiyacını karşıla, maliyetli genellemeyi yarın ki ihtiyaca bırak
 
 Modül tasarımı zordur.  Modülün kimliği açık şekilde tanımlı olmalı.
-
-<!--
-
-TODO Ruby'de çoğu zaman parantez gerekmiyor.  Nasıl anlıyor?  Atamalara bakıyor
-(duck typing gibi).
-
-TODO bölümler: Fonksiyonel Programlama, Meta Programlama, Eko Sistem
-
--->
