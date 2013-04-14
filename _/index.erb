@@ -231,7 +231,7 @@
         <% items.each do |item| %>
         <li>
           <% if item %>
-          <a href="<%= item[:file] %>"><span class="folio"><span><%= item[:label] %></span></span></a>
+          <a href="<%= item[:file] %>"><span class="folio"><span><%= item[:title] %></span></span></a>
           <% else %>
           <span class="folio pad"><!--dolgu--><span>&nbsp;</span></span>
           <% end %>

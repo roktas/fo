@@ -214,7 +214,7 @@ def index(items)
     items.sort_by do |item|
       item[:label]
     end.map do |item|
-      { label: item[:label], file: item[:destination] }
+      { label: item[:label], title: item[:title], file: item[:destination] }
     end
   )
 end
@@ -226,6 +226,7 @@ def itemize(path)
     destination: path.ext('.html'),
     directory: File.dirname(path),
     label: File.dirname(path),
+    title: open(path).gets.strip.sub(/^#\s+/, '').capitalize
   }
 end
 
