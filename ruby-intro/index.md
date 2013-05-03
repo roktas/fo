@@ -715,7 +715,7 @@ Bu sayede:
 
         ...
 
-        x = Math.sin(teta) > 0.5
+        x = Math.sin(teta)
         if x > 0.5
           sin("hatalı aralıkta değer üretildi: #{x}")
         end
@@ -734,7 +734,7 @@ Bu sayede:
           end
         end
 
-        x = Math.sin(teta) > 0.5
+        x = Math.sin(teta)
         if x > 0.5
           Log.sin("hatalı aralıkta değer üretildi: #{x}")
         end
@@ -758,9 +758,10 @@ Bu sayede:
 *   Müşteri kodu (`log.rb` modül yollarında tanımlı)
 
         !ruby
+        $LOAD_PATH.unshift(File.dirname(__FILE__))
         require 'log'
 
-        x = Math.sin(teta) > 0.5
+        x = Math.sin(30)
         if x > 0.5
           Log.sin("hatalı aralıkta değer üretildi: #{x}")
         end
@@ -773,11 +774,12 @@ Gerçeklemenin seçtiğiniz bir isim uzayına yerleştirilmesini (katıştırıl
 sağlıyor
 
         !ruby
+        $LOAD_PATH.unshift(File.dirname(__FILE__))
         require 'log'
 
         include 'Math' # Mixin
 
-        x = sin(teta) > 0.5
+        x = sin(teta)
         if x > 0.5
           Log.sin("hatalı aralıkta değer üretildi: #{x}")
         end

@@ -3071,10 +3071,21 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
 
 <span class="k">class</span> <span class="nc">Point</span>
   <span class="c1"># XXX Her nitelik için okuyucu yazmamız gerekmiyor</span>
-  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
+  <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">,</span> <span class="ss">:color</span>
+  <span class="c1"># RENK = %w(blue red green black)</span>
+  <span class="no">RENK</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;blue&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span>
+
+  <span class="k">def</span> <span class="nf">color</span><span class="o">=</span><span class="p">(</span><span class="n">verilen</span><span class="p">)</span>
+    <span class="k">if</span> <span class="no">RENK</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">verilen</span><span class="p">)</span>
+      <span class="vi">@color</span> <span class="o">=</span> <span class="n">verilen</span>
+    <span class="k">else</span>
+      <span class="k">raise</span> <span class="s2">&quot;Hatali renk: </span><span class="si">#{</span><span class="n">verilen</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="vi">@x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+    <span class="vi">@color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
   <span class="k">end</span>
 
   <span class="c1"># Ruby&#39;de &quot;doğrulayıcı&quot; (predicator) böyle yazılır</span>
@@ -3115,7 +3126,9 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
 
 <span class="k">def</span> <span class="nf">main</span>
   <span class="nb">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> noktası </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> noktasının &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">left?</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="p">?</span> <span class="s2">&quot;solunda&quot;</span> <span class="p">:</span> <span class="s2">&quot;sağında&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> noktasi </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> noktasinin &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">left?</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="p">?</span> <span class="s2">&quot;solunda&quot;</span> <span class="p">:</span> <span class="s2">&quot;saginda&quot;</span><span class="p">)</span>
+  <span class="nb">p</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+  <span class="nb">puts</span> <span class="nb">p</span><span class="o">.</span><span class="n">color</span>
 <span class="k">end</span>
 
 <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
@@ -3595,11 +3608,11 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">perimeter</span>
-    <span class="mi">2</span> <span class="o">*</span> <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">area</span>
-    <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
+    <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_s</span>
@@ -3912,30 +3925,30 @@ var &rarr; S&#305;n&#305;f sabitleri</p>
             <section><ul>
 <li>&Ccedil;&#305;kt&#305;</li>
 </ul>
-<p><div class="highlight"><pre>A sınıfı tanımlanıyor
-B <span class="nt">&lt; A</span> <span class="err">sınıfı</span> <span class="err">tanımlanıyor</span> <span class="err">(değişiklik</span> <span class="err">yapmadan)</span>
-<span class="err">C</span> <span class="err">&lt;</span> <span class="err">A</span> <span class="err">sınıfı</span> <span class="err">tanımlanıyor</span> <span class="err">(değişiklik</span> <span class="err">yaparak)</span>
-<span class="err">A</span> <span class="err">sınıfından</span> <span class="err">a</span> <span class="err">nesnesi</span> <span class="err">oluşturuluyor</span>
-<span class="err">B</span> <span class="err">sınıfından</span> <span class="err">b</span> <span class="err">nesnesi</span> <span class="err">oluşturuluyor</span>
-<span class="err">C</span> <span class="err">sınıfından</span> <span class="err">c</span> <span class="err">nesnesi</span> <span class="err">oluşturuluyor</span>
+<p><div class="highlight"><pre><span class="nx">A</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span> <span class="nb">tan</span><span class="err">ı</span><span class="nx">mlan</span><span class="err">ı</span><span class="nx">yor</span>
+<span class="nx">B</span> <span class="o">&lt;</span> <span class="nx">A</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span> <span class="nb">tan</span><span class="err">ı</span><span class="nx">mlan</span><span class="err">ı</span><span class="nx">yor</span> <span class="p">(</span><span class="nx">de</span><span class="err">ğ</span><span class="nx">i</span><span class="err">ş</span><span class="nx">iklik</span> <span class="nx">yapmadan</span><span class="p">)</span>
+<span class="nx">C</span> <span class="o">&lt;</span> <span class="nx">A</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span> <span class="nb">tan</span><span class="err">ı</span><span class="nx">mlan</span><span class="err">ı</span><span class="nx">yor</span> <span class="p">(</span><span class="nx">de</span><span class="err">ğ</span><span class="nx">i</span><span class="err">ş</span><span class="nx">iklik</span> <span class="nx">yaparak</span><span class="p">)</span>
+<span class="nx">A</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span><span class="nx">ndan</span> <span class="nx">a</span> <span class="nx">nesnesi</span> <span class="nx">olu</span><span class="err">ş</span><span class="nx">turuluyor</span>
+<span class="nx">B</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span><span class="nx">ndan</span> <span class="nx">b</span> <span class="nx">nesnesi</span> <span class="nx">olu</span><span class="err">ş</span><span class="nx">turuluyor</span>
+<span class="nx">C</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span><span class="nx">ndan</span> <span class="nx">c</span> <span class="nx">nesnesi</span> <span class="nx">olu</span><span class="err">ş</span><span class="nx">turuluyor</span>
 
-<span class="err">A:</span> <span class="err">A</span>
-<span class="err">A::CONSTANT:</span> <span class="err">A_CONSTANT</span>
-<span class="err">A.class_variable:</span> <span class="err">C_class_variable</span>
-<span class="err">A.class_instance_variable:</span> <span class="err">A_class_instance_variable</span>
-<span class="err">a.instance_variable:</span> <span class="err">#&lt;A:0x00000001bc1a28</span><span class="nt">&gt;</span>_instance_variable
+<span class="nx">A</span><span class="p">:</span> <span class="nx">A</span>
+<span class="nx">A</span><span class="p">::</span><span class="nl">CONSTANT</span><span class="p">:</span> <span class="nx">A_CONSTANT</span>
+<span class="nx">A.class_variable</span><span class="p">:</span> <span class="nx">C_class_variable</span>
+<span class="nx">A.class_instance_variable</span><span class="p">:</span> <span class="nx">A_class_instance_variable</span>
+<span class="nx">a.instance_variable</span><span class="p">:</span> <span class="err">#</span><span class="o">&lt;</span><span class="nx">A</span><span class="p">:</span><span class="mh">0x00000001bc1a28</span><span class="o">&gt;</span><span class="nx">_instance_variable</span>
 
-B: B
-B::CONSTANT: A_CONSTANT
-B.class_variable: C_class_variable
-B.class_instance_variable: boş
-b.instance_variable: #<span class="nt">&lt;B:0x00000001bc18c0&gt;</span>_instance_variable
+<span class="nx">B</span><span class="p">:</span> <span class="nx">B</span>
+<span class="nx">B</span><span class="p">::</span><span class="nl">CONSTANT</span><span class="p">:</span> <span class="nx">A_CONSTANT</span>
+<span class="nx">B.class_variable</span><span class="p">:</span> <span class="nx">C_class_variable</span>
+<span class="nx">B.class_instance_variable</span><span class="p">:</span> <span class="nx">bo</span><span class="err">ş</span>
+<span class="nx">b.instance_variable</span><span class="p">:</span> <span class="err">#</span><span class="o">&lt;</span><span class="nx">B</span><span class="p">:</span><span class="mh">0x00000001bc18c0</span><span class="o">&gt;</span><span class="nx">_instance_variable</span>
 
-C: C
-C::CONSTANT: C_CONSTANT
-C.class_variable: C_class_variable
-C.class_instance_variable: C_class_instance_variable
-c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instance_variable
+<span class="nx">C</span><span class="p">:</span> <span class="nx">C</span>
+<span class="nx">C</span><span class="p">::</span><span class="nl">CONSTANT</span><span class="p">:</span> <span class="nx">C_CONSTANT</span>
+<span class="nx">C.class_variable</span><span class="p">:</span> <span class="nx">C_class_variable</span>
+<span class="nx">C.class_instance_variable</span><span class="p">:</span> <span class="nx">C_class_instance_variable</span>
+<span class="nx">c.instance_variable</span><span class="p">:</span> <span class="err">#</span><span class="o">&lt;</span><span class="nx">C</span><span class="p">:</span><span class="mh">0x00000001bc17a8</span><span class="o">&gt;</span><span class="nx">_instance_variable</span>
 </pre></div>
 </p></section>
             
@@ -4124,7 +4137,7 @@ c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instanc
 
     <span class="o">.</span><span class="n">.</span><span class="o">.</span>
 
-    <span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
       <span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatalı aralıkta değer üretildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">end</span>
@@ -4167,7 +4180,7 @@ c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instanc
       <span class="k">end</span>
     <span class="k">end</span>
 
-    <span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
       <span class="no">Log</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatalı aralıkta değer üretildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">end</span>
@@ -4219,9 +4232,10 @@ c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instanc
 </li>
 <li>
 <p>M&uuml;&#351;teri kodu (<code>log.rb</code> mod&uuml;l yollar&#305;nda tan&#305;ml&#305;)</p>
-<div class="highlight"><pre><span class="nb">require</span> <span class="s1">&#39;log&#39;</span>
+<div class="highlight"><pre><span class="vg">$LOAD_PATH</span><span class="o">.</span><span class="n">unshift</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">))</span>
+<span class="nb">require</span> <span class="s1">&#39;log&#39;</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+<span class="n">x</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
   <span class="no">Log</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatalı aralıkta değer üretildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">end</span>
@@ -4260,11 +4274,12 @@ c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instanc
             
             <section><p>Ger&ccedil;eklemenin se&ccedil;ti&#287;iniz bir isim uzay&#305;na yerle&#351;tirilmesini (kat&#305;&#351;t&#305;r&#305;lmas&#305;n&#305;)
 sa&#287;l&#305;yor</p>
-<div class="highlight"><pre>    <span class="nb">require</span> <span class="s1">&#39;log&#39;</span>
+<div class="highlight"><pre>    <span class="vg">$LOAD_PATH</span><span class="o">.</span><span class="n">unshift</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">))</span>
+    <span class="nb">require</span> <span class="s1">&#39;log&#39;</span>
 
     <span class="kp">include</span> <span class="s1">&#39;Math&#39;</span> <span class="c1"># Mixin</span>
 
-    <span class="n">x</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">teta</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
       <span class="no">Log</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="s2">&quot;hatalı aralıkta değer üretildi: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">end</span>
@@ -4736,7 +4751,7 @@ gibi, ekleyebiliyoruz.</p>
 
 <span class="c1"># Dizgi arayüzünü etkinleştir</span>
 <span class="k">class</span> <span class="nc">String</span>
-  <span class="kp">include</span> <span class="no">LanguageUtils</span><span class="o">::</span><span class="nb">String</span>
+  <span class="kp">include</span> <span class="ss">LanguageUtils</span><span class="p">:</span><span class="ss">:String</span>
 <span class="k">end</span>
 
 <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
@@ -4744,7 +4759,7 @@ gibi, ekleyebiliyoruz.</p>
   <span class="nb">puts</span> <span class="s2">&quot;şğüöçİı&quot;</span><span class="o">.</span><span class="n">ascii</span>
   <span class="nb">puts</span> <span class="s2">&quot;über straße&quot;</span><span class="o">.</span><span class="n">ascii</span> <span class="ss">:de</span>
   <span class="nb">puts</span> <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">yes</span> <span class="ss">:tr</span>
-  <span class="nb">puts</span> <span class="no">LanguageUtils</span><span class="o">::</span><span class="no">Turkish</span><span class="o">.</span><span class="n">spesific_util</span>
+  <span class="nb">puts</span> <span class="ss">LanguageUtils</span><span class="p">:</span><span class="ss">:Turkish</span><span class="o">.</span><span class="n">spesific_util</span>
 <span class="k">end</span>
 </pre></div>
 </p></section>

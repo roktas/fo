@@ -10,6 +10,24 @@ Nisan 2012
 
 ---
 
+#   Gist Çalışma Akışı
+
+*   Güvenlik düzeyi düşük bir çalışma ortamında (örneğin bir bilgisayar
+    laboratuvarı) Git ile çalışmalarınızı kayıt altında tutmak istiyoruz
+
+*   Ortamın en azından tuş kaydediciler (keylogger) içermeyecek kadar güvenli
+    olduğunu varsayıyoruz
+
+*   Oluşturacağınız Git deposu yazılabilir olmalı
+
+*   SSH şemasını kullanamazsınız çünkü SSH anahtarları ele geçirilebilir
+
+*   HTTPS şemasını kullanmalıyız
+
+*   Ama her `git push` işleminde parola girmek de istemiyoruz
+
+---
+
 #   Merge
 
 *   Merge conflict varsa:
