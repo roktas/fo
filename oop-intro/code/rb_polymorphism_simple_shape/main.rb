@@ -31,7 +31,7 @@ class Point
     @x == other.x and @y == other.y
   end
 
-  def +(other=nil)
+  def +(other = nil)
     other ||= origin
     self.class.new @x + other.x, @y + other.y
   end
@@ -43,7 +43,7 @@ class Point
   end
 
   def to_s
-    "(#@x,#{@y})"
+    "(#{@x},#{@y})"
   end
 
   # Sınıf metodları
@@ -54,10 +54,10 @@ class Point
     end
 
     def origin
-      new *ORIGIN
+      new(*ORIGIN)
     end
 
-    def distance(here, there=nil)
+    def distance(here, there = nil)
       there ||= origin
       Math.sqrt((here.x - there.x)**2 + (here.y - there.y)**2)
     end
@@ -70,12 +70,12 @@ class Circle < Point
   NAME   = 'çember'
 
   def initialize(*coords, r)
-    super *coords
+    super(*coords)
     @r = r
   end
 
   def +(*)
-    raise "Bu şeklin toplanması anlamı değil"
+    raise 'Bu şeklin toplanması anlamı değil'
   end
 
   def perimeter
@@ -87,12 +87,12 @@ class Circle < Point
   end
 
   def to_s
-    "#@r@(#{self.x},#{self.y})" # XXX DRY değil ama okunur
+    "#{@r}@(#{self.x},#{self.y})" # XXX DRY değil ama okunur
   end
 end
 
 class Square < Circle
-  FACTOR = 2/Math.sqrt(2)
+  FACTOR = 2 / Math.sqrt(2)
   NAME   = 'kare'
 
   def perimeter
@@ -110,6 +110,4 @@ def main
   end
 end
 
-if __FILE__ == $0
-    main
-end
+main if __FILE__ == $PROGRAM_NAME

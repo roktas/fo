@@ -32,7 +32,7 @@ class Point
 
   # + işlecini overload ederek sınırsız sayıda noktayı da
   # toplama olanağına kavuştuk.
-  def +(other=nil)
+  def +(other = nil)
     # Nesne metodundan sınıf metodu (origin) nasıl çağrılır?
     # Point.origin olabilir ama DRY değil, cevap: self.class
     other ||= self.class.origin
@@ -46,7 +46,7 @@ class Point
   end
 
   def to_s
-    "(#@x,#@y)"
+    "(#{@x},#{@y})"
   end
 
   # Sınıf metodları
@@ -59,10 +59,10 @@ class Point
     def origin
       # new metodunun alıcısı kim?  self
       # self burada ne değer alır?  Point (yani sınıf)
-      new *ORIGIN
+      new(*ORIGIN)
     end
 
-    def distance(here, there=nil)
+    def distance(here, there = nil)
       there ||= origin
       Math.sqrt((here.x - there.x)**2 + (here.y - there.y)**2)
     end
@@ -77,6 +77,4 @@ def main
   puts "#{p} - orijin uzaklığı: #{Point.distance(p)}"
 end
 
-if __FILE__ == $0
-    main
-end
+main if __FILE__ == $PROGRAM_NAME

@@ -3109,18 +3109,16 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_s</span>
-    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#@y</span><span class="s2">)&quot;</span>
+    <span class="s2">&quot;(</span><span class="si">#{</span><span class="vi">@x</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@y</span><span class="si">}</span><span class="s2">)&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">def</span> <span class="nf">main</span>
   <span class="nb">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> noktası </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> noktasının &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">left?</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="p">?</span> <span class="s2">&quot;solunda&quot;</span> <span class="p">:</span> <span class="s2">&quot;sağında&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> noktası </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> noktasının &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">left?</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="p">?</span> <span class="s1">&#39;solunda&#39;</span> <span class="p">:</span> <span class="s1">&#39;sağında&#39;</span><span class="p">)</span>
 <span class="k">end</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
-    <span class="n">main</span>
-<span class="k">end</span>
+<span class="n">main</span> <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
 </pre></div>
 </p></section>
             
@@ -3326,7 +3324,7 @@ tan&#305;mlayaca&#287;&#305;z?</p>
 
   <span class="c1"># + işlecini overload ederek sınırsız sayıda noktayı da</span>
   <span class="c1"># toplama olanağına kavuştuk.</span>
-  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
     <span class="c1"># Nesne metodundan sınıf metodu (origin) nasıl çağrılır?</span>
     <span class="c1"># Point.origin olabilir ama DRY değil, cevap: self.class</span>
     <span class="n">other</span> <span class="o">||=</span> <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">origin</span>
@@ -3340,7 +3338,7 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_s</span>
-    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#@y</span><span class="s2">)&quot;</span>
+    <span class="s2">&quot;(</span><span class="si">#{</span><span class="vi">@x</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@y</span><span class="si">}</span><span class="s2">)&quot;</span>
   <span class="k">end</span>
 
   <span class="c1"># Sınıf metodları</span>
@@ -3353,10 +3351,10 @@ tan&#305;mlayaca&#287;&#305;z?</p>
     <span class="k">def</span> <span class="nf">origin</span>
       <span class="c1"># new metodunun alıcısı kim?  self</span>
       <span class="c1"># self burada ne değer alır?  Point (yani sınıf)</span>
-      <span class="kp">new</span> <span class="o">*</span><span class="no">ORIGIN</span>
+      <span class="kp">new</span><span class="p">(</span><span class="o">*</span><span class="no">ORIGIN</span><span class="p">)</span>
     <span class="k">end</span>
 
-    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">there</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">there</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
       <span class="n">there</span> <span class="o">||=</span> <span class="n">origin</span>
       <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">here</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">here</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">end</span>
@@ -3371,9 +3369,7 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> - orijin uzaklığı: </span><span class="si">#{</span><span class="no">Point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="nb">p</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">end</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
-    <span class="n">main</span>
-<span class="k">end</span>
+<span class="n">main</span> <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
 </pre></div>
 </p></section>
             
@@ -3482,18 +3478,16 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_s</span>
-    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#@y</span><span class="s2">)&quot;</span>
+    <span class="s2">&quot;(</span><span class="si">#{</span><span class="vi">@x</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@y</span><span class="si">}</span><span class="s2">)&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">def</span> <span class="nf">main</span>
   <span class="nb">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="no">Point</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> noktası </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> noktasının &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">p</span> <span class="o">&lt;</span> <span class="n">q</span> <span class="p">?</span> <span class="s2">&quot;solunda&quot;</span> <span class="p">:</span> <span class="s2">&quot;sağında&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2"> noktası </span><span class="si">#{</span><span class="n">q</span><span class="si">}</span><span class="s2"> noktasının &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">p</span> <span class="o">&lt;</span> <span class="n">q</span> <span class="p">?</span> <span class="s1">&#39;solunda&#39;</span> <span class="p">:</span> <span class="s1">&#39;sağında&#39;</span><span class="p">)</span>
 <span class="k">end</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
-    <span class="n">main</span>
-<span class="k">end</span>
+<span class="n">main</span> <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
 </pre></div>
 </p></section>
             
@@ -3557,7 +3551,7 @@ tan&#305;mlayaca&#287;&#305;z?</p>
     <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
   <span class="k">end</span>
 
-  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
     <span class="n">other</span> <span class="o">||=</span> <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">origin</span>
     <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">new</span> <span class="vi">@x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
   <span class="k">end</span>
@@ -3569,17 +3563,17 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_s</span>
-    <span class="s2">&quot;(</span><span class="si">#@x</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@y</span><span class="si">}</span><span class="s2">)&quot;</span>
+    <span class="s2">&quot;(</span><span class="si">#{</span><span class="vi">@x</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@y</span><span class="si">}</span><span class="s2">)&quot;</span>
   <span class="k">end</span>
 
   <span class="c1"># Sınıf metodları</span>
 
   <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
     <span class="k">def</span> <span class="nf">origin</span>
-      <span class="kp">new</span> <span class="o">*</span><span class="no">ORIGIN</span>
+      <span class="kp">new</span><span class="p">(</span><span class="o">*</span><span class="no">ORIGIN</span><span class="p">)</span>
     <span class="k">end</span>
 
-    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">there</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">there</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
       <span class="n">there</span> <span class="o">||=</span> <span class="n">origin</span>
       <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">here</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">here</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">there</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">end</span>
@@ -3590,7 +3584,7 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="kp">attr_reader</span> <span class="ss">:r</span>
 
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">coords</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-    <span class="k">super</span> <span class="o">*</span><span class="n">coords</span>
+    <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">coords</span><span class="p">)</span>
     <span class="vi">@r</span> <span class="o">=</span> <span class="n">r</span>
   <span class="k">end</span>
 
@@ -3604,7 +3598,7 @@ tan&#305;mlayaca&#287;&#305;z?</p>
 
   <span class="k">def</span> <span class="nf">to_s</span>
     <span class="c1"># XXX Ooooo!  Artık DRY ama kara büyü :-/</span>
-    <span class="s2">&quot;</span><span class="si">#@r</span><span class="s2">@</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">instance_method</span><span class="p">(</span><span class="ss">:to_s</span><span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span><span class="o">.</span><span class="n">call</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;</span><span class="si">#{</span><span class="vi">@r</span><span class="si">}</span><span class="s2">@</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">instance_method</span><span class="p">(</span><span class="ss">:to_s</span><span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span><span class="o">.</span><span class="n">call</span><span class="si">}</span><span class="s2">&quot;</span>
   <span class="k">end</span>
 
   <span class="c1"># XXX Anlamlı olmayan işleçler şuna benzer bir şey yapılabilir</span>
@@ -3619,9 +3613,7 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2"> çemberi </span><span class="si">#{</span><span class="n">c</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span><span class="si">}</span><span class="s2"> çemberine dönüştü&quot;</span>
 <span class="k">end</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
-    <span class="n">main</span>
-<span class="k">end</span>
+<span class="n">main</span> <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
 </pre></div>
 </p></section>
             
@@ -3738,9 +3730,7 @@ var &rarr; S&#305;n&#305;f sabitleri</p>
   <span class="no">Point</span><span class="o">.</span><span class="n">report</span>
 <span class="k">end</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
-    <span class="n">main</span>
-<span class="k">end</span>
+<span class="n">main</span> <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
 </pre></div>
 </p></section>
             
@@ -3822,7 +3812,7 @@ var &rarr; S&#305;n&#305;f sabitleri</p>
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">p</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="nb">eval</span><span class="p">(</span><span class="nb">p</span><span class="p">,</span> <span class="no">TOPLEVEL_BINDING</span><span class="p">)</span> <span class="o">||</span> <span class="s1">&#39;boş&#39;</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">end</span>
 
-<span class="nb">puts</span> <span class="s2">&quot;A sınıfı tanımlanıyor&quot;</span>
+<span class="nb">puts</span> <span class="s1">&#39;A sınıfı tanımlanıyor&#39;</span>
 <span class="k">class</span> <span class="nc">A</span>
   <span class="kp">attr</span> <span class="ss">:instance_variable</span>
 
@@ -3842,22 +3832,22 @@ var &rarr; S&#305;n&#305;f sabitleri</p>
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="nb">puts</span> <span class="s2">&quot;B &lt; A sınıfı tanımlanıyor (değişiklik yapmadan)&quot;</span>
+<span class="nb">puts</span> <span class="s1">&#39;B &lt; A sınıfı tanımlanıyor (değişiklik yapmadan)&#39;</span>
 <span class="k">class</span> <span class="nc">B</span> <span class="o">&lt;</span> <span class="n">A</span>
 <span class="k">end</span>
 
-<span class="nb">puts</span> <span class="s2">&quot;C &lt; A sınıfı tanımlanıyor (değişiklik yaparak)&quot;</span>
+<span class="nb">puts</span> <span class="s1">&#39;C &lt; A sınıfı tanımlanıyor (değişiklik yaparak)&#39;</span>
 <span class="k">class</span> <span class="nc">C</span> <span class="o">&lt;</span> <span class="n">A</span>
   <span class="no">CONSTANT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">_CONSTANT&quot;</span>
   <span class="vc">@@class_variable</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">_class_variable&quot;</span>
   <span class="vi">@class_instance_variable</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">_class_instance_variable&quot;</span>
 <span class="k">end</span>
 
-<span class="nb">puts</span> <span class="s2">&quot;A sınıfından a nesnesi oluşturuluyor&quot;</span>
+<span class="nb">puts</span> <span class="s1">&#39;A sınıfından a nesnesi oluşturuluyor&#39;</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">new</span>
-<span class="nb">puts</span> <span class="s2">&quot;B sınıfından b nesnesi oluşturuluyor&quot;</span>
+<span class="nb">puts</span> <span class="s1">&#39;B sınıfından b nesnesi oluşturuluyor&#39;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">new</span>
-<span class="nb">puts</span> <span class="s2">&quot;C sınıfından c nesnesi oluşturuluyor&quot;</span>
+<span class="nb">puts</span> <span class="s1">&#39;C sınıfından c nesnesi oluşturuluyor&#39;</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">new</span>
 
 <span class="nb">puts</span>
@@ -4329,9 +4319,7 @@ gibi, ekleyebiliyoruz.</p>
   <span class="kp">include</span> <span class="no">Turkish</span>
 <span class="k">end</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
-  <span class="nb">puts</span> <span class="s2">&quot;ıişğüöç&quot;</span><span class="o">.</span><span class="n">turkish_upcase</span>
-<span class="k">end</span>
+<span class="nb">puts</span> <span class="s1">&#39;ıişğüöç&#39;</span><span class="o">.</span><span class="n">turkish_upcase</span> <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
 </pre></div>
 </p></section>
             
@@ -4468,14 +4456,14 @@ gibi, ekleyebiliyoruz.</p>
 
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">turkish</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
     <span class="c1"># FIXME Her seferinde bu düzenli ifadeyi hesaplamak gerekmemeli</span>
-    <span class="n">re</span> <span class="o">=</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span> <span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="no">TURKISH</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">join</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span>
-    <span class="n">text</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="n">re</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="no">TURKISH</span><span class="o">[</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
+    <span class="n">re</span> <span class="o">=</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span> <span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="no">CHARS</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">join</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span>
+    <span class="n">text</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="n">re</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="no">CHARS</span><span class="o">[</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
   <span class="c1"># FIXME Dizgi üzerinden çağrılsa?  &quot;ŞĞÜÖÇöçğüıİ&quot;.ascii gibi</span>
-  <span class="nb">puts</span> <span class="no">Ascii</span><span class="o">.</span><span class="n">turkish</span><span class="p">(</span><span class="s2">&quot;ŞĞÜÖÇöçğüıİ&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="no">Ascii</span><span class="o">.</span><span class="n">turkish</span><span class="p">(</span><span class="s1">&#39;ŞĞÜÖÇöçğüıİ&#39;</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div>
 </p></section>
@@ -4534,9 +4522,9 @@ gibi, ekleyebiliyoruz.</p>
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
   <span class="c1"># FIXME Dizgi üzerinden çağrılsa?  &quot;ŞĞÜÖÇöçğüıİ&quot;.ascii gibi</span>
-  <span class="nb">puts</span> <span class="no">Ascii</span><span class="o">.</span><span class="n">turkish</span><span class="p">(</span><span class="s2">&quot;ŞĞÜÖÇöçğüıİ&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="no">Ascii</span><span class="o">.</span><span class="n">turkish</span><span class="p">(</span><span class="s1">&#39;ŞĞÜÖÇöçğüıİ&#39;</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div>
 </p></section>
@@ -4599,9 +4587,7 @@ gibi, ekleyebiliyoruz.</p>
   <span class="kp">include</span> <span class="no">Turkish</span>
 <span class="k">end</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
-  <span class="nb">puts</span> <span class="s2">&quot;ŞĞÜÖÇöçğüıİ&quot;</span><span class="o">.</span><span class="n">ascii</span>
-<span class="k">end</span>
+<span class="nb">puts</span> <span class="s1">&#39;ŞĞÜÖÇöçğüıİ&#39;</span><span class="o">.</span><span class="n">ascii</span> <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
 </pre></div>
 </p></section>
             
@@ -4644,7 +4630,7 @@ gibi, ekleyebiliyoruz.</p>
   <span class="no">Language</span> <span class="o">=</span> <span class="p">{}</span>
   <span class="k">def</span> <span class="nc">Language</span><span class="o">.</span><span class="nf">[]</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
     <span class="n">desc</span> <span class="o">=</span> <span class="k">super</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">desc</span>
+    <span class="k">unless</span> <span class="n">desc</span>
       <span class="k">raise</span> <span class="s2">&quot;&#39;</span><span class="si">#{</span><span class="n">code</span><span class="si">}</span><span class="s2">&#39; geçerli bir dil kodu değil.  &quot;</span> <span class="o">+</span>
             <span class="s2">&quot;Geçerli dil kodları </span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">sort</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">end</span>
@@ -4661,17 +4647,17 @@ gibi, ekleyebiliyoruz.</p>
     <span class="k">end</span>
   <span class="k">end</span>
 
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">language</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">language</span><span class="p">(</span><span class="n">code</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
     <span class="n">code</span> <span class="p">?</span> <span class="no">Language</span><span class="o">[</span><span class="n">code</span><span class="o">]</span> <span class="p">:</span> <span class="vi">@language</span>
   <span class="k">end</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">language</span><span class="o">=</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
     <span class="vi">@language</span> <span class="o">=</span> <span class="no">Language</span><span class="o">[</span><span class="n">code</span><span class="o">]</span>
   <span class="k">end</span>
 
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">yes</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">yes</span><span class="p">(</span><span class="n">code</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
     <span class="n">language</span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="o">[</span><span class="ss">:yesno</span><span class="o">].</span><span class="n">first</span>
   <span class="k">end</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">no</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">no</span><span class="p">(</span><span class="n">code</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
     <span class="n">language</span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="o">[</span><span class="ss">:yesno</span><span class="o">].</span><span class="n">last</span>
   <span class="k">end</span>
 
@@ -4679,12 +4665,12 @@ gibi, ekleyebiliyoruz.</p>
 
   <span class="k">module</span> <span class="nn">English</span>
     <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span> <span class="ss">:en</span><span class="p">,</span>
-      <span class="ss">:yesno</span> <span class="o">=&gt;</span> <span class="sx">%w(yes no)</span>
+      <span class="n">yesno</span><span class="p">:</span> <span class="sx">%w(yes no)</span>
   <span class="k">end</span>
 
   <span class="k">module</span> <span class="nn">Turkish</span>
     <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span> <span class="ss">:tr</span><span class="p">,</span>
-      <span class="ss">:chars</span> <span class="o">=&gt;</span> <span class="sx">%w(</span>
+      <span class="n">chars</span><span class="p">:</span> <span class="sx">%w(</span>
 <span class="sx">        ı i</span>
 <span class="sx">        ğ g</span>
 <span class="sx">        ü u</span>
@@ -4698,7 +4684,7 @@ gibi, ekleyebiliyoruz.</p>
 <span class="sx">        Ö O</span>
 <span class="sx">        Ç C</span>
 <span class="sx">      )</span><span class="p">,</span>
-      <span class="ss">:yesno</span> <span class="o">=&gt;</span> <span class="sx">%w(evet hayır)</span>
+      <span class="n">yesno</span><span class="p">:</span> <span class="sx">%w(evet hayır)</span>
 
       <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">spesific_util</span>
         <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">: bu dile özgü bir metod&quot;</span>
@@ -4707,7 +4693,7 @@ gibi, ekleyebiliyoruz.</p>
 
   <span class="k">module</span> <span class="nn">German</span>
     <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span> <span class="ss">:de</span><span class="p">,</span>
-      <span class="ss">:chars</span> <span class="o">=&gt;</span> <span class="sx">%w(</span>
+      <span class="n">chars</span><span class="p">:</span> <span class="sx">%w(</span>
 <span class="sx">        ä a</span>
 <span class="sx">        Ä A</span>
 <span class="sx">        é e</span>
@@ -4717,15 +4703,15 @@ gibi, ekleyebiliyoruz.</p>
 <span class="sx">        Ü U</span>
 <span class="sx">        ß ss</span>
 <span class="sx">      )</span><span class="p">,</span>
-      <span class="ss">:yesno</span> <span class="o">=&gt;</span> <span class="sx">%w(ja nein)</span>
+      <span class="n">yesno</span><span class="p">:</span> <span class="sx">%w(ja nein)</span>
   <span class="k">end</span>
 
   <span class="c1"># Dizgi Arayüzü</span>
 
   <span class="k">module</span> <span class="nn">String</span>
-    <span class="k">def</span> <span class="nf">ascii</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">ascii</span><span class="p">(</span><span class="n">code</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
       <span class="n">desc</span> <span class="o">=</span> <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">language</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
-      <span class="k">return</span> <span class="nb">self</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">desc</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:chars</span>
+      <span class="k">return</span> <span class="nb">self</span> <span class="k">unless</span> <span class="n">desc</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:chars</span>
       <span class="nb">self</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="n">desc</span><span class="o">[</span><span class="ss">:re</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">desc</span><span class="o">[</span><span class="ss">:chars</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
     <span class="k">end</span>
   <span class="k">end</span>
@@ -4739,10 +4725,10 @@ gibi, ekleyebiliyoruz.</p>
   <span class="kp">include</span> <span class="no">LanguageUtils</span><span class="o">::</span><span class="nb">String</span>
 <span class="k">end</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
   <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="ss">:tr</span>
-  <span class="nb">puts</span> <span class="s2">&quot;şğüöçİı&quot;</span><span class="o">.</span><span class="n">ascii</span>
-  <span class="nb">puts</span> <span class="s2">&quot;über straße&quot;</span><span class="o">.</span><span class="n">ascii</span> <span class="ss">:de</span>
+  <span class="nb">puts</span> <span class="s1">&#39;şğüöçİı&#39;</span><span class="o">.</span><span class="n">ascii</span>
+  <span class="nb">puts</span> <span class="s1">&#39;über straße&#39;</span><span class="o">.</span><span class="n">ascii</span> <span class="ss">:de</span>
   <span class="nb">puts</span> <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">yes</span> <span class="ss">:tr</span>
   <span class="nb">puts</span> <span class="no">LanguageUtils</span><span class="o">::</span><span class="no">Turkish</span><span class="o">.</span><span class="n">spesific_util</span>
 <span class="k">end</span>
@@ -4928,15 +4914,7 @@ gibi, ekleyebiliyoruz.</p>
 <p>Bug&uuml;n&uuml;n ihtiyac&#305;n&#305; kar&#351;&#305;la, maliyetli genellemeyi yar&#305;n ki ihtiyaca b&#305;rak</p>
 </li>
 </ul>
-<p>Mod&uuml;l tasar&#305;m&#305; zordur.  Mod&uuml;l&uuml;n kimli&#287;i a&ccedil;&#305;k &#351;ekilde tan&#305;ml&#305; olmal&#305;.</p>
-<!--
-
-TODO Ruby'de &ccedil;o&#287;u zaman parantez gerekmiyor.  Nas&#305;l anl&#305;yor?  Atamalara bak&#305;yor
-(duck typing gibi).
-
-TODO b&ouml;l&uuml;mler: Fonksiyonel Programlama, Meta Programlama, Eko Sistem
-
---></section>
+<p>Mod&uuml;l tasar&#305;m&#305; zordur.  Mod&uuml;l&uuml;n kimli&#287;i a&ccedil;&#305;k &#351;ekilde tan&#305;ml&#305; olmal&#305;.</p></section>
             
           </div>
           <div class="presenter_notes">

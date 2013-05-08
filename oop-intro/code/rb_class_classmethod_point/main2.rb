@@ -37,7 +37,7 @@ class Point
   end
 
   def to_s
-    "(#@x,#@y)"
+    "(#{@x},#{@y})"
   end
 
   # XXX Artık DRY (Point yok)
@@ -51,6 +51,4 @@ def main
   puts Point.add Point.new(3, 5), Point.new(9, 7)
 end
 
-if __FILE__ == $0
-    main
-end
+main if __FILE__ == $PROGRAM_NAME
