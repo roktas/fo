@@ -30,7 +30,7 @@ class Point
     @x == other.x and @y == other.y
   end
 
-  def +(other=nil)
+  def +(other = nil)
     other ||= origin
     self.class.new @x + other.x, @y + other.y
   end
@@ -42,17 +42,17 @@ class Point
   end
 
   def to_s
-    "(#@x,#{@y})"
+    "(#{@x},#{@y})"
   end
 
   # Sınıf metodları
 
   class << self
     def origin
-      new *ORIGIN
+      new(*ORIGIN)
     end
 
-    def distance(here, there=nil)
+    def distance(here, there = nil)
       there ||= origin
       Math.sqrt((here.x - there.x)**2 + (here.y - there.y)**2)
     end
@@ -63,7 +63,7 @@ class Circle < Point
   attr_reader :r
 
   def initialize(*coords, r)
-    super *coords # XXX z,y yok; bu kısım artık DRY
+    super(*coords) # XXX z,y yok; bu kısım artık DRY
     @r = r
   end
 
@@ -76,9 +76,9 @@ class Circle < Point
   end
 
   # FIXME DRY ama ekstra satır
-  alias :super_to_s :to_s
+  alias_method :super_to_s, :to_s
   def to_s
-    "#@r@#{super_to_s}"
+    "#{@r}@#{super_to_s}"
   end
 
   # FIXME Point'te overload edilen bazı işleçler
@@ -91,6 +91,4 @@ def main
   puts "#{c} çemberi #{c.move(7, 9)} çemberine dönüştü"
 end
 
-if __FILE__ == $0
-    main
-end
+main if __FILE__ == $PROGRAM_NAME

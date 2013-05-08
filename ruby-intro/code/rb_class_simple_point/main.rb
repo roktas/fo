@@ -41,15 +41,13 @@ class Point
   end
 
   def to_s
-    "(#@x,#@y)"
+    "(#{@x},#{@y})"
   end
 end
 
 def main
   p, q = Point.new(3, 5), Point.new(9, 7)
-  puts "#{p} noktası #{q} noktasının " + (p.left?(q) ? "solunda" : "sağında")
+  puts "#{p} noktası #{q} noktasının " + (p.left?(q) ? 'solunda' : 'sağında')
 end
 
-if __FILE__ == $0
-    main
-end
+main if __FILE__ == $PROGRAM_NAME

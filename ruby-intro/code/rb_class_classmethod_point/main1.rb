@@ -37,7 +37,7 @@ class Point
   end
 
   def to_s
-    "(#@x,#@y)"
+    "(#{@x},#{@y})"
   end
 
   # Sınıf metodları
@@ -51,10 +51,10 @@ class Point
   end
 
   def self.origin
-    new *ORIGIN
+    new(*ORIGIN)
   end
 
-  def self.distance(here, there=nil)
+  def self.distance(here, there = nil)
     there ||= origin # origin metodunun alıcısı?  self → Point
     Math.sqrt((here.x - there.x)**2 + (here.y - there.y)**2)
   end
@@ -69,7 +69,7 @@ class Array
   def sum
     # XXX vektörden skalara dönüştürme ihtiyacı varsa
     # inject'i hatırlayın
-    inject(nil) { |sum, x| sum ? sum+x : x }
+    inject(nil) { |sum, x| sum ? sum + x : x }
   end
 end
 
@@ -81,6 +81,4 @@ def main
   puts "#{p} - orijin uzaklığı: #{Point.distance(p)}"
 end
 
-if __FILE__ == $0
-    main
-end
+main if __FILE__ == $PROGRAM_NAME

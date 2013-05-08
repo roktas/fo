@@ -8,7 +8,7 @@ module LanguageUtils
   Language = {}
   def Language.[](code)
     desc = super
-    if not desc
+    unless desc
       raise "'#{code}' geçerli bir dil kodu değil.  " +
             "Geçerli dil kodları #{self.keys.sort}"
     end
@@ -25,17 +25,17 @@ module LanguageUtils
     end
   end
 
-  def self.language(code=nil)
+  def self.language(code = nil)
     code ? Language[code] : @language
   end
   def self.language=(code)
     @language = Language[code]
   end
 
-  def self.yes(code=nil)
+  def self.yes(code = nil)
     language(code)[:yesno].first
   end
-  def self.no(code=nil)
+  def self.no(code = nil)
     language(code)[:yesno].last
   end
 
@@ -43,12 +43,12 @@ module LanguageUtils
 
   module English
     LanguageUtils.describe_language :en,
-      :yesno => %w(yes no)
+      yesno: %w(yes no)
   end
 
   module Turkish
     LanguageUtils.describe_language :tr,
-      :chars => %w(
+      chars: %w(
         ı i
         ğ g
         ü u
@@ -62,7 +62,7 @@ module LanguageUtils
         Ö O
         Ç C
       ),
-      :yesno => %w(evet hayır)
+      yesno: %w(evet hayır)
 
       def self.spesific_util
         puts "#{self}: bu dile özgü bir metod"
@@ -71,7 +71,7 @@ module LanguageUtils
 
   module German
     LanguageUtils.describe_language :de,
-      :chars => %w(
+      chars: %w(
         ä a
         Ä A
         é e
@@ -81,15 +81,15 @@ module LanguageUtils
         Ü U
         ß ss
       ),
-      :yesno => %w(ja nein)
+      yesno: %w(ja nein)
   end
 
   # Dizgi Arayüzü
 
   module String
-    def ascii(code=nil)
+    def ascii(code = nil)
       desc = LanguageUtils.language(code)
-      return self if not desc.has_key? :chars
+      return self unless desc.has_key? :chars
       self.gsub(desc[:re]) { |c| desc[:chars][c] }
     end
   end
@@ -103,10 +103,10 @@ class String
   include LanguageUtils::String
 end
 
-if __FILE__ == $0
+if __FILE__ == $PROGRAM_NAME
   LanguageUtils.language = :tr
-  puts "şğüöçİı".ascii
-  puts "über straße".ascii :de
+  puts 'şğüöçİı'.ascii
+  puts 'über straße'.ascii :de
   puts LanguageUtils.yes :tr
   puts LanguageUtils::Turkish.spesific_util
 end

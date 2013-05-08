@@ -28,6 +28,4 @@ class String
   include Turkish
 end
 
-if __FILE__ == $0
-  puts "ŞĞÜÖÇöçğüıİ".ascii
-end
+puts 'ŞĞÜÖÇöçğüıİ'.ascii if __FILE__ == $PROGRAM_NAME

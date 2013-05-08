@@ -30,7 +30,7 @@ class Point
     @x == other.x and @y == other.y
   end
 
-  def +(other=nil)
+  def +(other = nil)
     other ||= origin
     # XXX self.class → Point, ama sadece bu sınıfta!
     self.class.new @x + other.x, @y + other.y
@@ -43,17 +43,17 @@ class Point
   end
 
   def to_s
-    "(#@x,#{@y})"
+    "(#{@x},#{@y})"
   end
 
   # Sınıf metodları
 
   class << self
     def origin
-      new *ORIGIN
+      new(*ORIGIN)
     end
 
-    def distance(here, there=nil)
+    def distance(here, there = nil)
       there ||= origin
       Math.sqrt((here.x - there.x)**2 + (here.y - there.y)**2)
     end
@@ -78,7 +78,7 @@ class Circle < Point
 
   def to_s
     # FIXME Neden x, y?  DRY değil
-    "#@r@(#{self.x},#{self.y})"
+    "#{@r}@(#{self.x},#{self.y})"
   end
 
   # FIXME Point'te overload edilen bazı işleçler
@@ -91,6 +91,4 @@ def main
   puts "#{c} çemberi #{c.move(7, 9)} çemberine dönüştü"
 end
 
-if __FILE__ == $0
-    main
-end
+main if __FILE__ == $PROGRAM_NAME

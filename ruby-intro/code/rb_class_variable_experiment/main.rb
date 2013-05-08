@@ -6,7 +6,7 @@ def dump(p)
   puts "#{p}: #{eval(p, TOPLEVEL_BINDING) || 'boş'}"
 end
 
-puts "A sınıfı tanımlanıyor"
+puts 'A sınıfı tanımlanıyor'
 class A
   attr :instance_variable
 
@@ -26,22 +26,22 @@ class A
   end
 end
 
-puts "B < A sınıfı tanımlanıyor (değişiklik yapmadan)"
+puts 'B < A sınıfı tanımlanıyor (değişiklik yapmadan)'
 class B < A
 end
 
-puts "C < A sınıfı tanımlanıyor (değişiklik yaparak)"
+puts 'C < A sınıfı tanımlanıyor (değişiklik yaparak)'
 class C < A
   CONSTANT = "#{self}_CONSTANT"
   @@class_variable = "#{self}_class_variable"
   @class_instance_variable = "#{self}_class_instance_variable"
 end
 
-puts "A sınıfından a nesnesi oluşturuluyor"
+puts 'A sınıfından a nesnesi oluşturuluyor'
 a = A.new
-puts "B sınıfından b nesnesi oluşturuluyor"
+puts 'B sınıfından b nesnesi oluşturuluyor'
 b = B.new
-puts "C sınıfından c nesnesi oluşturuluyor"
+puts 'C sınıfından c nesnesi oluşturuluyor'
 c = C.new
 
 puts

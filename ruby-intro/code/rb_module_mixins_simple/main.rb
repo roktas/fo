@@ -15,6 +15,4 @@ class String
   include Turkish
 end
 
-if __FILE__ == $0
-  puts "ıişğüöç".turkish_upcase
-end
+puts 'ıişğüöç'.turkish_upcase if __FILE__ == $PROGRAM_NAME

@@ -21,12 +21,12 @@ module Ascii
 
   def self.turkish(text)
     # FIXME Her seferinde bu düzenli ifadeyi hesaplamak gerekmemeli
-    re = Regexp.new '[' + TURKISH.keys.join + ']'
-    text.gsub(re) { |c| TURKISH[c] }
+    re = Regexp.new '[' + CHARS.keys.join + ']'
+    text.gsub(re) { |c| CHARS[c] }
   end
 end
 
-if __FILE__ == $0
+if __FILE__ == $PROGRAM_NAME
   # FIXME Dizgi üzerinden çağrılsa?  "ŞĞÜÖÇöçğüıİ".ascii gibi
-  puts Ascii.turkish("ŞĞÜÖÇöçğüıİ")
+  puts Ascii.turkish('ŞĞÜÖÇöçğüıİ')
 end

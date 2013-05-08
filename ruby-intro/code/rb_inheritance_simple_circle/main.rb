@@ -30,7 +30,7 @@ class Point
     @x == other.x and @y == other.y
   end
 
-  def +(other=nil)
+  def +(other = nil)
     other ||= self.class.origin
     self.class.new @x + other.x, @y + other.y
   end
@@ -42,17 +42,17 @@ class Point
   end
 
   def to_s
-    "(#@x,#{@y})"
+    "(#{@x},#{@y})"
   end
 
   # Sınıf metodları
 
   class << self
     def origin
-      new *ORIGIN
+      new(*ORIGIN)
     end
 
-    def distance(here, there=nil)
+    def distance(here, there = nil)
       there ||= origin
       Math.sqrt((here.x - there.x)**2 + (here.y - there.y)**2)
     end
@@ -63,7 +63,7 @@ class Circle < Point
   attr_reader :r
 
   def initialize(*coords, r)
-    super *coords
+    super(*coords)
     @r = r
   end
 
@@ -77,7 +77,7 @@ class Circle < Point
 
   def to_s
     # XXX Ooooo!  Artık DRY ama kara büyü :-/
-    "#@r@#{self.class.superclass.instance_method(:to_s).bind(self).call}"
+    "#{@r}@#{self.class.superclass.instance_method(:to_s).bind(self).call}"
   end
 
   # XXX Anlamlı olmayan işleçler şuna benzer bir şey yapılabilir
@@ -92,6 +92,4 @@ def main
   puts "#{c} çemberi #{c.move(7, 9)} çemberine dönüştü"
 end
 
-if __FILE__ == $0
-    main
-end
+main if __FILE__ == $PROGRAM_NAME

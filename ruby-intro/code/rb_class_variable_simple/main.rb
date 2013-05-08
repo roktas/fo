@@ -31,6 +31,4 @@ def main
   Point.report
 end
 
-if __FILE__ == $0
-    main
-end
+main if __FILE__ == $PROGRAM_NAME
