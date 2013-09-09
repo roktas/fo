@@ -3589,11 +3589,11 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">perimeter</span>
-    <span class="mi">2</span> <span class="o">*</span> <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">area</span>
-    <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
+    <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_s</span>
@@ -3902,30 +3902,30 @@ var &rarr; S&#305;n&#305;f sabitleri</p>
             <section><ul>
 <li>&Ccedil;&#305;kt&#305;</li>
 </ul>
-<p><div class="highlight"><pre>A sınıfı tanımlanıyor
-B <span class="nt">&lt; A</span> <span class="err">sınıfı</span> <span class="err">tanımlanıyor</span> <span class="err">(değişiklik</span> <span class="err">yapmadan)</span>
-<span class="err">C</span> <span class="err">&lt;</span> <span class="err">A</span> <span class="err">sınıfı</span> <span class="err">tanımlanıyor</span> <span class="err">(değişiklik</span> <span class="err">yaparak)</span>
-<span class="err">A</span> <span class="err">sınıfından</span> <span class="err">a</span> <span class="err">nesnesi</span> <span class="err">oluşturuluyor</span>
-<span class="err">B</span> <span class="err">sınıfından</span> <span class="err">b</span> <span class="err">nesnesi</span> <span class="err">oluşturuluyor</span>
-<span class="err">C</span> <span class="err">sınıfından</span> <span class="err">c</span> <span class="err">nesnesi</span> <span class="err">oluşturuluyor</span>
+<p><div class="highlight"><pre><span class="nx">A</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span> <span class="nb">tan</span><span class="err">ı</span><span class="nx">mlan</span><span class="err">ı</span><span class="nx">yor</span>
+<span class="nx">B</span> <span class="o">&lt;</span> <span class="nx">A</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span> <span class="nb">tan</span><span class="err">ı</span><span class="nx">mlan</span><span class="err">ı</span><span class="nx">yor</span> <span class="p">(</span><span class="nx">de</span><span class="err">ğ</span><span class="nx">i</span><span class="err">ş</span><span class="nx">iklik</span> <span class="nx">yapmadan</span><span class="p">)</span>
+<span class="nx">C</span> <span class="o">&lt;</span> <span class="nx">A</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span> <span class="nb">tan</span><span class="err">ı</span><span class="nx">mlan</span><span class="err">ı</span><span class="nx">yor</span> <span class="p">(</span><span class="nx">de</span><span class="err">ğ</span><span class="nx">i</span><span class="err">ş</span><span class="nx">iklik</span> <span class="nx">yaparak</span><span class="p">)</span>
+<span class="nx">A</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span><span class="nx">ndan</span> <span class="nx">a</span> <span class="nx">nesnesi</span> <span class="nx">olu</span><span class="err">ş</span><span class="nx">turuluyor</span>
+<span class="nx">B</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span><span class="nx">ndan</span> <span class="nx">b</span> <span class="nx">nesnesi</span> <span class="nx">olu</span><span class="err">ş</span><span class="nx">turuluyor</span>
+<span class="nx">C</span> <span class="nb">s</span><span class="err">ı</span><span class="nb">n</span><span class="err">ı</span><span class="nb">f</span><span class="err">ı</span><span class="nx">ndan</span> <span class="nx">c</span> <span class="nx">nesnesi</span> <span class="nx">olu</span><span class="err">ş</span><span class="nx">turuluyor</span>
 
-<span class="err">A:</span> <span class="err">A</span>
-<span class="err">A::CONSTANT:</span> <span class="err">A_CONSTANT</span>
-<span class="err">A.class_variable:</span> <span class="err">C_class_variable</span>
-<span class="err">A.class_instance_variable:</span> <span class="err">A_class_instance_variable</span>
-<span class="err">a.instance_variable:</span> <span class="err">#&lt;A:0x00000001bc1a28</span><span class="nt">&gt;</span>_instance_variable
+<span class="nx">A</span><span class="p">:</span> <span class="nx">A</span>
+<span class="nx">A</span><span class="p">::</span><span class="nl">CONSTANT</span><span class="p">:</span> <span class="nx">A_CONSTANT</span>
+<span class="nx">A.class_variable</span><span class="p">:</span> <span class="nx">C_class_variable</span>
+<span class="nx">A.class_instance_variable</span><span class="p">:</span> <span class="nx">A_class_instance_variable</span>
+<span class="nx">a.instance_variable</span><span class="p">:</span> <span class="err">#</span><span class="o">&lt;</span><span class="nx">A</span><span class="p">:</span><span class="mh">0x00000001bc1a28</span><span class="o">&gt;</span><span class="nx">_instance_variable</span>
 
-B: B
-B::CONSTANT: A_CONSTANT
-B.class_variable: C_class_variable
-B.class_instance_variable: boş
-b.instance_variable: #<span class="nt">&lt;B:0x00000001bc18c0&gt;</span>_instance_variable
+<span class="nx">B</span><span class="p">:</span> <span class="nx">B</span>
+<span class="nx">B</span><span class="p">::</span><span class="nl">CONSTANT</span><span class="p">:</span> <span class="nx">A_CONSTANT</span>
+<span class="nx">B.class_variable</span><span class="p">:</span> <span class="nx">C_class_variable</span>
+<span class="nx">B.class_instance_variable</span><span class="p">:</span> <span class="nx">bo</span><span class="err">ş</span>
+<span class="nx">b.instance_variable</span><span class="p">:</span> <span class="err">#</span><span class="o">&lt;</span><span class="nx">B</span><span class="p">:</span><span class="mh">0x00000001bc18c0</span><span class="o">&gt;</span><span class="nx">_instance_variable</span>
 
-C: C
-C::CONSTANT: C_CONSTANT
-C.class_variable: C_class_variable
-C.class_instance_variable: C_class_instance_variable
-c.instance_variable: #<span class="nt">&lt;C:0x00000001bc17a8&gt;</span>_instance_variable
+<span class="nx">C</span><span class="p">:</span> <span class="nx">C</span>
+<span class="nx">C</span><span class="p">::</span><span class="nl">CONSTANT</span><span class="p">:</span> <span class="nx">C_CONSTANT</span>
+<span class="nx">C.class_variable</span><span class="p">:</span> <span class="nx">C_class_variable</span>
+<span class="nx">C.class_instance_variable</span><span class="p">:</span> <span class="nx">C_class_instance_variable</span>
+<span class="nx">c.instance_variable</span><span class="p">:</span> <span class="err">#</span><span class="o">&lt;</span><span class="nx">C</span><span class="p">:</span><span class="mh">0x00000001bc17a8</span><span class="o">&gt;</span><span class="nx">_instance_variable</span>
 </pre></div>
 </p></section>
             
@@ -4665,12 +4665,12 @@ gibi, ekleyebiliyoruz.</p>
 
   <span class="k">module</span> <span class="nn">English</span>
     <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span> <span class="ss">:en</span><span class="p">,</span>
-      <span class="n">yesno</span><span class="p">:</span> <span class="sx">%w(yes no)</span>
+      <span class="ss">yesno</span><span class="p">:</span> <span class="sx">%w(yes no)</span>
   <span class="k">end</span>
 
   <span class="k">module</span> <span class="nn">Turkish</span>
     <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span> <span class="ss">:tr</span><span class="p">,</span>
-      <span class="n">chars</span><span class="p">:</span> <span class="sx">%w(</span>
+      <span class="ss">chars</span><span class="p">:</span> <span class="sx">%w(</span>
 <span class="sx">        ı i</span>
 <span class="sx">        ğ g</span>
 <span class="sx">        ü u</span>
@@ -4684,7 +4684,7 @@ gibi, ekleyebiliyoruz.</p>
 <span class="sx">        Ö O</span>
 <span class="sx">        Ç C</span>
 <span class="sx">      )</span><span class="p">,</span>
-      <span class="n">yesno</span><span class="p">:</span> <span class="sx">%w(evet hayır)</span>
+      <span class="ss">yesno</span><span class="p">:</span> <span class="sx">%w(evet hayır)</span>
 
       <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">spesific_util</span>
         <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">: bu dile özgü bir metod&quot;</span>
@@ -4693,7 +4693,7 @@ gibi, ekleyebiliyoruz.</p>
 
   <span class="k">module</span> <span class="nn">German</span>
     <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span> <span class="ss">:de</span><span class="p">,</span>
-      <span class="n">chars</span><span class="p">:</span> <span class="sx">%w(</span>
+      <span class="ss">chars</span><span class="p">:</span> <span class="sx">%w(</span>
 <span class="sx">        ä a</span>
 <span class="sx">        Ä A</span>
 <span class="sx">        é e</span>
@@ -4703,7 +4703,7 @@ gibi, ekleyebiliyoruz.</p>
 <span class="sx">        Ü U</span>
 <span class="sx">        ß ss</span>
 <span class="sx">      )</span><span class="p">,</span>
-      <span class="n">yesno</span><span class="p">:</span> <span class="sx">%w(ja nein)</span>
+      <span class="ss">yesno</span><span class="p">:</span> <span class="sx">%w(ja nein)</span>
   <span class="k">end</span>
 
   <span class="c1"># Dizgi Arayüzü</span>
@@ -4722,7 +4722,7 @@ gibi, ekleyebiliyoruz.</p>
 
 <span class="c1"># Dizgi arayüzünü etkinleştir</span>
 <span class="k">class</span> <span class="nc">String</span>
-  <span class="kp">include</span> <span class="no">LanguageUtils</span><span class="o">::</span><span class="nb">String</span>
+  <span class="kp">include</span> <span class="ss">LanguageUtils</span><span class="p">:</span><span class="ss">:String</span>
 <span class="k">end</span>
 
 <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
@@ -4730,7 +4730,7 @@ gibi, ekleyebiliyoruz.</p>
   <span class="nb">puts</span> <span class="s1">&#39;şğüöçİı&#39;</span><span class="o">.</span><span class="n">ascii</span>
   <span class="nb">puts</span> <span class="s1">&#39;über straße&#39;</span><span class="o">.</span><span class="n">ascii</span> <span class="ss">:de</span>
   <span class="nb">puts</span> <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">yes</span> <span class="ss">:tr</span>
-  <span class="nb">puts</span> <span class="no">LanguageUtils</span><span class="o">::</span><span class="no">Turkish</span><span class="o">.</span><span class="n">spesific_util</span>
+  <span class="nb">puts</span> <span class="ss">LanguageUtils</span><span class="p">:</span><span class="ss">:Turkish</span><span class="o">.</span><span class="n">spesific_util</span>
 <span class="k">end</span>
 </pre></div>
 </p></section>

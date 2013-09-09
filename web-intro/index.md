@@ -28,21 +28,21 @@ CSS dosyaları "kurallar"dan ("rules") oluşuyor
 
 Seçici ("selector") bir tip, sınıf veya id seçiyor
 
-*   Tip seçici: `p` etiketlerini yani paragrafları seç
+-   Tip seçici: `p` etiketlerini yani paragrafları seç
 
         !css
         p {
           ...
         }
 
-*   Sınıf ("class") seçici: `foo` sınıflı elemanları seç
+-   Sınıf ("class") seçici: `foo` sınıflı elemanları seç
 
         !css
         .foo {
           ...
         }
 
-*   Id ("id") seçici: `baz` id'li elemanları seç
+-   Id ("id") seçici: `baz` id'li elemanları seç
 
         !css
         #baz {
@@ -55,7 +55,7 @@ Seçici ("selector") bir tip, sınıf veya id seçiyor
 
 Birden fazla seçiciyi virgülle gruplayarak tek bir kural oluşturabiliyoruz
 
-*   `foo` ve `bar` sınıflarını (her ikisini) seç ve font boyutunu `16px` olarak
+-   `foo` ve `bar` sınıflarını (her ikisini) seç ve font boyutunu `16px` olarak
     ayarla
 
         !css
@@ -65,7 +65,7 @@ Birden fazla seçiciyi virgülle gruplayarak tek bir kural oluşturabiliyoruz
 
 Soldan sağa sırayla seçiciyi özelleştirmek mümkün
 
-*   `foo` sınıfı içindeki **tüm** `bar` sınıflı elemanlar içindeki **tüm**
+-   `foo` sınıfı içindeki **tüm** `bar` sınıflı elemanlar içindeki **tüm**
     paragrafları seç ve font boyutunu `16px` olarak ayarla
 
         !css
@@ -79,22 +79,22 @@ Soldan sağa sırayla seçiciyi özelleştirmek mümkün
 
 Seçicilerle gruplama yapmak dışında çeşitli kombinasyonlar da kurulabiliyor
 
-*   Sırasız listelerdeki tüm maddelerin metin rengini kırmızı yap
+-   Sırasız listelerdeki tüm maddelerin metin rengini kırmızı yap
 
         !css
         ul li { color: red; }
 
-*   Sırasız listelerde ilk seviye maddelerin metin rengini kırmızı yap
+-   Sırasız listelerde ilk seviye maddelerin metin rengini kırmızı yap
 
         !css
         ul > li { color: red; }
 
-*   Sırasız listelerden sonra gelen ilk paragrafların metin rengini kırmızı yap
+-   Sırasız listelerden sonra gelen ilk paragrafların metin rengini kırmızı yap
 
         !css
         ul + p { color: red; }
 
-*   Sırasız listelerden sonra gelen **tüm** paragrafların metin rengini kırmızı
+-   Sırasız listelerden sonra gelen **tüm** paragrafların metin rengini kırmızı
     yap
 
         !css

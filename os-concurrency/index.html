@@ -1787,7 +1787,7 @@ div.slide {
     </div>
     <div class="slides">
       
-      <!-- slide source: os-parallel/index.md -->
+      <!-- slide source: os-concurrency/index.md -->
       <div class="slide-wrapper">
         <div class="slide first">
           <div class="inner">
@@ -1809,7 +1809,7 @@ div.slide {
           <footer>
             
             <aside class="source">
-              Source: <a href="os-parallel/index.md">os-parallel/index.md</a>
+              Source: <a href="os-concurrency/index.md">os-concurrency/index.md</a>
             </aside>
             
             <aside class="page_number">
@@ -1819,7 +1819,7 @@ div.slide {
         </div>
       </div>
       
-      <!-- slide source: os-parallel/index.md -->
+      <!-- slide source: os-concurrency/index.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
@@ -1853,7 +1853,7 @@ div.slide {
 <span class="kt">int</span>
 <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
-        <span class="n">pthread_t</span> <span class="n">threads</span><span class="p">[</span><span class="n">NUMBER_OF_THREADS</span><span class="p">];</span>
+        <span class="kt">pthread_t</span> <span class="n">threads</span><span class="p">[</span><span class="n">NUMBER_OF_THREADS</span><span class="p">];</span>
         <span class="kt">int</span> <span class="n">status</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
 
         <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUMBER_OF_THREADS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -1890,7 +1890,7 @@ div.slide {
           <footer>
             
             <aside class="source">
-              Source: <a href="os-parallel/index.md">os-parallel/index.md</a>
+              Source: <a href="os-concurrency/index.md">os-concurrency/index.md</a>
             </aside>
             
             <aside class="page_number">
@@ -1900,7 +1900,7 @@ div.slide {
         </div>
       </div>
       
-      <!-- slide source: os-parallel/index.md -->
+      <!-- slide source: os-concurrency/index.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
@@ -1977,7 +1977,7 @@ div.slide {
           <footer>
             
             <aside class="source">
-              Source: <a href="os-parallel/index.md">os-parallel/index.md</a>
+              Source: <a href="os-concurrency/index.md">os-concurrency/index.md</a>
             </aside>
             
             <aside class="page_number">
@@ -1987,7 +1987,7 @@ div.slide {
         </div>
       </div>
       
-      <!-- slide source: os-parallel/index.md -->
+      <!-- slide source: os-concurrency/index.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
@@ -2039,7 +2039,7 @@ div.slide {
 <span class="cm">/*</span>
 <span class="cm"> * Tüm evreler arasında paylaşılan karşılıklı dışlayıcı.</span>
 <span class="cm"> */</span>
-<span class="k">static</span> <span class="n">pthread_mutex_t</span> <span class="n">mutex_dot_product</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">pthread_mutex_t</span> <span class="n">mutex_dot_product</span><span class="p">;</span>
 
 <span class="cm">/* Test vektörlerini ilkle. */</span>
 <span class="k">static</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span> <span class="kt">long</span> <span class="n">i</span><span class="p">;</span>
@@ -2130,7 +2130,7 @@ div.slide {
         <span class="cm">/*</span>
 <span class="cm">         * Evre dizisi.</span>
 <span class="cm">         */</span>
-        <span class="n">pthread_t</span> <span class="n">threads</span><span class="p">[</span><span class="n">NTHREAD</span><span class="p">];</span>
+        <span class="kt">pthread_t</span> <span class="n">threads</span><span class="p">[</span><span class="n">NTHREAD</span><span class="p">];</span>
 
         <span class="cm">/*</span>
 <span class="cm">         * Vektörleri oluştur.</span>
@@ -2191,7 +2191,7 @@ div.slide {
           <footer>
             
             <aside class="source">
-              Source: <a href="os-parallel/index.md">os-parallel/index.md</a>
+              Source: <a href="os-concurrency/index.md">os-concurrency/index.md</a>
             </aside>
             
             <aside class="page_number">
@@ -2201,7 +2201,7 @@ div.slide {
         </div>
       </div>
       
-      <!-- slide source: os-parallel/index.md -->
+      <!-- slide source: os-concurrency/index.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
@@ -2266,7 +2266,7 @@ div.slide {
 <span class="cm">/*</span>
 <span class="cm"> * Tüm evreler arasında paylaşılan karşılıklı dışlayıcı.</span>
 <span class="cm"> */</span>
-<span class="k">static</span> <span class="n">pthread_mutex_t</span> <span class="n">mutex_dot_product</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">pthread_mutex_t</span> <span class="n">mutex_dot_product</span><span class="p">;</span>
 
 <span class="cm">/* Test vektörlerini ilkle. */</span>
 <span class="k">static</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span> <span class="kt">long</span> <span class="n">i</span><span class="p">;</span>
@@ -2366,7 +2366,7 @@ div.slide {
         <span class="cm">/*</span>
 <span class="cm">         * Evre dizisi.</span>
 <span class="cm">         */</span>
-        <span class="n">pthread_t</span> <span class="n">threads</span><span class="p">[</span><span class="n">NTHREAD</span><span class="p">];</span>
+        <span class="kt">pthread_t</span> <span class="n">threads</span><span class="p">[</span><span class="n">NTHREAD</span><span class="p">];</span>
 
         <span class="cm">/*</span>
 <span class="cm">         * Vektörleri oluştur.</span>
@@ -2433,7 +2433,7 @@ div.slide {
           <footer>
             
             <aside class="source">
-              Source: <a href="os-parallel/index.md">os-parallel/index.md</a>
+              Source: <a href="os-concurrency/index.md">os-concurrency/index.md</a>
             </aside>
             
             <aside class="page_number">

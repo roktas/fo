@@ -2600,7 +2600,7 @@ etkinle&#351;tiriyor ve npm ile eksik paketleri kuruyor.</p></section>
     <span class="k">throw</span> <span class="nx">err</span> <span class="k">if</span> <span class="nx">err</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">stdout</span> <span class="o">+</span> <span class="nx">stderr</span>
 
-<span class="nx">task</span> <span class="s">&#39;log&#39;</span><span class="p">,</span> <span class="s">&#39;sunucu günlüğünü görüntüle&#39;</span><span class="p">,</span> <span class="o">-&gt;</span>
+<span class="nx">task</span> <span class="s">&#39;log&#39;</span><span class="p">,</span> <span class="s">&#39;sunucu günlüğünü görüntüle&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
   <span class="nx">runcmd</span><span class="p">(</span>
     <span class="s">&quot;ssh </span><span class="si">#{</span><span class="nx">HOST</span><span class="si">}</span><span class="s"> tail -n </span><span class="si">#{</span><span class="nx">LINES</span><span class="si">}</span><span class="s"> &quot;</span> <span class="o">+</span>
     <span class="s">&quot;/var/svc/log/site-node-service:default.log&quot;</span>

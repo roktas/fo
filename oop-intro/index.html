@@ -2076,11 +2076,11 @@ div.slide {
             <section><p><div class="highlight"><pre><span class="cp">#include &lt;cstdio&gt;</span>
 
 <span class="k">class</span> <span class="nc">Point</span> <span class="p">{</span>
-<span class="k">private</span><span class="o">:</span>
+<span class="nl">private:</span>
         <span class="kt">int</span> <span class="n">m_x</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">m_y</span><span class="p">;</span>
 
-<span class="k">public</span><span class="o">:</span>
+<span class="nl">public:</span>
         <span class="n">Point</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
         <span class="p">{</span>
                 <span class="n">m_x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
@@ -2131,7 +2131,7 @@ div.slide {
         <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="n">Point</span> <span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">q</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
 
@@ -3962,11 +3962,11 @@ div.slide {
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">perimeter</span>
-    <span class="mi">2</span> <span class="o">*</span> <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">area</span>
-    <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
+    <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_s</span>
@@ -4086,11 +4086,11 @@ div.slide {
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">perimeter</span>
-    <span class="mi">2</span> <span class="o">*</span> <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">area</span>
-    <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
+    <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
   <span class="k">end</span>
 
   <span class="c1"># FIXME DRY ama ekstra satır</span>
@@ -4211,11 +4211,11 @@ div.slide {
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">perimeter</span>
-    <span class="mi">2</span> <span class="o">*</span> <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">area</span>
-    <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
+    <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_s</span>
@@ -4348,11 +4348,11 @@ div.slide {
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">perimeter</span>
-    <span class="mi">2</span> <span class="o">*</span> <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">area</span>
-    <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
+    <span class="ss">Math</span><span class="p">:</span><span class="ss">:PI</span> <span class="o">*</span> <span class="vi">@r</span><span class="o">**</span><span class="mi">2</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_s</span>

@@ -20,17 +20,17 @@ Nisan 2012
 
 Sınıf ilişkilerini UML diyagramlarıyla gösteriyoruz
 
-*   Bir modelleme aracı
+-   Bir modelleme aracı
 
-*   **Unified Modelling Language**
+-   **Unified Modelling Language**
 
-*   Tasarım sırasında yararlı
+-   Tasarım sırasında yararlı
 
 ---
 
 #   UML Diyagramları
 
-*   "Miras Alma" ilişkisi ebeveyn sınıfa doğru içi boş bir ok
+-   "Miras Alma" ilişkisi ebeveyn sınıfa doğru içi boş bir ok
 
 ![Miras Alma](media/uml-inheritance.png)
 
@@ -40,17 +40,17 @@ Sınıf ilişkilerini UML diyagramlarıyla gösteriyoruz
 
 "Miras Alma" bir `is-a` ilişkisi kurar
 
-*   `Car` **`is a`** `Vehicle`: Araba bir Araçtır
+-   `Car` **`is a`** `Vehicle`: Araba bir Araçtır
 
 Bu ilişkinin doğal olması lazım
 
-*   Aksi halde hatalı bir soyutlama yapmış olursunuz
+-   Aksi halde hatalı bir soyutlama yapmış olursunuz
 
-*   Hatalı soyutlamanın bedeli?
+-   Hatalı soyutlamanın bedeli?
 
-*   Karmaşık ve kırılgan kod
+-   Karmaşık ve kırılgan kod
 
-*   Yapboz'da yerine oturmayan parçalar
+-   Yapboz'da yerine oturmayan parçalar
 
 ---
 
@@ -70,13 +70,13 @@ Bu ilişkinin doğal olması lazım
 
 `Car` **`is a`** `Vehicle`: Araba bir Araçtır
 
-*   Yukarıdaki cümle kulağa doğru geliyor; fakat...
+-   Yukarıdaki cümle kulağa doğru geliyor; fakat...
 
-*   İsimlendirmelere aldanmayın, modele bakın
+-   İsimlendirmelere aldanmayın, modele bakın
 
-*   "Araç" nasıl modellenmiş? `Vehicle` sınıfıyla
+-   "Araç" nasıl modellenmiş? `Vehicle` sınıfıyla
 
-*   `Vehicle`?  "Motoru olan bir nesne" üretir
+-   `Vehicle`?  "Motoru olan bir nesne" üretir
 
 ---
 
@@ -84,11 +84,11 @@ Bu ilişkinin doğal olması lazım
 
 Her aracın (vasıta'nın) bir motoru var mıdır?
 
-*   Bisiklet?
+-   Bisiklet?
 
-*   Planör?
+-   Planör?
 
-*   Kayık?
+-   Kayık?
 
 ---
 
@@ -96,15 +96,15 @@ Her aracın (vasıta'nın) bir motoru var mıdır?
 
 Bize başka bir soyutlama lazım
 
-*   Her aracın motoru olmayabilir
+-   Her aracın motoru olmayabilir
 
-*   "Araba moturu olan bir araçtır"
+-   "Araba moturu olan bir araçtır"
 
 ---
 
 #   Komposizyon
 
-*   "Komposizyon" ilişkisi kompoze **edilen** sınıfa doğru içi dolu bir ok
+-   "Komposizyon" ilişkisi kompoze **edilen** sınıfa doğru içi dolu bir ok
 
 ![Doğru Kompozisyon](media/uml-composition.png)
 
@@ -114,11 +114,11 @@ Bize başka bir soyutlama lazım
 
 "Kompozisyon" bir `has-a` ilişkisi kurar
 
-*   `Car` **`is a`** `Vehicle`, that **`has an`** `Engine`
+-   `Car` **`is a`** `Vehicle`, that **`has an`** `Engine`
 
-*   "Araba motora sahip bir Araçtır"
+-   "Araba motora sahip bir Araçtır"
 
-*   Bakın bu farklı bir model
+-   Bakın bu farklı bir model
 
 ---
 
@@ -132,17 +132,17 @@ Bize başka bir soyutlama lazım
 
 **Mümkün olan her yerde "Komposizyon"u, "Miras Alma"ya tercih edin.**
 
-*   Bir modellemenin eşiğindesiniz
+-   Bir modellemenin eşiğindesiniz
 
-*   Hemen `is-a` ve `has-a` ilişkilerini tayin edin
+-   Hemen `is-a` ve `has-a` ilişkilerini tayin edin
 
-*   Model'e alternatif açılardan bakın
+-   Model'e alternatif açılardan bakın
 
-*   `is-a` ilişkisi çok doğal olmalı
+-   `is-a` ilişkisi çok doğal olmalı
 
-*   Doğal değilse `has-a` ilişkisini arayın
+-   Doğal değilse `has-a` ilişkisini arayın
 
-*   Doğallık şüphesi varsa `has-a`
+-   Doğallık şüphesi varsa `has-a`
 
 ---
 
@@ -164,11 +164,11 @@ Bazen "Kompozisyon" ve "Miras Alma" birlikte kullanılabilir
 
 "Komposizyon"lu modelde motorun çalışma aklı nerede?
 
-*   Motorda ama bir kısmı Araba'ya sızmış gibi: `car.start`
+-   Motorda ama bir kısmı Araba'ya sızmış gibi: `car.start`
 
-*   Araba motorun çalışmasına bu kadar yakın olmamalı
+-   Araba motorun çalışmasına bu kadar yakın olmamalı
 
-*   Araba modelinin müşterisi motorun çalışmasıyla ilgilenmez
+-   Araba modelinin müşterisi motorun çalışmasıyla ilgilenmez
 
 Ne yapmalı?
 
@@ -178,11 +178,11 @@ Ne yapmalı?
 
 Araba içinde motorun çalışmasıyla ilgili tüm işler motora devredilmeli
 
-*   `Car` sınıfında motorla ilgili tüm işler `Engine` sınıfına bırakılmalı
+-   `Car` sınıfında motorla ilgili tüm işler `Engine` sınıfına bırakılmalı
 
-*   `Engine` sınıfı "motor işleri"ni temsil ediyor
+-   `Engine` sınıfı "motor işleri"ni temsil ediyor
 
-*   "Motor"un delegasyonu
+-   "Motor"un delegasyonu
 
 ---
 

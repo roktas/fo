@@ -14,17 +14,17 @@ Mart 2012
 
 Ruby'de ifade/deyim ayrımı yoktur, her şey bir ifadedir (değer üretir).
 
-*   `if`, `case`, metod, bloklarda üretilen değer son deyimden gelir
+-   `if`, `case`, metod, bloklarda üretilen değer son deyimden gelir
 
-*   `while`, `for` deyimleri daima `nil` üretir
+-   `while`, `for` deyimleri daima `nil` üretir
 
 ---
 
 #   Doğru/Yanlış
 
-*   Ruby'de sadece `false` ve `nil` mantıksal olarak "yanlış" değer üretir
+-   Ruby'de sadece `false` ve `nil` mantıksal olarak "yanlış" değer üretir
 
-*   Kalan her şey "doğru" değer üretir
+-   Kalan her şey "doğru" değer üretir
 
         !ruby
         nil and true #=> false
@@ -34,7 +34,7 @@ Ruby'de ifade/deyim ayrımı yoktur, her şey bir ifadedir (değer üretir).
         "" and true  #=> true
         -1 and true  #=> true
 
-*   İpucu: Bir nesneyi mantıksal bir değere çevirmek için `!!` işlecini kullanın
+-   İpucu: Bir nesneyi mantıksal bir değere çevirmek için `!!` işlecini kullanın
 
         !ruby
         !! nil #=> false
@@ -50,7 +50,7 @@ Ruby'de ifade/deyim ayrımı yoktur, her şey bir ifadedir (değer üretir).
 
 `and` ve `or` operatörleri düşük önceliğe sahiptir.
 
-*   Bu operatörler `=` operatöründen daha düşük öncelikli (`=` önce işlenir)
+-   Bu operatörler `=` operatöründen daha düşük öncelikli (`=` önce işlenir)
 
         !ruby
         y = false
@@ -73,12 +73,12 @@ deyimden çıkılır.
 Metod isminin sonundaki `!` "dikkatli olunması gereken bir eylem gerçekleşiyor"
 olarak yorumlanmalıdır.
 
-*   Bu **çoğunlukla** alıcı nesnede bir şeylerin değiştirildiği manasına gelir
+-   Bu **çoğunlukla** alıcı nesnede bir şeylerin değiştirildiği manasına gelir
 
         !ruby
         "foo".delete! #=> "f"
 
-*   Metod ismi zaten bunu anlatıyorsa `!` son ekine gerek yoktur
+-   Metod ismi zaten bunu anlatıyorsa `!` son ekine gerek yoktur
 
         !ruby
         hash.update :foo => "bar"
@@ -89,12 +89,12 @@ olarak yorumlanmalıdır.
 
 Alıcı nesnede değişiklik yapmayan `!` metodlarda varolabilir.  Örnek:
 
-*   Hata halinde istisna üretme
+-   Hata halinde istisna üretme
 
         !ruby
         u = User.create :login => "joe"
 
-*   Hata halinde istisna üret
+-   Hata halinde istisna üret
 
         !ruby
         u = User.create! :login => "joe"
@@ -103,7 +103,7 @@ Alıcı nesnede değişiklik yapmayan `!` metodlarda varolabilir.  Örnek:
 
 #   Sınıflar ve Nesneler
 
-*   Her sınıf `Class` sınıfında bir nesnedir.
+-   Her sınıf `Class` sınıfında bir nesnedir.
 
         !ruby
         class Foo
@@ -112,7 +112,7 @@ Alıcı nesnede değişiklik yapmayan `!` metodlarda varolabilir.  Örnek:
         Foo.class #=> Class < Module
         Foo.instance_of? Class #=> true
 
-*   `Object` isimli sınıf da `Class` sınıfında bir nesnedir.
+-   `Object` isimli sınıf da `Class` sınıfında bir nesnedir.
 
 ---
 
@@ -120,7 +120,7 @@ Alıcı nesnede değişiklik yapmayan `!` metodlarda varolabilir.  Örnek:
 
 Metod gövdesindeki nitelik yazıcıları yerel değişken üretir.
 
-*   Örnekte 4'ncü satırda `bar` niteliğine yazılmaz; `baz` metodunda yerel bir
+-   Örnekte 4'ncü satırda `bar` niteliğine yazılmaz; `baz` metodunda yerel bir
     `bar` değişkeni üretilir
 
         #!ruby
@@ -131,7 +131,7 @@ Metod gövdesindeki nitelik yazıcıları yerel değişken üretir.
           end
         end
 
-*   Nitelik yazıcısının doğru şekilde çözülmesi için `self` ile açık niteleme
+-   Nitelik yazıcısının doğru şekilde çözülmesi için `self` ile açık niteleme
     yapın
 
         #!ruby
@@ -146,7 +146,7 @@ Metod gövdesindeki nitelik yazıcıları yerel değişken üretir.
 
 #   Nesne Nitelik Erişimcileri
 
-*   Nitelik erişimcisinde özel bir lojik olmadığı sürece en doğrusu `@` ile
+-   Nitelik erişimcisinde özel bir lojik olmadığı sürece en doğrusu `@` ile
     açıkça niteleme yapın
 
         #!ruby
@@ -157,7 +157,7 @@ Metod gövdesindeki nitelik yazıcıları yerel değişken üretir.
           end
         end
 
-*   Nitelik erişimcisinde (okuyucu veya yazıcı farketmez) özel bir erişim lojiği
+-   Nitelik erişimcisinde (okuyucu veya yazıcı farketmez) özel bir erişim lojiği
     varsa `self` kullanın
 
         #!ruby
@@ -177,9 +177,9 @@ Metod gövdesindeki nitelik yazıcıları yerel değişken üretir.
 Ruby'de görünürde herhangi bir sınıfa ait olmayan işlevler `Object` sınıfına ait
 `private` metodlardır.
 
-*   `private` semantiğinden dolayı bir nesne üzerinden uyarılması gerekmez
+-   `private` semantiğinden dolayı bir nesne üzerinden uyarılması gerekmez
 
-*   Sonuç: tepe seviyede yazılan tüm metodlar yapısal bir dilde olduğu gibi
+-   Sonuç: tepe seviyede yazılan tüm metodlar yapısal bir dilde olduğu gibi
     çalıştırılır
 
 ---
@@ -192,7 +192,7 @@ Ruby'de görünürde herhangi bir sınıfa ait olmayan işlevler `Object` sını
 
 #   Sınıf İçinde Değişkenler ve Sabitler
 
-*   Çıktı
+-   Çıktı
 
 .code: code/rb_class_variable_experiment/out
 
@@ -202,14 +202,14 @@ Ruby'de görünürde herhangi bir sınıfa ait olmayan işlevler `Object` sını
 
 Sonuçlar:
 
-*   Sınıf sabitleri çocuk sınıfta değiştirilmediği sürece ebeveyn'deki değerini
+-   Sınıf sabitleri çocuk sınıfta değiştirilmediği sürece ebeveyn'deki değerini
     alıyor
 
-*   Sınıf değişkenleri çocuk sınıflarda değiştirilebiliyor
+-   Sınıf değişkenleri çocuk sınıflarda değiştirilebiliyor
 
-*   Sınıf nesne değişkenlerinin değeri çocuk sınıflara miras edilmez
+-   Sınıf nesne değişkenlerinin değeri çocuk sınıflara miras edilmez
 
-*   Sınıf nesne değişkenleri için nitelik erişimcileri tanımlanabiliyor
+-   Sınıf nesne değişkenleri için nitelik erişimcileri tanımlanabiliyor
 
         !ruby
         class A
@@ -225,28 +225,28 @@ Sonuçlar:
 
 #   Sınıf Değişkenleri
 
-*   Bir sınıf gövdesi içinde `@@var` değişkenleri sınıf kapsamında geçerli bir
+-   Bir sınıf gövdesi içinde `@@var` değişkenleri sınıf kapsamında geçerli bir
     tür global değişken olarak davranır
 
-*   Sınıf değişkenleri o sınıftan miras alan tüm çocuk sınıflarca erişilebilir
+-   Sınıf değişkenleri o sınıftan miras alan tüm çocuk sınıflarca erişilebilir
     ve değiştirilebilir
 
-*   Bu "global değişken" etkisi isteniyorsa sınıf değişkenleri doğru çözümdür
+-   Bu "global değişken" etkisi isteniyorsa sınıf değişkenleri doğru çözümdür
 
-*   Sadece ilgili sınıfa ait bir değişken isteniyorsa "sınıf nesne değişkenleri"
+-   Sadece ilgili sınıfa ait bir değişken isteniyorsa "sınıf nesne değişkenleri"
     kullanılmalı
 
 ---
 
 #   Sınıf Nesne Değişkenleri
 
-*   Bir sınıf gövdesi içinde, fakat metod gövdesi dışında kullanılan `@var`
+-   Bir sınıf gövdesi içinde, fakat metod gövdesi dışında kullanılan `@var`
     değişkenleri nesne nitelik değişkeni **değildir**
 
-*   Bu değişkenler sınıf kapsamında anlamlı "sınıf nesnesi" değişkenleridir ve
+-   Bu değişkenler sınıf kapsamında anlamlı "sınıf nesnesi" değişkenleridir ve
     nadiren işe yarar
 
-*   Sınıf değişkenlerindeki "global değişken" etkisinin istenmediği durumlarda
+-   Sınıf değişkenlerindeki "global değişken" etkisinin istenmediği durumlarda
     bu değişkenler kullanılabilir
 
 ---
@@ -255,22 +255,22 @@ Sonuçlar:
 
 Ruby'de nesne değişkenleri miras almadan etkilenmez.
 
-*   Bu kural bir sınıftan üretilen nesnelerin nitelikleri için gayet anlaşılır
+-   Bu kural bir sınıftan üretilen nesnelerin nitelikleri için gayet anlaşılır
 
-*   Fakat kural "sınıf nesne değişkenleri" için de geçerli
+-   Fakat kural "sınıf nesne değişkenleri" için de geçerli
 
-*   Sınıf nesne değişkenleri de "nesne değişkenleri"dir
+-   Sınıf nesne değişkenleri de "nesne değişkenleri"dir
 
-*   Ebeveyn sınıfın sınıf nesne değişkenleri çocuk sınıflara aktarılmaz
+-   Ebeveyn sınıfın sınıf nesne değişkenleri çocuk sınıflara aktarılmaz
 
 ---
 
 #   `ARGV[0]`
 
-*   Pek çok dilden farklı olarak; `ARGV[0]` komut satırında program isminden
+-   Pek çok dilden farklı olarak; `ARGV[0]` komut satırında program isminden
     sonra gelen ilk argümanı gösterir, program ismini değil
 
-*   Program ismi için `$0` değişkenini kullanın
+-   Program ismi için `$0` değişkenini kullanın
 
 ---
 

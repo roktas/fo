@@ -98,9 +98,9 @@ Ocak 2012
 Çok Biçimlilik
 :    Bir isim → Çok biçim
 
-*   Bir isim: `area`
+-   Bir isim: `area`
 
-*   Çok biçim: `shape` nesneleri `area` mesajına farklı şekilde cevap veriyor
+-   Çok biçim: `shape` nesneleri `area` mesajına farklı şekilde cevap veriyor
 
 ---
 
@@ -116,9 +116,9 @@ Diğer bir çok biçimlilik örneği
         // those = [20, "191"]
 
 
-*   JavaScript'te `+` operatörü çokbiçimli davranıyor
+-   JavaScript'te `+` operatörü çokbiçimli davranıyor
 
-*   Dizideki güncel nesne eğer:
+-   Dizideki güncel nesne eğer:
 
     +   tamsayı ise toplama yapıyor
 
@@ -130,11 +130,11 @@ Diğer bir çok biçimlilik örneği
 
 Çok Biçimlilik'te
 
-*   Sadece davranış ismiyle ilgileniyoruz → `area`
+-   Sadece davranış ismiyle ilgileniyoruz → `area`
 
-*   Davranışı sergileyen nesnelere ortak bir isim veriyoruz →  `shape` (şekil)
+-   Davranışı sergileyen nesnelere ortak bir isim veriyoruz →  `shape` (şekil)
 
-*   Nesnenin kimliğini ayrıntılı bilmemiz gerekmiyor → `Circle`, `Square`
+-   Nesnenin kimliğini ayrıntılı bilmemiz gerekmiyor → `Circle`, `Square`
 
 ---
 
@@ -142,67 +142,67 @@ Diğer bir çok biçimlilik örneği
 
 Bir kargo merkezi ve kargo paketleri
 
-*   Kargo paketleri nasıl **dağıtılır**?
+-   Kargo paketleri nasıl **dağıtılır**?
 
-*   Paketin hangi yolla (hava, kara, deniz) gönderileceğine karar vermek lazım
+-   Paketin hangi yolla (hava, kara, deniz) gönderileceğine karar vermek lazım
 
-*   Alıcı adrese göre yöntem değişir
+-   Alıcı adrese göre yöntem değişir
 
 **Cargo Dispatch**
 
-*   Alıcı adrese bak
+-   Alıcı adrese bak
 
-*   Ulaşım yöntemini tayin et
+-   Ulaşım yöntemini tayin et
 
-*   Tek isim → `send`, çok biçimli davranış → farklı ulaşım yöntemleri
-
----
-
-#   Dinamik Dağıtım
-
-*   Şekil nesneleri arasında dolaşıyor ve `area` metodunu çalıştırıyoruz
-
-*   `area`'nın hangi gerçeklemesi çalıştırılacak?
-
-*   İlgili nesnenin sınıfı neyse o sınıfta tanımlı metod çalıştırılacak
-
-*   Ama ilgili nesnenin sınıfını bilmemiz gerekmiyor
-
-*   Uygun `area` gerçeklemesine çalışma zamanında karar veriliyor
+-   Tek isim → `send`, çok biçimli davranış → farklı ulaşım yöntemleri
 
 ---
 
 #   Dinamik Dağıtım
 
-*   Kargo paketi nasıl gönderilecek? `send` metodu
+-   Şekil nesneleri arasında dolaşıyor ve `area` metodunu çalıştırıyoruz
 
-*   Şekil nesnesinin alanı nasıl hesaplanacak? `area` metodu
+-   `area`'nın hangi gerçeklemesi çalıştırılacak?
 
-*   Karar anında bir tür dağıtım (**dispatch**) yapılıyor
+-   İlgili nesnenin sınıfı neyse o sınıfta tanımlı metod çalıştırılacak
 
-*   Bu karar çalışma zamanında veriliyor
+-   Ama ilgili nesnenin sınıfını bilmemiz gerekmiyor
 
-*   Dinamik dağıtım → **dynamic dispatch**
+-   Uygun `area` gerçeklemesine çalışma zamanında karar veriliyor
+
+---
+
+#   Dinamik Dağıtım
+
+-   Kargo paketi nasıl gönderilecek? `send` metodu
+
+-   Şekil nesnesinin alanı nasıl hesaplanacak? `area` metodu
+
+-   Karar anında bir tür dağıtım (**dispatch**) yapılıyor
+
+-   Bu karar çalışma zamanında veriliyor
+
+-   Dinamik dağıtım → **dynamic dispatch**
 
 ---
 
 #   Arayüz
 
-*   Vana/vida → açma/kapama
+-   Vana/vida → açma/kapama
 
-*   Arabalar → direksiyon, vites sistemi
+-   Arabalar → direksiyon, vites sistemi
 
-*   Telefon → kulaklık/mikrofon, tuş takımı
+-   Telefon → kulaklık/mikrofon, tuş takımı
 
-*   USB standartı → Aygıtlar, USB soketleri
+-   USB standartı → Aygıtlar, USB soketleri
 
 ---
 
 #   Arayüz
 
-*   İç yapısı (gerçeklemesi) farklı olabilen nesnelerle haberleşmemizi sağlıyor
+-   İç yapısı (gerçeklemesi) farklı olabilen nesnelerle haberleşmemizi sağlıyor
 
-*   Bir tür sözleşme
+-   Bir tür sözleşme
 
     +   Vanayı saat yönünün tersine çevirerek akışı kes
 
@@ -212,9 +212,9 @@ Bir kargo merkezi ve kargo paketleri
 
     +   USB aygıtı kullanmak için aygıtı USB soketine tak
 
-*   Nesneleri arayüzler üzerinden kullanıyoruz
+-   Nesneleri arayüzler üzerinden kullanıyoruz
 
-*   Arayüzler aynı, gerçeklemedeki farklı olabilir
+-   Arayüzler aynı, gerçeklemedeki farklı olabilir
 
 ---
 
@@ -222,11 +222,11 @@ Bir kargo merkezi ve kargo paketleri
 
 Arayüz ve Çok biçimlilik birbiriyle yakından ilintili
 
-*   Çok biçimlilik → bir isim, çok biçim
+-   Çok biçimlilik → bir isim, çok biçim
 
-*   İsim → arayüzde tanımlanan bir sözleşme maddesi
+-   İsim → arayüzde tanımlanan bir sözleşme maddesi
 
-*   Biçim → ilgili arayüzün (o sınıf için) gerçeklemesi
+-   Biçim → ilgili arayüzün (o sınıf için) gerçeklemesi
 
 ---
 

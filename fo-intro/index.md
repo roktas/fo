@@ -14,13 +14,13 @@ Ekim 2012
 
 Folyo → Bir doküman türü
 
-*   Uydurduğumuz bir terim
+-   Uydurduğumuz bir terim
 
-*   Slayt veya sunu değil folyo
+-   Slayt veya sunu değil folyo
 
-*   Bu bir doküman türü; kitap, makale gibi
+-   Bu bir doküman türü; kitap, makale gibi
 
-*   Genel olarak bir konunun özünü anlatmayı kolaylaştıran bir doküman türü
+-   Genel olarak bir konunun özünü anlatmayı kolaylaştıran bir doküman türü
 
 ---
 
@@ -28,12 +28,12 @@ Folyo → Bir doküman türü
 
 Daha uzun ve kapsamlı bir doküman türüne hazırlık
 
-*   Örneğin bir makale yazarken ana fikri önce folyo biçiminde
+-   Örneğin bir makale yazarken ana fikri önce folyo biçiminde
     hazırlayabilirsiniz
 
-*   Veya bir kitabın bölümlerini önce bir folyoya dökebilirsiniz
+-   Veya bir kitabın bölümlerini önce bir folyoya dökebilirsiniz
 
-*   Bir öncü doküman
+-   Bir öncü doküman
 
 ---
 
@@ -41,9 +41,9 @@ Daha uzun ve kapsamlı bir doküman türüne hazırlık
 
 Öğrenme süreçlerinde alınan bilgi notları
 
-*   Etkili bir not alma aracı
+-   Etkili bir not alma aracı
 
-*   Folyoyu çalışma notlarını kaydetmek için kullanabilirsiniz
+-   Folyoyu çalışma notlarını kaydetmek için kullanabilirsiniz
 
 ---
 
@@ -51,13 +51,13 @@ Daha uzun ve kapsamlı bir doküman türüne hazırlık
 
 Etkili bir bilgi aktarım aracı
 
-*   Öğrendiklerinizi başkalarına aktarmanızı kolaylaştırıyor
+-   Öğrendiklerinizi başkalarına aktarmanızı kolaylaştırıyor
 
-*   Uzun ve düzenli cümlelerden oluşan bir doküman yazmanız gerekmiyor
+-   Uzun ve düzenli cümlelerden oluşan bir doküman yazmanız gerekmiyor
 
-*   Sunum değeri de taşıdığından okunması, izlenmesi kolay
+-   Sunum değeri de taşıdığından okunması, izlenmesi kolay
 
-*   Sunum değeri taşıyor fakat sunum değil
+-   Sunum değeri taşıyor fakat sunum değil
 
 ---
 
@@ -65,41 +65,41 @@ Etkili bir bilgi aktarım aracı
 
 **Folyo tanım olarak bir sunum aracı değil**
 
-*   Kısmen sunum değeri var
+-   Kısmen sunum değeri var
 
-*   Fakat hiç bir zaman içerik değerinin önünde değil
+-   Fakat hiç bir zaman içerik değerinin önünde değil
 
-*   Bol efektli, zaman alıcı içeriklerden kaçınıyoruz
+-   Bol efektli, zaman alıcı içeriklerden kaçınıyoruz
 
-*   İçerik daha önemli
+-   İçerik daha önemli
 
-*   Amaç içeriğin kolay şekilde oluşturulması, etkili şekilde aktarılması
+-   Amaç içeriğin kolay şekilde oluşturulması, etkili şekilde aktarılması
 
-*   Nasıl?
+-   Nasıl?
 
 ---
 
 ##  Folyo Hazırlığı
 
-*   Ana fikirleri kısa cümleleler halinde sayfalara böl
+-   Ana fikirleri kısa cümleleler halinde sayfalara böl
 
-*   Sayfa sıralamasını değiştirerek fikir akışını düzenle
+-   Sayfa sıralamasını değiştirerek fikir akışını düzenle
 
-*   Her sayfada cümleleri ayrıntılandır
+-   Her sayfada cümleleri ayrıntılandır
 
 ---
 
 ##  Basit Araçlar
 
-*   Özel bir araca gerek yok
+-   Özel bir araca gerek yok
 
-*   Çok özel bir dosya biçimi de yok
+-   Çok özel bir dosya biçimi de yok
 
-*   Öğrenilmesi kolay bir hafif etiketleme dili → Markdown
+-   Öğrenilmesi kolay bir hafif etiketleme dili → Markdown
 
-*   Basit bir metin düzenleyici
+-   Basit bir metin düzenleyici
 
-*   Düz metin folyo dosyaları
+-   Düz metin folyo dosyaları
 
 ---
 
@@ -116,13 +116,13 @@ Etkili bir bilgi aktarım aracı
 
 ##  Ruby Ayarla
 
-    !sh
-    $ sudo update-alternatives --set ruby /usr/bin/ruby1.9.1
+        !sh
+        $ sudo update-alternatives --set ruby /usr/bin/ruby1.9.1
 
-*   Folyo inşa sistemi Ruby `1.9` gerektiriyor; bu sistem Ruby `1.8` ile
+-   Folyo inşa sistemi Ruby `1.9` gerektiriyor; bu sistem Ruby `1.8` ile
     çalışmaz
 
-*   Öntanımlı Ruby versiyonunu öğrenmek için
+-   Öntanımlı Ruby versiyonunu öğrenmek için
 
         !sh
         $ ruby --version
@@ -137,7 +137,7 @@ Etkili bir bilgi aktarım aracı
         $ wget -qO- deb.ondokuz.biz/archive.key | sudo apt-key add -
         $ sudo apt-get update
 
-*   19 depolarında Landslide'ın yamalanmış bir sürümü bulunuyor
+-   19 depolarında Landslide'ın yamalanmış bir sürümü bulunuyor
 
 ---
 
@@ -146,11 +146,11 @@ Etkili bir bilgi aktarım aracı
         !sh
         $ sudo apt-get install python-landslide-patched python-markdown-extra
 
-*   Paket ismine dikkat → `python-landslide-patched`
+-   Paket ismine dikkat → `python-landslide-patched`
 
-*   Resmi depolardaki `python-landslide` paketini **kurmayın**
+-   Resmi depolardaki `python-landslide` paketini **kurmayın**
 
-*   Landslide kurulumunu kontrol et
+-   Landslide kurulumunu kontrol et
 
         !sh
         $ landslide --version
@@ -165,11 +165,11 @@ Etkili bir bilgi aktarım aracı
 Farklı bir sistem (ör. Fedora, FreeBSD, Mac OS X, Windows) kullanıyorsanız
 aşağıdaki koşulları sağlamalısınız
 
-*   Python
+-   Python
 
-*   `pip` → Python paket yöneticisi
+-   `pip` → Python paket yöneticisi
 
-*   Ruby `1.9`
+-   Ruby `1.9`
 
 Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
 "Yapılandırma" bölümü ile devam edin
@@ -199,7 +199,7 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
         $ git remote add upstream git://github.com/roktas/fo
         $ git pull upstream master
 
-*   Şablon güncellemelerini de `upstream` kaynağından alacağız
+-   Şablon güncellemelerini de `upstream` kaynağından alacağız
 
 ---
 
@@ -209,7 +209,7 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
         $ git checkout -b gh-pages
         $ git branch -d master
 
-*   Github yayın dalını, yani `gh-pages`'i oluşturuyoruz
+-   Github yayın dalını, yani `gh-pages`'i oluşturuyoruz
 
 ---
 
@@ -222,9 +222,9 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
         $ rake
         $ git commit -a -m Yapılandır
 
-*   `_/param.yaml` dosyasındaki boş alanları dolduruyoruz
+-   `_/param.yaml` dosyasındaki boş alanları dolduruyoruz
 
-*   Bir alanı boş bırakmak için `''` girin
+-   Bir alanı boş bırakmak için `''` girin
 
 ---
 
@@ -234,7 +234,7 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
         $ git remote add origin git@github.com:[hesap]/[depo]
         $ git push origin gh-pages
 
-*   Önce Github `[hesap]`'ınızda `[depo]` isimli depoyu oluşturuyoruz
+-   Önce Github `[hesap]`'ınızda `[depo]` isimli depoyu oluşturuyoruz
 
 ---
 
@@ -243,12 +243,12 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
         !sh
         $ git pull upstream master
 
-*   Şablonla birlikte gelen (sizin oluşturmadığınız) dosyaları düzenlememelisinz
+-   Şablonla birlikte gelen (sizin oluşturmadığınız) dosyaları düzenlememelisinz
 
-*   Düzenlemeniz halinde birleştirme çakışması ("merge conflict")
+-   Düzenlemeniz halinde birleştirme çakışması ("merge conflict")
     yaşayabilirsiniz
 
-*   Güncelleme için Rake `update` görevini kullanmanız önerilir
+-   Güncelleme için Rake `update` görevini kullanmanız önerilir
 
         !sh
         $ rake update
@@ -267,11 +267,11 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
 [Markdown Sözdizimini](http://daringfireball.net/projects/markdown/syntax)
 kullanacaksınız
 
-*   Diğer bir [başvuru kaynağı](http://www.markdown-ref.org/)
+-   Diğer bir [başvuru kaynağı](http://www.markdown-ref.org/)
 
-*   Markdown'ın çeşitli lehçeleri var
+-   Markdown'ın çeşitli lehçeleri var
 
-*   Folyolarda Markdown'ın [Sundown](https://github.com/vmg/sundown) lehçesi
+-   Folyolarda Markdown'ın [Sundown](https://github.com/vmg/sundown) lehçesi
     kullanılıyor
 
 ---
@@ -281,10 +281,10 @@ kullanacaksınız
 [Bu folyoyu](https://raw.github.com/roktas/fo/gh-pages/fo-intro/index.md)
 inceleyerek başlayabilirsiniz
 
-*   Sayfalar için kullanılan ayırıcılar ve bazı makrolar dışında her şey
+-   Sayfalar için kullanılan ayırıcılar ve bazı makrolar dışında her şey
     Markdown
 
-*   Lehçe farklılıklarına dikkat edin
+-   Lehçe farklılıklarına dikkat edin
 
 ---
 
@@ -292,22 +292,22 @@ inceleyerek başlayabilirsiniz
 
 Aşağıdaki `rake` işlemlerini yapabilirsiniz
 
-*   Yeni folyo oluştur
+-   Yeni folyo oluştur
 
         !sh
         $ rake new
 
-*   İnşa et
+-   İnşa et
 
         !sh
         $ rake
 
-*   Folyo indisini görüntüle
+-   Folyo indisini görüntüle
 
         !sh
         $ rake view
 
-*   Üretilen dosyaları sil
+-   Üretilen dosyaları sil
 
         !sh
         $ rake clean
@@ -318,33 +318,33 @@ Aşağıdaki `rake` işlemlerini yapabilirsiniz
 
 Sadece tek dosya üzerinde de işlem yapabilirsiniz
 
-*   Bulunulan dizindeki `index.md` dosyasını derle
+-   Bulunulan dizindeki `index.md` dosyasını derle
 
         !sh
         $ rake compile[index.md]
 
-*   Bu dosyaya ait derlenmiş dosyayı (`index.html`) görüntüle
+-   Bu dosyaya ait derlenmiş dosyayı (`index.html`) görüntüle
 
         !sh
         $ rake view[index.md]
 
-*   Vim ile düzenlerken komutlara klavye kısayollarıyla erişebilirsiniz
+-   Vim ile düzenlerken komutlara klavye kısayollarıyla erişebilirsiniz
 
 ---
 
 ##  Vim Kısayolları
 
-*   `F9`  → Folyoyu derle
+-   `F9`  → Folyoyu derle
 
-*   `F10` → Folyoyu derle ve görüntüle
+-   `F10` → Folyoyu derle ve görüntüle
 
 Kısayolların kurulumu
 
-*   [İlgili eklenti
+-   [İlgili eklenti
     dosyasını](https://github.com/roktas/x/blob/master/etc/vim/ftplugin/markdown.vim)
     `~/.vim/ftplugin` dizinine kopyalayın
 
-*   Bu kısayollar 19/x yapılandırmasında zaten tanımlı
+-   Bu kısayollar 19/x yapılandırmasında zaten tanımlı
 
 ---
 
@@ -356,9 +356,9 @@ Kısayolların kurulumu
 
 İçerik yukarıdan aşağıya önem sırasıyla yazılmalı
 
-*   Önemli içerik sayfanın üst kısmında olsun
+-   Önemli içerik sayfanın üst kısmında olsun
 
-*   Daha az önemli içerik alt kısımda
+-   Daha az önemli içerik alt kısımda
 
 ---
 
@@ -366,7 +366,7 @@ Kısayolların kurulumu
 
 .fx: wrong
 
-*   Önemsiz içerik
+-   Önemsiz içerik
 
 Önemli içerik
 
@@ -378,7 +378,7 @@ Kısayolların kurulumu
 
 Önemli içerik
 
-*   Önemsiz içerik
+-   Önemsiz içerik
 
 ---
 
@@ -386,9 +386,9 @@ Kısayolların kurulumu
 
 Cümle → Bir sayfanın en küçük ögesi
 
-*   Sayfa (şekil, tablo ve kod dışında) cümlelerden oluşuyor
+-   Sayfa (şekil, tablo ve kod dışında) cümlelerden oluşuyor
 
-*   Liste maddeleri de birer cümle
+-   Liste maddeleri de birer cümle
 
 ---
 
@@ -396,9 +396,9 @@ Cümle → Bir sayfanın en küçük ögesi
 
 Cümleleri tutarlı olarak aynı biçimde yazın
 
-*   Büyük harfle başlayın
+-   Büyük harfle başlayın
 
-*   Sonda nokta kullanmayın
+-   Sonda nokta kullanmayın
 
 ---
 
@@ -406,11 +406,11 @@ Cümleleri tutarlı olarak aynı biçimde yazın
 
 Cümle iki satırı geçmemeli
 
-*   En fazla 140-150 karakter
+-   En fazla 140-150 karakter
 
-*   İdealde 140'tan küçük
+-   İdealde 140'tan küçük
 
-*   Bu sınırı geçerseniz 140-150 aralığında kalın
+-   Bu sınırı geçerseniz 140-150 aralığında kalın
 
 ---
 
@@ -418,11 +418,11 @@ Cümle iki satırı geçmemeli
 
 Cümleler kısa olmalı
 
-*   Gereksiz kelimeleri çıkarın
+-   Gereksiz kelimeleri çıkarın
 
-*   Cümleleri kurallı yazmak zorunda değilsiniz
+-   Cümleleri kurallı yazmak zorunda değilsiniz
 
-*   Konuşma üslubunda yazın
+-   Konuşma üslubunda yazın
 
 ---
 
@@ -430,7 +430,7 @@ Cümleler kısa olmalı
 
 .fx: wrong
 
-*   Genellikle klavyeyi onparmak kullanan insanların Vim editörüne alışması
+-   Genellikle klavyeyi onparmak kullanan insanların Vim editörüne alışması
     biraz daha kolaydır.
 
 ...
@@ -441,7 +441,7 @@ Cümleler kısa olmalı
 
 .fx: correct
 
-*   Onparmak klavye kullanıcılarının Vim'e alışmaları daha kolay
+-   Onparmak klavye kullanıcılarının Vim'e alışmaları daha kolay
 
 ...
 
@@ -451,11 +451,11 @@ Cümleler kısa olmalı
 
 Paragraf → Noktayla ayrılmış cümleler topluluğu
 
-*   **Paragraf kullanmayın!**
+-   **Paragraf kullanmayın!**
 
-*   Paragraf içeriğini liste biçiminde yazın
+-   Paragraf içeriğini liste biçiminde yazın
 
-*   Paragraftaki her cümle bir liste maddesi
+-   Paragraftaki her cümle bir liste maddesi
 
 ---
 
@@ -474,13 +474,13 @@ nature" deniyor, yani ellerinizin siz düşünmeden yaptığı işe odaklanması
 
 .fx: correct
 
-*   Vim alışılması zor bir metin editörü
+-   Vim alışılması zor bir metin editörü
 
-*   Bir kere alıştığınızda çalışmanız çok hızlanır
+-   Bir kere alıştığınızda çalışmanız çok hızlanır
 
-*   Alışmak, bir türü içgüdü geliştirmek → "Second Nature"
+-   Alışmak, bir türü içgüdü geliştirmek → "Second Nature"
 
-*   "Second Nature"?  Ellerinizin siz düşünmeden üzerine düşeni yapması
+-   "Second Nature"?  Ellerinizin siz düşünmeden üzerine düşeni yapması
 
 ---
 
@@ -488,9 +488,9 @@ nature" deniyor, yani ellerinizin siz düşünmeden yaptığı işe odaklanması
 
 Liste → Maddelerden oluşmuş cümleler topluluğu
 
-*   Sayfada sunulan fikri bir paragraf olarak kurgulayın
+-   Sayfada sunulan fikri bir paragraf olarak kurgulayın
 
-*   Paragraftaki cümleleri maddelere dönüştürün
+-   Paragraftaki cümleleri maddelere dönüştürün
 
 ---
 
@@ -498,9 +498,9 @@ Liste → Maddelerden oluşmuş cümleler topluluğu
 
 İç içe listelerden kaçının
 
-*   Listeler mümkün olduğunca tek seviyeli olmalı
+-   Listeler mümkün olduğunca tek seviyeli olmalı
 
-*   İç içe listeler çoğunlukla birden fazla sayfaya dağıtılabilir
+-   İç içe listeler çoğunlukla birden fazla sayfaya dağıtılabilir
 
 ---
 
@@ -508,44 +508,44 @@ Liste → Maddelerden oluşmuş cümleler topluluğu
 
 Liste bir bütünlük göstermeli
 
-*   Bütünlüğü öne çıkarmak için önce düz bir cümle yazın
+-   Bütünlüğü öne çıkarmak için önce düz bir cümle yazın
 
-*   Öyle ki düz cümle liste içeriğini özetlesin
+-   Öyle ki düz cümle liste içeriğini özetlesin
 
-*   Liste maddeleriyle düz cümledeki fikri ayrıntılandırın
+-   Liste maddeleriyle düz cümledeki fikri ayrıntılandırın
 
 ---
 
 ##  Liste
 
         !text
-        *   Bir madde
+        -   Bir madde
 
-        *   İkinci madde
+        -   İkinci madde
 
-            + Alt madde
+            * Alt madde
 
-            + Başka bir alt madde
+            * Başka bir alt madde
 
-        *   Başka bir madde
+        -   Başka bir madde
 
-*   Madde imi olarak birinci seviye listelerde `*`, ikinci seviye listelerde `+`
+-   Madde imi olarak birinci seviye listelerde `-`, ikinci seviye listelerde `*`
     kullanın
 
 ---
 
 ##  Liste
 
-*   Birinci seviye listelerde madde iminden sonra **3 boşluk** bırakın
+-   Birinci seviye listelerde madde iminden sonra **3 boşluk** bırakın
 
-*   Maddelerde (varsa) devam paragraflarını 4 boşluk girintiyle yazın
+-   Maddelerde (varsa) devam paragraflarını 4 boşluk girintiyle yazın
 
         !text
-        *   Bir madde
+        -   Bir madde
 
             Bu maddenin devamı bir paragraf
 
-        *   İkinci madde
+        -   İkinci madde
 
 ---
 
@@ -553,21 +553,21 @@ Liste bir bütünlük göstermeli
 
 Başlıkları tutarlı olarak aynı biçimde yazın
 
-*   İlk harfleri büyük kelimelerden oluşmalı
+-   İlk harfleri büyük kelimelerden oluşmalı
 
-*   Hepsi büyük harf başlıklar kullanmayın
+-   Hepsi büyük harf başlıklar kullanmayın
 
-*   Sadece ilk harfi büyük başlıklar kullanmayın
+-   Sadece ilk harfi büyük başlıklar kullanmayın
 
 ---
 
 ##  Başlık
 
-*   Yanlış → "BİR BAŞLIK"
+-   Yanlış → "BİR BAŞLIK"
 
-*   Yanlış → "Bir başlık"
+-   Yanlış → "Bir başlık"
 
-*   Doğru → "Bir Başlık"
+-   Doğru → "Bir Başlık"
 
 ---
 
@@ -575,11 +575,11 @@ Başlıkları tutarlı olarak aynı biçimde yazın
 
 Başlık satırında taşma olmamalı
 
-*   En fazla 28-32 karakter
+-   En fazla 28-32 karakter
 
-*   İdealde 28'den küçük
+-   İdealde 28'den küçük
 
-*   Bu sınırı geçerseniz 28-32 aralığında kalın
+-   Bu sınırı geçerseniz 28-32 aralığında kalın
 
 ---
 
@@ -591,9 +591,9 @@ Başlık satırında taşma olmamalı
 İlk üç seviye başlık iminden sonra 5'nci sütuna kadar boşluk bırakmanızı
 öneririz
 
-*   Daha estetik ve liste imleriyle uyumlu oluyor
+-   Daha estetik ve liste imleriyle uyumlu oluyor
 
-*   Fakat şart değil
+-   Fakat şart değil
 
 ---
 
@@ -601,13 +601,13 @@ Başlık satırında taşma olmamalı
 
 Bir dosyada en fazla iki seviyeli başlıklandırma kullanın
 
-*   İlk seviye → `#`, ikinci seviye → `##`
+-   İlk seviye → `#`, ikinci seviye → `##`
 
-*   Üçüncü seviyeye girmeyin
+-   Üçüncü seviyeye girmeyin
 
-*   Üçüncü seviye folyonun çok büyüdüğünü gösterir
+-   Üçüncü seviye folyonun çok büyüdüğünü gösterir
 
-*   Dosyayı bölerek yeni bir düzenleme yapın
+-   Dosyayı bölerek yeni bir düzenleme yapın
 
 ---
 
@@ -617,16 +617,16 @@ Bir dosyada en fazla iki seviyeli başlıklandırma kullanın
         <8 boşluk> !ruby
         <8 boşluk> puts "Merhaba"
 
-*   Blok kodları daima 8 boşluk girintiyle yazın (sekmeyi 8 boşluğa çevirin)
+-   Blok kodları daima 8 boşluk girintiyle yazın (sekmeyi 8 boşluğa çevirin)
 
-*   8 boşluk kuralı düz paragraf ve birinci seviye listeler için geçerli
+-   8 boşluk kuralı düz paragraf ve birinci seviye listeler için geçerli
 
-*   İkinci seviyeden itibaren her seviyede girintiyi 8 boşluk arttırın
+-   İkinci seviyeden itibaren her seviyede girintiyi 8 boşluk arttırın
 
-*   Sözdizimi renklendirmesi için bloğun ilk satırında `!<dil>` ile dil
+-   Sözdizimi renklendirmesi için bloğun ilk satırında `!<dil>` ile dil
     bildirimi yapın
 
-*   Satır numaralarını görüntülemek için `#!<dil>` bildirimini kullanın
+-   Satır numaralarını görüntülemek için `#!<dil>` bildirimini kullanın
 
         !text
         #!ruby
@@ -638,9 +638,9 @@ Bir dosyada en fazla iki seviyeli başlıklandırma kullanın
 
 Uygun dil bildirimi yapmayı unutmayın
 
-*   Kabuk kodları için (Bash'e özgü bir sözdizimi yoksa) `sh` dilini kullanın
+-   Kabuk kodları için (Bash'e özgü bir sözdizimi yoksa) `sh` dilini kullanın
 
-*   Etkileşimli kabuk komutları için komut istemini `$` ile belirtin
+-   Etkileşimli kabuk komutları için komut istemini `$` ile belirtin
 
         !text
         !sh
@@ -652,10 +652,10 @@ Uygun dil bildirimi yapmayı unutmayın
 
 Uzun blok kodlardan kaçının
 
-*   Bunun yerine ilgili kodu bir dosyaya yerleştirerek `code` makrosuyla içeri
+-   Bunun yerine ilgili kodu bir dosyaya yerleştirerek `code` makrosuyla içeri
     aktarın
 
-*   Kod dosyaları için folyo dizininde `code` adında bir alt dizin kullanın
+-   Kod dosyaları için folyo dizininde `code` adında bir alt dizin kullanın
 
         !text
         .code: code/echo.c
@@ -666,11 +666,11 @@ Uzun blok kodlardan kaçının
 
 Aşağıdaki ögeler sabit genişlikli yazıtipleriyle yazılmalı
 
-*   Kod ögeleri (değişkenler, fonksiyon/metod isimleri vb)
+-   Kod ögeleri (değişkenler, fonksiyon/metod isimleri vb)
 
-*   Dosya/dizin ve program adları
+-   Dosya/dizin ve program adları
 
-*   Program çıktıları
+-   Program çıktıları
 
 ---
 
@@ -679,7 +679,7 @@ Aşağıdaki ögeler sabit genişlikli yazıtipleriyle yazılmalı
         !text
         ![Resim başlığı](media/resim.png)
 
-*   Resim dosyaları için folyo dizininde `media` adında bir alt dizin kullanın
+-   Resim dosyaları için folyo dizininde `media` adında bir alt dizin kullanın
 
 ---
 
@@ -687,13 +687,13 @@ Aşağıdaki ögeler sabit genişlikli yazıtipleriyle yazılmalı
 
 Resimlerin sayfada taşmamasını sağlayın
 
-*   Gerekiyorsa resmi ön işlemeden geçirerek ölçekleyin
+-   Gerekiyorsa resmi ön işlemeden geçirerek ölçekleyin
 
-*   Resmin yatay uzunluğu dikeyden uzunluğundan daha büyük olmalı
+-   Resmin yatay uzunluğu dikeyden uzunluğundan daha büyük olmalı
 
-*   `4:3` oranını tercih edin
+-   `4:3` oranını tercih edin
 
-*   Örneğin `1024x768` geometrili bir resmi `640x480` geometrisine çevirmek için
+-   Örneğin `1024x768` geometrili bir resmi `640x480` geometrisine çevirmek için
 
         !sh
         $ convert -resize 640 resim-1024.png resim-640.png
@@ -704,13 +704,13 @@ Resimlerin sayfada taşmamasını sağlayın
 
 Resimlerin büyük boyutlu olmamasına dikkat edin
 
-*   Genel olarak 50 kB'ı geçmemeli
+-   Genel olarak 50 kB'ı geçmemeli
 
-*   Çizimler için PNG, gerçek resimler için JPEG biçimlerini tercih edin
+-   Çizimler için PNG, gerçek resimler için JPEG biçimlerini tercih edin
 
-*   Resim boyutlarını `pngnq`, `jpegoptim` gibi araçlarla düşürebilirsiniz
+-   Resim boyutlarını `pngnq`, `jpegoptim` gibi araçlarla düşürebilirsiniz
 
-*   En önemli küçültme yönteminin resim geometrisini düzenlemek olduğunu
+-   En önemli küçültme yönteminin resim geometrisini düzenlemek olduğunu
     unutmayın
 
 ---
@@ -719,7 +719,7 @@ Resimlerin büyük boyutlu olmamasına dikkat edin
 
 Türkçe'nin yazım kurallarına uyun
 
-*   Türk Dil Kurumunun [Yazım
+-   Türk Dil Kurumunun [Yazım
     Kılavuzuna](http://www.tdk.gov.tr/index.php?option=com_content&view=category&id=50)
     sıklıkla başvurun
 
@@ -727,11 +727,11 @@ Türkçe'nin yazım kurallarına uyun
 
 ##  Sıkça Yapılan Yazım Hataları
 
-*   Ayrı yazılması gereken ekler
+-   Ayrı yazılması gereken ekler
 
-*   Bitişik yazılması gereken ekler
+-   Bitişik yazılması gereken ekler
 
-*   Noktalama işaretleri
+-   Noktalama işaretleri
 
 ---
 
@@ -739,13 +739,13 @@ Türkçe'nin yazım kurallarına uyun
 
 Doğrusu kalın harflerle yazılanlar
 
-*   **yalnız** yanlız
+-   **yalnız** yanlız
 
-*   **yanlış** yalnış
+-   **yanlış** yalnış
 
-*   **herkes** herkez
+-   **herkes** herkez
 
-*   **doküman** döküman
+-   **doküman** döküman
 
 ---
 
@@ -757,15 +757,15 @@ Doğrusu kalın harflerle yazılanlar
 
 Standart Markdown sözdizimine yapılan bazı eklemeler var
 
-*   Tablo, tanım listesi, dipnot gibi
+-   Tablo, tanım listesi, dipnot gibi
 
-*   Bu ekstralar her Markdown lehçesinde bulunmuyor
+-   Bu ekstralar her Markdown lehçesinde bulunmuyor
 
 Değiştirilmiş Landslide'da desteklenen Markdown ayrıştıcıları
 
-*   Python Misaka (Sundown)
+-   Python Misaka (Sundown)
 
-*   Python Markdown
+-   Python Markdown
 
 ---
 
@@ -787,11 +787,11 @@ Desteklenen ayrıştıcılar → Python Misaka ve Python Markdown
 bir terim
 :   Bu bir terim tanımı.  Tanım gövdesinde diğer bloklar kullanılabilir.
 
-    *   Liste maddesi
+    -   Liste maddesi
 
-    *   Bir başka liste maddesi
+    -   Bir başka liste maddesi
 
-    *   Kod öbeği içeren bir liste maddesi
+    -   Kod öbeği içeren bir liste maddesi
 
             !sh
             $ ls
@@ -809,7 +809,6 @@ Desteklenen ayrıştıcılar → Python Markdown
 Folyo'larda Landslide makroları kullanabilirsiniz
 
         .<makro adı>: [<makro argümanları>...]
-
 
 Bazı makrolar sadece değiştirilmiş Landslide'da
 

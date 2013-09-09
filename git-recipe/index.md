@@ -12,29 +12,29 @@ Nisan 2012
 
 #   Merge
 
-*   Merge conflict varsa:
+-   Merge conflict varsa:
 
         !sh
         $ git merge --abort
 
     (Öncesinde depo temiz durumda olmalı.  Bu komut pull için de geçerli)
 
-*   Merge ayarları
+-   Merge ayarları
 
         !sh
         $ git config branch.<branch>.mergeoptions "-Xsubtree='foo'"
 
-*   `--squash` ile tek komit halinde alınır
+-   `--squash` ile tek komit halinde alınır
 
-*   TODO `--ff`, `--no-ff` konusu
+-   TODO `--ff`, `--no-ff` konusu
 
-*   `-s theirs` ile onlarınkini al, `-s ours` ile bizimki
+-   `-s theirs` ile onlarınkini al, `-s ours` ile bizimki
 
 ---
 
 #   Pull
 
-*   Ortaklaşa komitlenen bir dalda "göndermeden önce yerel kopyayı
+-   Ortaklaşa komitlenen bir dalda "göndermeden önce yerel kopyayı
     güncelleyeyim" için şu tavsiye ediliyor:
 
         !sh
@@ -42,7 +42,7 @@ Nisan 2012
 
     http://stackoverflow.com/questions/2472254/when-should-i-use-git-pull-rebase
 
-*   Uzakta ne değişti?
+-   Uzakta ne değişti?
 
         !sh
         $ git diff origin/master

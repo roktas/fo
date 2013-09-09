@@ -18,7 +18,7 @@ Mart 2012
 
 #   Pthread - Nokta Çarpımı
 
-*   Seri Versiyon
+-   Seri Versiyon
 
 .code: code/c_parallel_pthread_dot/serial.c
 
@@ -26,7 +26,7 @@ Mart 2012
 
 #   Pthread - Nokta Çarpımı
 
-*   Hatalı Paralel Versiyon
+-   Hatalı Paralel Versiyon
 
 .code: code/c_parallel_pthread_dot/parallel_error.c
 
@@ -34,6 +34,6 @@ Mart 2012
 
 #   Pthread - Nokta Çarpımı
 
-*   Paralel Versiyon
+-   Paralel Versiyon
 
 .code: code/c_parallel_pthread_dot/main.c
