@@ -778,7 +778,7 @@ Ubuntu   | `deb`          | APT
 Fedora   | `rpm`          | Yum
 Pardus   | `pisi`         | Pisi
 
-Desteklenen ayrıştıcılar → Python Misaka ve Python Markdown
+Desteklenen ayrıştıcılar → Python Markdown ve Python Misaka
 
 ---
 
