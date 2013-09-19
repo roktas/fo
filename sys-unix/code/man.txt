@@ -1,0 +1,182 @@
+MAN(1)                     OpenBSD Reference Manual                     MAN(1)
+
+NAME
+     man - display manual pages
+
+SYNOPSIS
+     man [-achw] [-C file] [-M path] [-m path] [-S subsection] [-s section]
+         [section] name ...
+     man -f command ...
+     man -k keyword ...
+
+DESCRIPTION
+     The man utility displays the BSD manual pages entitled name.  Pages may
+     be selected according to a specific category (section) or machine
+     architecture (subsection).
+
+     The options are as follows:
+
+     -a      Display all of the manual pages for a specified section and name
+             combination.  Normally, only the first manual page found is
+             displayed.
+
+     -C file
+             Use the specified file instead of the default configuration file.
+             This permits users to configure their own manual environment.
+             See man.conf(5) for a description of the contents of this file.
+
+     -c      Copy the manual page to the standard output instead of using
+             more(1) to paginate it.  This is done by default if the standard
+             output is not a terminal device.
+
+     -f command
+             A synonym for whatis(1).  It looks up a given command and gives
+             the header line from the manual page.  command is case
+             insensitive.
+
+     -h      Display only the ``SYNOPSIS'' lines of the requested manual
+             pages.
+
+     -k keyword
+             A synonym for apropos(1).  It shows which manual pages contain
+             instances of any of the given keywords in their title line.
+             keyword is case insensitive.
+
+             For instance, to list all man pages which contain ``mount'' in
+             the ``NAME'' line of the man page:
+
+                   $ man -k mount
+
+             Which would produce a list much like this:
+
+             amd (8) - automatically mount file systems
+             amq (8) - automounter query tool
+             domountroothooks (9) - run all mountroot hooks
+             exports (5) - define remote mount points for NFS mount requests
+             getfsstat (2) - get list of all mounted file systems
+             getmntinfo (3) - get information about mounted file systems
+             mount (8) - mount file systems
+             mount, unmount (2) - mount or dismount a filesystem
+             mount_cd9660 (8) - mount an ISO-9660 filesystem
+             mount_ext2fs (8) - mount an ext2fs file system
+             mount_ffs (8) - mount a Berkeley Fast File System
+             mount_msdos (8) - mount an MS-DOS file system
+             mount_nfs (8) - mount NFS file systems
+             mount_ntfs (8) - mount an NTFS file system
+             mount_procfs (8) - mount the process file system
+             mount_udf (8) - mount a UDF filesystem
+             mount_vnd, vnconfig (8) - configure vnode disks
+             mountd (8) - service remote NFS mount requests
+             ...
+
+     -M path
+             Override the list of standard directories which man searches for
+             manual pages.  The supplied path must be a colon (`:') separated
+             list of directories.  This search path may also be set using the
+             environment variable MANPATH.  The subdirectories to be searched,
+             and their search order, are specified by the ``_subdir'' line in
+             the man configuration file.
+
+     -m path
+             Augment the list of standard directories which man searches for
+             manual pages.  The supplied path must be a colon (`:') separated
+             list of directories.  These directories will be searched before
+             the standard directories or the directories specified using the
+             -M option or the MANPATH environment variable.  The
+             subdirectories to be searched, and their search order, are
+             specified by the ``_subdir'' line in the man configuration file.
+
+     -S subsection
+             Restricts the directories that man will search to those of a
+             specific machine(1) architecture.  subsection is case
+             insensitive.
+
+             By default manual pages for all architectures are installed.
+             Therefore this option can be used to view pages for one
+             architecture whilst using another.
+
+             This option overrides the MACHINE environment variable.
+
+     [-s] section
+             Restricts the directories that man will search to a specific
+             section.  The currently available sections are:
+
+                   1         General commands (tools and utilities).
+                   2         System calls and error numbers.
+                   3         Libraries.
+                   3f        Fortran programmer's reference guide.
+                   3p        perl(1) programmer's reference guide.
+                   4         Device drivers.
+                   5         File formats.
+                   6         Games.
+                   7         Miscellaneous.
+                   8         System maintenance and operation commands.
+                   9         Kernel internals.
+                   X11       An alias for X11R6.
+                   X11R6     X Window System.
+                   local     Pages located in /usr/local.
+                   n         Tcl/Tk commands.
+
+             The man configuration file, man.conf(5), specifies the possible
+             section values, and their search order.  Additional sections may
+             be specified.
+
+     -w      List the pathnames of the manual pages which man would display
+             for the specified section and name combination.
+
+     Guidelines for OpenBSD man pages can be found in mdoc(7).
+
+     If both a formatted and an unformatted version of the same manual page,
+     for example cat1/foo.0 and man1/foo.1, exist in the same directory, and
+     at least one of them is selected, only the newer one is used.  However,
+     if both the -a and the -w options are specified, both file names are
+     printed.
+
+ENVIRONMENT
+     MACHINE   As some manual pages are intended only for specific
+               architectures, man searches any subdirectories, with the same
+               name as the current architecture, in every directory which it
+               searches.  Machine specific areas are checked before general
+               areas.  The current machine type may be overridden by setting
+               the environment variable MACHINE to the name of a specific
+               architecture, or with the -S option.  MACHINE is case
+               insensitive.
+
+     MANPAGER  Any non-null value of the environment variable MANPAGER will be
+               used instead of the standard pagination program, more(1).
+
+     MANPATH   The standard search path used by man may be overridden by
+               specifying a path in the MANPATH environment variable.  The
+               format of the path is a colon (`:') separated list of
+               directories.  The subdirectories to be searched, as well as
+               their search order, are specified by the ``_subdir'' line in
+               the man configuration file.
+
+     PAGER     Specifies the pagination program to use when MANPAGER is not
+               defined.
+
+FILES
+     /etc/man.conf  default man configuration file
+
+EXIT STATUS
+     The man utility exits 0 on success, and >0 if an error occurs.
+
+SEE ALSO
+     apropos(1), intro(1), whatis(1), whereis(1), intro(2), intro(3),
+     intro(4), intro(5), man.conf(5), intro(6), intro(7), mdoc(7), intro(8),
+     intro(9)
+
+STANDARDS
+     The man utility is compliant with the IEEE Std 1003.1-2008 (``POSIX.1'')
+     specification.
+
+     The flags [-aCcfhMmSsw] are extensions to that specification.
+
+HISTORY
+     A man command first appeared in Version 3 AT&T UNIX.
+
+     The -w option first appeared in Version 7 AT&T UNIX; -f and -k in 4BSD;
+     -M in 4.3BSD; -a in 4.3BSD-Tahoe; -c and -m in 4.3BSD-Reno; -h in
+     4.3BSD-Net/2; -C in NetBSD 1.0; and -s and -S in OpenBSD 2.3.
+
+OpenBSD 5.0                     August 23, 2012                    OpenBSD 5.0

@@ -1,0 +1,34 @@
+ECHO(1)                    OpenBSD Reference Manual                    ECHO(1)
+
+NAME
+     echo - write arguments to the standard output
+
+SYNOPSIS
+     echo [-n] [string ...]
+
+DESCRIPTION
+     The echo utility writes any specified operands, separated by single blank
+     (` ') characters and followed by a newline (`\n') character, to the
+     standard output.  When no operands are given, only the newline is
+     written.
+
+     The options are as follows:
+
+     -n      Do not print the trailing newline character.
+
+EXIT STATUS
+     The echo utility exits 0 on success, and >0 if an error occurs.
+
+SEE ALSO
+     csh(1), ksh(1), printf(1)
+
+STANDARDS
+     The echo utility is compliant with the IEEE Std 1003.1-2008 (``POSIX.1'')
+     specification.
+
+     The flag [-n] is an extension to that specification.
+
+     echo also exists as a built-in to csh(1) and ksh(1), though with a
+     different syntax.
+
+OpenBSD 5.0                    September 3, 2010                   OpenBSD 5.0
