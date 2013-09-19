@@ -1,4 +1,4 @@
-#   Sistem - Operatörlük
+#   Sistem - Operatör
 
 .fx: first
 
