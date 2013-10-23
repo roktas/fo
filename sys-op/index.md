@@ -1360,7 +1360,7 @@ UNIX sistemlerde bu nasıl yapılıyor
 *   Kabuk programlarında `cat` kullanımı bir antipatern'dir; nadiren gereklidir
 
 *   `cat` kullanılan her yerde daha uygun ve etkili bir alternatif çoğunlukla
-    vardır (gelecekte bahsedeğiz)
+    vardır (gelecekte bahsedeceğiz)
 
 *   Ama komut satırında bazen yararlı olabilir; özellikle bir aygıtın içerik
     dökümünü ("dump) bir başka aygıta veya dosyaya yönlendirmek için
