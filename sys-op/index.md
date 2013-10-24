@@ -772,7 +772,7 @@ Bir dosya üzerinde hangi eylemler gerçekleştirilebilir?
 ##  Sahiplik ve İzinler
 
         !sh
-        $ ls foo.txt
+        $ ls -l foo.txt
         -rw-r--r-- 1 roktas users 0 Eki  2 01:27 foo.txt
 
 *   Kullanıcı (`roktas`) okuyabilir/yazabilir, çalıştıramaz
@@ -841,8 +841,8 @@ Sahipliği nasıl düzenliyoruz?
 
 Grubu düzenlemenin bir başka yolu
 
-    !sh
-    $ chgrp staff foo.txt
+        !sh
+        $ chgrp staff foo.txt
 
 *   `chown` ile hem kullanıcı hem grup düzenlenebiliyor
 
