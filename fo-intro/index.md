@@ -271,8 +271,7 @@ kullanacaksınız
 
 -   Markdown'ın çeşitli lehçeleri var
 
--   Folyolarda Markdown'ın [Sundown](https://github.com/vmg/sundown) lehçesi
-    kullanılıyor
+-   Folyolarda Markdown'ın Python lehçesi kullanılıyor
 
 ---
 

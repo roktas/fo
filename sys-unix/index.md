@@ -222,7 +222,7 @@ içinde tutuyoruz → `inode`
 
         !sh
         $ ls -i /home/roktas/foo.xt
-        36148 foo.txt
+        2359898 foo.txt
 
 ---
 
