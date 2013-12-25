@@ -1429,6 +1429,215 @@ Maskeyi yerleşik bir kabuk komutu olan `umask` ile ayarlıyoruz
 
 ---
 
+#   Yönlendirme ve Borulama
+
+---
+
+##  Standart Giriş/Çıkış
+
+                          ---       +-----------------------+
+        standard input   ( 0 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard output  ( 1 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard error   ( 2 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+---
+
+##  Çıkışı Yönlendir: `>file`
+
+                          ---       +-----------------------+
+        standard input   ( 0 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard output  ( 1 ) ---->| file                  |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard error   ( 2 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+---
+
+##  Standart Olmayan Çıkışlar: `n>file`
+
+                          ---       +-----------------------+
+        standard input   ( 0 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard output  ( 1 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard error   ( 2 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        new descriptor   ( n ) ---->| file                  |
+                          ---       +-----------------------+
+
+---
+
+##  Girişi Yönlendir: `<file`
+
+                          ---       +-----------------------+
+        standard input   ( 0 ) ---->| file                  |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard output  ( 1 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard error   ( 2 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+---
+
+##  Borulama
+
+                   echo foo               |                cat
+
+         ---       +--------------+               ---       +--------------+
+        ( 0 ) ---->| /dev/pts/5   |     ------>  ( 0 ) ---->| pipe (read)  |
+         ---       +--------------+    /          ---       +--------------+
+                                      /
+         ---       +--------------+  /            ---       +--------------+
+        ( 1 ) ---->| pipe (write) | /            ( 1 ) ---->| /dev/pts     |
+         ---       +--------------+               ---       +--------------+
+
+         ---       +--------------+               ---       +--------------+
+        ( 2 ) ---->| /dev/pts/5   |              ( 2 ) ---->| /dev/pts/    |
+         ---       +--------------+               ---       +--------------+
+
+---
+
+##  Borulama
+
+           ls /tmp/ doesnotexist 2>&1     |                   less
+
+         ---       +--------------+              ---       +--------------+
+        ( 0 ) ---->| /dev/pts/5   |     ------> ( 0 ) ---->|from the pipe |
+         ---       +--------------+    /   --->  ---       +--------------+
+                                      /   /
+         ---       +--------------+  /   /       ---       +--------------+
+        ( 1 ) ---->| to the pipe  | /   /       ( 1 ) ---->|  /dev/pts    |
+         ---       +--------------+    /         ---       +--------------+
+                                      /
+         ---       +--------------+  /           ---       +--------------+
+        ( 2 ) ---->|  to the pipe | /           ( 2 ) ---->| /dev/pts/    |
+         ---       +--------------+              ---       +--------------+
+
+---
+
+##  Yönlendirme Kuralı
+
+.fx: achtung
+
+-   Yönlendirmeler daima soldan sağa sırayla işlenir
+
+-   Yönlendirme komut çalıştırılmadan önce gerçekleşir
+
+---
+
+##  Yanlış: `2>&1 >file`
+
+                          ---       +-----------------------+
+        standard input   ( 0 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard output  ( 1 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard error   ( 2 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+---
+
+##  Yanlış: `2>&1 >file`
+
+                          ---       +-----------------------+
+        standard input   ( 0 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard output  ( 1 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard error   ( 2 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+---
+
+##  Yanlış: `2>&1 >file`
+
+                          ---       +-----------------------+
+        standard input   ( 0 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard output  ( 1 ) ---->| file                  |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard error   ( 2 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+---
+
+##  Doğru: `>file 2>&1`
+
+                          ---       +-----------------------+
+        standard input   ( 0 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard output  ( 1 ) ---->| file                  |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard error   ( 2 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+---
+
+##  Doğru: `>file 2>&1`
+
+                          ---       +-----------------------+
+        standard input   ( 0 ) ---->| /dev/pts/5            |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard output  ( 1 ) ---->| file                  |
+                          ---       +-----------------------+
+
+                          ---       +-----------------------+
+        standard error   ( 2 ) ---->| file                  |
+                          ---       +-----------------------+
+
+---
+
+##  Görev
+
+.fx: task
+
+`file` dosyasındaki tüm "foo" dizgilerini "bar" ile değiştirmeye çalışan
+aşağıdaki komut ne yapar?  Nasıl düzeltilmelidir?
+
+        !sh
+        $ sed 's/foo/bar/g' file >file
+
+---
 
 #   Ek: `strace`
 
@@ -1865,5 +2074,28 @@ Kullanıcı prosesleri sistem kaynaklarına erişirken sistem çağrıları yolu
 
 
 https://www.youtube.com/user/briantwill
+
+Why is it called duplicating? Because after 2>&1, we have 2 file descriptors
+pointing to the same file. Take care not to call this "File Descriptor
+Aliasing"; if we redirect stdout after 2>&1 to a file B, file descriptor 2 will
+still be opened on the file A where it was. This is often misunderstood by
+people wanting to redirect both standard input and standard output to the file.
+Continue reading for more on this.
+
+So if you have a file descriptor like:
+
+                          ---       +-----------------------+
+         a descriptor    ( n ) ---->| /some/file            |
+                          ---       +-----------------------+
+
+Using a m>&n (where m is a number) you got a copy of this descriptor:
+
+                          ---       +-----------------------+
+         a descriptor    ( m ) ---->| /some/file            |
+                          ---       +-----------------------+
+
+Note that the positions are also duplicated. If you have allready read a line of
+n, then after n>&m if you read a line from m, you will get the second line of
+the file.
 
 -->
