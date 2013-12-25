@@ -1431,6 +1431,9 @@ Maskeyi yerleşik bir kabuk komutu olan `umask` ile ayarlıyoruz
 
 #   Yönlendirme ve Borulama
 
+Kaynak: [Bash Hackers
+Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
+
 ---
 
 ##  Standart Giriş/Çıkış
@@ -2075,27 +2078,25 @@ Kullanıcı prosesleri sistem kaynaklarına erişirken sistem çağrıları yolu
 
 https://www.youtube.com/user/briantwill
 
-Why is it called duplicating? Because after 2>&1, we have 2 file descriptors
+http://wiki.bash-hackers.org/howto/redirection_tutorial
+
+Why is it called duplicating? Because after 2-1, we have 2 file descriptors
 pointing to the same file. Take care not to call this "File Descriptor
-Aliasing"; if we redirect stdout after 2>&1 to a file B, file descriptor 2 will
+Aliasing"; if we redirect stdout after 2-1 to a file B, file descriptor 2 will
 still be opened on the file A where it was. This is often misunderstood by
 people wanting to redirect both standard input and standard output to the file.
 Continue reading for more on this.
 
 So if you have a file descriptor like:
 
-                          ---       +-----------------------+
-         a descriptor    ( n ) ---->| /some/file            |
-                          ---       +-----------------------+
+         a descriptor    ( n ) - /some/file
 
-Using a m>&n (where m is a number) you got a copy of this descriptor:
+Using a m-n (where m is a number) you got a copy of this descriptor:
 
-                          ---       +-----------------------+
-         a descriptor    ( m ) ---->| /some/file            |
-                          ---       +-----------------------+
+         a descriptor    ( m ) - /some/file
 
 Note that the positions are also duplicated. If you have allready read a line of
-n, then after n>&m if you read a line from m, you will get the second line of
-the file.
+n, then after n-m if you read a line from m, you will get the second line of the
+file.
 
 -->

@@ -6112,6 +6112,9 @@ foo
             <header><h1>Y&ouml;nlendirme ve Borulama</h1></header>
             
             
+            <section><p>Kaynak: <a href="http://wiki.bash-hackers.org/howto/redirection_tutorial">Bash Hackers
+Wiki</a></p></section>
+            
           </div>
           <div class="presenter_notes">
             <header><h1>Presenter Notes</h1></header>
@@ -7822,29 +7825,28 @@ Sonra
 
 https://www.youtube.com/user/briantwill
 
-Why is it called duplicating? Because after 2>&1, we have 2 file descriptors
-pointing to the same file. Take care not to call this &ldquo;File Descriptor
-Aliasing&rdquo;; if we redirect stdout after 2>&1 to a file B, file descriptor 2 will
+http://wiki.bash-hackers.org/howto/redirection_tutorial
+
+Why is it called duplicating? Because after 2-1, we have 2 file descriptors
+pointing to the same file. Take care not to call this "File Descriptor
+Aliasing"; if we redirect stdout after 2-1 to a file B, file descriptor 2 will
 still be opened on the file A where it was. This is often misunderstood by
 people wanting to redirect both standard input and standard output to the file.
 Continue reading for more on this.
 
 So if you have a file descriptor like:
 
-                          &ndash;       +&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&mdash;+
-         a descriptor    ( n ) &ndash;->
+         a descriptor    ( n ) - /some/file
 
-<p>| /some/file            |
-                          &ndash;       +&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&mdash;+</p>
-<p>Using a m&gt;&amp;n (where m is a number) you got a copy of this descriptor:</p>
-<pre><code>                      ---       +-----------------------+
-     a descriptor    ( m ) ----&gt;| /some/file            |
-                      ---       +-----------------------+
-</code></pre>
-<p>Note that the positions are also duplicated. If you have allready read a line of
-n, then after n&gt;&amp;m if you read a line from m, you will get the second line of
-the file.</p>
-<p>&mdash;&gt;</p></section>
+Using a m-n (where m is a number) you got a copy of this descriptor:
+
+         a descriptor    ( m ) - /some/file
+
+Note that the positions are also duplicated. If you have allready read a line of
+n, then after n-m if you read a line from m, you will get the second line of the
+file.
+
+--></section>
             
           </div>
           <div class="presenter_notes">
