@@ -1970,7 +1970,7 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
             <section><p>Program ve Proses ili&#351;kisi</p>
 <ul>
 <li>
-<p>Depolama ayg&#305;t&#305;nda pasif &rarr; Bellekte canl&#305;</p>
+<p>Depolama ayg&#305;t&#305;nda pasif &rarr; Bellekte aktif</p>
 </li>
 <li>
 <p>Yemek tarifi &rarr; Tarife g&ouml;re yap&#305;lan yemek</p>
@@ -2045,42 +2045,6 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
       
       <!-- slide source: sys-process/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h2><code>getpid</code> ve <code>getppid</code></h2></header>
-            
-            
-            <section><div class="highlight"><pre>    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">sys</span><span class="o">/</span><span class="n">types</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
-    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">unistd</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
-
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Pid: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">getpid</span><span class="p">());</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Parent Pid: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">getppid</span><span class="p">());</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="sys-process/index.md">sys-process/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              7/22
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: sys-process/index.md -->
-      <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
             
@@ -2104,6 +2068,42 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
 <p>Proses istatistikleri (ne kadar zaman ayr&#305;lm&#305;&#351; vs)</p>
 </li>
 </ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="sys-process/index.md">sys-process/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/22
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: sys-process/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>getpid</code> ve <code>getppid</code></h2></header>
+            
+            
+            <section><div class="highlight"><pre>    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">sys</span><span class="o">/</span><span class="n">types</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">unistd</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Pid: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">getpid</span><span class="p">());</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Parent Pid: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">getppid</span><span class="p">());</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -2868,12 +2868,12 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
         </tr>
         
         <tr id="toc-row-7" class="sub">
-          <th><a href="#slide7"><code>getpid</code> ve <code>getppid</code></a></th>
+          <th><a href="#slide7">Proses</a></th>
           <td><a href="#slide7">7</a></td>
         </tr>
         
         <tr id="toc-row-8" class="sub">
-          <th><a href="#slide8">Proses</a></th>
+          <th><a href="#slide8"><code>getpid</code> ve <code>getppid</code></a></th>
           <td><a href="#slide8">8</a></td>
         </tr>
         
