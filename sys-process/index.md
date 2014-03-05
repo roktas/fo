@@ -217,13 +217,13 @@ Bu çok güçlü bir soyutlamadır → "fork", "exec", "wait" semantiği
 
 ---
 
-##  Proses
+##  Zombi Çocuk
 
 .code: code/fork_zombie_child/main.c
 
 ---
 
-##  Proses
+##  Öksüz Çocuk
 
 .code: code/fork_orphaned_child/main.c
 
@@ -249,12 +249,12 @@ Bu çok güçlü bir soyutlamadır → "fork", "exec", "wait" semantiği
 
 ---
 
-##  Proses
+##  Cenazeyi Bekle
 
 .code: code/fork_exec_with_wait/main.c
 
 ---
 
-##  Proses
+##  Ölüm Haberi Ver
 
 .code: code/fork_exec_signaled/main.c
