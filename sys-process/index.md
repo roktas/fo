@@ -49,6 +49,7 @@ Bir yemek makinesi düşünelim
         sıcaklık < 100 C°
                 bekle
 
+---
 
 ##  Kaynak Kod, Program ve Proses
 
