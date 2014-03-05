@@ -65,7 +65,7 @@ Bir yemek makinesi düşünelim
 
 Program ve Proses ilişkisi
 
--   Depolama aygıtında pasif → Bellekte canlı
+-   Depolama aygıtında pasif → Bellekte aktif
 
 -   Yemek tarifi → Tarife göre yapılan yemek
 
@@ -85,17 +85,6 @@ Program ve Proses ilişkisi
 
 ---
 
-##  `getpid` ve `getppid`
-
-        !c
-        #include <sys/types.h>
-        #include <unistd.h>
-
-        printf("Pid: %d\n", getpid());
-        printf("Parent Pid: %d\n", getppid());
-
----
-
 ##  Proses
 
 -   Proses numarası
@@ -107,6 +96,17 @@ Program ve Proses ilişkisi
 -   Açık dosyalar
 
 -   Proses istatistikleri (ne kadar zaman ayrılmış vs)
+
+---
+
+##  `getpid` ve `getppid`
+
+        !c
+        #include <sys/types.h>
+        #include <unistd.h>
+
+        printf("Pid: %d\n", getpid());
+        printf("Parent Pid: %d\n", getppid());
 
 ---
 
