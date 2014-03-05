@@ -47,49 +47,79 @@ Ocak 2012
 
 ---
 
-#   Python
+#   Ruby
+
+---
+
+#   Ruby
+
+[http://www.ruby-lang.org/tr/downloads/](http://www.ruby-lang.org/tr/downloads/)
+
+---
+
+#   Ruby
+
+.code: code/rb_class_simple_point/main1.rb
 
 ---
 
 #   Sınıf
 
-.code: code/py_class_simple_point/main.py
+.code: code/rb_class_simple_point/main.rb
 
 ---
 
 #   İşleç Yüklemesi
 
-.code: code/py_class_overloading_point/main.py
+.code: code/rb_class_overloading_point/main.rb
 
 ---
 
 #   Sınıf Metodları
 
-.code: code/py_class_classmethod_point/main1.py
+.code: code/rb_class_classmethod_point/main3.rb
 
 ---
 
 #   Sınıf Metodları
 
-.code: code/py_class_classmethod_point/main.py
+.code: code/rb_class_classmethod_point/main2.rb
+
+---
+
+#   Sınıf Metodları
+
+.code: code/rb_class_classmethod_point/main1.rb
+
+---
+
+#   Sınıf Metodları
+
+.code: code/rb_class_classmethod_point/main.rb
 
 ---
 
 #   Miras Alma
 
-.code: code/py_inheritance_simple_circle/main1.py
+.code: code/rb_inheritance_simple_circle/main2.rb
 
 ---
 
 #   Miras Alma
 
-.code: code/py_inheritance_simple_circle/main.py
+.code: code/rb_inheritance_simple_circle/main1.rb
+
+---
+
+#   Miras Alma
+
+.code: code/rb_inheritance_simple_circle/main.rb
 
 ---
 
 #   Çok Biçimlilik
 
-.code: code/py_polymorphism_simple_shape/main.py
+.code: code/rb_polymorphism_simple_shape/main.rb
 
 ---
 
@@ -230,79 +260,50 @@ Arayüz ve Çok biçimlilik birbiriyle yakından ilintili
 
 ---
 
-#   Ruby
 
----
-
-#   Ruby
-
-[http://www.ruby-lang.org/tr/downloads/](http://www.ruby-lang.org/tr/downloads/)
-
----
-
-#   Ruby
-
-.code: code/rb_class_simple_point/main1.rb
+#   Python
 
 ---
 
 #   Sınıf
 
-.code: code/rb_class_simple_point/main.rb
+.code: code/py_class_simple_point/main.py
 
 ---
 
 #   İşleç Yüklemesi
 
-.code: code/rb_class_overloading_point/main.rb
+.code: code/py_class_overloading_point/main.py
 
 ---
 
 #   Sınıf Metodları
 
-.code: code/rb_class_classmethod_point/main3.rb
+.code: code/py_class_classmethod_point/main1.py
 
 ---
 
 #   Sınıf Metodları
 
-.code: code/rb_class_classmethod_point/main2.rb
-
----
-
-#   Sınıf Metodları
-
-.code: code/rb_class_classmethod_point/main1.rb
-
----
-
-#   Sınıf Metodları
-
-.code: code/rb_class_classmethod_point/main.rb
+.code: code/py_class_classmethod_point/main.py
 
 ---
 
 #   Miras Alma
 
-.code: code/rb_inheritance_simple_circle/main2.rb
+.code: code/py_inheritance_simple_circle/main1.py
 
 ---
 
 #   Miras Alma
 
-.code: code/rb_inheritance_simple_circle/main1.rb
-
----
-
-#   Miras Alma
-
-.code: code/rb_inheritance_simple_circle/main.rb
+.code: code/py_inheritance_simple_circle/main.py
 
 ---
 
 #   Çok Biçimlilik
 
-.code: code/rb_polymorphism_simple_shape/main.rb
+.code: code/py_polymorphism_simple_shape/main.py
 
 ---
 
