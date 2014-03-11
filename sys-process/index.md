@@ -95,7 +95,22 @@ Program ve Proses ilişkisi
 
 -   Açık dosyalar
 
+-   Sinyaller
+
 -   Proses istatistikleri (ne kadar zaman ayrılmış vs)
+
+---
+
+##  Sinyaller
+
+Örnekler
+
+        !sh
+        $ trap 'printf "\nDeğişti\n"' SIGWINCH
+        $ trap 'printf "\nKesildi\n"' SIGINT
+        $ xeyes &
+        $ kill -s SIGSTOP «PID»
+        $ kill -s SIGCONT «PID»
 
 ---
 
