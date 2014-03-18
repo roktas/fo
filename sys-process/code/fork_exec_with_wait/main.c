@@ -33,7 +33,5 @@ main(void)
 	else
 		printf("Terminated abnormally.\n");
 
-	sleep(10);
-
 	return EXIT_SUCCESS;
 }
