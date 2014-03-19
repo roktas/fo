@@ -204,6 +204,8 @@ Bu gerçeklemede bir sorun var
 
 -   "Şu isimdeki metodları şu nesneye gönder" gibi bir kolaylık?
 
+---
+
 #   Delegasyon - `Forwardable` modülü
 
 .code: code/rb_delegation_vehicle/main.rb
