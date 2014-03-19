@@ -1813,7 +1813,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/19
+              1/20
             </aside>
           </footer>
         </div>
@@ -1843,7 +1843,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              2/19
+              2/20
             </aside>
           </footer>
         </div>
@@ -1884,7 +1884,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              3/19
+              3/20
             </aside>
           </footer>
         </div>
@@ -1917,7 +1917,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              4/19
+              4/20
             </aside>
           </footer>
         </div>
@@ -1965,7 +1965,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              5/19
+              5/20
             </aside>
           </footer>
         </div>
@@ -1995,7 +1995,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              6/19
+              6/20
             </aside>
           </footer>
         </div>
@@ -2053,7 +2053,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              7/19
+              7/20
             </aside>
           </footer>
         </div>
@@ -2097,7 +2097,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              8/19
+              8/20
             </aside>
           </footer>
         </div>
@@ -2138,7 +2138,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              9/19
+              9/20
             </aside>
           </footer>
         </div>
@@ -2176,7 +2176,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              10/19
+              10/20
             </aside>
           </footer>
         </div>
@@ -2209,7 +2209,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              11/19
+              11/20
             </aside>
           </footer>
         </div>
@@ -2250,7 +2250,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              12/19
+              12/20
             </aside>
           </footer>
         </div>
@@ -2311,7 +2311,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              13/19
+              13/20
             </aside>
           </footer>
         </div>
@@ -2361,7 +2361,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              14/19
+              14/20
             </aside>
           </footer>
         </div>
@@ -2392,7 +2392,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              15/19
+              15/20
             </aside>
           </footer>
         </div>
@@ -2469,7 +2469,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              16/19
+              16/20
             </aside>
           </footer>
         </div>
@@ -2511,7 +2511,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              17/19
+              17/20
             </aside>
           </footer>
         </div>
@@ -2552,7 +2552,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              18/19
+              18/20
             </aside>
           </footer>
         </div>
@@ -2593,17 +2593,17 @@ div.slide {
   <span class="k">end</span>
   <span class="k">def</span> <span class="nf">sunday_drive</span>
     <span class="nb">puts</span> <span class="s2">&quot;Motor tipi: </span><span class="si">#{</span><span class="vi">@engine</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="vi">@engine</span><span class="o">.</span><span class="n">start</span>
+    <span class="n">start</span>
     <span class="c1"># Cruise out into the country and return...</span>
-    <span class="vi">@engine</span><span class="o">.</span><span class="n">stop</span>
+    <span class="n">stop</span>
   <span class="k">end</span>
   <span class="k">def</span> <span class="nf">switch_to_diesel</span>
     <span class="vi">@engine</span> <span class="o">=</span> <span class="no">DieselEngine</span><span class="o">.</span><span class="n">new</span>
   <span class="k">end</span>
-  <span class="k">def</span> <span class="nf">start_engine</span>
+  <span class="k">def</span> <span class="nf">start</span>
     <span class="vi">@engine</span><span class="o">.</span><span class="n">start</span>
   <span class="k">end</span>
-  <span class="k">def</span> <span class="nf">stop_engine</span>
+  <span class="k">def</span> <span class="nf">stop</span>
     <span class="vi">@engine</span><span class="o">.</span><span class="n">stop</span>
   <span class="k">end</span>
 <span class="k">end</span>
@@ -2631,7 +2631,106 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              19/19
+              19/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: oop-rule/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Delegasyon</h1></header>
+            
+            
+            <section><p>Bu ger&ccedil;eklemede bir sorun var</p>
+<ul>
+<li>
+<p>Kod <strong>DRY</strong> de&#287;il</p>
+</li>
+<li>
+<p><code>start</code> ve <code>stop</code> metodlar&#305; bu eylemleri motor nesnesine g&ouml;nderiyor</p>
+</li>
+<li>
+<p>Her delegasyonda b&ouml;yle sarmalay&#305;c&#305; metodlar yazmak zorunda m&#305;y&#305;z?</p>
+</li>
+<li>
+<p>&ldquo;&#350;u isimdeki metodlar&#305; &#351;u nesneye g&ouml;nder&rdquo; gibi bir kolayl&#305;k?</p>
+</li>
+</ul>
+<h1>Delegasyon - <code>Forwardable</code> mod&uuml;l&uuml;</h1>
+<p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="nb">require</span> <span class="s1">&#39;forwardable&#39;</span>
+
+<span class="c1"># Motor</span>
+<span class="k">class</span> <span class="nc">Engine</span>
+  <span class="c1"># Motor&#39;la ilgili tüm ortak akıl burada...</span>
+  <span class="k">def</span> <span class="nf">start</span>
+    <span class="nb">puts</span> <span class="s1">&#39;başla&#39;</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">stop</span>
+    <span class="nb">puts</span> <span class="s1">&#39;dur&#39;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">GasolineEngine</span> <span class="o">&lt;</span> <span class="no">Engine</span>
+  <span class="c1"># Benzinli Motor</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">DieselEngine</span> <span class="o">&lt;</span> <span class="no">Engine</span>
+  <span class="c1"># Dizel Motor</span>
+<span class="k">end</span>
+
+<span class="c1"># Araba</span>
+<span class="k">class</span> <span class="nc">Car</span>
+  <span class="kp">extend</span> <span class="no">Forwardable</span>
+  <span class="n">def_delegators</span> <span class="ss">:@engine</span><span class="p">,</span> <span class="ss">:start</span><span class="p">,</span> <span class="ss">:stop</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@engine</span> <span class="o">=</span> <span class="no">GasolineEngine</span><span class="o">.</span><span class="n">new</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">sunday_drive</span>
+    <span class="nb">puts</span> <span class="s2">&quot;Motor tipi: </span><span class="si">#{</span><span class="vi">@engine</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">start</span>
+    <span class="c1"># Cruise out into the country and return...</span>
+    <span class="n">stop</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">switch_to_diesel</span>
+    <span class="vi">@engine</span> <span class="o">=</span> <span class="no">DieselEngine</span><span class="o">.</span><span class="n">new</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
+  <span class="n">car</span> <span class="o">=</span> <span class="no">Car</span><span class="o">.</span><span class="n">new</span>
+  <span class="n">car</span><span class="o">.</span><span class="n">sunday_drive</span>
+  <span class="n">car</span><span class="o">.</span><span class="n">switch_to_diesel</span>
+  <span class="n">car</span><span class="o">.</span><span class="n">sunday_drive</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="oop-rule/index.md">oop-rule/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/20
             </aside>
           </footer>
         </div>
@@ -2756,6 +2855,12 @@ div.slide {
       <tr id="toc-row-19">
         <th><a href="#slide19">Delegasyon</a></th>
         <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Delegasyon</a></th>
+        <td><a href="#slide20">20</a></td>
       </tr>
       
       

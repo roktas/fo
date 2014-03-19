@@ -188,4 +188,22 @@ Araba içinde motorun çalışmasıyla ilgili tüm işler motora devredilmeli
 
 #   Delegasyon
 
+.code: code/rb_delegation_vehicle/main1.rb
+
+---
+
+#   Delegasyon
+
+Bu gerçeklemede bir sorun var
+
+-   Kod **DRY** değil
+
+-   `start` ve `stop` metodları bu eylemleri motor nesnesine gönderiyor
+
+-   Her delegasyonda böyle sarmalayıcı metodlar yazmak zorunda mıyız?
+
+-   "Şu isimdeki metodları şu nesneye gönder" gibi bir kolaylık?
+
+#   Delegasyon - `Forwardable` modülü
+
 .code: code/rb_delegation_vehicle/main.rb
