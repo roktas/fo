@@ -11,6 +11,7 @@
 
 require 'forwardable'
 
+# Oyun kartları
 module Cards
   SUITES = %w(club diamond heart spade).map(&:to_sym)
   RANKS  = %w(1 2 3 4 5 6 7 8 9 j q k).map(&:to_sym)
@@ -27,7 +28,7 @@ module Cards
     s10: "\u{1f0aa}", h10: "\u{1f0ba}", d10: "\u{1f0ca}", c10: "\u{1f0da}",
     sj:  "\u{1f0ab}", hj:  "\u{1f0bb}", dj:  "\u{1f0cb}", cj:  "\u{1f0db}",
     sq:  "\u{1f0ad}", hq:  "\u{1f0bd}", dq:  "\u{1f0cd}", cq:  "\u{1f0dd}",
-    sk:  "\u{1f0ae}", hk:  "\u{1f0be}", dk:  "\u{1f0ce}", ck:  "\u{1f0de}",
+    sk:  "\u{1f0ae}", hk:  "\u{1f0be}", dk:  "\u{1f0ce}", ck:  "\u{1f0de}"
   }
 
   # Kart
@@ -38,10 +39,10 @@ module Cards
 
     def initialize(suite, rank)
       @suite = suite.to_s.to_sym
-      raise "Bad suite: #{suite}" unless SUITES.include?(@suite)
+      fail "Bad suite: #{suite}" unless SUITES.include?(@suite)
 
       @rank = rank.to_s.to_sym
-      raise "Bad rank: #{rank}"   unless RANKS.include?(@rank)
+      fail "Bad rank: #{rank}"   unless RANKS.include?(@rank)
 
       @symbol = "#{@suite[0]}#{@rank}".to_sym
     end
@@ -66,10 +67,10 @@ module Cards
     # Sıralamada önemli
     def <=>(other)
       # Bu metodun üzerine yazmak yerine suit değerleri değiştirilebilir
-      if self.suite_value == other.suite_value
-        self.rank_value <=> other.rank_value
+      if suite_value == other.suite_value
+        rank_value <=> other.rank_value
       else
-        self.suite_value <=> other.suite_value
+        suite_value <=> other.suite_value
       end
     end
   end
@@ -78,7 +79,9 @@ module Cards
   class Cards
     extend Forwardable
     # Deste (deck) ve El (hand) temelde birer dizi (@cards)
-    def_delegators :@cards,:push, :pop, :shuffle, :shuffle!, :sort, :sort?, :empty?, :size
+    def_delegators :@cards, :push, :pop, :shuffle,
+                   :shuffle!, :sort, :sort?, :empty?,
+                   :size
 
     def to_s
       @cards.map(&:to_s).join(' ')
@@ -117,7 +120,7 @@ module Cards
 end
 
 # Test sürüşü
-if __FILE__ == $0
+if __FILE__ == $PROGRAM_NAME
   include Cards
 
   # Yeni deste
@@ -128,11 +131,11 @@ if __FILE__ == $0
   until (h = d.hand).empty?
     puts h
     # Ellerden tek kart
-    while c = h.deal
+    while (c = h.deal)
       puts c
     end
   end
 
   # Kart karşılaştır
-  puts Card.new("spade", "j") < Card.new("diamond", "k")
+  puts Card.new('spade', 'j') < Card.new('diamond', 'k')
 end
