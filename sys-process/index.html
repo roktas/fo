@@ -2475,7 +2475,7 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
 
         <span class="n">pid</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pid</span><span class="p">)</span> <span class="p">{</span>
-                <span class="kt">char</span> <span class="o">*</span><span class="k">const</span> <span class="n">argv</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;date&quot;</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
+                <span class="kt">char</span> <span class="o">*</span><span class="k">const</span> <span class="n">argv</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;date&quot;</span><span class="p">,</span> <span class="s">&quot;+&#39;%Y&#39;&quot;</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
                 <span class="kt">int</span> <span class="n">ret</span><span class="p">;</span>
 
                 <span class="n">ret</span> <span class="o">=</span> <span class="n">execv</span><span class="p">(</span><span class="s">&quot;/bin/date&quot;</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
@@ -2599,6 +2599,8 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
                 <span class="n">perror</span><span class="p">(</span><span class="s">&quot;fork&quot;</span><span class="p">);</span>
                 <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
         <span class="p">}</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;child: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">pid</span><span class="p">);</span>
 
         <span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 
@@ -2755,7 +2757,7 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
                 <span class="kt">char</span> <span class="o">*</span><span class="k">const</span> <span class="n">argv</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;false&quot;</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
                 <span class="kt">int</span> <span class="n">ret</span><span class="p">;</span>
 
-                <span class="n">ret</span> <span class="o">=</span> <span class="n">execv</span><span class="p">(</span><span class="s">&quot;/bin/false&quot;</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="n">execv</span><span class="p">(</span><span class="s">&quot;/bin/date&quot;</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
                         <span class="n">perror</span><span class="p">(</span><span class="s">&quot;execv&quot;</span><span class="p">);</span>
                         <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
@@ -2820,7 +2822,7 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
 
         <span class="n">pid</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pid</span><span class="p">)</span> <span class="p">{</span>
-                <span class="kt">char</span> <span class="o">*</span><span class="k">const</span> <span class="n">argv</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;sleep&quot;</span><span class="p">,</span> <span class="s">&quot;100&quot;</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
+                <span class="kt">char</span> <span class="o">*</span><span class="k">const</span> <span class="n">argv</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;sleep&quot;</span><span class="p">,</span> <span class="s">&quot;6&quot;</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
                 <span class="kt">int</span> <span class="n">ret</span><span class="p">;</span>
 
                 <span class="n">ret</span> <span class="o">=</span> <span class="n">execv</span><span class="p">(</span><span class="s">&quot;/bin/sleep&quot;</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>

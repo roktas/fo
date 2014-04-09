@@ -23,6 +23,8 @@ main(void)
 		exit(EXIT_FAILURE);
 	}
 
+	printf("child: %d\n", pid);
+
 	sleep(10);
 
 	return EXIT_SUCCESS;

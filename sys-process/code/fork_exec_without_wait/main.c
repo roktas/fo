@@ -10,7 +10,7 @@ main(void)
 
 	pid = fork();
 	if (!pid) {
-		char *const argv[] = { "date", NULL };
+		char *const argv[] = { "date", "+'%Y'", NULL };
 		int ret;
 
 		ret = execv("/bin/date", argv);

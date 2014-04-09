@@ -15,7 +15,7 @@ main(void)
 		char *const argv[] = { "false", NULL };
 		int ret;
 
-		ret = execv("/bin/false", argv);
+		ret = execv("/bin/date", argv);
 		if (ret == -1) {
 			perror("execv");
 			exit(EXIT_FAILURE);
