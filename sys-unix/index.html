@@ -26,7 +26,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta id="viewport" name="viewport" content="user-scalable=no" />
     <title>Sistem - Unix</title>
     <!-- Styles -->
     
@@ -1133,6 +1133,13 @@ div.slide {
     var showingPresenterView = false;
     var presenterViewWin = null;
     var isPresenterView = false;
+    var isAndroid = navigator.userAgent.toLowerCase().indexOf('android') > -1;
+
+    if (isAndroid) {
+      document.querySelector('meta[name=viewport]').setAttribute('content',
+	'width=device-width, initial-scale=0.7, maximum-scale=0.7, user-scalable=no'
+      );
+    }
 
     var str2array = function(s) {
         if (typeof s == 'string' || s instanceof String) {
@@ -1625,6 +1632,7 @@ div.slide {
 
     var addTouchListeners = function() {
         document.addEventListener('touchstart', function(e) {
+	    if (isAndroid) e.preventDefault();
             touchStartX = e.touches[0].pageX;
         }, false);
         document.addEventListener('touchend', function(e) {
