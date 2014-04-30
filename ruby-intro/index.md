@@ -767,6 +767,22 @@ Bu sayede:
 
 ---
 
+#   İsim Uzayı
+
+-   Ruby modülleri `$LOAD_PATH` değişkeninin gösterdiği dizinlerde aranır
+
+-   Bulunduğunuz dizin öntanımlı olarak `$LOAD_PATH`'te kayıtlı değildir
+
+-   Bulunduğunuz dizindeki `log.rb` modülü yüklenemez
+
+-   `require 'log'` satırının çalışması için bulunduğunuz dizini yükleme yoluna
+    ekleyin
+
+        !ruby
+        $LOAD_PATH.unshift File.join(File.dirname(__FILE__))
+
+---
+
 #   Katıştırma
 
 Gerçeklemenin seçtiğiniz bir isim uzayına yerleştirilmesini (katıştırılmasını)

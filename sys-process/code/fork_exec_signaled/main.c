@@ -12,7 +12,7 @@ main(void)
 
 	pid = fork();
 	if (!pid) {
-		char *const argv[] = { "sleep", "100", NULL };
+		char *const argv[] = { "sleep", "6", NULL };
 		int ret;
 
 		ret = execv("/bin/sleep", argv);
