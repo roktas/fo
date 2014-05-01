@@ -8,8 +8,6 @@ http://roktas.me/
 
 Mart 2012
 
----
-
 #   Geliştirme Ortamı Kurulumu
 
 -   Npm dışındaki temel paketleri kur:
@@ -28,8 +26,6 @@ Mart 2012
         !sh
         $ sudo ln -s /usr/bin/cake.coffeescript /usr/bin/cake
 
----
-
 #   Geliştirme Ortamı Kurulumu
 
 -   Npm'i özel olarak kur:
@@ -47,8 +43,6 @@ Mart 2012
     Kullanıcı adının (`Username`) münkünse Unix sistemlerde her zaman
     kullandığınız ad olmasına dikkat edin.
 
----
-
 #   İlk Uygulama
 
 -   Depo oluştur
@@ -65,8 +59,6 @@ Mart 2012
         $ git init
         $ echo "node_modules" >>.gitignore
         $ touch README.md
-
----
 
 #   İlk Uygulama
 
@@ -91,8 +83,6 @@ Mart 2012
         $ git commit -a -m ilk
         $ git remote add origin git@github.com/$ACCOUNT/$APP
         $ git push origin master
-
----
 
 #   CoffeeScript Kullanımı
 
@@ -119,8 +109,6 @@ Mart 2012
         !javascript
         "postinstall": "coffee -b -c ."
 
----
-
 #   Npm Paket Yönetimi
 
 -   Node uygulamasının bağımlılıklarını `package.json` dosyasında
@@ -142,11 +130,7 @@ Mart 2012
 
 Bk. [Npm dokümanları](http://npmjs.org/doc/json.html)
 
----
-
 #   Joyent
-
----
 
 #   Joyent
 
@@ -166,8 +150,6 @@ Node'ı geliştirenler (Joyent) tarafından sunulan bir barındırma hizmeti.
     kuruluyor
 
 -   Maksimum 5 adet veritabanı oluşturulabiliyor (MySQL, PostgreSQL, MongoDB vb)
-
----
 
 #   Başlangıç
 
@@ -193,8 +175,6 @@ Node'ı geliştirenler (Joyent) tarafından sunulan bir barındırma hizmeti.
         	    ForwardAgent yes
         EOF
 
----
-
 #   Başlangıç
 
 -   SSH girişini ayarla
@@ -213,8 +193,6 @@ Node'ı geliştirenler (Joyent) tarafından sunulan bir barındırma hizmeti.
         $ echo "node-service" >>.gitignore
         $ git commit .gitignore -m "gitignore Joyent"
 
----
-
 #   Başlangıç
 
 -   Depoyu ayarla (hub gibi git alias'ları etkin olabileceğinden git için açık
@@ -232,14 +210,10 @@ Bk. [Joyent dokümanları](http://wiki.joyent.com/display/node/Getting+Started+w
 
 Bk. [İlk Node uygulaması](http://roktas.me/FIXME)
 
----
-
 #   Npm paketleri nasıl yönetiliyor?
 
 Joyent beklenildiği gibi `package.json`'daki değişiklikleri her gönderimde
 etkinleştiriyor ve npm ile eksik paketleri kuruyor.
-
----
 
 #   Node sürümünü nasıl ayarlıyoruz?
 
@@ -260,8 +234,6 @@ Joyent'te kullanılacak Node sürümünü `config.json` dosyasında `{ "version"
 
 Bk. [Joyent dokümanları](http://wiki.joyent.com/display/node/Setting+the+Node.js+Version)
 
----
-
 #   Uygulama nasıl ayarlanıyor?
 
 -   Uygulama ayarları için `node-service/profile` dosyası kullanılıyor.
@@ -274,8 +246,6 @@ Bk. [Joyent dokümanları](http://wiki.joyent.com/display/node/Setting+the+Node.
 
         !javascript
         key = process.env.GITHUB_API_KEY;
-
----
 
 #   Ekstra yazılımları nasıl kuruyoruz?
 
@@ -294,8 +264,6 @@ Bk. [Joyent dokümanları](http://wiki.joyent.com/display/node/Setting+the+Node.
 
 Bk. [Joyent dokümanları](http://wiki.joyent.com/display/node/Node.js+SmartMachine+FAQ)
 
----
-
 #   Servis günlüğünü nasıl görüyoruz?
 
 -   Sanal makineye girerek:
@@ -307,8 +275,6 @@ Bk. [Joyent dokümanları](http://wiki.joyent.com/display/node/Node.js+SmartMach
 
         !sh
         $ ssh $JOYENT node-service-log
-
----
 
 #   Servis günlüğünü nasıl görüyoruz?
 
@@ -335,8 +301,6 @@ Bk. [Joyent dokümanları](http://wiki.joyent.com/display/node/Node.js+SmartMach
         !sh
         $ cake log
 
----
-
 #   Uçbirim düzgün değil?
 
 Yereldeki `TERM` ortam değişkeninin etkin olmamasını sağlayın
@@ -345,8 +309,6 @@ Yereldeki `TERM` ortam değişkeninin etkin olmamasını sağlayın
 
         !sh
         [joyent]$ echo "TERM=xterm-color" >>~/.ssh/environment
-
----
 
 #   `sudo` nasıl?
 

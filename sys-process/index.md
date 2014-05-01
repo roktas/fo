@@ -8,8 +8,6 @@ Recai Oktaş `<roktas@bil.omu.edu.tr>`
 
 Mart 2013
 
----
-
 ##  Kaynak Kod ve Program
 
 Bir yemek makinesi düşünelim
@@ -27,8 +25,6 @@ Bir yemek makinesi düşünelim
         aç ısıtıcı
         sıcaklık < 100 C°
                 bekle
-
----
 
 ##  Kaynak Kod ve Program
 
@@ -49,8 +45,6 @@ Bir yemek makinesi düşünelim
         sıcaklık < 100 C°
                 bekle
 
----
-
 ##  Kaynak Kod, Program ve Proses
 
 -   Kaynak kod → İnsanî yemek tarifi
@@ -58,8 +52,6 @@ Bir yemek makinesi düşünelim
 -   Program → Yemek makinesinin dilinde yemek tarifi
 
 -   Proses → Tarife göre yapılan yemek
-
----
 
 ##  Program ve Proses
 
@@ -71,8 +63,6 @@ Program ve Proses ilişkisi
 
 -   Tek tarif → birden fazla yemek
 
----
-
 ##  Proses
 
 -   İşletim sistemi proses tablosunda her prosesi takip eder
@@ -82,8 +72,6 @@ Program ve Proses ilişkisi
 -   Bu numara anahtar kılınarak prosese ait bilgilere erişiliyor
 
 -   Nedir bu bilgiler?
-
----
 
 ##  Proses
 
@@ -99,8 +87,6 @@ Program ve Proses ilişkisi
 
 -   Proses istatistikleri (ne kadar zaman ayrılmış vs)
 
----
-
 ##  Sinyaller
 
 Örnekler
@@ -112,8 +98,6 @@ Program ve Proses ilişkisi
         $ kill -s SIGSTOP «PID»
         $ kill -s SIGCONT «PID»
 
----
-
 ##  `getpid` ve `getppid`
 
         !c
@@ -122,8 +106,6 @@ Program ve Proses ilişkisi
 
         printf("Pid: %d\n", getpid());
         printf("Parent Pid: %d\n", getppid());
-
----
 
 ##  Proseslerin Hayatı
 
@@ -137,16 +119,12 @@ Program ve Proses ilişkisi
 
 -   Ebeveyn proses ölen çocuğu gömer
 
----
-
 ##  Proseslerin Hayatı
 
 Unix İşletim sistemlerinde bir prosesin oluşturulması, çalıştırılması ve ölmesi
 üç farklı işlem öbeği halinde gerçekleşir.
 
 Bu çok güçlü bir soyutlamadır → "fork", "exec", "wait" semantiği
-
----
 
 ##  `fork`
 
@@ -156,13 +134,9 @@ Bu çok güçlü bir soyutlamadır → "fork", "exec", "wait" semantiği
 
         pid_t fork(void);
 
----
-
 ##  Prosesin Doğuşu
 
 .code: code/fork_without_exec/main.c
-
----
 
 ##  `exec`
 
@@ -175,8 +149,6 @@ Bu çok güçlü bir soyutlamadır → "fork", "exec", "wait" semantiği
         int execvp(const char *file, char * const argv[]);
         int execve(const char *file, char * const argv[], char * const envp[]);
 
----
-
 ##  `exec`
 
 -   `l` → Liste (fonksiyonun parametre listesi)
@@ -186,8 +158,6 @@ Bu çok güçlü bir soyutlamadır → "fork", "exec", "wait" semantiği
 -   `p` → `PATH` ortam değişkenini kullan
 
 -   `e` → Ortam ("**E**nvironment") değişkenleri kullan
-
----
 
 ##  Prosesin Çalıştırılması
 
@@ -199,13 +169,9 @@ Bu çok güçlü bir soyutlamadır → "fork", "exec", "wait" semantiği
 
 -   Kopya çalıştırılıyor → çocuk proses
 
----
-
 ##  Prosesin Çalıştırılması
 
 .code: code/fork_exec_without_wait/main.c
-
----
 
 ##  Windows ®
 
@@ -230,19 +196,13 @@ Bu çok güçlü bir soyutlamadır → "fork", "exec", "wait" semantiği
 *   `CreateProcess` dışında ayrıca `CreateProcessAsUser`,
     `CreateProcessWithLogonW`, `CreateProcessWithTokenW`
 
----
-
 ##  Zombi Çocuk
 
 .code: code/fork_zombie_child/main.c
 
----
-
 ##  Öksüz Çocuk
 
 .code: code/fork_orphaned_child/main.c
-
----
 
 ##  `waitpid`
 
@@ -262,13 +222,9 @@ Bu çok güçlü bir soyutlamadır → "fork", "exec", "wait" semantiği
         int WSTOPSIG(status);
         int WCOREDUMP(status);
 
----
-
 ##  Cenazeyi Bekle
 
 .code: code/fork_exec_with_wait/main.c
-
----
 
 ##  Ölüm Haberi Ver
 

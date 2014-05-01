@@ -8,13 +8,9 @@ http://roktas.me/
 
 Ocak 2012
 
----
-
 #   Bir "nokta"nın hikayesi...
 
 ![Nokta](media/point.png)
-
----
 
 #   NYP
 
@@ -24,104 +20,68 @@ Ocak 2012
 
 3.  Çok Biçimlilik
 
----
-
 #   C
-
----
 
 #   Yapı
 
 .code: code/c_struct_simple_point/main.c
 
----
-
 
 #   C++
-
----
 
 #   Sınıf
 
 .code: code/cpp_class_simple_point/main.cpp
 
----
-
 #   Ruby
-
----
 
 #   Ruby
 
 [http://www.ruby-lang.org/tr/downloads/](http://www.ruby-lang.org/tr/downloads/)
 
----
-
 #   Ruby
 
 .code: code/rb_class_simple_point/main1.rb
-
----
 
 #   Sınıf
 
 .code: code/rb_class_simple_point/main.rb
 
----
-
 #   İşleç Yüklemesi
 
 .code: code/rb_class_overloading_point/main.rb
-
----
 
 #   Sınıf Metodları
 
 .code: code/rb_class_classmethod_point/main3.rb
 
----
-
 #   Sınıf Metodları
 
 .code: code/rb_class_classmethod_point/main2.rb
-
----
 
 #   Sınıf Metodları
 
 .code: code/rb_class_classmethod_point/main1.rb
 
----
-
 #   Sınıf Metodları
 
 .code: code/rb_class_classmethod_point/main.rb
-
----
 
 #   Miras Alma
 
 .code: code/rb_inheritance_simple_circle/main2.rb
 
----
-
 #   Miras Alma
 
 .code: code/rb_inheritance_simple_circle/main1.rb
-
----
 
 #   Miras Alma
 
 .code: code/rb_inheritance_simple_circle/main.rb
 
----
-
 #   Çok Biçimlilik
 
 .code: code/rb_polymorphism_simple_shape/main.rb
-
----
 
 #   Çok Biçimlilik
 
@@ -131,8 +91,6 @@ Ocak 2012
 -   Bir isim: `area`
 
 -   Çok biçim: `shape` nesneleri `area` mesajına farklı şekilde cevap veriyor
-
----
 
 #   Çok Biçimlilik
 
@@ -154,8 +112,6 @@ Diğer bir çok biçimlilik örneği
 
     +   dizgi ise tamsayıyı dizgiye çevirip ekleme yapıyor
 
----
-
 #   Çok Biçimlilik
 
 Çok Biçimlilik'te
@@ -165,8 +121,6 @@ Diğer bir çok biçimlilik örneği
 -   Davranışı sergileyen nesnelere ortak bir isim veriyoruz →  `shape` (şekil)
 
 -   Nesnenin kimliğini ayrıntılı bilmemiz gerekmiyor → `Circle`, `Square`
-
----
 
 #   Dinamik Dağıtım
 
@@ -186,8 +140,6 @@ Bir kargo merkezi ve kargo paketleri
 
 -   Tek isim → `send`, çok biçimli davranış → farklı ulaşım yöntemleri
 
----
-
 #   Dinamik Dağıtım
 
 -   Şekil nesneleri arasında dolaşıyor ve `area` metodunu çalıştırıyoruz
@@ -199,8 +151,6 @@ Bir kargo merkezi ve kargo paketleri
 -   Ama ilgili nesnenin sınıfını bilmemiz gerekmiyor
 
 -   Uygun `area` gerçeklemesine çalışma zamanında karar veriliyor
-
----
 
 #   Dinamik Dağıtım
 
@@ -214,8 +164,6 @@ Bir kargo merkezi ve kargo paketleri
 
 -   Dinamik dağıtım → **dynamic dispatch**
 
----
-
 #   Arayüz
 
 -   Vana/vida → açma/kapama
@@ -225,8 +173,6 @@ Bir kargo merkezi ve kargo paketleri
 -   Telefon → kulaklık/mikrofon, tuş takımı
 
 -   USB standartı → Aygıtlar, USB soketleri
-
----
 
 #   Arayüz
 
@@ -246,8 +192,6 @@ Bir kargo merkezi ve kargo paketleri
 
 -   Arayüzler aynı, gerçeklemedeki farklı olabilir
 
----
-
 #   Arayüz ve Çok Biçimlilik
 
 Arayüz ve Çok biçimlilik birbiriyle yakından ilintili
@@ -258,54 +202,36 @@ Arayüz ve Çok biçimlilik birbiriyle yakından ilintili
 
 -   Biçim → ilgili arayüzün (o sınıf için) gerçeklemesi
 
----
-
 
 #   Python
-
----
 
 #   Sınıf
 
 .code: code/py_class_simple_point/main.py
 
----
-
 #   İşleç Yüklemesi
 
 .code: code/py_class_overloading_point/main.py
-
----
 
 #   Sınıf Metodları
 
 .code: code/py_class_classmethod_point/main1.py
 
----
-
 #   Sınıf Metodları
 
 .code: code/py_class_classmethod_point/main.py
-
----
 
 #   Miras Alma
 
 .code: code/py_inheritance_simple_circle/main1.py
 
----
-
 #   Miras Alma
 
 .code: code/py_inheritance_simple_circle/main.py
 
----
-
 #   Çok Biçimlilik
 
 .code: code/py_polymorphism_simple_shape/main.py
-
----
 
 #   Kartlar
 
@@ -325,8 +251,6 @@ Arayüz ve Çok biçimlilik birbiriyle yakından ilintili
 🂭       🂽       🃍       🃝
 🂮       🂾       🃎       🃞
 
-
----
 
 #   Dil Karşılaştırmaları
 

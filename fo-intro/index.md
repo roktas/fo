@@ -8,8 +8,6 @@ http://roktas.me/
 
 Ekim 2012
 
----
-
 ##  Bir Doküman Türü
 
 Folyo → Bir doküman türü
@@ -22,8 +20,6 @@ Folyo → Bir doküman türü
 
 -   Genel olarak bir konunun özünü anlatmayı kolaylaştıran bir doküman türü
 
----
-
 ##  Öncü Doküman
 
 Daha uzun ve kapsamlı bir doküman türüne hazırlık
@@ -35,8 +31,6 @@ Daha uzun ve kapsamlı bir doküman türüne hazırlık
 
 -   Bir öncü doküman
 
----
-
 ##  Bilgi Notları
 
 Öğrenme süreçlerinde alınan bilgi notları
@@ -44,8 +38,6 @@ Daha uzun ve kapsamlı bir doküman türüne hazırlık
 -   Etkili bir not alma aracı
 
 -   Folyoyu çalışma notlarını kaydetmek için kullanabilirsiniz
-
----
 
 ##  Bilgi Aktarımı
 
@@ -58,8 +50,6 @@ Etkili bir bilgi aktarım aracı
 -   Sunum değeri de taşıdığından okunması, izlenmesi kolay
 
 -   Sunum değeri taşıyor fakat sunum değil
-
----
 
 ##  İçerik ve Sunum
 
@@ -77,8 +67,6 @@ Etkili bir bilgi aktarım aracı
 
 -   Nasıl?
 
----
-
 ##  Folyo Hazırlığı
 
 -   Ana fikirleri kısa cümleleler halinde sayfalara böl
@@ -86,8 +74,6 @@ Etkili bir bilgi aktarım aracı
 -   Sayfa sıralamasını değiştirerek fikir akışını düzenle
 
 -   Her sayfada cümleleri ayrıntılandır
-
----
 
 ##  Basit Araçlar
 
@@ -101,18 +87,12 @@ Etkili bir bilgi aktarım aracı
 
 -   Düz metin folyo dosyaları
 
----
-
 #   Kurulum
-
----
 
 ##  Ruby Kur
 
         !sh
         $ sudo apt-get install ruby1.9.1-full rake
-
----
 
 ##  Ruby Ayarla
 
@@ -128,8 +108,6 @@ Etkili bir bilgi aktarım aracı
         $ ruby --version
         ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux]
 
----
-
 ##  Paket Depolarını Ekle
 
         !sh
@@ -138,8 +116,6 @@ Etkili bir bilgi aktarım aracı
         $ sudo apt-get update
 
 -   19 depolarında Landslide'ın yamalanmış bir sürümü bulunuyor
-
----
 
 ##  Landslide Kur
 
@@ -155,8 +131,6 @@ Etkili bir bilgi aktarım aracı
         !sh
         $ landslide --version
         landslide patched 1.0.1
-
----
 
 ##  Diğer Sistemler
 
@@ -177,11 +151,7 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
         !sh
         $ pip install  https://github.com/00010011/landslide/zipball/master
 
----
-
 #   Yapılandırma
-
----
 
 ##  Yerelde Depo Oluştur
 
@@ -191,8 +161,6 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
         $ git add .
         $ git commit -a -m İlk
 
----
-
 ##  Üst Depodan İlkle
 
         !sh
@@ -201,8 +169,6 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
 
 -   Şablon güncellemelerini de `upstream` kaynağından alacağız
 
----
-
 ##  Yayın Dalını Ayarla
 
         !sh
@@ -210,8 +176,6 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
         $ git branch -d master
 
 -   Github yayın dalını, yani `gh-pages`'i oluşturuyoruz
-
----
 
 ##  Yapılandır
 
@@ -226,8 +190,6 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
 
 -   Bir alanı boş bırakmak için `''` girin
 
----
-
 ##  Yayınla
 
         !sh
@@ -235,8 +197,6 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
         $ git push origin gh-pages
 
 -   Önce Github `[hesap]`'ınızda `[depo]` isimli depoyu oluşturuyoruz
-
----
 
 ##  Güncelleme
 
@@ -256,11 +216,7 @@ Bu koşullar sağlandığında kurulumu aşağıdaki komutla gerçekleştirin ve
     Bu görev depoyu güncellemeye ilave olarak, Landslide paketini ve gerekiyorsa
     tüm folyoları günceller
 
----
-
 #   Kullanım
-
----
 
 ##  Düzenleme
 
@@ -273,8 +229,6 @@ kullanacaksınız
 
 -   Folyolarda Markdown'ın Python lehçesi kullanılıyor
 
----
-
 ##  Folyo Biçimi
 
 [Bu folyoyu](https://raw.github.com/roktas/fo/gh-pages/fo-intro/index.md)
@@ -284,8 +238,6 @@ inceleyerek başlayabilirsiniz
     Markdown
 
 -   Lehçe farklılıklarına dikkat edin
-
----
 
 ##  İnşa Sistemi
 
@@ -311,8 +263,6 @@ Aşağıdaki `rake` işlemlerini yapabilirsiniz
         !sh
         $ rake clean
 
----
-
 ##  İnşa Sistemi
 
 Sadece tek dosya üzerinde de işlem yapabilirsiniz
@@ -329,8 +279,6 @@ Sadece tek dosya üzerinde de işlem yapabilirsiniz
 
 -   Vim ile düzenlerken komutlara klavye kısayollarıyla erişebilirsiniz
 
----
-
 ##  Vim Kısayolları
 
 -   `F9`  → Folyoyu derle
@@ -345,11 +293,7 @@ Kısayolların kurulumu
 
 -   Bu kısayollar 19/x yapılandırmasında zaten tanımlı
 
----
-
 #   Stil
-
----
 
 ##  Sayfa Düzeni
 
@@ -359,8 +303,6 @@ Kısayolların kurulumu
 
 -   Daha az önemli içerik alt kısımda
 
----
-
 ##  Yanlış
 
 .fx: wrong
@@ -368,8 +310,6 @@ Kısayolların kurulumu
 -   Önemsiz içerik
 
 Önemli içerik
-
----
 
 ##  Doğru
 
@@ -379,8 +319,6 @@ Kısayolların kurulumu
 
 -   Önemsiz içerik
 
----
-
 ##  Cümle
 
 Cümle → Bir sayfanın en küçük ögesi
@@ -389,8 +327,6 @@ Cümle → Bir sayfanın en küçük ögesi
 
 -   Liste maddeleri de birer cümle
 
----
-
 ##  Cümle
 
 Cümleleri tutarlı olarak aynı biçimde yazın
@@ -398,8 +334,6 @@ Cümleleri tutarlı olarak aynı biçimde yazın
 -   Büyük harfle başlayın
 
 -   Sonda nokta kullanmayın
-
----
 
 ##  Cümle
 
@@ -411,8 +345,6 @@ Cümle iki satırı geçmemeli
 
 -   Bu sınırı geçerseniz 140-150 aralığında kalın
 
----
-
 ##  Cümle
 
 Cümleler kısa olmalı
@@ -423,8 +355,6 @@ Cümleler kısa olmalı
 
 -   Konuşma üslubunda yazın
 
----
-
 ##  Yanlış
 
 .fx: wrong
@@ -434,8 +364,6 @@ Cümleler kısa olmalı
 
 ...
 
----
-
 ##  Doğru
 
 .fx: correct
@@ -443,8 +371,6 @@ Cümleler kısa olmalı
 -   Onparmak klavye kullanıcılarının Vim'e alışmaları daha kolay
 
 ...
-
----
 
 ##  Paragraf
 
@@ -456,8 +382,6 @@ Paragraf → Noktayla ayrılmış cümleler topluluğu
 
 -   Paragraftaki her cümle bir liste maddesi
 
----
-
 ##  Yanlış
 
 .fx: wrong
@@ -466,8 +390,6 @@ Vim alışması ve öğrenmesi gerçekten çok sancılı bir metin editörüdür
 alıştıktan sonra, yani içten gelen içgüdü gibi bir hal aldığında (buna "second
 nature" deniyor, yani ellerinizin siz düşünmeden yaptığı işe odaklanması ve
 üzerine düşeni yapması) çalışmayı hızlandırıyor.
-
----
 
 ##  Doğru
 
@@ -481,8 +403,6 @@ nature" deniyor, yani ellerinizin siz düşünmeden yaptığı işe odaklanması
 
 -   "Second Nature"?  Ellerinizin siz düşünmeden üzerine düşeni yapması
 
----
-
 ##  Liste
 
 Liste → Maddelerden oluşmuş cümleler topluluğu
@@ -491,8 +411,6 @@ Liste → Maddelerden oluşmuş cümleler topluluğu
 
 -   Paragraftaki cümleleri maddelere dönüştürün
 
----
-
 ##  Liste
 
 İç içe listelerden kaçının
@@ -500,8 +418,6 @@ Liste → Maddelerden oluşmuş cümleler topluluğu
 -   Listeler mümkün olduğunca tek seviyeli olmalı
 
 -   İç içe listeler çoğunlukla birden fazla sayfaya dağıtılabilir
-
----
 
 ##  Liste
 
@@ -512,8 +428,6 @@ Liste bir bütünlük göstermeli
 -   Öyle ki düz cümle liste içeriğini özetlesin
 
 -   Liste maddeleriyle düz cümledeki fikri ayrıntılandırın
-
----
 
 ##  Liste
 
@@ -531,8 +445,6 @@ Liste bir bütünlük göstermeli
 -   Madde imi olarak birinci seviye listelerde `-`, ikinci seviye listelerde `*`
     kullanın
 
----
-
 ##  Liste
 
 -   Birinci seviye listelerde madde iminden sonra **3 boşluk** bırakın
@@ -546,8 +458,6 @@ Liste bir bütünlük göstermeli
 
         -   İkinci madde
 
----
-
 ##  Başlık
 
 Başlıkları tutarlı olarak aynı biçimde yazın
@@ -558,8 +468,6 @@ Başlıkları tutarlı olarak aynı biçimde yazın
 
 -   Sadece ilk harfi büyük başlıklar kullanmayın
 
----
-
 ##  Başlık
 
 -   Yanlış → "BİR BAŞLIK"
@@ -567,8 +475,6 @@ Başlıkları tutarlı olarak aynı biçimde yazın
 -   Yanlış → "Bir başlık"
 
 -   Doğru → "Bir Başlık"
-
----
 
 ##  Başlık
 
@@ -579,8 +485,6 @@ Başlık satırında taşma olmamalı
 -   İdealde 28'den küçük
 
 -   Bu sınırı geçerseniz 28-32 aralığında kalın
-
----
 
 ##  Başlık
 
@@ -594,8 +498,6 @@ Başlık satırında taşma olmamalı
 
 -   Fakat şart değil
 
----
-
 ##  Başlık
 
 Bir dosyada en fazla iki seviyeli başlıklandırma kullanın
@@ -607,8 +509,6 @@ Bir dosyada en fazla iki seviyeli başlıklandırma kullanın
 -   Üçüncü seviye folyonun çok büyüdüğünü gösterir
 
 -   Dosyayı bölerek yeni bir düzenleme yapın
-
----
 
 ##  Blok Kod
 
@@ -631,8 +531,6 @@ Bir dosyada en fazla iki seviyeli başlıklandırma kullanın
         #!ruby
         puts "Merhaba"
 
----
-
 ##  Blok Kod
 
 Uygun dil bildirimi yapmayı unutmayın
@@ -644,8 +542,6 @@ Uygun dil bildirimi yapmayı unutmayın
         !text
         !sh
         $ ls
-
----
 
 ##  Blok Kod
 
@@ -659,8 +555,6 @@ Uzun blok kodlardan kaçının
         !text
         .code: code/echo.c
 
----
-
 ##  Sabit Genişlikli Yazıtipi
 
 Aşağıdaki ögeler sabit genişlikli yazıtipleriyle yazılmalı
@@ -671,16 +565,12 @@ Aşağıdaki ögeler sabit genişlikli yazıtipleriyle yazılmalı
 
 -   Program çıktıları
 
----
-
 ##  Resim
 
         !text
         ![Resim başlığı](media/resim.png)
 
 -   Resim dosyaları için folyo dizininde `media` adında bir alt dizin kullanın
-
----
 
 ##  Resim
 
@@ -697,8 +587,6 @@ Resimlerin sayfada taşmamasını sağlayın
         !sh
         $ convert -resize 640 resim-1024.png resim-640.png
 
----
-
 ##  Resim
 
 Resimlerin büyük boyutlu olmamasına dikkat edin
@@ -712,8 +600,6 @@ Resimlerin büyük boyutlu olmamasına dikkat edin
 -   En önemli küçültme yönteminin resim geometrisini düzenlemek olduğunu
     unutmayın
 
----
-
 ##  Yazım Kuralları
 
 Türkçe'nin yazım kurallarına uyun
@@ -722,8 +608,6 @@ Türkçe'nin yazım kurallarına uyun
     Kılavuzuna](http://www.tdk.gov.tr/index.php?option=com_content&view=category&id=50)
     sıklıkla başvurun
 
----
-
 ##  Sıkça Yapılan Yazım Hataları
 
 -   Ayrı yazılması gereken ekler
@@ -731,8 +615,6 @@ Türkçe'nin yazım kurallarına uyun
 -   Bitişik yazılması gereken ekler
 
 -   Noktalama işaretleri
-
----
 
 ##  Hatalı Yazılan Kelimeler
 
@@ -746,11 +628,7 @@ Doğrusu kalın harflerle yazılanlar
 
 -   **doküman** döküman
 
----
-
 #   Ekstralar
-
----
 
 ##  Markdown Ekstraları
 
@@ -766,8 +644,6 @@ Değiştirilmiş Landslide'da desteklenen Markdown ayrıştıcıları
 
 -   Python Markdown
 
----
-
 ##  Tablo
 
 Dağıtım  |  Paket Biçimi  |  Paket Yöneticisi
@@ -778,8 +654,6 @@ Fedora   | `rpm`          | Yum
 Pardus   | `pisi`         | Pisi
 
 Desteklenen ayrıştıcılar → Python Markdown ve Python Misaka
-
----
 
 ##  Tanım Listesi
 
@@ -797,11 +671,7 @@ bir terim
 
 Desteklenen ayrıştıcılar → Python Markdown
 
----
-
 #   Makrolar
-
----
 
 #   Makrolar
 
@@ -811,23 +681,17 @@ Folyo'larda Landslide makroları kullanabilirsiniz
 
 Bazı makrolar sadece değiştirilmiş Landslide'da
 
----
-
 ##   `code`
 
 `.code: code/echo.c`
 
 .code: code/echo.c
 
----
-
 ##   `gist`
 
 `.gist: 19`
 
 .gist: 19
-
----
 
 ##   `shelr`
 

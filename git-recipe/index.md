@@ -8,8 +8,6 @@ http://roktas.me/
 
 Nisan 2012
 
----
-
 #   Merge
 
 -   Merge conflict varsa:
@@ -29,8 +27,6 @@ Nisan 2012
 -   TODO `--ff`, `--no-ff` konusu
 
 -   `-s theirs` ile onlarınkini al, `-s ours` ile bizimki
-
----
 
 #   Pull
 

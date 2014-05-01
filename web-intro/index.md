@@ -8,11 +8,7 @@ http://roktas.me/
 
 Nisan 2012
 
----
-
 #   CSS
-
----
 
 #   Kurallar
 
@@ -21,8 +17,6 @@ CSS dosyaları "kurallar"dan ("rules") oluşuyor
         <seçici> {
                 özellik: değer;
         }
-
----
 
 #   Seçiciler
 
@@ -49,8 +43,6 @@ Seçici ("selector") bir tip, sınıf veya id seçiyor
           ...
         }
 
----
-
 #   Seçiciler
 
 Birden fazla seçiciyi virgülle gruplayarak tek bir kural oluşturabiliyoruz
@@ -72,8 +64,6 @@ Soldan sağa sırayla seçiciyi özelleştirmek mümkün
         .foo .bar p {
           font-size: 16px;
         }
-
----
 
 #   Seçiciler
 
@@ -100,30 +90,18 @@ Seçicilerle gruplama yapmak dışında çeşitli kombinasyonlar da kurulabiliyo
         !css
         ul ~  p { color: red; }
 
----
-
 #   Kural Öncelikleri
 
 TODO
-
----
 
 #   Sınıf mı, Id mi?
 
 TODO
 
----
-
 #   Seçiciler
 
 [Daha fazlası](http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/)
 
----
-
 #   HTML
 
----
-
 #   JavaScript
-
----

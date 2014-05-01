@@ -8,8 +8,6 @@ http://roktas.me/
 
 Mart 2012
 
----
-
 #   `*` atamaları
 
 `*` işleciyle atama yap
@@ -25,8 +23,6 @@ Mart 2012
         text   #=> "Something"
         number #=> "981"
 
----
-
 #   Düzenli ifade eşleşmeleri
 
 Düzenli ifadelerde eşleşmeleri topla
@@ -37,8 +33,6 @@ Düzenli ifadelerde eşleşmeleri topla
 
         string = 'this is a test'
         string[/[aeiou].+?[aeiou]/] #=> 'is i'
-
----
 
 #   Dizi değerlerinden değişkene
 
@@ -51,16 +45,12 @@ Heterojen bir diziden eleman seç
         c #=> :c
         d #=> [:d, :f]
 
----
-
 #   İlklendirmemiş ataması
 
 Değişken ilklendirmesini atlayarak atama yap
 
         !ruby
         (a ||= []) << 'test'
-
----
 
 #   İlklendirmeler
 
@@ -76,8 +66,6 @@ Değişken *ilklendirilmişse* ekle
         string &&= string + "suffix"
         # if string then string = string + "suffix"
 
----
-
 #   Tekil veya çoğul değerden döngü
 
 Tekil veya çoğul (dizi) değeri alabilecek bir değişkenle döngü kur
@@ -86,8 +74,6 @@ Tekil veya çoğul (dizi) değeri alabilecek bir değişkenle döngü kur
         [*v].each do |item|
         # ...
         end
-
----
 
 #   Satır içi `and` ve `or`
 
@@ -102,8 +88,6 @@ Tekil veya çoğul (dizi) değeri alabilecek bir değişkenle döngü kur
         #=> Added to queue
         #=> Added to queue
         #=> ["hello", "world"]
-
----
 
 #   `case` deyimlerinde `Proc`
 
@@ -122,8 +106,6 @@ Tekil veya çoğul (dizi) değeri alabilecek bir değişkenle döngü kur
           puts "Multiple of 7"
         end
 
----
-
 #   Dizi ilkleme
 
 Aralık kullanarak dizi ilkle
@@ -138,8 +120,6 @@ Veya
         numbers = (0..5).to_a
         #=> [0, 1, 2, 3, 4, 5]
 
----
-
 #   İki diziden sözlük üretimi
 
 Eşboyutlu iki diziden sözlük üret
@@ -151,8 +131,6 @@ Eşboyutlu iki diziden sözlük üret
         Hash[keys.zip(values)]
         #=> {:x=>123, :y=>456, :z=>789}
 
----
-
 #   Sözlükten dizi üretimi
 
 Sözlükten "anahtar, değer" çiftleri dizisi üret
@@ -161,8 +139,6 @@ Sözlükten "anahtar, değer" çiftleri dizisi üret
         h = { :name => "Fred", :age => 93, :gender => :male }
         [*h]
         #=> [[:name, "Fred"], [:age, 93], [:gender, :male]]
-
----
 
 #   Dizi veya sözlükten değerler seçmek
 
@@ -179,8 +155,6 @@ Dizi veya sözlükten değerler seç
         h.values_at(*required)
         #=> [ 93, "Fred" ]
 
----
-
 #   Diziden sözlük üretimi
 
 Çift sayıda elemana sahip bir diziden sözlük oluştur
@@ -191,8 +165,6 @@ Dizi veya sözlükten değerler seç
 
         Hash[*fruit]
         #=> {"apple"=>"red", "banana"=>"yellow"}
-
----
 
 #   Nesne niteliklerinden diziye
 
@@ -205,8 +177,6 @@ Bir nesne dizisindeki niteliklerden dizi oluştur
         shapes << Circle.new 7
 
         areas = shapes.map(&:area)
-
----
 
 #   Öntanımlı sözlük değerleri
 
@@ -221,8 +191,6 @@ Sözlük değerlerini öntanımlı olarak ayarla
         #=> {"Summer party"=> ["Joe"]}
         parties["Other party"] << "Jane"
         #=> {"Summer party"=>["Joe"], "Other party"=>"Jane"}
-
----
 
 #   Sözlük argümanları
 
@@ -245,8 +213,6 @@ En güzeli! (Ruby 1.9.x notasyonu)
         !ruby
         dump name: 'Fred', age: 93
 
----
-
 #   Küme
 
 Yapısı diziye, başarımı sözlüğe benzer bir veriyapısı: "küme"
@@ -259,8 +225,6 @@ Hızlı aramalar için sözlüğe yakın bir başarıma sahip
         !ruby
         set.include? 'foo'
         #=> true
-
----
 
 #   Metod gövdelerinde `rescue`
 
@@ -284,8 +248,6 @@ Yerine
           # ...
         end
 
----
-
 #   Satır içi `rescue`
 
 `rescue` tek satırlığı
@@ -294,8 +256,6 @@ Yerine
         h = { :age => 10 }
         h[:name].downcase                         #=> ERROR
         h[:name].downcase rescue "No name"        #=> "No name"
-
----
 
 #   İstisnanın geri takibi
 
@@ -310,8 +270,6 @@ Hata ayıklamada üretilen istisnayı geri takip et
           puts exception.backtrace
         end
 
----
-
 #   Ebeveyn metodda değişiklik
 
 Ebeveyn metodda minör değişiklik
@@ -324,8 +282,6 @@ Ebeveyn metodda minör değişiklik
 
 `hello` metodunun argümanlarını bilmek gerekmiyor
 
----
-
 #   Hem program hem modül
 
 Betiğin hem program hem de modül olarak davranabilmesini sağla
@@ -337,8 +293,6 @@ Betiğin hem program hem de modül olarak davranabilmesini sağla
           # program
         end
 
----
-
 #   Gerçel sayı biçimlendirmesi
 
 Gerçel sayıları biçimle
@@ -346,8 +300,6 @@ Gerçel sayıları biçimle
         !ruby
         money = 9.5
         "%.2f" % money #=> "9.50"
-
----
 
 #   Kaynakça
 

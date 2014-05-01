@@ -8,8 +8,6 @@ http://roktas.me/
 
 Ekim 2012
 
----
-
 ##  Kabuk
 
 *   Sisteme girdiğinizde sizi karşılayan ortam; siyah ekran!
@@ -25,8 +23,6 @@ Ekim 2012
     bir sunucu
 
 *   Örneğin kodlama yaptığınız bir iş istasyonu
-
----
 
 ##  Kabuk
 
@@ -47,8 +43,6 @@ Ekim 2012
 *   Bu dokümandaki komutları denerken, komutun `$`'dan sonraki kısım olduğunu
     unutmayın!
 
----
-
 ##  `whoami`
 
         !sh
@@ -66,8 +60,6 @@ Ekim 2012
     "kullanıcı dostu" olmak adına ad soyadınız da görüntülenebilir
 
 *   Fakat kullanıcı adı size ait önemli bir öge
-
----
 
 ##  Kullanıcı Adı
 
@@ -93,8 +85,6 @@ ortamda kullanın
 
 *   Bu koşullara uygun bir ad bulmak için hayalgücünüzü kullanın
 
----
-
 ##  `passwd`
 
 *   Parolanızı nasıl değiştireceksiniz?
@@ -104,15 +94,11 @@ ortamda kullanın
         !sh
         $ passwd
 
----
-
 ##  Parola Seçimi
 
 .fx: achtung
 
         Qwerty
-
----
 
 ##  `lspci`
 
@@ -135,8 +121,6 @@ ortamda kullanın
 
 *   Bu bilgileri bir grafik arayüz üzerinden de öğrenebilirsiniz
 
----
-
 ##  Uçbirim
 
 *   Tipik bir UNIX iş istasyonunda (güçlü bir masaüstü sistem) grafik ortam
@@ -148,8 +132,6 @@ ortamda kullanın
 *   Sonra bir uçbirim ("terminal") açıyorsunuz
 
 *   İşletim sistemiyle etkileşime girmenin tek yolu grafik ortam değil
-
----
 
 ##  Uçbirim
 
@@ -172,8 +154,6 @@ Günümüzde böyle bir düzenleme yok
 *   Böyle bir terminal ünitesi yok ama o eski düzene öykünen yazılımlar var →
     Terminal Emulators
 
----
-
 ##  Konsol
 
 *   Uçbirim veya Uçbirim Emulatörü adlandırması kablo sonlandırması yönüyle
@@ -185,8 +165,6 @@ Günümüzde böyle bir düzenleme yok
 
 *   Konsol uçbirimle aynı şeyi anlatıyor, tek farkla "mobilya bakış açısı"
 
----
-
 ##  `echo`
 
         !sh
@@ -196,8 +174,6 @@ Günümüzde böyle bir düzenleme yok
 *   En basit komutlardan biri
 
 *   Komut satırı argümanlarını görüntülüyor
-
----
 
 ##  Kabuk
 
@@ -214,8 +190,6 @@ Günümüzde böyle bir düzenleme yok
 *   Değişkenin adı → `USER`, içeriği → `$USER`
 
 *   Kabukta bundan da fazlası var gibi
-
----
 
 ##  İpuçları
 
@@ -244,8 +218,6 @@ kısayolları kullanabilirsiniz
         !sh
         $ KOMUT >dosya 2>&1
 
----
-
 ##  Kabuk Programlama
 
 **Kabuk bir programlama ortamı!**
@@ -268,8 +240,6 @@ kısayolları kullanabilirsiniz
 
 *   `[`'dan sonra ve `]`'dan önce en az bir boşluk **olmalı**
 
----
-
 ##  Neredeyim?
 
         !sh
@@ -282,8 +252,6 @@ kısayolları kullanabilirsiniz
 
 *   Sisteme giriş yaptığınızda (özel bir yapılandırma kullanmadığınız sürece)
     daima "ev dizini" içindesiniz
-
----
 
 ##  Çalışma Dizini
 
@@ -308,13 +276,9 @@ kısayolları kullanabilirsiniz
 *   Dokümanda, çalışma dizininin bilinmesini gerektiren örneklerde böyle bir
     komut istemi kullanacağız
 
----
-
 ##  Dizinler ve Dosyalar
 
 .
-
----
 
 ##  Dizin ve Dosya
 
@@ -333,8 +297,6 @@ kısayolları kullanabilirsiniz
 *   Aksi belirtilmediği sürece dosyalar için belirtilen özellikler dizinler için
     de geçerli
 
----
-
 ##  Dosya Yolu
 
 *   `/` kök dizin altında bir ağaç yapısı
@@ -346,8 +308,6 @@ kısayolları kullanabilirsiniz
 *   "mutlak/göreceli dosya yolu" → `/` ile başlayan/başlamayan dosya yolu
 
 *   Göreceli dosya yolunda başlangıç noktası çalışma dizini
-
----
 
 ##  `cd`
 
@@ -370,8 +330,6 @@ kısayolları kullanabilirsiniz
         /home/roktas$ cd /tmp
         /tmp$
 
----
-
 ##  Özel Dizin İsimleri
 
 Bazı dizin isimleri özel
@@ -390,8 +348,6 @@ Bazı dizin isimleri özel
 
 *   Bu isimler kabuktan bağımsız, çekirdek tarafından oluşturuluyor ve her
     düzeyde anlamlı
-
----
 
 ##  Özel Dizin İsimleri
 
@@ -415,8 +371,6 @@ Bazı dizin isimleri özel
 
 *   Kabuk tarafından çalıştırılmayan bazı programlarda `~` tanınmayabilir
 
----
-
 ##  Dosya İsimleri
 
 *   `/` dosya yolu ayırıcısı olarak kullanılıyor
@@ -429,8 +383,6 @@ Bazı dizin isimleri özel
 *   Fakat "doğru pratikler"e uymanızda yarar var
 
 *   Özellikle geliştirme yaparken
-
----
 
 ##  Dosya İsimleri
 
@@ -457,8 +409,6 @@ Bazı dizin isimleri özel
 *   Kod dosyaları için önerilen bu kısıtlamaları ofis dosyalarında
     gevşetebilirsiniz (örneğin Türkçe karakterler kullanılabilir)
 
----
-
 ##  `ls`
 
 `ls` "List Directory Contents" → Dizin içeriğini listele
@@ -476,8 +426,6 @@ Bazı dizin isimleri özel
 *   Fakat bu haliyle ayrıntı vermiyor sadece dosya/dizin isimleri
 
 *   Görüntülenen ismin dizin mi, dosya mı olduğunu bile öğrenemiyoruz!
-
----
 
 ##  Bir Komutun Anatomisi
 
@@ -501,8 +449,6 @@ Bazı dizin isimleri özel
 
 *   Seçeneğin bir diğer adı "anahtar" → `l` anahtarı
 
----
-
 ##  Bir Komutun Anatomisi
 
 *   Genel biçim
@@ -514,8 +460,6 @@ Bazı dizin isimleri özel
     ögelerin bir veya daha fazla sayıda tekrar ettiğini anlatır
 
 *   `[]` yoksa ilgili ögenin varlığı gerekli
-
----
 
 ##  Seçenekler
 
@@ -538,8 +482,6 @@ Bazı dizin isimleri özel
         $ ls --all ~
         $ ls --ignore-backups ~
 
----
-
 ##  `man`
 
         !sh
@@ -556,8 +498,6 @@ Bazı dizin isimleri özel
         !sh
         $ man man
 
----
-
 ##  `man`
 
 *   Seçenek sayısı fazla olan komutlar için zorunlu; ör. `ls`
@@ -573,8 +513,6 @@ Bazı dizin isimleri özel
 
 *   İngilizceniz çok iyi olmasa bile sorununuzu çözebilecek örnek komutlar veya
     basit açıklamalar bulabilirsiniz
-
----
 
 ##  BSD Kılavuz Sayfaları
 
@@ -594,8 +532,6 @@ Bazı dizin isimleri özel
 
 *   BSD ile Linux arasındaki farklılıklara dikkat edin!  Bazı komutlar Linux'ta
     farklı davranabilir
-
----
 
 ##  `ls`
 
@@ -622,8 +558,6 @@ Bazı dizin isimleri özel
 
 *   `bin` → isim
 
----
-
 ##  `ls`
 
 *   Sadece dizin ("directory") hakkında bilgi → `-d`
@@ -641,8 +575,6 @@ Bazı dizin isimleri özel
         .private
 
 *   Hangi dosyalar gizleniyor?
-
----
 
 ##  Gizli Dosyalar
 
@@ -669,8 +601,6 @@ Bazı dizin isimleri özel
         !sh
         $ ls -a ~
 
----
-
 ##  `mkdir`
 
 `mkdir` Make Directory → Dizin Oluştur
@@ -696,43 +626,29 @@ Bazı dizin isimleri özel
         ~$ ls -d tmp/foo/bar
         tmp/foo/bar
 
----
-
 ##  `touch`
 
 .
-
----
 
 ##  `rmdir`
 
 .
 
----
-
 ##  `rm`
 
 .
-
----
 
 ##  `cp`
 
 .
 
----
-
 ##  `mv`
 
 .
 
----
-
 ##  `ln`
 
 .
-
----
 
 
 ##  Sahiplik ve İzinler
@@ -746,8 +662,6 @@ Bazı dizin isimleri özel
 *   9 karakterlik bir dizgi; 3'lü `rwx` öbekleri
 
 *   Her öbekte `rwx` dizgisinde izin verilmeyen eylem için `-`
-
----
 
 ##  Sahiplik ve İzinler
 
@@ -767,8 +681,6 @@ Bir dosya üzerinde hangi eylemler gerçekleştirilebilir?
 
 *   Çalıştır → eXecute
 
----
-
 ##  Sahiplik ve İzinler
 
         !sh
@@ -784,8 +696,6 @@ Bir dosya üzerinde hangi eylemler gerçekleştirilebilir?
 
 *   Fakat dizinlerde çalıştırılabilirlik izninin bulunduğunu görmüştük
 
----
-
 ##  Çalıştırılabilir Dosya
 
 *   Okuma ve yazma izinlerinin kavranması görece kolay
@@ -796,8 +706,6 @@ Bir dosya üzerinde hangi eylemler gerçekleştirilebilir?
 *   Çalıştırılabilir bir dosya hemen hemen daima bir program dosyasıdır
 
 *   Bu konuya döneceğiz
-
----
 
 ##  Çalıştırılabilir Dizin
 
@@ -813,8 +721,6 @@ Bir dosya üzerinde hangi eylemler gerçekleştirilebilir?
 *   Bu yorum olağan senaryolarda gayet yeterli
 
 *   Fakat muğlak kaldığı durumlar da var; ilerleyen bölümlerde...
-
----
 
 ##  `chown`
 
@@ -835,8 +741,6 @@ Sahipliği nasıl düzenliyoruz?
         !sh
         $ chown :staff foo.txt
 
----
-
 ##  `chgrp`
 
 Grubu düzenlemenin bir başka yolu
@@ -849,8 +753,6 @@ Grubu düzenlemenin bir başka yolu
 *   Kognitif yükü azaltmak için tek bir araç: `chown` kullanmak daha doğru
 
 *   Bu nedenle fazla kullanmıyoruz
-
----
 
 ##  `chmod`
 
@@ -876,8 +778,6 @@ Grubu düzenlemenin bir başka yolu
         !sh
         $ chmod +x foo.txt
 
----
-
 ##  `chmod`
 
 *   Sahiplik için `ugoa`, izinler için `rwx` mnemonikleri ve üç basit operatör
@@ -892,8 +792,6 @@ Grubu düzenlemenin bir başka yolu
 *   `=` bir atama, ekleme/çıkarma değil; sağ taraf boşsa tüm izinler kaldırılır
 
 *   `+/-` ile mevcut düzenlemeye ekleme/çıkarma yapılıyor
-
----
 
 ##  Program
 
@@ -913,8 +811,6 @@ Grubu düzenlemenin bir başka yolu
 *   Betik aynı zamanda kaynak kod; Web sayfalarında yüklenen JavaScript
     betikleri gibi
 
----
-
 ##  Betik
 
 *   Ruby ile yazılmış tek satırlık bir `echo.rb` dosyası
@@ -928,8 +824,6 @@ Grubu düzenlemenin bir başka yolu
 
         !sh
         $ ruby echo.rb
-
----
 
 ##  Dosya Uzantıları
 
@@ -945,8 +839,6 @@ Grubu düzenlemenin bir başka yolu
 *   Dosyayı düzenlerken de yararlı; pek çok düzenleyici bu uzantıya bakarak
     ilgili dilin sözdizimi renklendirmesini etkinleştiriyor
 
----
-
 ##  Dosya Uzantıları
 
 .fx: achtung
@@ -957,8 +849,6 @@ UNIX sistemlerde dosya uzantısı sadece bir konvansiyondur; dosyanın nasıl
 *   Windows® sistemlerde karşılaştırın → `.exe` uzantıları
 
 *   UNIX'te böyle bir zorunluluk yok
-
----
 
 ##  Betik
 
@@ -977,8 +867,6 @@ UNIX sistemlerde dosya uzantısı sadece bir konvansiyondur; dosyanın nasıl
 
 *   Tek şartla dosya yazılabilir olmalı
 
----
-
 ##  Betik
 
 Betiği tıpkı olağan bir komut gibi çalıştırmak isterseniz?
@@ -990,8 +878,6 @@ Betiği tıpkı olağan bir komut gibi çalıştırmak isterseniz?
         !sh
         $ papagan Naber
         Naber
-
----
 
 ##  Betik
 
@@ -1011,8 +897,6 @@ Betiği tıpkı olağan bir komut gibi çalıştırmak isterseniz?
         $ papagan
         bash: papagan: komut yok
 
----
-
 ##  `PATH`
 
 *   Komut satırında girilen programlar belirli dizinlerde aranır ve ilk bulunan
@@ -1031,8 +915,6 @@ Betiği tıpkı olağan bir komut gibi çalıştırmak isterseniz?
     yoluyla yazmalısınız
 
 *   Açık dosya yolu?  Bulunduğumuz dizin → `.`, dosya yolu → `./papagan`
-
----
 
 ##  Betik
 
@@ -1057,8 +939,6 @@ Betiği tıpkı olağan bir komut gibi çalıştırmak isterseniz?
 *   Kaynağın Ruby ile yorumlanması gerektiğini "program yükleyici"ye
     anlatmalıyız
 
----
-
 ##  Betik
 
 UNIX sistemlerde bu nasıl yapılıyor
@@ -1068,8 +948,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 *   Çalıştırılabilir ikili dosyalarda içeriğin ilk baytlarında bir tür imza var
 
 *   Düz metin dosyalarda ise ilk satır özel
-
----
 
 ##  `#!` Shebang
 
@@ -1089,8 +967,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 
 *   İngilizce "Hash" kelimesini okursanız "She" sesini alacaksınız → Shebang
 
----
-
 ##  `#!` Shebang
 
 *   `!` anlaşılır bir şey; program yükleyiciye bir nida gibi; `#` neden var?
@@ -1105,8 +981,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 
 *   `#` olmasaydı bu sefer Ruby (veya bir başka betik dili) ihtimal ki `!` ile
     başlayan satırı yorumlayamayacak ve hata oluşacaktı
-
----
 
 ##  Betik
 
@@ -1123,8 +997,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 *    Ve tekrar edelim → **"`.` dizini `PATH`'te olmamalı"**  Neden?
 
 *   Dosyayı PATH'te belirtilen bir dizine koymalıyız
-
----
 
 ##  Betik
 
@@ -1145,8 +1017,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 *   Bu dizini oluşturarak, dizinin **kalıcı şekilde** `PATH`'te listelenmesini
     sağlamalısınız; Nasıl?  Eklere bakın
 
----
-
 ##  Betik
 
         !sh
@@ -1164,8 +1034,6 @@ UNIX sistemlerde bu nasıl yapılıyor
         $ papagan Naber
         Naber
 
----
-
 ##  `root`
 
 *   Sistem yöneticisi; sistemde her türlü eylemi yapma gücüne sahip kullanıcı
@@ -1179,8 +1047,6 @@ UNIX sistemlerde bu nasıl yapılıyor
     yöneticisi
 
 *   `sudo` yapılandırması hakkında daha ayrıntılı bilgi için eklere bakın
-
----
 
 ##  `sudo`
 
@@ -1201,16 +1067,12 @@ UNIX sistemlerde bu nasıl yapılıyor
         !sh
         $ sudo apt-get install chromium
 
----
-
 ##  `sudo`
 
 .fx: achtung
 
 **`sudo` komutu iki tarafı keskin bir bıçaktır, kullanırken dikkatli olun,
   sisteme hasar verebilirsiniz!**
-
----
 
 ##  Görev
 
@@ -1220,8 +1082,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 
 *   Bu farklara göre her iki komut için tipik kullanım senaryoları neler
     olabilir?
-
----
 
 ##  `root`
 
@@ -1238,8 +1098,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 *   Kullandığınız dağıtımda gerçek bir `root` hesabı varsa (ör. Debian) **`sudo`
     komutunu çalıştırdığınızda istenen parola `root` parolası değil normal
     kullanıcı hesabınıza ait paroladır**
-
----
 
 ##  Yönlendirme
 
@@ -1258,8 +1116,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 *   Kopyala/yapıştır?  Daha kolay bir yolu olmalı
 
 *   Ekranda gördüğünü bir dosyaya kaydet ve yardım iletisine dosya olarak ekle
-
----
 
 ##  Yönlendirme
 
@@ -1282,8 +1138,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 
 *   `cat` dosya içeriğini görüntülüyor
 
----
-
 ##  Yönlendirme: `>`
 
 `>` → yönlendirme operatörü
@@ -1295,8 +1149,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 *   **Dikkat!  Yönlendirme yapılan dosya zaten varsa üzerine yazıyoruz**
 
 *   Dosya adını dikkatli seçin
-
----
 
 ##  `cat`
 
@@ -1319,8 +1171,6 @@ UNIX sistemlerde bu nasıl yapılıyor
         $ cat /tmp/foobar.txt
         foo
         bar
-
----
 
 ##  Yönlendirme: `>>`
 
@@ -1347,8 +1197,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 *   Aynı işlemi üç farklı dosya kullanarak `cat` ile de yapabildiğimizi
     görmüştük
 
----
-
 ##  `cat`
 
 *   `cat` terimi bir tür bitiştirme yapan işlev ve programların
@@ -1367,8 +1215,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 
         !sh
         $ cat mini.iso >/dev/sdb
-
----
 
 ##  Borulama: `|`
 
@@ -1394,8 +1240,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 
 *   Örnekte "`foo`" dizgisindeki bayt sayısı hesaplanıyor
 
----
-
 ##  Borulama: `|`
 
         !sh
@@ -1417,8 +1261,6 @@ UNIX sistemlerde bu nasıl yapılıyor
 
 *   Borunun diğer ucundaki `wc` komutu veriyi alarak işliyor
 
----
-
 ##  Borulama
 
 *   Borulama işlemi kabuk tarafından yönetiliyor
@@ -1434,13 +1276,9 @@ UNIX sistemlerde bu nasıl yapılıyor
 
 *   Bu şekilde komutları birleştirerek pek çok iş çevirebilirsiniz!
 
----
-
 ##  `less`
 
 .
-
----
 
 ##  `grep`
 
@@ -1462,8 +1300,6 @@ satırları görüntüle
 
 *   Aramada neden "`ethernet`" demedik?
 
----
-
 ##  Küçük Araçlar Anlayışı
 
 .fx: achtung
@@ -1482,8 +1318,6 @@ karşılayabilecek şekilde tasarlanmıştır
 *   Tüm araçları bir arada kullanabilmek için (bir tür yapıştırıcı olarak)
     kabuktan yararlan
 
----
-
 ##  `grep`
 
 *   Dosyalarda da arama yapabilirsiniz
@@ -1498,21 +1332,15 @@ karşılayabilecek şekilde tasarlanmıştır
 
 *   Karmaşık ifadeler tanımlanabiliyor
 
----
-
 ##  Düzenli İfadeler
 
 Regular Expression → Düzenli İfade
 
 .
 
----
-
 ##  Kabuk Desenleri
 
 .
-
----
 
 ##  `find`
 
@@ -1536,8 +1364,6 @@ Regular Expression → Düzenli İfade
 
 *   Tüm UNIX komutları içinde en sıradışı argüman düzenine sahip komut
 
----
-
 ##  Görev
 
 .fx: achtung
@@ -1548,13 +1374,9 @@ Regular Expression → Düzenli İfade
 *   İki komut bir arada nasıl kullanılabilir?  Şu ana kadar öğrendiğiniz
     bilgilerle bunu sağlayabilir misiniz?
 
----
-
 ##  `xargs`
 
 .
-
----
 
 ##  Ne Nerede?
 
@@ -1604,8 +1426,6 @@ Regular Expression → Düzenli İfade
                 srv/
                 opt/
 
----
-
 ##  Dizin: `/dev`
 
 Bellek çubuğuna sistem kurulumu yap
@@ -1628,8 +1448,6 @@ Bellek çubuğuna sistem kurulumu yap
 *   Önyükleme kodu → bilgisayar bellek çubuğu ile başlatıldığında işletim
     sistemini yörüngeye oturtan bir "taşıyıcı roket" kaydı
 
----
-
 ##  Dizin: `/dev`
 
 *   Görüldüğü gibi bir aygıta bir dosya gibi erişebiliyorsunuz
@@ -1646,8 +1464,6 @@ Bellek çubuğuna sistem kurulumu yap
 *   "Aygıtın denetlenmesi" → aygıt davranışının kontrol edilebilmesi; davranışı
     şekillendiren parameterlerin ayarlanabilmesi
 
----
-
 ##  Her Şey Bir Dosya
 
 .fx: achtung
@@ -1657,8 +1473,6 @@ UNIX işletim sistemlerinde "hemen her şey bir dosyadır"
 *   İşletim sistemi aktörleriyle bir dosya üzerinden temas kurabilirsiniz
 
 *   Bu aktörler oku/yaz sistem çağrılarına yanıt verecek şekilde düzenlenmiş
-
----
 
 ##  Görev
 
@@ -1681,21 +1495,13 @@ Aşağıdaki bilgilerin hangi dosya/dizinlerde olduğunu araştırın
 
 *   Python modülleri
 
----
-
 #   Ek: Kabuk Yapılandırması
-
----
 
 #   `~/.bashrc`
 
 .
 
----
-
 #   Ek: Sudo
-
----
 
 ##  Sudo Yapılandırması
 
@@ -1713,8 +1519,6 @@ Bir kullanıcı sistem yöneticisi olarak nasıl atanır?
 
 *   Kullanıcıyı (kurulum sırasında) `admin` grubuna ekle
 
----
-
 ##  Sudo Yapılandırması
 
 *   Her dağıtımda böyle bir mekanizma sunulmayabilir
@@ -1723,8 +1527,6 @@ Bir kullanıcı sistem yöneticisi olarak nasıl atanır?
 
 *   Alternatif olarak `sudo` veya `wheel` gruplarını kullanabilirsiniz; bu
     gruplardan en az bir tanesinin çoğu dağıtımda bulunduğunu varsayıyoruz
-
----
 
 ##  Sudo Yapılandırması
 
@@ -1739,8 +1541,6 @@ Benzer bir mekanizmayı kurmak için
 
         !sh
         root$ visudo
-
----
 
 ##  Sudo Yapılandırması
 

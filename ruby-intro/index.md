@@ -8,8 +8,6 @@ http://roktas.me/
 
 Mart 2012
 
----
-
 #   Ruby
 
 -   Genel amaçlı, nesne yönelimli bir programlama dili
@@ -20,11 +18,7 @@ Mart 2012
 
 ![ruby](media/ruby.svg)
 
----
-
 #   Temeller
-
----
 
 #   İlk Kod
 
@@ -47,8 +41,6 @@ Mart 2012
 
 -   Dizgi içinde `#{...}` ile değer (satır 9)
 
----
-
 #   İşlevler (Metodlar)
 
         #!ruby
@@ -68,8 +60,6 @@ Mart 2012
 -   Paralel atamalar yapılabilir (satır 2)
 
 -   `#{...}` içinde herhangi bir Ruby ifadesi kullanılabilir (satır 11)
-
----
 
 #   Deyim/İfade
 
@@ -97,8 +87,6 @@ Ruby'de deyim (statement) ve ifade (expression) ayrımı yok
         irb(main):004:0> i
         => 1
 
----
-
 #   Deyim/İfade
 
 -   Görüntülenenle ifade değerini karıştırmayın
@@ -118,8 +106,6 @@ Ruby'de deyim (statement) ve ifade (expression) ayrımı yok
 
 -   Fakat `puts` metodu `1` değerini görüntülüyor
 
----
-
 #   İfadeler
 
 Her şeyin bir ifade olması neden önemli?
@@ -136,8 +122,6 @@ Her şeyin bir ifade olması neden önemli?
 
         !ruby
         flag = x == 0
-
----
 
 #   Doğru/Yanlış
 
@@ -164,8 +148,6 @@ Her şeyin bir ifade olması neden önemli?
         irb(main):005:0> -1 and true
         => true
 
----
-
 #   Dönüş Değerleri
 
         #!ruby
@@ -186,8 +168,6 @@ Her şeyin bir ifade olması neden önemli?
 
 -   Metodda son satır bir ifade; kendisi de bir ifade olan metod çağrısının
     değeri
-
----
 
 #   Nesneler
 
@@ -213,8 +193,6 @@ Her şeyin bir ifade olması neden önemli?
         Test
         => 3
 
----
-
 #   Bloklar
 
 -   `3` bir tamsayı nesnesi, `times` bu nesnenin bir metodu
@@ -238,8 +216,6 @@ Kodlama stili:
 -   Tek satırlık bloklarda kıvrık parantezler
 
 -   Birden fazla satıra yayılan kod blokları için `do ... end`
-
----
 
 #   Bloklar
 
@@ -266,8 +242,6 @@ Ama bu soru hatalı.
 
 -   Diyalog `times` ile değil `3` tamsayı nesnesi arasında gerçekleşmeli
 
----
-
 #   Bloklar
 
 Diyalog:
@@ -291,8 +265,6 @@ Sonuçlar:
 
 -   `times` bir metod, `puts "Test"` ise bu metoda geçirilen bir blok
 
----
-
 #   Döngüler
 
 Ruby'de döngüleri (tamsayı, dizgi, aralık, dizi, sözlük gibi) nesneler üzerinden
@@ -312,8 +284,6 @@ uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.
 -   Bu örnekte `(1..10)` bir aralık ("range") nesnesi
 
 -   Toplama eylemini (bir blok) bu nesnenin `each` metoduna geçiriyoruz
-
----
 
 #   Döngüler
 
@@ -337,8 +307,6 @@ uyarılan tekrarlayıcı metodlarla (örnekte satır 3) kurun.
 
 -   Bu durum daha nadir olarak `while` için de geçerli
 
----
-
 #   Diziler
 
         !ruby
@@ -350,8 +318,6 @@ Veya daha şık olanı:
         !ruby
         a = []
         a << "Word"
-
----
 
 #   Diziler
 
@@ -369,8 +335,6 @@ Veya daha şık olanı:
           puts "#{i}: #{e}"
         end
 
----
-
 #   Diziler
 
         !ruby
@@ -380,8 +344,6 @@ Veya daha şık olanı:
         a = [1, 2, 3]
         a.include?("x") #=> false
         a.include?(3)   #=> true
-
----
 
 #   Sözlükler
 
@@ -397,8 +359,6 @@ Fakat anahtarları (çoğu zaman) şöyle yazıyoruz (bazen değerler de öyle):
 
 -   `:name` ise bir sembol (`Symbol`)
 
----
-
 #   Semboller
 
 -   Değiştirilmez bir dizgi gibi
@@ -406,8 +366,6 @@ Fakat anahtarları (çoğu zaman) şöyle yazıyoruz (bazen değerler de öyle):
 -   Pek çok işlemde daha hızlı ve güvenli
 
 TODO
-
----
 
 #   Sözlükler
 
@@ -426,8 +384,6 @@ TODO
         if person[:gender] == :male && (person[:age] < 18 || person[:age] > 85)
           puts "A very young or old man"
         end
-
----
 
 #   Dosya İşlemleri
 
@@ -453,8 +409,6 @@ TODO
           end
         end
 
----
-
 #   Tek Satırlıklar
 
 Başa dönelim...
@@ -470,29 +424,19 @@ Başa dönelim...
 
 -   `inject`?  Daha sonra...
 
----
-
 #   Nesne Yönelimli Programlama
-
----
 
 #   Sınıf ve Nesne
 
 TODO
 
----
-
 #   Nesne Nitelikleri
 
 TODO
 
----
-
 #   Sınıf
 
 .code: code/rb_class_simple_point/main.rb
-
----
 
 #   Sınıf Metodları
 
@@ -502,8 +446,6 @@ tanımlayacağız?
 -   `Point` için örnek: noktaların toplanması (`add`)
 
 -   `Point` için örnek: noktalar arası uzaklık (`distance`)
-
----
 
 #   Sınıf Metodları
 
@@ -531,8 +473,6 @@ tanımlayacağız?
         !ruby
         t = Point.add(p, q)
 
----
-
 #   Sınıf Metodları
 
 -   Bir başka örnek: orijin noktasını veren bir metod
@@ -545,13 +485,9 @@ tanımlayacağız?
         !ruby
         o = p.origin # (0, 0) nokta nesnesi
 
----
-
 #   Sınıf Metodları
 
 .code: code/rb_class_classmethod_point/main.rb
-
----
 
 #   İşleç Yüklemesi
 
@@ -570,19 +506,13 @@ tanımlayacağız?
 
 Bunu yapabilirsek sınıf metodları çözümüne alternatif bir çözümümüz olacak
 
----
-
 #   İşleç Yüklemesi
 
 .code: code/rb_class_overloading_point/main.rb
 
----
-
 #   Miras Alma
 
 .code: code/rb_inheritance_simple_circle/main.rb
-
----
 
 #   Sınıf Değişkenleri
 
@@ -607,13 +537,9 @@ var → Sınıf sabitleri
           ...
         end
 
----
-
 #   Sınıf Değişkenleri
 
 .code: code/rb_class_variable_simple/main.rb
-
----
 
 #   Sınıf Değişkenleri
 
@@ -626,21 +552,15 @@ Sınıf değişkenleriyle çalışırken bir şeyin farkında olmalıyız:
 
 -   Genel değişkenlerin sorunlarını biliyorsunuz
 
----
-
 #   Sınıf İçinde Değişkenler ve Sabitler
 
 .code: code/rb_class_variable_experiment/main.rb
-
----
 
 #   Sınıf İçinde Değişkenler ve Sabitler
 
 -   Çıktı
 
 .code: code/rb_class_variable_experiment/out
-
----
 
 #   Sınıf İçinde Değişkenler ve Sabitler
 
@@ -665,8 +585,6 @@ Sonuçlar:
         ...
         A.class_instance_variable
 
----
-
 #   Modüller
 
 Ruby'nin modüler programlama için "sınıf"larla birlikte sunduğu diğer imkan
@@ -686,8 +604,6 @@ Ruby'nin modüler programlama için "sınıf"larla birlikte sunduğu diğer imka
 
 -   "Katıştırma" ("Mixins") tekniğiyle gerçeklemelerin paylaşılmasını sağlıyor
 
----
-
 #   İsim Uzayı
 
 -   `sin` metodu `Math` modülünde tanımlı
@@ -701,8 +617,6 @@ Bu sayede:
     pekiştiriyor
 
 -   İsim çakışmaları önleniyor: `sin` isimli bir metod yazdığımızı varsayın?
-
----
 
 #   İsim Uzayı
 
@@ -719,8 +633,6 @@ Bu sayede:
         if x > 0.5
           sin("hatalı aralıkta değer üretildi: #{x}")
         end
-
----
 
 #   İsim Uzayı
 
@@ -740,8 +652,6 @@ Bu sayede:
         end
 
 -   `Log` modül isminin anlamı pekiştirdiğine dikkat edin
-
----
 
 #   İsim Uzayı
 
@@ -765,8 +675,6 @@ Bu sayede:
           Log.sin("hatalı aralıkta değer üretildi: #{x}")
         end
 
----
-
 #   İsim Uzayı
 
 -   Ruby modülleri `$LOAD_PATH` değişkeninin gösterdiği dizinlerde aranır
@@ -780,8 +688,6 @@ Bu sayede:
 
         !ruby
         $LOAD_PATH.unshift File.join(File.dirname(__FILE__))
-
----
 
 #   Katıştırma
 
@@ -806,16 +712,12 @@ sağlıyor
 
 -   Bize ait `sin` metodu bir modülde bulunmasaydı isim çakışması olacaktı
 
----
-
 #   Katıştırma
 
 Bir gerçeklemeyi uygun sınıflara, sanki o sınıfta yapılan bir gerçeklemeymiş
 gibi, ekleyebiliyoruz.
 
 .code: code/rb_module_mixins_simple/main.rb /module/ $
-
----
 
 #   Katıştırma
 
@@ -830,8 +732,6 @@ gibi, ekleyebiliyoruz.
 
 **Mümkün olan her yerde "katıştırma"yı "miras alma"ya tercih edin**
 
----
-
 #   Asciify
 
 -   Türkçe karakterleri ASCII eşseslileriyle değiştirelim, öyle ki
@@ -840,33 +740,23 @@ gibi, ekleyebiliyoruz.
 
 -   "Ascii"leştir → "Asciify"
 
----
-
 #   Asciify
 
 .code: code/rb_module_simple_asciify/main4.rb
-
----
 
 #   Asciify
 
 .code: code/rb_module_simple_asciify/main3.rb
 
----
-
 #   Asciify
 
 .code: code/rb_module_simple_asciify/main2.rb
-
----
 
 #   Asciify
 
 Çoklu Dil desteği?  Örneğin Türkçe dışında Almanca
 
 .code: code/rb_module_simple_asciify/main1.rb
-
----
 
 #   Asciify
 
@@ -877,13 +767,9 @@ gibi, ekleyebiliyoruz.
 -   Çünkü böyle bir modülü açık bir ihtiyaç üzerine değil "genelleştirme" adına
     yaptık
 
----
-
 #   Asciify
 
 .code: code/rb_module_simple_asciify/main.rb
-
----
 
 #   Asciify
 

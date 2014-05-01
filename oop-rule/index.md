@@ -8,13 +8,9 @@ http://roktas.me/
 
 Nisan 2012
 
----
-
 #   Miras Alma
 
 ![Miras Alma](media/uml-inheritance.png)
-
----
 
 #   UML Diyagramları
 
@@ -26,15 +22,11 @@ Sınıf ilişkilerini UML diyagramlarıyla gösteriyoruz
 
 -   Tasarım sırasında yararlı
 
----
-
 #   UML Diyagramları
 
 -   "Miras Alma" ilişkisi ebeveyn sınıfa doğru içi boş bir ok
 
 ![Miras Alma](media/uml-inheritance.png)
-
----
 
 #   Miras Alma - `is-a`
 
@@ -52,19 +44,13 @@ Bu ilişkinin doğal olması lazım
 
 -   Yapboz'da yerine oturmayan parçalar
 
----
-
 #   Miras Alma (Hatalı Soyutlama)
 
 ![Hatalı Miras Alma](media/uml-inheritance-notok.png)
 
----
-
 #   Miras Alma (Hatalı Soyutlama)
 
 .code: code/rb_inheritance_vs_composition_vehicle/main1.rb
-
----
 
 #   Miras Alma - `is-a`
 
@@ -78,8 +64,6 @@ Bu ilişkinin doğal olması lazım
 
 -   `Vehicle`?  "Motoru olan bir nesne" üretir
 
----
-
 #   Hatalı soyutlama
 
 Her aracın (vasıta'nın) bir motoru var mıdır?
@@ -90,8 +74,6 @@ Her aracın (vasıta'nın) bir motoru var mıdır?
 
 -   Kayık?
 
----
-
 #   Doğru Soyutlama
 
 Bize başka bir soyutlama lazım
@@ -100,15 +82,11 @@ Bize başka bir soyutlama lazım
 
 -   "Araba moturu olan bir araçtır"
 
----
-
 #   Komposizyon
 
 -   "Komposizyon" ilişkisi kompoze **edilen** sınıfa doğru içi dolu bir ok
 
 ![Doğru Kompozisyon](media/uml-composition.png)
-
----
 
 #   Kompozisyon - `has-a`
 
@@ -120,13 +98,9 @@ Bize başka bir soyutlama lazım
 
 -   Bakın bu farklı bir model
 
----
-
 #   Komposizyon
 
 .code: code/rb_inheritance_vs_composition_vehicle/main.rb
-
----
 
 #   Kompozisyon veya Miras Alma?
 
@@ -144,21 +118,15 @@ Bize başka bir soyutlama lazım
 
 -   Doğallık şüphesi varsa `has-a`
 
----
-
 #   Komposizyon ve Miras Alma
 
 Bazen "Kompozisyon" ve "Miras Alma" birlikte kullanılabilir
 
 ![Kompozisyon ve Miras Alma](media/uml-composition+inheritance.png)
 
----
-
 #   Komposizyon ve Miras Alma
 
 .code: code/rb_inheritance_plus_composition_vehicle/main.rb
-
----
 
 #   Delegasyon
 
@@ -172,8 +140,6 @@ Bazen "Kompozisyon" ve "Miras Alma" birlikte kullanılabilir
 
 Ne yapmalı?
 
----
-
 #   Delegasyon
 
 Araba içinde motorun çalışmasıyla ilgili tüm işler motora devredilmeli
@@ -184,13 +150,9 @@ Araba içinde motorun çalışmasıyla ilgili tüm işler motora devredilmeli
 
 -   "Motor"un delegasyonu
 
----
-
 #   Delegasyon
 
 .code: code/rb_delegation_vehicle/main1.rb
-
----
 
 #   Delegasyon
 
@@ -203,8 +165,6 @@ Bu gerçeklemede bir sorun var
 -   Her delegasyonda böyle sarmalayıcı metodlar yazmak zorunda mıyız?
 
 -   "Şu isimdeki metodları şu nesneye gönder" gibi bir kolaylık?
-
----
 
 #   Delegasyon - `Forwardable` modülü
 

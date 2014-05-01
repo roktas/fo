@@ -8,18 +8,12 @@ http://roktas.me/
 
 Ekim 2012
 
----
-
 #   UNIX
 
 >  **Those who don't understand UNIX are doomed to reinvent it, poorly.**
 >> **Henry Spencer**
 
----
-
 #   Kullanıcı/Gruplar
-
----
 
 ##  Kimim?
 
@@ -28,8 +22,6 @@ Ekim 2012
         uid=1000(roktas) gid=1000(roktas) gruplar=1000(roktas),...
 
 *   `id` komutu `whoami`'dan daha ayrıntılı bilgi görüntülüyor
-
----
 
 ##  `uid`
 
@@ -40,8 +32,6 @@ Ekim 2012
 
 *   Debian'da `1000`'den başlar; `0-999` sanal veya özel kullanıcılar için
     rezerve edilmiş
-
----
 
 ##  `gid`
 
@@ -56,8 +46,6 @@ Ekim 2012
 *   Ama tersi doğru değil, her grup için o gruba karşı düşen aynı isimde bir
     kullanıcının bulunması gerekmez; gruba üye bir kullanıcı bulunması da
     gerekmez
-
----
 
 ##  Neden Sayılar?
 
@@ -78,8 +66,6 @@ yürütülmüyor ve böyle sayılar kullanıyoruz?
 Fakat tamsayılar genel olarak geliştiriciler için gerekli; olağan bilgisayar
 kullanımında kullanıcı/grup adlarıyla çalışıyoruz
 
----
-
 ##  Sayılar
 
 *   UNIX sistemlerde böyle pek çok yerde tamsayılarla karşılacaksınız
@@ -96,11 +82,7 @@ kullanımında kullanıcı/grup adlarıyla çalışıyoruz
 
 *   Sonuç → etkili, basit, bakımı kolay kodlar
 
----
-
 #   Dosya Sistemi
-
----
 
 ##  Dosya Sistemi
 
@@ -123,8 +105,6 @@ kullanımında kullanıcı/grup adlarıyla çalışıyoruz
 
 *   Sadece arayışımızda bir sonraki isim durağını bildiriyor; DNS sistemi gibi
 
----
-
 ##  Dosya Sistemi
 
         !sh
@@ -140,8 +120,6 @@ kullanımında kullanıcı/grup adlarıyla çalışıyoruz
 
 *   `foo.txt` ismine ulaştığımızda bu isimle anılan dosyanın tüm verilerini
     (bloklar) okuyabiliriz
-
----
 
 ##  Dosya Nesnesi
 
@@ -163,8 +141,6 @@ kullanımında kullanıcı/grup adlarıyla çalışıyoruz
 *   Bu bakış açısı olağan dosyalarla, dizinleri tek bir dosya nesnesi olarak
     soyutlamamızı sağlar
 
----
-
 ##  Dizin Fikri
 
 *   Bir dosyanın içeriğine ait veriler depolama aygıtında **sıralı olmayabilen**
@@ -182,8 +158,6 @@ kullanımında kullanıcı/grup adlarıyla çalışıyoruz
 
 *   `home` → `25624` gibi
 
----
-
 ##  `inode` Kavramı
 
 Bu veri bloğu numaralarını nerede tutuyoruz?
@@ -200,8 +174,6 @@ Veri blokları listesi dışında tutmamız gereken bilgiler olabilir mi?
 
 *   Bu veri blokları olağan bir dosya mı yoksa bir dizin mi (içinde dosya
     isimleri barındıran)?
-
----
 
 ##  `inode` Kavramı
 
@@ -224,8 +196,6 @@ içinde tutuyoruz → `inode`
         $ ls -i /home/roktas/foo.xt
         2359898 foo.txt
 
----
-
 ##  Dizin Girdisi
 
 *   İlk inode numarası `/` nesnesini gösteriyor (ilk numara `0` değil; ilgili
@@ -241,8 +211,6 @@ içinde tutuyoruz → `inode`
 
 Bir dizine ait veri bloklarından oluşan bu tabloya dizin girdisi ("directory
 entry") diyoruz
-
----
 
 ##  Dizin Girdisi
 
@@ -264,8 +232,6 @@ Dosya yolunda ilerlemeye devam edelim
 
 *   Dosyaya erişim yaptığımıza göre erişim zamanını `inode`'a kaydet
 
----
-
 ##  `inode` İçeriği
 
 *   Veri blokları; aslında bu bir işaretçi, sizi daha sonra bir bağlı listeye
@@ -284,8 +250,6 @@ Dosya yolunda ilerlemeye devam edelim
 *   Başvuru sayısı: bu düğüme kaç nesne başvuruda bulunmuş; başvuru sayısı 0 ise
     ilgili veri blokları serbest bırakılır
 
----
-
 ##  Dosya İsimleri ve Durumu
 
 .fx: achtung
@@ -303,8 +267,6 @@ tutulmaz!**
 
 *   Bu bilgi ilgili dosya nesnesine ait `inode`'da
 
----
-
 ##  Görev
 
 .fx: task
@@ -316,8 +278,6 @@ Aynı dosyanın bir başka dosyaya kopyalanması ve taşınması işlemini ele a
         $ mv foo.txt bar.txt
 
 Bu iki işlemden hangisi daha hızlıdır?  Neden?
-
----
 
 ##  Zaman Damgaları: `atime`
 
@@ -339,8 +299,6 @@ Bu iki işlemden hangisi daha hızlıdır?  Neden?
 
 *   Ama bu son işlem bir başka düğümün erişim zamanını değiştirir, hangisi?
 
----
-
 ##  Zaman Damgaları: `mtime`
 
 `mtime` → Dosya içeriğinin son değiştirilme zamanı ("modify time")
@@ -357,8 +315,6 @@ Bu iki işlemden hangisi daha hızlıdır?  Neden?
 
 *   Dosyayı okumanız, listelemeniz veya sahibini/grubunu ayarlamanız bu zamanı
     değiştirmez
-
----
 
 ##  Zaman Damgaları: `ctime`
 
@@ -382,8 +338,6 @@ time değil)
 *   Dosyanın sahibi/grubu veya izinleri değiştirildiğinde, dosya isminde
     değişiklik yapıldığında `ctime` güncellenir; `atime` ve `mtime` değişmez
 
----
-
 ##  Zaman Damgaları
 
 .fx: achtung
@@ -399,8 +353,6 @@ time değil)
     güncellenir
 
 *   UNIX'te dosyanın ilk oluşturulma zamanı bilgisi kaydedilmez
-
----
 
 ##  Başvuru Sayısı
 
@@ -422,8 +374,6 @@ Başvuru sayısı →  İlgili dosya nesnesine referans veren düğüm sayısı
 
 *   Dizinler en az `2`, dosyalar en az `1` başvuru sayısına sahip
 
----
-
 ##  Dizin Başvuru Sayısı
 
         !sh
@@ -441,8 +391,6 @@ Başvuru sayısı →  İlgili dosya nesnesine referans veren düğüm sayısı
 
 *   `ln` yoluyla dizinlere sabit bağlama zaten yapılamaz
 
----
-
 ##  Dosya Başvuru Sayısı
 
         $ ls -l /tmp/t/f
@@ -459,8 +407,6 @@ Başvuru sayısı →  İlgili dosya nesnesine referans veren düğüm sayısı
 *   `ln -s` yoluyla dosyaya yapılan sembolik bağlamalar başvuru sayısını
     etkilemez, neden?
 
----
-
 ##  Dosya Başvuru Sayısı
 
         !sh
@@ -474,8 +420,6 @@ Başvuru sayısı →  İlgili dosya nesnesine referans veren düğüm sayısı
         $ ls -l /tmp/t/f
         -rw-r--r-- 1 roktas roktas 0 Eki 11 00:17 /tmp/t/f
 
----
-
 ##  `echo`
 
 *   POSIX standartlarında tanımlanmış
@@ -484,13 +428,9 @@ Başvuru sayısı →  İlgili dosya nesnesine referans veren düğüm sayısı
 
 *   Kılavuz dokümanları ilgili programın bir tür belirtimidir
 
----
-
 ##  `echo(1)`
 
 .code: code/echo.txt
-
----
 
 ##  Kılavuz
 
@@ -508,8 +448,6 @@ Başvuru sayısı →  İlgili dosya nesnesine referans veren düğüm sayısı
 
 *   `SEE ALSO` → Çapraz başvuru; bu kılavuzla ilişkili diğer kılavuzlar
 
----
-
 ##  Kılavuz
 
 Tüm kılavuz sayfalarında geçerli bir anahat yok
@@ -523,8 +461,6 @@ Tüm kılavuz sayfalarında geçerli bir anahat yok
 
 *   `ENVIRONMENT` → Yazılımın çalışmasını etkileyen ortam değişkenleri
 
----
-
 ##  Kılavuz: Kısımlar
 
 *   Kılavuz sayfaları kısımlardan oluşuyor
@@ -536,13 +472,9 @@ Tüm kılavuz sayfalarında geçerli bir anahat yok
 *   UNIX geleneğinde (örneğin bir posta listesinde) bir kişi size `echo(1)`
     demişse bunun anlamı: "Lütfen (önce ödevini yap ve) `echo` kılavuzunu oku"
 
----
-
 ##  `man(1)`
 
 .code: code/man.txt
-
----
 
 ##  Kılavuz: Dosya Biçimleri
 
@@ -566,13 +498,9 @@ Tüm kılavuz sayfalarında geçerli bir anahat yok
         !sh
         $ man passwd 5
 
----
-
 ##  `echo`
 
 .code: code/echo.c
-
----
 
 ##  `echo`
 
@@ -585,8 +513,6 @@ Tüm kılavuz sayfalarında geçerli bir anahat yok
 
         !sh
         $ ./echo Merhaba Dünya!
-
----
 
 ##  `which`
 
@@ -602,8 +528,6 @@ Tüm kılavuz sayfalarında geçerli bir anahat yok
 *   Yazdığımız `echo` programının çalışmasını nasıl sağladık?
 
 *   Programın dosya yolunu açık şekilde vererek
-
----
 
 ##  `PATH`
 
@@ -624,8 +548,6 @@ Tüm kılavuz sayfalarında geçerli bir anahat yok
 *   `PATH`'te tanımlı olmayan bir programı çalıştırmak için programı açık dosya
     yoluyla yazıyoruz
 
----
-
 ##  Görev
 
 .fx: task
@@ -635,11 +557,7 @@ Tüm kılavuz sayfalarında geçerli bir anahat yok
 
 *   `echo.c` kodunu esas alarak `-n` seçeneğini gerçekleyin
 
----
-
 #   Prosesler
-
----
 
 ##  Proses
 
@@ -661,8 +579,6 @@ Tüm kılavuz sayfalarında geçerli bir anahat yok
 
 *   Tek program → Çok proses
 
----
-
 ##  Proses
 
 *   Kabuğun temel işlevi programları (tanınan adlarla) proseslere dönüştürmek ve
@@ -676,8 +592,6 @@ Tüm kılavuz sayfalarında geçerli bir anahat yok
 *   **Kabuğun kendisi de bir proses!**
 
 *   Sisteme giriş yaptığınızda çalıştırılan bir proses
-
----
 
 ##  `pid`
 
@@ -704,8 +618,6 @@ Her prosesin bir numarası var →  pid: Process ID
 *   `USER` alanında neden `root` var?  Programı normal kullanıcı hesabıyla
     çalıştırdığım halde
 
----
-
 ##  Prosesin Kimliği
 
         !sh
@@ -721,8 +633,6 @@ Her prosesin bir numarası var →  pid: Process ID
 
 5.   Proses hangi komutla oluştu?
 
----
-
 ##  Prosesin Kimliği
 
 Bunlar en temel bilgiler (ama daha fazlası da var).  Neden temel?
@@ -733,8 +643,6 @@ Bunlar en temel bilgiler (ama daha fazlası da var).  Neden temel?
 *   Çocuk proses bazı özellikleri ebeveyn prosesten miras alır
 
 *   Ebeveyn proses öldüğünde *çoğu zaman* çocuk proses de ölür
-
----
 
 ##  `init`
 
@@ -755,8 +663,6 @@ Bunlar en temel bilgiler (ama daha fazlası da var).  Neden temel?
 
 *   `init` prosesinin proses numarası → `1`
 
----
-
 ##  Proses Ağacı
 
         !sh
@@ -766,8 +672,6 @@ Tüm proseslerin ebeveyni durumundaki `init` prosesini görebiliyor musunuz?
 
 *   `| less`?  Komutun ürettiği çıktı tek ekrana sığmayacağından sayfalanmasını
     sağlıyor (daha sonra üzerinde duracağız)
-
----
 
 ##  `ps`
 
@@ -793,8 +697,6 @@ Tüm proseslerin ebeveyni durumundaki `init` prosesini görebiliyor musunuz?
         !sh
         $ ps ax | grep <terim>
 
----
-
 ##  `top`
 
         !sh
@@ -807,8 +709,6 @@ Tüm proseslerin ebeveyni durumundaki `init` prosesini görebiliyor musunuz?
 
 *   Nasıl?  `?` tuşuyla yardım alın
 
----
-
 ##  Prosesin Ölümü
 
 *   Program sonlandığında proses de sonlanır ("eceliyle ölüm")
@@ -819,8 +719,6 @@ Tüm proseslerin ebeveyni durumundaki `init` prosesini görebiliyor musunuz?
         $ kill <pid>
 
 *   Proses öldüğünde sisteme bir tamsayı değer döner → çıkış kodu ("exit code")
-
----
 
 ##  Çıkış Kodu
 
@@ -839,13 +737,9 @@ Tüm proseslerin ebeveyni durumundaki `init` prosesini görebiliyor musunuz?
 
 *   Fakat bazı kullanım senaryolarında özel hata kodları kullanılabilir
 
----
-
 ##  Çıkış Kodu
 
 .code: code/echo.c
-
----
 
 ##  Çıkış Kodu
 
@@ -864,8 +758,6 @@ Tüm proseslerin ebeveyni durumundaki `init` prosesini görebiliyor musunuz?
 
 *   Taşınırlık adına böyle yaptık ama `exit(0)` veya `return 0` da denilebilirdi
 
----
-
 ##  Görev
 
 .fx: task
@@ -873,8 +765,6 @@ Tüm proseslerin ebeveyni durumundaki `init` prosesini görebiliyor musunuz?
 *   `return 0` ile `exit(EXIT_SUCCESS)` arasında ne fark vardır?
 
 *   Hangisi tercih edilmelidir?
-
----
 
 ##  Çıkış Kodu
 
@@ -887,8 +777,6 @@ Lütfen aşağıdaki konvansiyonlara uyun
 
 *   (Benzer bir hassasiyetle) Hata iletilerini `stdout`'a değil `stderr`'e yazın
     (daha sonra değineceğimiz bir konu)
-
----
 
 ##  Çıkış Kodu
 
@@ -906,11 +794,7 @@ Lütfen aşağıdaki konvansiyonlara uyun
     ise (`0` çıkış kodu), sonraki komutu çalıştırıyor; aksi halde (`> 0`) işlem
     sonlanıyor
 
----
-
 #   Kabuk
-
----
 
 ##  Kabuk ve `true`/`false`
 
@@ -931,8 +815,6 @@ Lütfen aşağıdaki konvansiyonlara uyun
 *   "`cc -o echo echo.c`" ifadesi hangi durumda doğru değer alıyor?  Komut `0`
     değeri döndüğünde
 
----
-
 ##  Kabuk ve `true`/`false`
 
 .fx: achtung
@@ -943,8 +825,6 @@ Lütfen aşağıdaki konvansiyonlara uyun
 
 *   Bu ince noktayı kavradığınızda kabuk programlamada önemli engellerden birini
     aşmış olursunuz!
-
----
 
 ##  Kabuk ve `true`/`false`
 
@@ -959,8 +839,6 @@ Diğer senaryolar
 
         !sh
         $ dağınık_işlem ; rm -rf çöpler
-
----
 
 ##  Ortam Değişkenleri
 
@@ -977,8 +855,6 @@ Diğer senaryolar
 *   Programlar bazı ayarları (yaygın pratikte ayarların öntanımlı değerlerini)
     komut satırı seçenekleri yerine ortam değişkenlerinden alabilir
 
----
-
 ##  Ortam Değişkenleri
 
 *   Ortam değişkenleri birer kabuk değişkeni, fakat bunları olağan
@@ -993,8 +869,6 @@ Diğer senaryolar
 *   **Dikkat!**  `export` komutunda değişken referansı yok, `$` kullanmayın
 
 *   Ortam değişkenlerini yaygın pratikte hepsi büyük harf olarak yazıyoruz
-
----
 
 ##  Özel Ortam Değişkenleri
 
@@ -1015,8 +889,6 @@ Diğer senaryolar
         $ echo $!
         19
 
----
-
 ##  Yerleşik Komutlar
 
 *   Şu ana kadar göz ardı ettiğimiz gerçek: `cd`, `pwd` ve `echo` aslında
@@ -1035,8 +907,6 @@ Diğer senaryolar
         $ which pwd
         /bin/pwd
 
----
-
 ##  Yerleşik Komutlar
 
 *   Yerleşik komutlar çok daha hızlı çalışır, neden?
@@ -1047,19 +917,13 @@ Diğer senaryolar
 
 *   Örneğin `cd` komutu yerleşik olmak zorundadır
 
----
-
 ##  Görev
 
 .fx: task
 
 *   `cd` komutu neden yerleşik bir komut olmak zorundadır?
 
----
-
 #   Sahiplik ve İzinler
-
----
 
 ##  Sahiplik ve İzinler
 
@@ -1073,8 +937,6 @@ okuyabilir/yazabilir, grup okuyabilir, başkaları hiç bir şey yapamaz" gibi.
 3.   Kombinasyonların yönetimi (görüntülenmesi ve düzenlenmesi) nasıl?
 
 Son iki soruyu kısmen cevaplamıştık
-
----
 
 ##  `root`
 
@@ -1096,8 +958,6 @@ Son iki soruyu kısmen cevaplamıştık
     komutunu çalıştırdığınızda istenen parola `root` parolası değil normal
     kullanıcı hesabınıza ait paroladır**
 
----
-
 ##  Sahiplik ve İzinler
 
 Etkin kombinasyonu nerede saklıyoruz? → `inode`
@@ -1116,8 +976,6 @@ Nasıl görüntülüyoruz?
 
 *   Her öbekte `rwx`'ten hangisine izin verilmişse o karakter, izin yoksa `-`
 
----
-
 ##  Dizin İzinleri
 
 İzinleri oku/yaz/çalıştır olarak sınıfladık
@@ -1135,8 +993,6 @@ Nasıl görüntülüyoruz?
 
 *   Dizin izinleri için standartlara bağlanan semantik bir çatı gerekiyor
 
----
-
 ##  POSIX
 
 POSIX → Portable Operating System Interface
@@ -1151,8 +1007,6 @@ POSIX → Portable Operating System Interface
 *   POSIX standartlarına uygun şekilde geliştirilen bir yazılım farklı işletim
     sistemlerine kolayca taşınabiliyor
 
----
-
 ##  POSIX
 
 *   Yazılımların nasıl davranmaları gerektiği çoğu durumda açık olabilir
@@ -1164,8 +1018,6 @@ POSIX → Portable Operating System Interface
 
 *   "Neden böyle davranıyor?" sorusuna evvel emirde verilecek cevap: "POSIX
     böyle buyurmuş"
-
----
 
 ##  Dizin: Okunabilir
 
@@ -1187,8 +1039,6 @@ Web servislerinde kullanılan indekslenebilir dizin fikriyle benzer
 
 *   `http://foo.com/bar/baz.txt` ile dosyayı görüntüleyebilirim
 
----
-
 ##  Dizin: Yazılabilir
 
 *   Yazılabilir dizin → Dizinde yeni bir dosya/dizin oluşturabilirsiniz
@@ -1199,8 +1049,6 @@ Web servislerinde kullanılan indekslenebilir dizin fikriyle benzer
         $ echo ekleme >yazılabilir_olmayan_dizin/varolan_dosya
 
 *   Koşul → Dizin aynı zamanda çalıştırılabilir olmalı
-
----
 
 ##  Dizin: Çalıştırılabilir
 
@@ -1218,8 +1066,6 @@ Web servislerinde kullanılan indekslenebilir dizin fikriyle benzer
 
 *   Bu "invazif" eylemler için dizin aynı zamanda yazılabilir olmalı
 
----
-
 ##  Dizin: Çalıştırılabilir
 
 Bazı durumlarda uygulanabilecek diğer bir kural:
@@ -1228,8 +1074,6 @@ Bazı durumlarda uygulanabilecek diğer bir kural:
     dosyanın bulunduğu dizin çalıştırılabilir olmalıdır
 
 *   Örneğin `ls -l`, ve `stat` bunu çok açık şekilde yapıyor
-
----
 
 ##  Görev
 
@@ -1256,8 +1100,6 @@ Bazı durumlarda uygulanabilecek diğer bir kural:
         $ /bin/ls t
         foo
 
----
-
 ##  Temsil
 
 Sahiplik/izin kombinasyonlarını nasıl temsil edeceğiz?
@@ -1274,8 +1116,6 @@ Cevap beklenildiği gibi: **sayılar**
 *   Kullanıcı ve gruplar zaten birer tamsayı → `uid`, `gid`
 
 *   İzin?  `3` bitlik bir bit deseni?
-
----
 
 ##  Sekizli Temsil
 
@@ -1299,8 +1139,6 @@ Cevap beklenildiği gibi: **sayılar**
 
 *   **Oku**: için en anlamlı bit açık olmalı → `100` yani `4` ekle
 
----
-
 ##  Sekizli Temsil
 
 Artık elimizde düzgün bir temsil şeması var: Sekizli (Oktal) sayılar
@@ -1317,8 +1155,6 @@ Artık elimizde düzgün bir temsil şeması var: Sekizli (Oktal) sayılar
 *   `inode` yapısına uzun bir bit dizisi ("blob") gibi bakabilirsiniz
 
 *   Bu dizide 40'ncı bitten itibaren 3 bit izinlere ayrılmış
-
----
 
 ##  `chmod`
 
@@ -1341,8 +1177,6 @@ Sekizli temsil o kadar basit ki izin yönetimi araçlarında da kullanılabilir
 *   Ama bu gösterimi bilmenizin yararlı olacağı önemli bir özellik var: `umask`
     → dosya oluşturma maskesi
 
----
-
 ##  `umask`
 
 Yeni bir dosya oluşturulduğunda izinleri kim belirliyor?
@@ -1363,8 +1197,6 @@ Dosya oluşturma genel olarak ilgili programda yapılan bir `open` sistem
 Bu süreç üzerinde bizim bir denetimimiz var mı?
 
 *   Evet var, `umask` sayesinde
-
----
 
 ##  `umask`
 
@@ -1388,8 +1220,6 @@ Bu süreç üzerinde bizim bir denetimimiz var mı?
 
 *   Görüldüğü gibi `umask` bir negatif maske olarak vazife görüyor
 
----
-
 ##  `umask`
 
 Maskeyi yerleşik bir kabuk komutu olan `umask` ile ayarlıyoruz
@@ -1403,38 +1233,26 @@ Maskeyi yerleşik bir kabuk komutu olan `umask` ile ayarlıyoruz
 
 *   Veya daha liberal olmak için `0002`
 
----
-
 ##  Yapışkanlık Özelliği
 
 .
-
----
 
 ##  Dosya Betimleyicileri
 
 .
 
----
-
 ##  `lsof`
 
 .
-
----
 
 ##  `fuser`
 
 .
 
----
-
 #   Yönlendirme ve Borulama
 
 Kaynak: [Bash Hackers
 Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
-
----
 
 ##  Standart Giriş/Çıkış
 
@@ -1450,8 +1268,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
         standard error   ( 2 ) ---->| /dev/pts/5            |
                           ---       +-----------------------+
 
----
-
 ##  Çıkışı Yönlendir: `>file`
 
                           ---       +-----------------------+
@@ -1465,8 +1281,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
                           ---       +-----------------------+
         standard error   ( 2 ) ---->| /dev/pts/5            |
                           ---       +-----------------------+
-
----
 
 ##  Standart Olmayan Çıkışlar: `n>file`
 
@@ -1486,8 +1300,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
         new descriptor   ( n ) ---->| file                  |
                           ---       +-----------------------+
 
----
-
 ##  Girişi Yönlendir: `<file`
 
                           ---       +-----------------------+
@@ -1501,8 +1313,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
                           ---       +-----------------------+
         standard error   ( 2 ) ---->| /dev/pts/5            |
                           ---       +-----------------------+
-
----
 
 ##  Borulama
 
@@ -1520,8 +1330,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
         ( 2 ) ---->| /dev/pts/5   |              ( 2 ) ---->| /dev/pts/    |
          ---       +--------------+               ---       +--------------+
 
----
-
 ##  Borulama
 
            ls /tmp/ doesnotexist 2>&1     |                   less
@@ -1538,8 +1346,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
         ( 2 ) ---->|  to the pipe | /           ( 2 ) ---->| /dev/pts/    |
          ---       +--------------+              ---       +--------------+
 
----
-
 ##  Yönlendirme Kuralı
 
 .fx: achtung
@@ -1548,8 +1354,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
 
 -   Yönlendirme komut çalıştırılmadan önce gerçekleşir
 
----
-
 ##  Yanlış: `2>&1 >file`
 
                           ---       +-----------------------+
@@ -1564,8 +1368,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
         standard error   ( 2 ) ---->| /dev/pts/5            |
                           ---       +-----------------------+
 
----
-
 ##  Yanlış: `2>&1 >file`
 
                           ---       +-----------------------+
@@ -1579,8 +1381,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
                           ---       +-----------------------+
         standard error   ( 2 ) ---->| /dev/pts/5            |
                           ---       +-----------------------+
-
----
 
 ##  Yanlış: `2>&1 >file`
 
@@ -1595,8 +1395,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
                           ---       +-----------------------+
         standard error   ( 2 ) ---->| /dev/pts/5            |
                           ---       +-----------------------+
-
----
 
 ##  Doğru: `>file 2>&1`
 
@@ -1611,8 +1409,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
                           ---       +-----------------------+
         standard error   ( 2 ) ---->| /dev/pts/5            |
                           ---       +-----------------------+
-
----
 
 ##  Doğru: `>file 2>&1`
 
@@ -1628,8 +1424,6 @@ Wiki](http://wiki.bash-hackers.org/howto/redirection_tutorial)
         standard error   ( 2 ) ---->| file                  |
                           ---       +-----------------------+
 
----
-
 ##  Görev
 
 .fx: task
@@ -1640,11 +1434,7 @@ aşağıdaki komut ne yapar?  Nasıl düzeltilmelidir?
         !sh
         $ sed 's/foo/bar/g' file >file
 
----
-
 #   Ek: `strace`
-
----
 
 ##  `strace`
 
@@ -1660,8 +1450,6 @@ aşağıdaki komut ne yapar?  Nasıl düzeltilmelidir?
 
         !sh
         $ strace ls -l
-
----
 
 ##  Tamponlama
 
@@ -1682,8 +1470,6 @@ olarak kullan
 
 *   Yazarken önce tampona yaz
 
----
-
 ##  Tamponlama/Önbellekleme
 
 *   Her iki terim de benzer şeyleri anlatıyor
@@ -1701,8 +1487,6 @@ olarak kullan
 
 *   Tamponlama standart dosya işlemlerindeki "önbellekleme"yi anlatan bir terim
 
----
-
 ### Tamponlama
 
 *   Alt seviye sistem çağrıları, `read`/`write` tamponlanmamış
@@ -1710,8 +1494,6 @@ olarak kullan
 *   Standart C kitaplığında "`stdio.h`"ta tanımlı işlevler daima tamponlanmış
 
 *   Örneğin `printf`, `getc`, `putc` `scanf` (ve bunların `f`'li versiyonları)
-
----
 
 ##  Tamponlama
 
@@ -1734,8 +1516,6 @@ olarak kullan
         !sh
         $ ./a.out
         SonraÖnce
----
-
 ### Tamponlama
 
 *   `write` sistem çağrısı tamponlanmamış
@@ -1753,8 +1533,6 @@ olarak kullan
 
 *   `a.out` kaynak kod derlendiğinde üretilen öntanımlı program
 
----
-
 ### Tamponlama
 
 Tamponu ne zaman boşaltacağız? (Boşaltma → Flush)
@@ -1768,8 +1546,6 @@ Tamponu ne zaman boşaltacağız? (Boşaltma → Flush)
 *   Özel olarak istendiğinde boşalt
 
 *   Tampon içeriğinde özel bir karakter görüldüğünde (dolaylı)
-
----
 
 ##  Tamponlama: Satır
 
@@ -1794,8 +1570,6 @@ Tamponu ne zaman boşaltacağız? (Boşaltma → Flush)
         Önce
         Sonra
 
----
-
 ##  Tamponlama: Satır
 
 Tamponu ne zaman boşaltacağız?
@@ -1807,8 +1581,6 @@ Tamponu ne zaman boşaltacağız?
 *   Satır tamponlanmış ("line buffered") çalışma kipi
 
 *   Çıktı aygıtının `stdout` (dosya betimleyici `1`) olmasına dikkat buyurun!
-
----
 
 ##  Tamponlama: Tam
 
@@ -1834,8 +1606,6 @@ Tamponu ne zaman boşaltacağız?
         Sonra
         Önce
 
----
-
 ### Tamponlama: Tam
 
 Tamponu ne zaman boşaltacağız?
@@ -1852,8 +1622,6 @@ Tamponu ne zaman boşaltacağız?
     tamponlanıyor
 
 *   Tam tamponlanmış ("fully buffered") çalışma kipi
-
----
 
 ##  `fflush`
 
@@ -1880,8 +1648,6 @@ Tamponu ne zaman boşaltacağız?
         Önce
         Sonra
 
----
-
 ### `fflush`
 
 Tamponu ne zaman boşaltacağız?
@@ -1896,8 +1662,6 @@ Tamponu ne zaman boşaltacağız?
 
 **Dikkat!  Girdi akımları da (örneğin `stdin`) tamponlanmıştır, fakat `fflush`
   sadece çıktı akımlarıyla (örneğin `stdout`) çalışır**
-
----
 
 ##  Tamponlama: `stderr`
 
@@ -1922,8 +1686,6 @@ Tamponu ne zaman boşaltacağız?
         Önce
         Sonra
 
----
-
 ##  Tamponlamama
 
 *   Çıktı aygıtı `stderr` olduğunda `stdio.h` işlevleri tamponlama yapmıyor
@@ -1935,8 +1697,6 @@ Tamponu ne zaman boşaltacağız?
 *   Bunu hemen raporlamak, bekletmemek lazım
 
 *   Aksi halde raporlama fırsatınız hiç olmayabilir
-
----
 
 ##  Tamponlama
 
@@ -1950,11 +1710,7 @@ Standart C kitaplığında
 
 *   Olağan dosyalar tam tamponlu
 
----
-
 #   İşletim Sistemi
-
----
 
 ##  Kullanıcı/Çekirdek Kipi
 
@@ -1970,8 +1726,6 @@ Standart C kitaplığında
     yaptırmalı
 
 *   Nasıl?  İşletim sistemine çağrıda bulunarak → Sistem çağrıları
-
----
 
 ##  Kullanıcı/Çekirdek Kipi
 
@@ -1991,8 +1745,6 @@ Standart C kitaplığında
 *   Yetkilendirilmemiş kip → Kullanıcı kipi, Yetkilendirilmiş kip → Çekirdek
     kipi
 
----
-
 ##  Kullanıcı/Çekirdek Kipi
 
 *   İşlemci, kullanıcı prosesini çalıştırırken kullanıcı kipinde → denetim
@@ -2007,8 +1759,6 @@ Standart C kitaplığında
 
 *   Çekirdek isteği yerine getirdikten sonra işlemciyi tekrar kullanıcı kipine
     geçiriyor → denetim tekrar kullanıcı prosesinde
-
----
 
 ##  Sistem Çağrıları
 
@@ -2032,15 +1782,11 @@ Kullanıcı prosesleri sistem kaynaklarına erişirken sistem çağrıları yolu
 *   Sistem çağrılarının arka planında aygıt sürücülerinin baş rolü oynadığı
     katmanlar var
 
----
-
 ##  Sistem Çağrıları
 
 *   Sistem çağrıları kullanıcı kipinde başlayıp çekirdek kipine geçişle devam
     eden ve kullanıcı kipine geçişle sonlanan bir işlev çağrısı
 
-
----
 
 ##  İşletim Sistemi
 
@@ -2049,9 +1795,6 @@ Kullanıcı prosesleri sistem kaynaklarına erişirken sistem çağrıları yolu
 *   Her saat darbesinde denetim işletim sistemine geçiyor
 
 *   İşletim kararları
-
-----
-
 
 <!--
 

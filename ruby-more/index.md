@@ -8,8 +8,6 @@ http://roktas.me/
 
 Mart 2012
 
----
-
 #   İfade/Deyim
 
 Ruby'de ifade/deyim ayrımı yoktur, her şey bir ifadedir (değer üretir).
@@ -17,8 +15,6 @@ Ruby'de ifade/deyim ayrımı yoktur, her şey bir ifadedir (değer üretir).
 -   `if`, `case`, metod, bloklarda üretilen değer son deyimden gelir
 
 -   `while`, `for` deyimleri daima `nil` üretir
-
----
 
 #   Doğru/Yanlış
 
@@ -44,8 +40,6 @@ Ruby'de ifade/deyim ayrımı yoktur, her şey bir ifadedir (değer üretir).
         !! ""  #=> true
         !! -1  #=> true
 
----
-
 #   `and` ve `or` Öncelikleri
 
 `and` ve `or` operatörleri düşük önceliğe sahiptir.
@@ -59,14 +53,10 @@ Ruby'de ifade/deyim ayrımı yoktur, her şey bir ifadedir (değer üretir).
         x = y or z #=> true
         x          #=> false
 
----
-
 #   `case` Deyimleri
 
 C dilinden farklı olarak, `case` deyimlerinde `when` cümlelerinden sonra daima
 deyimden çıkılır.
-
----
 
 #   `!` Metodları
 
@@ -83,8 +73,6 @@ olarak yorumlanmalıdır.
         !ruby
         hash.update :foo => "bar"
 
----
-
 #   `!` Metodları
 
 Alıcı nesnede değişiklik yapmayan `!` metodlarda varolabilir.  Örnek:
@@ -99,8 +87,6 @@ Alıcı nesnede değişiklik yapmayan `!` metodlarda varolabilir.  Örnek:
         !ruby
         u = User.create! :login => "joe"
 
----
-
 #   Sınıflar ve Nesneler
 
 -   Her sınıf `Class` sınıfında bir nesnedir.
@@ -113,8 +99,6 @@ Alıcı nesnede değişiklik yapmayan `!` metodlarda varolabilir.  Örnek:
         Foo.instance_of? Class #=> true
 
 -   `Object` isimli sınıf da `Class` sınıfında bir nesnedir.
-
----
 
 #   Nesne Nitelik Erişimcileri
 
@@ -142,8 +126,6 @@ Metod gövdesindeki nitelik yazıcıları yerel değişken üretir.
           end
         end
 
----
-
 #   Nesne Nitelik Erişimcileri
 
 -   Nitelik erişimcisinde özel bir lojik olmadığı sürece en doğrusu `@` ile
@@ -170,8 +152,6 @@ Metod gövdesindeki nitelik yazıcıları yerel değişken üretir.
           end
         end
 
----
-
 #   İlişkisiz Metodlar
 
 Ruby'de görünürde herhangi bir sınıfa ait olmayan işlevler `Object` sınıfına ait
@@ -182,21 +162,15 @@ Ruby'de görünürde herhangi bir sınıfa ait olmayan işlevler `Object` sını
 -   Sonuç: tepe seviyede yazılan tüm metodlar yapısal bir dilde olduğu gibi
     çalıştırılır
 
----
-
 #   Sınıf İçinde Değişkenler ve Sabitler
 
 .code: code/rb_class_variable_experiment/main.rb
-
----
 
 #   Sınıf İçinde Değişkenler ve Sabitler
 
 -   Çıktı
 
 .code: code/rb_class_variable_experiment/out
-
----
 
 #   Sınıf İçinde Değişkenler ve Sabitler
 
@@ -221,8 +195,6 @@ Sonuçlar:
         ...
         A.class_instance_variable
 
----
-
 #   Sınıf Değişkenleri
 
 -   Bir sınıf gövdesi içinde `@@var` değişkenleri sınıf kapsamında geçerli bir
@@ -236,8 +208,6 @@ Sonuçlar:
 -   Sadece ilgili sınıfa ait bir değişken isteniyorsa "sınıf nesne değişkenleri"
     kullanılmalı
 
----
-
 #   Sınıf Nesne Değişkenleri
 
 -   Bir sınıf gövdesi içinde, fakat metod gövdesi dışında kullanılan `@var`
@@ -248,8 +218,6 @@ Sonuçlar:
 
 -   Sınıf değişkenlerindeki "global değişken" etkisinin istenmediği durumlarda
     bu değişkenler kullanılabilir
-
----
 
 #   Nesne Değişkenleri
 
@@ -263,8 +231,6 @@ Ruby'de nesne değişkenleri miras almadan etkilenmez.
 
 -   Ebeveyn sınıfın sınıf nesne değişkenleri çocuk sınıflara aktarılmaz
 
----
-
 #   `ARGV[0]`
 
 -   Pek çok dilden farklı olarak; `ARGV[0]` komut satırında program isminden
@@ -272,13 +238,9 @@ Ruby'de nesne değişkenleri miras almadan etkilenmez.
 
 -   Program ismi için `$0` değişkenini kullanın
 
----
-
 #   Meta Programlama
 
 .code: code/rb_meta_simple_masallah/main.rb /if.+FILE.+==.+0/+1 /end/-1
-
----
 
 #   Meta Programlama
 

@@ -8,11 +8,7 @@ http://roktas.me/
 
 Mayıs 2012
 
----
-
 #   Tarifler
-
----
 
 #   `sh`
 
@@ -29,8 +25,6 @@ Yönlendirme/borulama yoksa komutu dizi olarak ver
         # sh 'bir', 'kabuk', 'komutu'
 
 Bu yöntemin başarımı daha yüksektir
-
----
 
 #   `sh`
 
