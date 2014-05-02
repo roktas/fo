@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 # encoding: utf-8
 
-# FIXME Diğer diller için de genelleştirsek, örneğin Almanca
+# FIXME: Diğer diller için de genelleştirsek, örneğin Almanca
 module Turkish
   CHARS = Hash[*%w(
     ı i
@@ -20,7 +20,7 @@ module Turkish
   RE = Regexp.new '[' + CHARS.keys.join + ']'
 
   def ascii
-    self.gsub(RE) { |c| CHARS[c] }
+    gsub(RE) { |c| CHARS[c] }
   end
 end
 

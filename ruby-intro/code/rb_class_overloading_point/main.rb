@@ -17,15 +17,15 @@ class Point
   end
 
   def >=(other)
-    @x > other.x or @x == other.x
+    @x > other.x || @x == other.x
   end
 
   def <=(other)
-    @x < other.x or @x == other.x
+    @x < other.x || @x == other.x
   end
 
   def ==(other)
-    @x == other.x and @y == other.y
+    @x == other.x && @y == other.y
   end
 
   def to_s

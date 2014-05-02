@@ -2757,7 +2757,7 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
 </pre></div>
 
 <p>Fakat anahtarlar&#305; (&ccedil;o&#287;u zaman) &#351;&ouml;yle yaz&#305;yoruz (bazen de&#287;erler de &ouml;yle):</p>
-<div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+<div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">gender</span><span class="p">:</span> <span class="ss">:male</span> <span class="p">}</span>
 </pre></div>
 
 <ul>
@@ -2835,12 +2835,12 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
             <header><h1>S&ouml;zl&uuml;kler</h1></header>
             
             
-            <section><div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+            <section><div class="highlight"><pre>    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">gender</span><span class="p">:</span> <span class="ss">:male</span> <span class="p">}</span>
 
     <span class="nb">puts</span> <span class="n">person</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span>       <span class="c1">#=&gt; 20</span>
-    <span class="n">person</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:age</span>    <span class="c1">#=&gt; true</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">key?</span> <span class="ss">:age</span>    <span class="c1">#=&gt; true</span>
     <span class="nb">puts</span> <span class="n">person</span><span class="o">[</span><span class="ss">:weight</span><span class="o">]</span>    <span class="c1">#=&gt; nil</span>
-    <span class="n">person</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:weight</span> <span class="c1">#=&gt; false</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">key?</span> <span class="ss">:weight</span> <span class="c1">#=&gt; false</span>
 
     <span class="n">person</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
     <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -2899,7 +2899,7 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
 <p>Sat&#305;r numaralar&#305;n&#305; da ister misiniz?</p>
 <div class="highlight"><pre><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
   <span class="n">f</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">line</span><span class="p">,</span> <span class="n">no</span><span class="o">|</span>
-      <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">no</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">line</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">no</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">line</span><span class="si">}</span><span class="s2">&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
@@ -3074,7 +3074,7 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
 <span class="c1"># encoding: utf-8</span>
 
 <span class="k">class</span> <span class="nc">Point</span>
-  <span class="c1"># XXX Her nitelik için okuyucu yazmamız gerekmiyor</span>
+  <span class="c1"># XXX: Her nitelik için okuyucu yazmamız gerekmiyor</span>
   <span class="kp">attr_reader</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span>
 
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -3098,16 +3098,16 @@ uyar&#305;lan tekrarlay&#305;c&#305; metodlarla (&ouml;rnekte sat&#305;r 3) kuru
     <span class="vi">@y</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
   <span class="k">end</span>
 
-  <span class="c1"># FIXME foo.equal?(bar) yerine foo == bar yazılamaz mı?</span>
+  <span class="c1"># FIXME: foo.equal?(bar) yerine foo == bar yazılamaz mı?</span>
 
   <span class="k">def</span> <span class="nf">equal?</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="vi">@x</span> <span class="o">+=</span> <span class="n">x</span>
     <span class="vi">@y</span> <span class="o">+=</span> <span class="n">y</span>
-    <span class="c1"># XXX Taşımadan sonra nesnenin kendisini dön ki</span>
+    <span class="c1"># XXX: Taşımadan sonra nesnenin kendisini dön ki</span>
     <span class="c1"># çağıran ayrı bir atama yapma zorunda kalmasın</span>
     <span class="nb">self</span>
   <span class="k">end</span>
@@ -3315,20 +3315,20 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">||</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">||</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
   <span class="k">end</span>
 
   <span class="c1"># + işlecini overload ederek sınırsız sayıda noktayı da</span>
   <span class="c1"># toplama olanağına kavuştuk.</span>
-  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
     <span class="c1"># Nesne metodundan sınıf metodu (origin) nasıl çağrılır?</span>
     <span class="c1"># Point.origin olabilir ama DRY değil, cevap: self.class</span>
     <span class="n">other</span> <span class="o">||=</span> <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">origin</span>
@@ -3470,15 +3470,15 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">||</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">||</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_s</span>
@@ -3544,18 +3544,18 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">&gt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="vi">@x</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">||</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">or</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+    <span class="vi">@x</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">||</span> <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">==</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+    <span class="vi">@x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="vi">@y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
   <span class="k">end</span>
 
-  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
     <span class="n">other</span> <span class="o">||=</span> <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">origin</span>
     <span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">new</span> <span class="vi">@x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
   <span class="k">end</span>
@@ -3601,13 +3601,13 @@ tan&#305;mlayaca&#287;&#305;z?</p>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_s</span>
-    <span class="c1"># XXX Ooooo!  Artık DRY ama kara büyü :-/</span>
+    <span class="c1"># XXX: Ooooo!  Artık DRY ama kara büyü :-/</span>
     <span class="s2">&quot;</span><span class="si">#{</span><span class="vi">@r</span><span class="si">}</span><span class="s2">@</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">instance_method</span><span class="p">(</span><span class="ss">:to_s</span><span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span><span class="o">.</span><span class="n">call</span><span class="si">}</span><span class="s2">&quot;</span>
   <span class="k">end</span>
 
-  <span class="c1"># XXX Anlamlı olmayan işleçler şuna benzer bir şey yapılabilir</span>
+  <span class="c1"># XXX: Anlamlı olmayan işleçler şuna benzer bir şey yapılabilir</span>
   <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="c1"># argümanlarla ilgilenmediğimizden * diyoruz</span>
-    <span class="k">raise</span> <span class="s2">&quot;+ işleci </span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2"> sınıfı için anlamlı değil&quot;</span>
+    <span class="nb">fail</span> <span class="s2">&quot;+ işleci </span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2"> sınıfı için anlamlı değil&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -4360,7 +4360,7 @@ gibi, ekleyebiliyoruz.</p>
       <span class="s1">&#39;ı&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;İ&#39;</span><span class="p">,</span> <span class="s1">&#39;ğ&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Ğ&#39;</span><span class="p">,</span> <span class="s1">&#39;ü&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Ü&#39;</span><span class="p">,</span>
       <span class="s1">&#39;ö&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Ö&#39;</span><span class="p">,</span> <span class="s1">&#39;ç&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Ç&#39;</span><span class="p">,</span> <span class="s1">&#39;ş&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Ş&#39;</span>
     <span class="p">}</span>
-    <span class="nb">self</span><span class="o">.</span><span class="n">upcase</span><span class="o">.</span><span class="n">gsub</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">#{</span><span class="n">chars</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">join</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">c</span> <span class="o">=</span> <span class="n">chars</span><span class="o">[</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
+    <span class="n">upcase</span><span class="o">.</span><span class="n">gsub</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">#{</span><span class="n">chars</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">join</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">chars</span><span class="o">[</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -4486,8 +4486,8 @@ gibi, ekleyebiliyoruz.</p>
 <span class="c1"># encoding: utf-8</span>
 
 <span class="k">module</span> <span class="nn">Ascii</span>
-  <span class="c1"># FIXME Daha basit bir ilklendirme?</span>
-  <span class="c1"># FIXME Türkçeye özel, ama modül ismi (Ascii) genel</span>
+  <span class="c1"># FIXME: Daha basit bir ilklendirme?</span>
+  <span class="c1"># FIXME: Türkçeye özel, ama modül ismi (Ascii) genel</span>
   <span class="no">CHARS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;ı&#39;</span> <span class="o">=&gt;</span>  <span class="s1">&#39;i&#39;</span><span class="p">,</span>
     <span class="s1">&#39;ğ&#39;</span> <span class="o">=&gt;</span>  <span class="s1">&#39;g&#39;</span><span class="p">,</span>
@@ -4504,14 +4504,14 @@ gibi, ekleyebiliyoruz.</p>
   <span class="p">}</span>
 
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">turkish</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-    <span class="c1"># FIXME Her seferinde bu düzenli ifadeyi hesaplamak gerekmemeli</span>
+    <span class="c1"># FIXME: Her seferinde bu düzenli ifadeyi hesaplamak gerekmemeli</span>
     <span class="n">re</span> <span class="o">=</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span> <span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="no">CHARS</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">join</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span>
     <span class="n">text</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="n">re</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="no">CHARS</span><span class="o">[</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
-  <span class="c1"># FIXME Dizgi üzerinden çağrılsa?  &quot;ŞĞÜÖÇöçğüıİ&quot;.ascii gibi</span>
+  <span class="c1"># FIXME: Dizgi üzerinden çağrılsa?  &quot;ŞĞÜÖÇöçğüıİ&quot;.ascii gibi</span>
   <span class="nb">puts</span> <span class="no">Ascii</span><span class="o">.</span><span class="n">turkish</span><span class="p">(</span><span class="s1">&#39;ŞĞÜÖÇöçğüıİ&#39;</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div>
@@ -4549,7 +4549,7 @@ gibi, ekleyebiliyoruz.</p>
 <span class="c1"># encoding: utf-8</span>
 
 <span class="k">module</span> <span class="nn">Ascii</span>
-  <span class="c1"># FIXME Türkçeye özel, ama modül ismi (Ascii) genel</span>
+  <span class="c1"># FIXME: Türkçeye özel, ama modül ismi (Ascii) genel</span>
   <span class="no">CHARS</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[*</span><span class="sx">%w(</span>
 <span class="sx">    ı i</span>
 <span class="sx">    ğ g</span>
@@ -4572,7 +4572,7 @@ gibi, ekleyebiliyoruz.</p>
 <span class="k">end</span>
 
 <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
-  <span class="c1"># FIXME Dizgi üzerinden çağrılsa?  &quot;ŞĞÜÖÇöçğüıİ&quot;.ascii gibi</span>
+  <span class="c1"># FIXME: Dizgi üzerinden çağrılsa?  &quot;ŞĞÜÖÇöçğüıİ&quot;.ascii gibi</span>
   <span class="nb">puts</span> <span class="no">Ascii</span><span class="o">.</span><span class="n">turkish</span><span class="p">(</span><span class="s1">&#39;ŞĞÜÖÇöçğüıİ&#39;</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div>
@@ -4609,7 +4609,7 @@ gibi, ekleyebiliyoruz.</p>
             <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
 <span class="c1"># encoding: utf-8</span>
 
-<span class="c1"># FIXME Diğer diller için de genelleştirsek, örneğin Almanca</span>
+<span class="c1"># FIXME: Diğer diller için de genelleştirsek, örneğin Almanca</span>
 <span class="k">module</span> <span class="nn">Turkish</span>
   <span class="no">CHARS</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[*</span><span class="sx">%w(</span>
 <span class="sx">    ı i</span>
@@ -4628,7 +4628,7 @@ gibi, ekleyebiliyoruz.</p>
   <span class="no">RE</span> <span class="o">=</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span> <span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="no">CHARS</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">join</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span>
 
   <span class="k">def</span> <span class="nf">ascii</span>
-    <span class="nb">self</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="no">RE</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="no">CHARS</span><span class="o">[</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
+    <span class="nb">gsub</span><span class="p">(</span><span class="no">RE</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="no">CHARS</span><span class="o">[</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -4675,32 +4675,32 @@ gibi, ekleyebiliyoruz.</p>
 <span class="k">module</span> <span class="nn">LanguageUtils</span>
   <span class="c1"># Modül Arayüzü</span>
 
-  <span class="c1"># FIXME Basit bir sözlük yerine ayrı bir nesne (ör. Struct) yapsak?</span>
-  <span class="no">Language</span> <span class="o">=</span> <span class="p">{}</span>
-  <span class="k">def</span> <span class="nc">Language</span><span class="o">.</span><span class="nf">[]</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+  <span class="c1"># FIXME: Basit bir sözlük yerine ayrı bir nesne (ör. Struct) yapsak?</span>
+  <span class="no">LANGUAGE</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="k">def</span> <span class="nc">LANGUAGE</span><span class="o">.</span><span class="nf">[]</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
     <span class="n">desc</span> <span class="o">=</span> <span class="k">super</span>
     <span class="k">unless</span> <span class="n">desc</span>
-      <span class="k">raise</span> <span class="s2">&quot;&#39;</span><span class="si">#{</span><span class="n">code</span><span class="si">}</span><span class="s2">&#39; geçerli bir dil kodu değil.  &quot;</span> <span class="o">+</span>
-            <span class="s2">&quot;Geçerli dil kodları </span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">sort</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="nb">fail</span> <span class="s2">&quot;&#39;</span><span class="si">#{</span><span class="n">code</span><span class="si">}</span><span class="s2">&#39; geçerli bir dil kodu değil.  &quot;</span> <span class="o">+</span>
+           <span class="s2">&quot;Geçerli dil kodları </span><span class="si">#{</span><span class="n">keys</span><span class="o">.</span><span class="n">sort</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">end</span>
     <span class="n">desc</span>
   <span class="k">end</span>
 
-  <span class="c1"># FIXME Kod eşdeğerlerini yönetmiyor, ör. :en == :us</span>
+  <span class="c1"># FIXME: Kod eşdeğerlerini yönetmiyor, ör. :en == :us</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">describe_language</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">desc</span><span class="p">)</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="no">Language</span><span class="o">[</span><span class="n">code</span><span class="o">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="no">LANGUAGE</span><span class="o">[</span><span class="n">code</span><span class="o">]</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">d</span><span class="o">.</span><span class="n">merge!</span> <span class="n">desc</span>
-    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:chars</span>
+    <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">key?</span> <span class="ss">:chars</span>
       <span class="n">d</span><span class="o">[</span><span class="ss">:chars</span><span class="o">]</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[*</span><span class="n">desc</span><span class="o">[</span><span class="ss">:chars</span><span class="o">]]</span>
       <span class="n">d</span><span class="o">[</span><span class="ss">:re</span><span class="o">]</span> <span class="o">=</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span> <span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="n">d</span><span class="o">[</span><span class="ss">:chars</span><span class="o">].</span><span class="n">keys</span><span class="o">.</span><span class="n">join</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">language</span><span class="p">(</span><span class="n">code</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
-    <span class="n">code</span> <span class="p">?</span> <span class="no">Language</span><span class="o">[</span><span class="n">code</span><span class="o">]</span> <span class="p">:</span> <span class="vi">@language</span>
+    <span class="n">code</span> <span class="p">?</span> <span class="no">LANGUAGE</span><span class="o">[</span><span class="n">code</span><span class="o">]</span> <span class="p">:</span> <span class="vi">@language</span>
   <span class="k">end</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">language</span><span class="o">=</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
-    <span class="vi">@language</span> <span class="o">=</span> <span class="no">Language</span><span class="o">[</span><span class="n">code</span><span class="o">]</span>
+    <span class="vi">@language</span> <span class="o">=</span> <span class="no">LANGUAGE</span><span class="o">[</span><span class="n">code</span><span class="o">]</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">yes</span><span class="p">(</span><span class="n">code</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
@@ -4713,12 +4713,15 @@ gibi, ekleyebiliyoruz.</p>
   <span class="c1"># Diller</span>
 
   <span class="k">module</span> <span class="nn">English</span>
-    <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span> <span class="ss">:en</span><span class="p">,</span>
+    <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span><span class="p">(</span>
+      <span class="ss">:en</span><span class="p">,</span>
       <span class="ss">yesno</span><span class="p">:</span> <span class="sx">%w(yes no)</span>
+    <span class="p">)</span>
   <span class="k">end</span>
 
   <span class="k">module</span> <span class="nn">Turkish</span>
-    <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span> <span class="ss">:tr</span><span class="p">,</span>
+    <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span><span class="p">(</span>
+      <span class="ss">:tr</span><span class="p">,</span>
       <span class="ss">chars</span><span class="p">:</span> <span class="sx">%w(</span>
 <span class="sx">        ı i</span>
 <span class="sx">        ğ g</span>
@@ -4734,14 +4737,16 @@ gibi, ekleyebiliyoruz.</p>
 <span class="sx">        Ç C</span>
 <span class="sx">      )</span><span class="p">,</span>
       <span class="ss">yesno</span><span class="p">:</span> <span class="sx">%w(evet hayır)</span>
+    <span class="p">)</span>
 
-      <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">spesific_util</span>
-        <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">: bu dile özgü bir metod&quot;</span>
-      <span class="k">end</span>
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">spesific_util</span>
+      <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">: bu dile özgü bir metod&quot;</span>
+    <span class="k">end</span>
   <span class="k">end</span>
 
   <span class="k">module</span> <span class="nn">German</span>
-    <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span> <span class="ss">:de</span><span class="p">,</span>
+    <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">describe_language</span><span class="p">(</span>
+      <span class="ss">:de</span><span class="p">,</span>
       <span class="ss">chars</span><span class="p">:</span> <span class="sx">%w(</span>
 <span class="sx">        ä a</span>
 <span class="sx">        Ä A</span>
@@ -4753,6 +4758,7 @@ gibi, ekleyebiliyoruz.</p>
 <span class="sx">        ß ss</span>
 <span class="sx">      )</span><span class="p">,</span>
       <span class="ss">yesno</span><span class="p">:</span> <span class="sx">%w(ja nein)</span>
+    <span class="p">)</span>
   <span class="k">end</span>
 
   <span class="c1"># Dizgi Arayüzü</span>
@@ -4760,8 +4766,8 @@ gibi, ekleyebiliyoruz.</p>
   <span class="k">module</span> <span class="nn">String</span>
     <span class="k">def</span> <span class="nf">ascii</span><span class="p">(</span><span class="n">code</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
       <span class="n">desc</span> <span class="o">=</span> <span class="no">LanguageUtils</span><span class="o">.</span><span class="n">language</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
-      <span class="k">return</span> <span class="nb">self</span> <span class="k">unless</span> <span class="n">desc</span><span class="o">.</span><span class="n">has_key?</span> <span class="ss">:chars</span>
-      <span class="nb">self</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="n">desc</span><span class="o">[</span><span class="ss">:re</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">desc</span><span class="o">[</span><span class="ss">:chars</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
+      <span class="k">return</span> <span class="nb">self</span> <span class="k">unless</span> <span class="n">desc</span><span class="o">.</span><span class="n">key?</span> <span class="ss">:chars</span>
+      <span class="nb">gsub</span><span class="p">(</span><span class="n">desc</span><span class="o">[</span><span class="ss">:re</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">desc</span><span class="o">[</span><span class="ss">:chars</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -4859,18 +4865,18 @@ gibi, ekleyebiliyoruz.</p>
 <span class="k">module</span> <span class="nn">Asciify</span>
   <span class="c1"># Modül Arayüzü</span>
 
-  <span class="no">Language</span> <span class="o">=</span> <span class="p">{}</span>
-  <span class="k">def</span> <span class="nc">Language</span><span class="o">.</span><span class="nf">[]</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+  <span class="no">LANGUAGE</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="k">def</span> <span class="nc">LANGUAGE</span><span class="o">.</span><span class="nf">[]</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
     <span class="n">desc</span> <span class="o">=</span> <span class="k">super</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">desc</span>
-      <span class="k">raise</span> <span class="s2">&quot;&#39;</span><span class="si">#{</span><span class="n">code</span><span class="si">}</span><span class="s2">&#39; geçerli bir dil kodu değil.  &quot;</span> <span class="o">+</span>
-            <span class="s2">&quot;Geçerli dil kodları </span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">sort</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">unless</span> <span class="n">desc</span>
+      <span class="nb">fail</span> <span class="s2">&quot;&#39;</span><span class="si">#{</span><span class="n">code</span><span class="si">}</span><span class="s2">&#39; geçerli bir dil kodu değil.  &quot;</span> <span class="o">+</span>
+           <span class="s2">&quot;Geçerli dil kodları </span><span class="si">#{</span><span class="n">keys</span><span class="o">.</span><span class="n">sort</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">end</span>
     <span class="n">desc</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">describe</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">ascii</span><span class="p">)</span>
-    <span class="n">desc</span> <span class="o">=</span> <span class="no">Language</span><span class="o">[</span><span class="n">code</span><span class="o">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">desc</span> <span class="o">=</span> <span class="no">LANGUAGE</span><span class="o">[</span><span class="n">code</span><span class="o">]</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">desc</span><span class="o">[</span><span class="ss">:ascii</span><span class="o">]</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[*</span><span class="n">ascii</span><span class="o">]</span>
     <span class="n">desc</span><span class="o">[</span><span class="ss">:re</span><span class="o">]</span>    <span class="o">=</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span> <span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="n">desc</span><span class="o">[</span><span class="ss">:ascii</span><span class="o">].</span><span class="n">keys</span><span class="o">.</span><span class="n">join</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span>
   <span class="k">end</span>
@@ -4903,9 +4909,9 @@ gibi, ekleyebiliyoruz.</p>
 
   <span class="c1"># Dizgi Arayüzü</span>
 
-  <span class="k">def</span> <span class="nf">ascii</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
-    <span class="n">desc</span> <span class="o">=</span> <span class="no">Language</span><span class="o">[</span><span class="n">code</span><span class="o">]</span>
-    <span class="nb">self</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="n">desc</span><span class="o">[</span><span class="ss">:re</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">desc</span><span class="o">[</span><span class="ss">:ascii</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
+  <span class="k">def</span> <span class="nf">ascii</span><span class="p">(</span><span class="n">code</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+    <span class="n">desc</span> <span class="o">=</span> <span class="no">LANGUAGE</span><span class="o">[</span><span class="n">code</span><span class="o">]</span>
+    <span class="nb">gsub</span><span class="p">(</span><span class="n">desc</span><span class="o">[</span><span class="ss">:re</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">desc</span><span class="o">[</span><span class="ss">:ascii</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="p">}</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -4914,9 +4920,9 @@ gibi, ekleyebiliyoruz.</p>
   <span class="kp">include</span> <span class="no">Asciifiable</span>
 <span class="k">end</span>
 
-<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
-  <span class="nb">puts</span> <span class="s2">&quot;şğüöçİı&quot;</span><span class="o">.</span><span class="n">ascii</span> <span class="ss">:tr</span>
-  <span class="nb">puts</span> <span class="s2">&quot;über straße&quot;</span><span class="o">.</span><span class="n">ascii</span> <span class="ss">:de</span>
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
+  <span class="nb">puts</span> <span class="s1">&#39;şğüöçİı&#39;</span><span class="o">.</span><span class="n">ascii</span> <span class="ss">:tr</span>
+  <span class="nb">puts</span> <span class="s1">&#39;über straße&#39;</span><span class="o">.</span><span class="n">ascii</span> <span class="ss">:de</span>
 <span class="k">end</span>
 </pre></div>
 </p></section>

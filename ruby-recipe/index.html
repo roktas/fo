@@ -2184,7 +2184,7 @@ div.slide {
     <span class="n">values</span> <span class="o">=</span> <span class="o">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">,</span> <span class="mi">789</span><span class="o">]</span>
 
     <span class="no">Hash</span><span class="o">[</span><span class="n">keys</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">]</span>
-    <span class="c1">#=&gt; {:x=&gt;123, :y=&gt;456, :z=&gt;789}</span>
+    <span class="c1">#=&gt; {x: 123, y: 456, z: 789}</span>
 </pre></div>
 </section>
             
@@ -2217,7 +2217,7 @@ div.slide {
             
             
             <section><p>S&ouml;zl&uuml;kten &ldquo;anahtar, de&#287;er&rdquo; &ccedil;iftleri dizisi &uuml;ret</p>
-<div class="highlight"><pre>    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+<div class="highlight"><pre>    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">age</span><span class="p">:</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">gender</span><span class="p">:</span> <span class="ss">:male</span> <span class="p">}</span>
     <span class="o">[*</span><span class="n">h</span><span class="o">]</span>
     <span class="c1">#=&gt; [[:name, &quot;Fred&quot;], [:age, 93], [:gender, :male]]</span>
 </pre></div>
@@ -2257,7 +2257,7 @@ div.slide {
     <span class="n">a</span><span class="o">.</span><span class="n">values_at</span><span class="p">(</span><span class="o">*</span><span class="n">required</span><span class="p">)</span>
     <span class="c1">#=&gt; [&quot;a&quot;, &quot;f&quot;, &quot;g&quot;]</span>
 
-    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">:gender</span> <span class="o">=&gt;</span> <span class="ss">:male</span> <span class="p">}</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="ss">age</span><span class="p">:</span> <span class="mi">93</span><span class="p">,</span> <span class="ss">gender</span><span class="p">:</span> <span class="ss">:male</span> <span class="p">}</span>
     <span class="n">required</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:age</span><span class="p">,</span> <span class="ss">:name</span><span class="o">]</span>
     <span class="n">h</span><span class="o">.</span><span class="n">values_at</span><span class="p">(</span><span class="o">*</span><span class="n">required</span><span class="p">)</span>
     <span class="c1">#=&gt; [ 93, &quot;Fred&quot; ]</span>
@@ -2412,14 +2412,10 @@ div.slide {
       <span class="nb">puts</span> <span class="n">h</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">,</span> <span class="n">h</span><span class="o">[</span><span class="ss">:age</span><span class="o">]</span>
     <span class="k">end</span>
 
-    <span class="n">dump</span><span class="p">(</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span><span class="p">)</span>
+    <span class="n">dump</span><span class="p">(</span><span class="nb">name</span><span class="p">:</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">age</span><span class="p">:</span> <span class="mi">93</span><span class="p">)</span>
 </pre></div>
 
 <p>Veya</p>
-<div class="highlight"><pre>    <span class="n">dump</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="mi">93</span>
-</pre></div>
-
-<p>En g&uuml;zeli! (Ruby 1.9.x notasyonu)</p>
 <div class="highlight"><pre>    <span class="n">dump</span> <span class="nb">name</span><span class="p">:</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="ss">age</span><span class="p">:</span> <span class="mi">93</span>
 </pre></div>
 </section>
@@ -2651,7 +2647,7 @@ div.slide {
             <section><p>Beti&#287;in hem program hem de mod&uuml;l olarak davranabilmesini sa&#287;la</p>
 <div class="highlight"><pre>    <span class="c1"># module</span>
 
-    <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+    <span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
       <span class="c1"># program</span>
     <span class="k">end</span>
 </pre></div>

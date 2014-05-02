@@ -7,7 +7,7 @@ module Turkish
       'ı' => 'I', 'i' => 'İ', 'ğ' => 'Ğ', 'ü' => 'Ü',
       'ö' => 'Ö', 'ç' => 'Ç', 'ş' => 'Ş'
     }
-    self.upcase.gsub Regexp.new("[#{chars.keys.join}]") { |c| c = chars[c] }
+    upcase.gsub Regexp.new("[#{chars.keys.join}]") { |c| chars[c] }
   end
 end
 

@@ -6,7 +6,7 @@ class Point
     @x, @y = x, y
   end
 
-  # FIXME Her nitelik için böyle okuyucu mu yazacağız?
+  # FIXME: Her nitelik için böyle okuyucu mu yazacağız?
   def x
     @x
   end
@@ -32,13 +32,13 @@ class Point
   end
 
   def isequal(other)
-    @x == other.x and @y == other.y
+    @x == other.x && @y == other.y
   end
 
   def move(x, y)
     @x += x
     @y += y
-    # FIXME Bu metod (şu noktada) ne döner?  Zararı?
+    # FIXME: Bu metod (şu noktada) ne döner?  Zararı?
   end
 
   def to_s

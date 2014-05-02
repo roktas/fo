@@ -19,20 +19,20 @@ class Point
   end
 
   def >=(other)
-    @x > other.x or @x == other.x
+    @x > other.x || @x == other.x
   end
 
   def <=(other)
-    @x < other.x or @x == other.x
+    @x < other.x || @x == other.x
   end
 
   def ==(other)
-    @x == other.x and @y == other.y
+    @x == other.x && @y == other.y
   end
 
-  def +(other = nil)
+  def +(other)
     other ||= origin
-    # XXX self.class → Point, ama sadece bu sınıfta!
+    # XXX: self.class → Point, ama sadece bu sınıfta!
     self.class.new @x + other.x, @y + other.y
   end
 
@@ -64,7 +64,7 @@ class Circle < Point
   attr_reader :r
 
   def initialize(x, y, r)
-    super x, y # FIXME DRY değil; neden x, y ayrıca geçiyor?
+    super x, y # FIXME: DRY değil; neden x, y ayrıca geçiyor?
     @r = r
   end
 
@@ -77,11 +77,11 @@ class Circle < Point
   end
 
   def to_s
-    # FIXME Neden x, y?  DRY değil
-    "#{@r}@(#{self.x},#{self.y})"
+    # FIXME: Neden x, y?  DRY değil
+    "#{@r}@(#{x},#{y})"
   end
 
-  # FIXME Point'te overload edilen bazı işleçler
+  # FIXME: Point'te overload edilen bazı işleçler
   # örneğin +, ==, çocuk sınıfta anlamlı değil.
 end
 

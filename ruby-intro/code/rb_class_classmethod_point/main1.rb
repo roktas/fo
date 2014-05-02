@@ -19,15 +19,15 @@ class Point
   end
 
   def >=(other)
-    @x > other.x or @x == other.x
+    @x > other.x || @x == other.x
   end
 
   def <=(other)
-    @x < other.x or @x == other.x
+    @x < other.x || @x == other.x
   end
 
   def ==(other)
-    @x == other.x and @y == other.y
+    @x == other.x || @y == other.y
   end
 
   def move(x, y)
@@ -42,10 +42,10 @@ class Point
 
   # Sınıf metodları
 
-  # XXX Sınırsız sayıda nokta topluyor
-  # FIXME Fakat toplamayı + ile yapsak?
+  # XXX: Sınırsız sayıda nokta topluyor
+  # FIXME: Fakat toplamayı + ile yapsak?
   def self.add(*points)
-    # XXX new metodunun alıcısı kim?  self
+    # XXX: new metodunun alıcısı kim?  self
     # self burada ne değer alır?  Point (yani sınıf)
     new points.map(&:x).sum, points.map(&:x).sum
   end
@@ -59,17 +59,17 @@ class Point
     Math.sqrt((here.x - there.x)**2 + (here.y - there.y)**2)
   end
 
-  # FIXME Sınıf metodlarını böyle her seferinde self. ile mi
+  # FIXME: Sınıf metodlarını böyle her seferinde self. ile mi
   # yazacağız.  Pek DRY değil.
 end
 
-# XXX Array sınıfına bir yama yapıyoruz.  Ruby'de Python'daki gibi
+# XXX: Array sınıfına bir yama yapıyoruz.  Ruby'de Python'daki gibi
 # hazır bir "sum" metodu yok, ama bunu yazmak çok kolay.
 class Array
   def sum
-    # XXX vektörden skalara dönüştürme ihtiyacı varsa
+    # XXX: vektörden skalara dönüştürme ihtiyacı varsa
     # inject'i hatırlayın
-    inject(nil) { |sum, x| sum ? sum + x : x }
+    reduce(nil) { |sum, x| sum ? sum + x : x }
   end
 end
 

@@ -19,20 +19,20 @@ class Point
   end
 
   def >=(other)
-    @x > other.x or @x == other.x
+    @x > other.x || @x == other.x
   end
 
   def <=(other)
-    @x < other.x or @x == other.x
+    @x < other.x || @x == other.x
   end
 
   def ==(other)
-    @x == other.x and @y == other.y
+    @x == other.x && @y == other.y
   end
 
   # + işlecini overload ederek sınırsız sayıda noktayı da
   # toplama olanağına kavuştuk.
-  def +(other = nil)
+  def +(other)
     # Nesne metodundan sınıf metodu (origin) nasıl çağrılır?
     # Point.origin olabilir ama DRY değil, cevap: self.class
     other ||= self.class.origin

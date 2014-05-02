@@ -19,15 +19,15 @@ class Point
   end
 
   def >=(other)
-    @x > other.x or @x == other.x
+    @x > other.x || @x == other.x
   end
 
   def <=(other)
-    @x < other.x or @x == other.x
+    @x < other.x || @x == other.x
   end
 
   def ==(other)
-    @x == other.x and @y == other.y
+    @x == other.x && @y == other.y
   end
 
   def move(x, y)
@@ -40,10 +40,10 @@ class Point
     "(#{@x},#{@y})"
   end
 
-  # XXX Artık DRY (Point yok)
-  # FIXME Sadece iki nokta topluyor, nokta sayısını sınırlamasak?
+  # XXX: Artık DRY (Point yok)
+  # FIXME: Sadece iki nokta topluyor, nokta sayısını sınırlamasak?
   def self.add(this, that)
-    self.new this.x + that.x, this.y + that.y # FIXME self'e gerek var mı?
+    new this.x + that.x, this.y + that.y # FIXME: self'e gerek var mı?
   end
 end
 

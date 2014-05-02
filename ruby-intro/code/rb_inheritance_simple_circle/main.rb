@@ -19,18 +19,18 @@ class Point
   end
 
   def >=(other)
-    @x > other.x or @x == other.x
+    @x > other.x || @x == other.x
   end
 
   def <=(other)
-    @x < other.x or @x == other.x
+    @x < other.x || @x == other.x
   end
 
   def ==(other)
-    @x == other.x and @y == other.y
+    @x == other.x && @y == other.y
   end
 
-  def +(other = nil)
+  def +(other)
     other ||= self.class.origin
     self.class.new @x + other.x, @y + other.y
   end
@@ -76,13 +76,13 @@ class Circle < Point
   end
 
   def to_s
-    # XXX Ooooo!  Artık DRY ama kara büyü :-/
+    # XXX: Ooooo!  Artık DRY ama kara büyü :-/
     "#{@r}@#{self.class.superclass.instance_method(:to_s).bind(self).call}"
   end
 
-  # XXX Anlamlı olmayan işleçler şuna benzer bir şey yapılabilir
+  # XXX: Anlamlı olmayan işleçler şuna benzer bir şey yapılabilir
   def +(*) # argümanlarla ilgilenmediğimizden * diyoruz
-    raise "+ işleci #{self.class} sınıfı için anlamlı değil"
+    fail "+ işleci #{self.class} sınıfı için anlamlı değil"
   end
 end
 

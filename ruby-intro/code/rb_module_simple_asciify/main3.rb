@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 module Ascii
-  # FIXME Türkçeye özel, ama modül ismi (Ascii) genel
+  # FIXME: Türkçeye özel, ama modül ismi (Ascii) genel
   CHARS = Hash[*%w(
     ı i
     ğ g
@@ -25,6 +25,6 @@ module Ascii
 end
 
 if __FILE__ == $PROGRAM_NAME
-  # FIXME Dizgi üzerinden çağrılsa?  "ŞĞÜÖÇöçğüıİ".ascii gibi
+  # FIXME: Dizgi üzerinden çağrılsa?  "ŞĞÜÖÇöçğüıİ".ascii gibi
   puts Ascii.turkish('ŞĞÜÖÇöçğüıİ')
 end

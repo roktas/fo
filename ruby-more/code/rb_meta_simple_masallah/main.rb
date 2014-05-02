@@ -30,7 +30,7 @@ class Fixnum
   end
 end
 
-if __FILE__ == $0
+if __FILE__ == $PROGRAM_NAME
   1.kez gördüm
   2.sefer gittim
   3.defa evet

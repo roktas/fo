@@ -353,7 +353,7 @@ Veya daha şık olanı:
 Fakat anahtarları (çoğu zaman) şöyle yazıyoruz (bazen değerler de öyle):
 
         !ruby
-        person = { :name => "Fred", :age => 20, :gender => :male }
+        person = { name: "Fred", age: 20, gender: :male }
 
 -   `"name"` bir dizgi (`String`)
 
@@ -370,12 +370,12 @@ TODO
 #   Sözlükler
 
         !ruby
-        person = { :name => "Fred", :age => 20, :gender => :male }
+        person = { name: "Fred", age: 20, gender: :male }
 
         puts person[:age]       #=> 20
-        person.has_key? :age    #=> true
+        person.key? :age    #=> true
         puts person[:weight]    #=> nil
-        person.has_key? :weight #=> false
+        person.key? :weight #=> false
 
         person.each do |key, value|
         puts "#{key}: #{value}"
@@ -405,7 +405,7 @@ TODO
         !ruby
         File.open(filename) do |f|
           f.each_with_index do |line, no|
-              puts "#{no}: #{line}"
+            puts "#{no}: #{line}"
           end
         end
 

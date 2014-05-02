@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 class Point
-  # XXX Her nitelik için okuyucu yazmamız gerekmiyor
+  # XXX: Her nitelik için okuyucu yazmamız gerekmiyor
   attr_reader :x, :y
 
   def initialize(x, y)
@@ -26,16 +26,16 @@ class Point
     @y < other.y
   end
 
-  # FIXME foo.equal?(bar) yerine foo == bar yazılamaz mı?
+  # FIXME: foo.equal?(bar) yerine foo == bar yazılamaz mı?
 
   def equal?(other)
-    @x == other.x and @y == other.y
+    @x == other.x && @y == other.y
   end
 
   def move(x, y)
     @x += x
     @y += y
-    # XXX Taşımadan sonra nesnenin kendisini dön ki
+    # XXX: Taşımadan sonra nesnenin kendisini dön ki
     # çağıran ayrı bir atama yapma zorunda kalmasın
     self
   end

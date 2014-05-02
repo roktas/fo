@@ -19,18 +19,18 @@ class Point
   end
 
   def >=(other)
-    @x > other.x or @x == other.x
+    @x > other.x || @x == other.x
   end
 
   def <=(other)
-    @x < other.x or @x == other.x
+    @x < other.x || @x == other.x
   end
 
   def ==(other)
-    @x == other.x and @y == other.y
+    @x == other.x && @y == other.y
   end
 
-  def +(other = nil)
+  def +(other)
     other ||= origin
     self.class.new @x + other.x, @y + other.y
   end
@@ -63,7 +63,7 @@ class Circle < Point
   attr_reader :r
 
   def initialize(*coords, r)
-    super(*coords) # XXX z,y yok; bu kısım artık DRY
+    super(*coords) # XXX: z,y yok; bu kısım artık DRY
     @r = r
   end
 
@@ -75,13 +75,13 @@ class Circle < Point
     Math::PI * @r**2
   end
 
-  # FIXME DRY ama ekstra satır
+  # FIXME: DRY ama ekstra satır
   alias_method :super_to_s, :to_s
   def to_s
     "#{@r}@#{super_to_s}"
   end
 
-  # FIXME Point'te overload edilen bazı işleçler
+  # FIXME: Point'te overload edilen bazı işleçler
   # örneğin +, ==, çocuk sınıfta anlamlı değil.
 end
 

@@ -4,32 +4,32 @@
 module LanguageUtils
   # Modül Arayüzü
 
-  # FIXME Basit bir sözlük yerine ayrı bir nesne (ör. Struct) yapsak?
-  Language = {}
-  def Language.[](code)
+  # FIXME: Basit bir sözlük yerine ayrı bir nesne (ör. Struct) yapsak?
+  LANGUAGE = {}
+  def LANGUAGE.[](code)
     desc = super
     unless desc
-      raise "'#{code}' geçerli bir dil kodu değil.  " +
-            "Geçerli dil kodları #{self.keys.sort}"
+      fail "'#{code}' geçerli bir dil kodu değil.  " +
+           "Geçerli dil kodları #{keys.sort}"
     end
     desc
   end
 
-  # FIXME Kod eşdeğerlerini yönetmiyor, ör. :en == :us
+  # FIXME: Kod eşdeğerlerini yönetmiyor, ör. :en == :us
   def self.describe_language(code, desc)
-    d = Language[code] = {}
+    d = LANGUAGE[code] = {}
     d.merge! desc
-    if d.has_key? :chars
+    if d.key? :chars
       d[:chars] = Hash[*desc[:chars]]
       d[:re] = Regexp.new '[' + d[:chars].keys.join + ']'
     end
   end
 
   def self.language(code = nil)
-    code ? Language[code] : @language
+    code ? LANGUAGE[code] : @language
   end
   def self.language=(code)
-    @language = Language[code]
+    @language = LANGUAGE[code]
   end
 
   def self.yes(code = nil)
@@ -42,12 +42,15 @@ module LanguageUtils
   # Diller
 
   module English
-    LanguageUtils.describe_language :en,
+    LanguageUtils.describe_language(
+      :en,
       yesno: %w(yes no)
+    )
   end
 
   module Turkish
-    LanguageUtils.describe_language :tr,
+    LanguageUtils.describe_language(
+      :tr,
       chars: %w(
         ı i
         ğ g
@@ -63,14 +66,16 @@ module LanguageUtils
         Ç C
       ),
       yesno: %w(evet hayır)
+    )
 
-      def self.spesific_util
-        puts "#{self}: bu dile özgü bir metod"
-      end
+    def self.spesific_util
+      puts "#{self}: bu dile özgü bir metod"
+    end
   end
 
   module German
-    LanguageUtils.describe_language :de,
+    LanguageUtils.describe_language(
+      :de,
       chars: %w(
         ä a
         Ä A
@@ -82,6 +87,7 @@ module LanguageUtils
         ß ss
       ),
       yesno: %w(ja nein)
+    )
   end
 
   # Dizgi Arayüzü
@@ -89,8 +95,8 @@ module LanguageUtils
   module String
     def ascii(code = nil)
       desc = LanguageUtils.language(code)
-      return self unless desc.has_key? :chars
-      self.gsub(desc[:re]) { |c| desc[:chars][c] }
+      return self unless desc.key? :chars
+      gsub(desc[:re]) { |c| desc[:chars][c] }
     end
   end
 

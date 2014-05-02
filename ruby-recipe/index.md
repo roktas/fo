@@ -129,14 +129,14 @@ Eşboyutlu iki diziden sözlük üret
         values = [123, 456, 789]
 
         Hash[keys.zip(values)]
-        #=> {:x=>123, :y=>456, :z=>789}
+        #=> {x: 123, y: 456, z: 789}
 
 #   Sözlükten dizi üretimi
 
 Sözlükten "anahtar, değer" çiftleri dizisi üret
 
         !ruby
-        h = { :name => "Fred", :age => 93, :gender => :male }
+        h = { name: "Fred", age: 93, gender: :male }
         [*h]
         #=> [[:name, "Fred"], [:age, 93], [:gender, :male]]
 
@@ -150,7 +150,7 @@ Dizi veya sözlükten değerler seç
         a.values_at(*required)
         #=> ["a", "f", "g"]
 
-        h = { :name => "Fred", :age => 93, :gender => :male }
+        h = { name: "Fred", age: 93, gender: :male }
         required = [:age, :name]
         h.values_at(*required)
         #=> [ 93, "Fred" ]
@@ -201,14 +201,9 @@ Metodlarda son argüman sözlük ise kıvrık parantez gerekmez
           puts h[:name], h[:age]
         end
 
-        dump(:name => 'Fred', :age => 93)
+        dump(name: 'Fred', age: 93)
 
 Veya
-
-        !ruby
-        dump :name => 'Fred', :age => 93
-
-En güzeli! (Ruby 1.9.x notasyonu)
 
         !ruby
         dump name: 'Fred', age: 93
@@ -289,7 +284,7 @@ Betiğin hem program hem de modül olarak davranabilmesini sağla
         !ruby
         # module
 
-        if __FILE__ == $0
+        if __FILE__ == $PROGRAM_NAME
           # program
         end
 

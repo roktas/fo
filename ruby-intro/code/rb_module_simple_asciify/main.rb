@@ -4,18 +4,18 @@
 module Asciify
   # Modül Arayüzü
 
-  Language = {}
-  def Language.[](code)
+  LANGUAGE = {}
+  def LANGUAGE.[](code)
     desc = super
-    if not desc
-      raise "'#{code}' geçerli bir dil kodu değil.  " +
-            "Geçerli dil kodları #{self.keys.sort}"
+    unless desc
+      fail "'#{code}' geçerli bir dil kodu değil.  " +
+           "Geçerli dil kodları #{keys.sort}"
     end
     desc
   end
 
   def self.describe(code, ascii)
-    desc = Language[code] = {}
+    desc = LANGUAGE[code] = {}
     desc[:ascii] = Hash[*ascii]
     desc[:re]    = Regexp.new '[' + desc[:ascii].keys.join + ']'
   end
@@ -48,9 +48,9 @@ module Asciify
 
   # Dizgi Arayüzü
 
-  def ascii(code=nil)
-    desc = Language[code]
-    self.gsub(desc[:re]) { |c| desc[:ascii][c] }
+  def ascii(code = nil)
+    desc = LANGUAGE[code]
+    gsub(desc[:re]) { |c| desc[:ascii][c] }
   end
 end
 
@@ -59,7 +59,7 @@ class String
   include Asciifiable
 end
 
-if __FILE__ == $0
-  puts "şğüöçİı".ascii :tr
-  puts "über straße".ascii :de
+if __FILE__ == $PROGRAM_NAME
+  puts 'şğüöçİı'.ascii :tr
+  puts 'über straße'.ascii :de
 end

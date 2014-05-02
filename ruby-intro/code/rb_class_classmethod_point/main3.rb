@@ -19,15 +19,15 @@ class Point
   end
 
   def >=(other)
-    @x > other.x or @x == other.x
+    @x > other.x || @x == other.x
   end
 
   def <=(other)
-    @x < other.x or @x == other.x
+    @x < other.x || @x == other.x
   end
 
   def ==(other)
-    @x == other.x and @y == other.y
+    @x == other.x && @y == other.y
   end
 
   def move(x, y)
@@ -42,7 +42,7 @@ class Point
 
   # Sınıf metodları
 
-  # FIXME Bu metodda geçen Point DRY değil
+  # FIXME: Bu metodda geçen Point DRY değil
   def Point.add(this, that)
     Point.new this.x + that.x, this.y + that.y # Point'e gerek var mı?
   end
