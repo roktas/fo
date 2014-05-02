@@ -126,7 +126,7 @@ Etkili bir bilgi aktarım aracı
 
 -   Resmi depolardaki `python-landslide` paketini **kurmayın**
 
--   Landslide kurulumunu kontrol et
+-   Landslide kurulumunu kontrol et (versiyon farklı olabilir)
 
         !sh
         $ landslide --version
