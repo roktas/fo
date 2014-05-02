@@ -31,21 +31,21 @@ DEFAULTS  = {
 
 class Hash
   def stringify
-    inject({}) do |options, (key, value)|
+    reduce({}) do |options, (key, value)|
       options[key.to_s] = value.to_s
       options
     end
   end
 
   def symbolize
-    self.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+    each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
   end
 end
 
 class String
   # http://stackoverflow.com/a/5638187
   def unindent
-    gsub(/^#{self[/\A\s*/]}/, '')
+    gsub(%r(^#{self[/\A\s*/]}), '')
   end
 end
 
@@ -255,9 +255,9 @@ def compile(item)
   end
 
   run(*cmdline) do |ok, response, error|
-    if not ok
+    unless ok
       rm_f item[:destination]
-      $stderr.puts red("landslide hatası: %s" % error)
+      $stderr.puts red('landslide hatası: %s' % error)
       abort
     end
   end
@@ -266,8 +266,8 @@ end
 # Yeni kurulumlarda bir ayar dosyası oluştur.
 unless File.exist? PARAMFILE
   $stderr.puts(
-    "Muhtemelen bu bir yeni kurulum.",
-    "Ayar dosyası bulunamadı; öntanımlı bir dosya oluşturuluyor."
+    'Muhtemelen bu bir yeni kurulum.',
+    'Ayar dosyası bulunamadı; öntanımlı bir dosya oluşturuluyor.'
   )
   File.open(PARAMFILE, 'w') do |f|
     f.write(DEFAULTS.stringify.to_yaml)
@@ -295,8 +295,8 @@ end
 if  File.exist? Param[:landslide]
   unless %x(#{Param[:landslide]} --version 2>/dev/null).match(/patched/)
     $stderr.puts(
-      red("Sisteminizde hatalı bir landslide sürümü kurulu."),
-      red("Lütfen python-landslide-patched paketinin son sürümünü kurun.")
+      red('Sisteminizde hatalı bir landslide sürümü kurulu.'),
+      red('Lütfen python-landslide-patched paketinin son sürümünü kurun.')
     )
     abort
   end
@@ -349,7 +349,7 @@ desc 'Folyoları derle.'
 task :build => destinations
 CLEAN.include destinations
 
-file 'index.html'=> [PARAMFILE, Param[:indextemplate], *destinations] do
+file 'index.html' => [PARAMFILE, Param[:indextemplate], *destinations] do
   $stderr.puts green('index')
 
   Param[:items] = index(Items)
@@ -362,7 +362,7 @@ task :compile, :path do |t, args|
   if args[:path]
     compile(itemize(getpath(args[:path])))
   else
-    $stderr.puts red("Kullanım: rake compile[<dosya yolu>]")
+    $stderr.puts red('Kullanım: rake compile[<dosya yolu>]')
     abort
   end
 end
@@ -389,7 +389,7 @@ desc 'Yeni folyo.'
 task :new do
   # Bu görevde highline kullanıyoruz.
   if highline_not_installed
-    $stderr.puts "Lütfen highline gem paketini kurun."
+    $stderr.puts 'Lütfen highline gem paketini kurun.'
     abort
   end
 
@@ -403,7 +403,7 @@ task :new do
   max = Param[:maxtitlelength] || 24
 
   loop do
-    ans = ask("Başlık? [konuyu özetleyen birkaç kelime girin] ")
+    ans = ask('Başlık? [konuyu özetleyen birkaç kelime girin] ')
 
     break if ans.nil? || ans.strip.empty?
 
@@ -416,12 +416,12 @@ task :new do
     if Dir.exists?(label)
       $stderr.puts red("#{label} isminde bir dizin zaten var.")
     elsif max >= 0 && label.length > max
-      $stderr.puts red("Daha kısa bir başlık kullanmalısınız.")
+      $stderr.puts red('Daha kısa bir başlık kullanmalısınız.')
     else
       break
     end
 
-    $stderr.puts red("Lütfen tekrar deneyin.")
+    $stderr.puts red('Lütfen tekrar deneyin.')
   end
 
   if label
@@ -451,7 +451,7 @@ task :new do
     mkdir(label)
 
     source = "#{label}/index.md"
-    destination = source.ext(".html")
+    destination = source.ext('.html')
 
     touch destination
     Param[:foliotitle] = title
@@ -462,15 +462,15 @@ task :new do
   end
 end
 
-desc "Güncelle."
+desc 'Güncelle.'
 task :update do
   if %x(git config remote.upstream.url).chomp.empty? &&
      %x(git config remote.origin.url).chomp !~ %r{[:/]roktas/fo.git}
-    sh "git remote add upstream git://github.com/roktas/fo.git"
-    sh "git pull --no-edit upstream master"
+    sh 'git remote add upstream git://github.com/roktas/fo.git'
+    sh 'git pull --no-edit upstream master'
   end
   sh "sudo sh -c 'apt-get update && apt-get install python-landslide-patched'"
-  Rake::Task["default"].invoke
+  Rake::Task['default'].invoke
 end
 
 task :default => [:build, :index]
