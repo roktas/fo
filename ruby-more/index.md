@@ -240,7 +240,7 @@ Ruby'de nesne değişkenleri miras almadan etkilenmez.
 
 #   Meta Programlama
 
-.code: code/rb_meta_simple_masallah/main.rb /if.+FILE.+==.+0/+1 /end/-1
+.code: code/rb_meta_simple_masallah/main.rb /if.+FILE.+==.+(0|PROGRAM_NAME)/+1 /end/-1
 
 #   Meta Programlama
 
