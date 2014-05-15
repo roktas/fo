@@ -1805,7 +1805,7 @@ div.slide {
             
             <section><p>Recai Okta&#351; <code>&lt;roktas@bil.omu.edu.tr&gt;</code></p>
 <p><a href="http://roktas.me/">http://roktas.me/</a></p>
-<p>Mart 2012</p></section>
+<p>May&#305;s 2014</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1821,7 +1821,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/5
+              1/8
             </aside>
           </footer>
         </div>
@@ -1902,7 +1902,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              2/5
+              2/8
             </aside>
           </footer>
         </div>
@@ -1989,7 +1989,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              3/5
+              3/8
             </aside>
           </footer>
         </div>
@@ -2203,7 +2203,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              4/5
+              4/8
             </aside>
           </footer>
         </div>
@@ -2445,7 +2445,343 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              5/5
+              5/8
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: os-concurrency/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Pthread - Yar&#305;&#351; Durumu</h1></header>
+            
+            
+            <section><p><div class="highlight"><pre><span class="cm">/*</span>
+<span class="cm"> * CS170: race1.c</span>
+<span class="cm"> * adapted from code by Jim Plank</span>
+<span class="cm"> */</span>
+
+<span class="cp">#include &lt;unistd.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;pthread.h&gt;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">iterations</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Thread_struct</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="o">*</span><span class="nf">infloop</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+        <span class="n">Thread_struct</span> <span class="o">*</span><span class="n">t</span><span class="p">;</span>
+
+        <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">Thread_struct</span> <span class="o">*</span><span class="p">)</span> <span class="n">x</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">iterations</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">t</span><span class="o">-&gt;</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="o">+</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">t</span><span class="o">-&gt;</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Thread %d: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">,</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">s</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">pthread_t</span> <span class="o">*</span><span class="n">tid</span><span class="p">;</span>
+        <span class="n">Thread_struct</span> <span class="o">*</span><span class="n">t</span><span class="p">;</span>
+        <span class="kt">void</span> <span class="o">*</span><span class="n">retval</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nthreads</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">iterations</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;usage: race nthreads stringsize iterations</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">nthreads</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+        <span class="n">iterations</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+
+        <span class="n">tid</span> <span class="o">=</span> <span class="p">(</span><span class="kt">pthread_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">pthread_t</span><span class="p">)</span> <span class="o">*</span> <span class="n">nthreads</span><span class="p">);</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">Thread_struct</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Thread_struct</span><span class="p">)</span> <span class="o">*</span> <span class="n">nthreads</span><span class="p">);</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="o">*</span> <span class="n">size</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nthreads</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">iterations</span> <span class="o">=</span> <span class="n">iterations</span><span class="p">;</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+                <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">infloop</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nthreads</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">pthread_join</span><span class="p">(</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">retval</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="os-concurrency/index.md">os-concurrency/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/8
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: os-concurrency/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Pthread - Yar&#305;&#351; Durumu</h1></header>
+            
+            
+            <section><p><div class="highlight"><pre><span class="cm">/*</span>
+<span class="cm"> * CS170: race2.c</span>
+<span class="cm"> * adapted from code by Jim Plank</span>
+<span class="cm"> */</span>
+
+<span class="cp">#include &lt;unistd.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;pthread.h&gt;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">iterations</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Thread_struct</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="o">*</span><span class="nf">infloop</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
+        <span class="n">Thread_struct</span> <span class="o">*</span><span class="n">t</span><span class="p">;</span>
+
+        <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">Thread_struct</span> <span class="o">*</span><span class="p">)</span> <span class="n">x</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">iterations</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">t</span><span class="o">-&gt;</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="o">+</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
+                        <span class="cm">/* needed because machines are so darn fast */</span>
+                        <span class="k">for</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">80000</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">);</span>
+                        <span class="cm">/*</span>
+<span class="cm">                         * alternatively remove loop and use something like:</span>
+<span class="cm">                         *</span>
+<span class="cm">                         *      $ ./main 2 50 200000 | grep &#39;AB&#39;</span>
+<span class="cm">                         */</span>
+                <span class="p">}</span>
+                <span class="n">t</span><span class="o">-&gt;</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Thread %d: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">,</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">s</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">pthread_t</span> <span class="o">*</span><span class="n">tid</span><span class="p">;</span>
+        <span class="n">Thread_struct</span> <span class="o">*</span><span class="n">t</span><span class="p">;</span>
+        <span class="kt">void</span> <span class="o">*</span><span class="n">retval</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nthreads</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">iterations</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;usage: race nthreads stringsize iterations</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">nthreads</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+        <span class="n">iterations</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+
+        <span class="n">tid</span> <span class="o">=</span> <span class="p">(</span><span class="kt">pthread_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">pthread_t</span><span class="p">)</span> <span class="o">*</span> <span class="n">nthreads</span><span class="p">);</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">Thread_struct</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Thread_struct</span><span class="p">)</span> <span class="o">*</span> <span class="n">nthreads</span><span class="p">);</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="o">*</span> <span class="n">size</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nthreads</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">iterations</span> <span class="o">=</span> <span class="n">iterations</span><span class="p">;</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+                <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">infloop</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nthreads</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">pthread_join</span><span class="p">(</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">retval</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="os-concurrency/index.md">os-concurrency/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/8
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: os-concurrency/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Pthread - Yar&#305;&#351; Durumu</h1></header>
+            
+            
+            <section><p><div class="highlight"><pre><span class="cm">/*</span>
+<span class="cm"> * CS170: race3.c -- fixes race conditions</span>
+<span class="cm"> *</span>
+<span class="cm"> * adapted from code by Jim Plank</span>
+<span class="cm"> */</span>
+<span class="cp">#include &lt;unistd.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;pthread.h&gt;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span>
+<span class="p">{</span>
+        <span class="kt">pthread_mutex_t</span> <span class="o">*</span><span class="n">lock</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">iterations</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Thread_struct</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="o">*</span><span class="nf">infloop</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
+        <span class="n">Thread_struct</span> <span class="o">*</span><span class="n">t</span><span class="p">;</span>
+
+        <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">Thread_struct</span> <span class="o">*</span><span class="p">)</span> <span class="n">x</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">iterations</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">);</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">t</span><span class="o">-&gt;</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="o">+</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
+                        <span class="k">for</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">80000</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">);</span>       <span class="cm">/* delay loop */</span>
+                <span class="p">}</span>
+                <span class="n">t</span><span class="o">-&gt;</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Thread %d: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">,</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">s</span><span class="p">);</span>
+                <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">pthread_mutex_t</span> <span class="n">lock</span><span class="p">;</span>
+        <span class="kt">pthread_t</span> <span class="o">*</span><span class="n">tid</span><span class="p">;</span>
+        <span class="kt">pthread_attr_t</span> <span class="o">*</span><span class="n">attr</span><span class="p">;</span>
+        <span class="n">Thread_struct</span> <span class="o">*</span><span class="n">t</span><span class="p">;</span>
+        <span class="kt">void</span> <span class="o">*</span><span class="n">retval</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nthreads</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">iterations</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;usage: race nthreads stringsize iterations</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+                <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lock</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+        <span class="n">nthreads</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+        <span class="n">iterations</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+
+        <span class="n">tid</span> <span class="o">=</span> <span class="p">(</span><span class="kt">pthread_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">pthread_t</span><span class="p">)</span> <span class="o">*</span> <span class="n">nthreads</span><span class="p">);</span>
+        <span class="n">attr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">pthread_attr_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">pthread_attr_t</span><span class="p">)</span> <span class="o">*</span> <span class="n">nthreads</span><span class="p">);</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">Thread_struct</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Thread_struct</span><span class="p">)</span> <span class="o">*</span> <span class="n">nthreads</span><span class="p">);</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="o">*</span> <span class="n">size</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nthreads</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">iterations</span> <span class="o">=</span> <span class="n">iterations</span><span class="p">;</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">lock</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lock</span><span class="p">;</span>
+                <span class="n">pthread_attr_init</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+                <span class="n">pthread_attr_setscope</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">PTHREAD_SCOPE_SYSTEM</span><span class="p">);</span>
+                <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">infloop</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nthreads</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">pthread_join</span><span class="p">(</span><span class="n">tid</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">retval</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="os-concurrency/index.md">os-concurrency/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/8
             </aside>
           </footer>
         </div>
@@ -2486,6 +2822,24 @@ div.slide {
       <tr id="toc-row-5">
         <th><a href="#slide5">Pthread - Nokta &Ccedil;arp&#305;m&#305;</a></th>
         <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Pthread - Yar&#305;&#351; Durumu</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Pthread - Yar&#305;&#351; Durumu</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Pthread - Yar&#305;&#351; Durumu</a></th>
+        <td><a href="#slide8">8</a></td>
       </tr>
       
       
