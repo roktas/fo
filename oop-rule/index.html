@@ -1821,7 +1821,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              1/21
+              1/22
             </aside>
           </footer>
         </div>
@@ -1851,7 +1851,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              2/21
+              2/22
             </aside>
           </footer>
         </div>
@@ -1892,7 +1892,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              3/21
+              3/22
             </aside>
           </footer>
         </div>
@@ -1925,7 +1925,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              4/21
+              4/22
             </aside>
           </footer>
         </div>
@@ -1973,7 +1973,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              5/21
+              5/22
             </aside>
           </footer>
         </div>
@@ -2003,7 +2003,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              6/21
+              6/22
             </aside>
           </footer>
         </div>
@@ -2061,7 +2061,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              7/21
+              7/22
             </aside>
           </footer>
         </div>
@@ -2105,7 +2105,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              8/21
+              8/22
             </aside>
           </footer>
         </div>
@@ -2146,7 +2146,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              9/21
+              9/22
             </aside>
           </footer>
         </div>
@@ -2184,7 +2184,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              10/21
+              10/22
             </aside>
           </footer>
         </div>
@@ -2217,7 +2217,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              11/21
+              11/22
             </aside>
           </footer>
         </div>
@@ -2258,7 +2258,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              12/21
+              12/22
             </aside>
           </footer>
         </div>
@@ -2319,7 +2319,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              13/21
+              13/22
             </aside>
           </footer>
         </div>
@@ -2369,7 +2369,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              14/21
+              14/22
             </aside>
           </footer>
         </div>
@@ -2400,7 +2400,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              15/21
+              15/22
             </aside>
           </footer>
         </div>
@@ -2477,7 +2477,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              16/21
+              16/22
             </aside>
           </footer>
         </div>
@@ -2519,7 +2519,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              17/21
+              17/22
             </aside>
           </footer>
         </div>
@@ -2560,7 +2560,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              18/21
+              18/22
             </aside>
           </footer>
         </div>
@@ -2639,7 +2639,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              19/21
+              19/22
             </aside>
           </footer>
         </div>
@@ -2683,7 +2683,7 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              20/21
+              20/22
             </aside>
           </footer>
         </div>
@@ -2766,7 +2766,179 @@ div.slide {
             </aside>
             
             <aside class="page_number">
-              21/21
+              21/22
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: oop-rule/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Oyun Kartlar&#305;</h1></header>
+            
+            
+            <section><p><div class="highlight"><pre><span class="c1">#!/usr/bin/ruby</span>
+<span class="c1"># encoding: utf-8</span>
+<span class="c1">#</span>
+<span class="c1"># Kart denemeleri</span>
+<span class="c1">#</span>
+<span class="c1"># Bu programı çalıştıracağınız konsolda kullanılan sabit genişlikli</span>
+<span class="c1"># fontlar http://en.wikipedia.org/wiki/Playing_cards_in_Unicode</span>
+<span class="c1"># şekillerini desteklemelidir.  Örneğin Terminus fontunda (19/x&#39;in öntanımlı</span>
+<span class="c1"># fontu) bu destek **yoktur**, fakat GNOME uçbirimi ile gelen öntanımlı</span>
+<span class="c1"># font bu şekilleri destekler.</span>
+
+<span class="nb">require</span> <span class="s1">&#39;forwardable&#39;</span>
+
+<span class="c1"># Oyun kartları</span>
+<span class="k">module</span> <span class="nn">Cards</span>
+  <span class="no">SUITES</span> <span class="o">=</span> <span class="sx">%w(club diamond heart spade)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:to_sym</span><span class="p">)</span>
+  <span class="no">RANKS</span>  <span class="o">=</span> <span class="sx">%w(1 2 3 4 5 6 7 8 9 j q k)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:to_sym</span><span class="p">)</span>
+  <span class="no">GLYPH</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="ss">s1</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0a1}&quot;</span><span class="p">,</span> <span class="ss">h1</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0b1}&quot;</span><span class="p">,</span> <span class="ss">d1</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0c1}&quot;</span><span class="p">,</span> <span class="ss">c1</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0d1}&quot;</span><span class="p">,</span>
+    <span class="ss">s2</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0a2}&quot;</span><span class="p">,</span> <span class="ss">h2</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0b2}&quot;</span><span class="p">,</span> <span class="ss">d2</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0c2}&quot;</span><span class="p">,</span> <span class="ss">c2</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0d2}&quot;</span><span class="p">,</span>
+    <span class="ss">s3</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0a3}&quot;</span><span class="p">,</span> <span class="ss">h3</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0b3}&quot;</span><span class="p">,</span> <span class="ss">d3</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0c3}&quot;</span><span class="p">,</span> <span class="ss">c3</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0d3}&quot;</span><span class="p">,</span>
+    <span class="ss">s4</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0a4}&quot;</span><span class="p">,</span> <span class="ss">h4</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0b4}&quot;</span><span class="p">,</span> <span class="ss">d4</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0c4}&quot;</span><span class="p">,</span> <span class="ss">c4</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0d4}&quot;</span><span class="p">,</span>
+    <span class="ss">s5</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0a5}&quot;</span><span class="p">,</span> <span class="ss">h5</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0b5}&quot;</span><span class="p">,</span> <span class="ss">d5</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0c5}&quot;</span><span class="p">,</span> <span class="ss">c5</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0d5}&quot;</span><span class="p">,</span>
+    <span class="ss">s6</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0a6}&quot;</span><span class="p">,</span> <span class="ss">h6</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0b6}&quot;</span><span class="p">,</span> <span class="ss">d6</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0c6}&quot;</span><span class="p">,</span> <span class="ss">c6</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0d6}&quot;</span><span class="p">,</span>
+    <span class="ss">s7</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0a7}&quot;</span><span class="p">,</span> <span class="ss">h7</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0b7}&quot;</span><span class="p">,</span> <span class="ss">d7</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0c7}&quot;</span><span class="p">,</span> <span class="ss">c7</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0d7}&quot;</span><span class="p">,</span>
+    <span class="ss">s8</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0a8}&quot;</span><span class="p">,</span> <span class="ss">h8</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0b8}&quot;</span><span class="p">,</span> <span class="ss">d8</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0c8}&quot;</span><span class="p">,</span> <span class="ss">c8</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0d8}&quot;</span><span class="p">,</span>
+    <span class="ss">s9</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0a9}&quot;</span><span class="p">,</span> <span class="ss">h9</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0b9}&quot;</span><span class="p">,</span> <span class="ss">d9</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0c9}&quot;</span><span class="p">,</span> <span class="ss">c9</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0d9}&quot;</span><span class="p">,</span>
+    <span class="ss">s10</span><span class="p">:</span> <span class="s2">&quot;\u{1f0aa}&quot;</span><span class="p">,</span> <span class="ss">h10</span><span class="p">:</span> <span class="s2">&quot;\u{1f0ba}&quot;</span><span class="p">,</span> <span class="ss">d10</span><span class="p">:</span> <span class="s2">&quot;\u{1f0ca}&quot;</span><span class="p">,</span> <span class="ss">c10</span><span class="p">:</span> <span class="s2">&quot;\u{1f0da}&quot;</span><span class="p">,</span>
+    <span class="ss">sj</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0ab}&quot;</span><span class="p">,</span> <span class="ss">hj</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0bb}&quot;</span><span class="p">,</span> <span class="ss">dj</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0cb}&quot;</span><span class="p">,</span> <span class="ss">cj</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0db}&quot;</span><span class="p">,</span>
+    <span class="ss">sq</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0ad}&quot;</span><span class="p">,</span> <span class="ss">hq</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0bd}&quot;</span><span class="p">,</span> <span class="ss">dq</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0cd}&quot;</span><span class="p">,</span> <span class="ss">cq</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0dd}&quot;</span><span class="p">,</span>
+    <span class="ss">sk</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0ae}&quot;</span><span class="p">,</span> <span class="ss">hk</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0be}&quot;</span><span class="p">,</span> <span class="ss">dk</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0ce}&quot;</span><span class="p">,</span> <span class="ss">ck</span><span class="p">:</span>  <span class="s2">&quot;\u{1f0de}&quot;</span>
+  <span class="p">}</span>
+
+  <span class="c1"># Kart</span>
+  <span class="k">class</span> <span class="nc">Card</span>
+    <span class="kp">include</span> <span class="no">Comparable</span>
+
+    <span class="kp">attr_reader</span> <span class="ss">:suite</span><span class="p">,</span> <span class="ss">:rank</span><span class="p">,</span> <span class="ss">:symbol</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">suite</span><span class="p">,</span> <span class="n">rank</span><span class="p">)</span>
+      <span class="vi">@suite</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">to_s</span><span class="o">.</span><span class="n">to_sym</span>
+      <span class="nb">fail</span> <span class="s2">&quot;Bad suite: </span><span class="si">#{</span><span class="n">suite</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">unless</span> <span class="no">SUITES</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="vi">@suite</span><span class="p">)</span>
+
+      <span class="vi">@rank</span> <span class="o">=</span> <span class="n">rank</span><span class="o">.</span><span class="n">to_s</span><span class="o">.</span><span class="n">to_sym</span>
+      <span class="nb">fail</span> <span class="s2">&quot;Bad rank: </span><span class="si">#{</span><span class="n">rank</span><span class="si">}</span><span class="s2">&quot;</span>   <span class="k">unless</span> <span class="no">RANKS</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="vi">@rank</span><span class="p">)</span>
+
+      <span class="vi">@symbol</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="vi">@suite</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="si">}#{</span><span class="vi">@rank</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">to_sym</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">rank_value</span>
+      <span class="no">RANKS</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="vi">@rank</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">suite_value</span>
+      <span class="no">SUITES</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="vi">@suite</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">to_i</span>
+      <span class="n">rank_value</span>
+    <span class="k">end</span>
+
+    <span class="c1"># Kartları Unicode karakterlerle görüntülüyoruz</span>
+    <span class="k">def</span> <span class="nf">to_s</span>
+      <span class="no">GLYPH</span><span class="o">[</span><span class="vi">@symbol</span><span class="o">]</span>
+    <span class="k">end</span>
+
+    <span class="c1"># Sıralamada önemli</span>
+    <span class="k">def</span> <span class="nf">&lt;=&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+      <span class="c1"># Bu metodun üzerine yazmak yerine suit değerleri değiştirilebilir</span>
+      <span class="k">if</span> <span class="n">suite_value</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">suite_value</span>
+        <span class="n">rank_value</span> <span class="o">&lt;=&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">rank_value</span>
+      <span class="k">else</span>
+        <span class="n">suite_value</span> <span class="o">&lt;=&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">suite_value</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Deste (deck) ve El (hand) için baz sınıf</span>
+  <span class="k">class</span> <span class="nc">Cards</span>
+    <span class="kp">extend</span> <span class="no">Forwardable</span>
+    <span class="c1"># Deste (deck) ve El (hand) temelde birer dizi (@cards)</span>
+    <span class="n">def_delegators</span> <span class="ss">:@cards</span><span class="p">,</span> <span class="ss">:push</span><span class="p">,</span> <span class="ss">:pop</span><span class="p">,</span> <span class="ss">:shuffle</span><span class="p">,</span>
+                   <span class="ss">:shuffle!</span><span class="p">,</span> <span class="ss">:sort</span><span class="p">,</span> <span class="ss">:sort?</span><span class="p">,</span> <span class="ss">:empty?</span><span class="p">,</span>
+                   <span class="ss">:size</span>
+
+    <span class="k">def</span> <span class="nf">to_s</span>
+      <span class="vi">@cards</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:to_s</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Deste</span>
+  <span class="k">class</span> <span class="nc">Deck</span> <span class="o">&lt;</span> <span class="no">Cards</span>
+    <span class="c1"># Kart şablonunu nesne oluşturulurken değil sınıf ilklenirken hazırla</span>
+    <span class="no">CARDS</span> <span class="o">=</span> <span class="no">SUITES</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="no">RANKS</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="no">Card</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">*</span><span class="n">c</span><span class="p">)</span> <span class="p">}</span>
+    <span class="c1"># Öntanımlı el kaç kart?</span>
+    <span class="no">DEFAULT_HAND_SIZE</span> <span class="o">=</span> <span class="mi">4</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span>
+      <span class="c1"># Klonlama kart şablonunu her nesnede hazırlamaktan daha iyi</span>
+      <span class="vi">@cards</span>  <span class="o">=</span> <span class="no">CARDS</span><span class="o">.</span><span class="n">clone</span>
+    <span class="k">end</span>
+
+    <span class="c1"># Desteden el çıkar</span>
+    <span class="k">def</span> <span class="nf">hand</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+      <span class="vi">@last_hand_size</span> <span class="o">=</span> <span class="n">n</span> <span class="k">if</span> <span class="n">n</span>
+      <span class="no">Hand</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="vi">@cards</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="vi">@last_hand_size</span> <span class="o">||</span> <span class="no">DEFAULT_HAND_SIZE</span><span class="p">))</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="c1"># El</span>
+  <span class="k">class</span> <span class="nc">Hand</span> <span class="o">&lt;</span> <span class="no">Cards</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span>
+      <span class="vi">@cards</span> <span class="o">=</span> <span class="n">cards</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">deal</span>
+      <span class="vi">@cards</span><span class="o">.</span><span class="n">pop</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># Test sürüşü</span>
+<span class="k">if</span> <span class="bp">__FILE__</span> <span class="o">==</span> <span class="vg">$PROGRAM_NAME</span>
+  <span class="kp">include</span> <span class="no">Cards</span>
+
+  <span class="c1"># Yeni deste</span>
+  <span class="n">d</span> <span class="o">=</span> <span class="no">Deck</span><span class="o">.</span><span class="n">new</span>
+  <span class="c1"># Desteyi karıştır</span>
+  <span class="n">d</span><span class="o">.</span><span class="n">shuffle!</span>
+  <span class="c1"># Desteden eller</span>
+  <span class="k">until</span> <span class="p">(</span><span class="n">h</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">hand</span><span class="p">)</span><span class="o">.</span><span class="n">empty?</span>
+    <span class="nb">puts</span> <span class="n">h</span>
+    <span class="c1"># Ellerden tek kart</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">deal</span><span class="p">)</span>
+      <span class="nb">puts</span> <span class="n">c</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Kart karşılaştır</span>
+  <span class="nb">puts</span> <span class="no">Card</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;spade&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="no">Card</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;diamond&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="oop-rule/index.md">oop-rule/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/22
             </aside>
           </footer>
         </div>
@@ -2903,6 +3075,12 @@ div.slide {
       <tr id="toc-row-21">
         <th><a href="#slide21">Delegasyon - <code>Forwardable</code> mod&uuml;l&uuml;</a></th>
         <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Oyun Kartlar&#305;</a></th>
+        <td><a href="#slide22">22</a></td>
       </tr>
       
       

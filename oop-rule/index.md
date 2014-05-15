@@ -169,3 +169,7 @@ Bu gerçeklemede bir sorun var
 #   Delegasyon - `Forwardable` modülü
 
 .code: code/rb_delegation_vehicle/main.rb
+
+#   Oyun Kartları
+
+.code: code/rb_delegation_card/main.rb
