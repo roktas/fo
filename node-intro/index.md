@@ -4,7 +4,7 @@
 
 Recai Oktaş `<roktas@bil.omu.edu.tr>`
 
-http://roktas.me/
+http://r.oktas.us/
 
 Mart 2012
 
@@ -208,7 +208,7 @@ Node'ı geliştirenler (Joyent) tarafından sunulan bir barındırma hizmeti.
 
 Bk. [Joyent dokümanları](http://wiki.joyent.com/display/node/Getting+Started+with+a+Node.js+Development+SmartMachine)
 
-Bk. [İlk Node uygulaması](http://roktas.me/FIXME)
+Bk. [İlk Node uygulaması](http://r.oktas.us/FIXME)
 
 #   Npm paketleri nasıl yönetiliyor?
 

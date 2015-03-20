@@ -1804,7 +1804,7 @@ div.slide {
             
             
             <section><p>Recai Okta&#351; <code>&lt;roktas@bil.omu.edu.tr&gt;</code></p>
-<p><a href="http://roktas.me/">http://roktas.me/</a></p>
+<p><a href="http://r.oktas.us/">http://r.oktas.us/</a></p>
 <p>Ekim 2012</p></section>
             
           </div>
@@ -2430,7 +2430,7 @@ k&#305;sayollar&#305; kullanabilirsiniz</p>
 <li>
 <p>Bir komutun &ccedil;&#305;kt&#305;s&#305;n&#305; (&ouml;rne&#287;in yard&#305;m almak amac&#305;yla) bir dosyaya kaydetmeyi
     tercih edin; nas&#305;l?</p>
-<div class="highlight"><pre><span class="nv">$ </span>KOMUT &gt;dosya 2&gt;&amp;1
+<div class="highlight"><pre><span class="nv">$ </span>KOMUT &gt;dosya 2&gt;<span class="p">&amp;</span>1
 </pre></div>
 
 </li>
@@ -3073,7 +3073,7 @@ bin etc lib
 <li>
 <p>Daha uzun (&ldquo;long&rdquo;) bilgi g&ouml;r&uuml;nt&uuml;le &rarr; <code>-l</code></p>
 <div class="highlight"><pre>~<span class="nv">$ </span>ls -l ~
-drwxr-xr-x 2 roktas roktas 4096 Ağu 12 00:37 bin
+drwxr-xr-x <span class="m">2</span> roktas roktas <span class="m">4096</span> Ağu <span class="m">12</span> 00:37 bin
 ...
 </pre></div>
 
@@ -3378,7 +3378,7 @@ drwxr-xr-x 2 roktas roktas 4096 Ağu 12 00:37 bin
             
             
             <section><div class="highlight"><pre>    ~<span class="nv">$ </span>ls -l
-    drwxr-xr-x 2 roktas roktas 4096 Ağu 12 00:37 bin
+    drwxr-xr-x <span class="m">2</span> roktas roktas <span class="m">4096</span> Ağu <span class="m">12</span> 00:37 bin
     ...
 </pre></div>
 
@@ -3443,7 +3443,7 @@ drwxr-xr-x 2 roktas roktas 4096 Ağu 12 00:37 bin
 <li>
 <p>Sadece dizin (&ldquo;directory&rdquo;) hakk&#305;nda bilgi &rarr; <code>-d</code></p>
 <div class="highlight"><pre>~<span class="nv">$ </span>ls -ld
-drwx------ 49 roktas roktas 4096 Eki  3 21:34 .
+drwx------ <span class="m">49</span> roktas roktas <span class="m">4096</span> Eki  <span class="m">3</span> 21:34 .
 </pre></div>
 
 </li>
@@ -3786,7 +3786,7 @@ tmp/foo/bar
             
             
             <section><div class="highlight"><pre>    <span class="nv">$ </span>ls foo.txt
-    -rw-r--r-- 1 roktas users 0 Eki  2 01:27 foo.txt
+    -rw-r--r-- <span class="m">1</span> roktas users <span class="m">0</span> Eki  <span class="m">2</span> 01:27 foo.txt
 </pre></div>
 
 <ul>
@@ -3883,7 +3883,7 @@ tmp/foo/bar
             
             
             <section><div class="highlight"><pre>    <span class="nv">$ </span>ls -l foo.txt
-    -rw-r--r-- 1 roktas users 0 Eki  2 01:27 foo.txt
+    -rw-r--r-- <span class="m">1</span> roktas users <span class="m">0</span> Eki  <span class="m">2</span> 01:27 foo.txt
 </pre></div>
 
 <ul>
@@ -4413,7 +4413,7 @@ tmp/foo/bar
 <li>
 <p>Bu y&ouml;ntemde <code>echo.rb</code>&lsquo;nin &ccedil;al&#305;&#351;t&#305;r&#305;labilir olmas&#305; gerekiyor mu?  Hay&#305;r</p>
 <div class="highlight"><pre><span class="nv">$ </span>ls -l echo.rb
--rw-r--r-- 1 roktas roktas 19 Eki  4 03:32 echo.rb
+-rw-r--r-- <span class="m">1</span> roktas roktas <span class="m">19</span> Eki  <span class="m">4</span> 03:32 echo.rb
 </pre></div>
 
 </li>
@@ -5506,7 +5506,7 @@ bar
 </li>
 <li>
 <p>&Ouml;rne&#287;in &ldquo;foo&rdquo; dizgisinde ka&ccedil; bayt var?</p>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> -n foo | wc -c
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> -n foo <span class="p">|</span> wc -c
 3
 </pre></div>
 
@@ -5547,7 +5547,7 @@ bar
             <header><h2>Borulama: <code>|</code></h2></header>
             
             
-            <section><div class="highlight"><pre>    <span class="nv">$ </span><span class="nb">echo</span> -n foo | wc -c
+            <section><div class="highlight"><pre>    <span class="nv">$ </span><span class="nb">echo</span> -n foo <span class="p">|</span> wc -c
     3
 </pre></div>
 
@@ -5693,7 +5693,7 @@ sat&#305;rlar&#305; g&ouml;r&uuml;nt&uuml;le</p>
 </li>
 <li>
 <p>&ldquo;Bu makinede kullan&#305;lan a&#287; ba&#287;da&#351;t&#305;c&#305;s&#305;n&#305;n (Ethernet) markas&#305; ne?&rdquo;</p>
-<div class="highlight"><pre><span class="nv">$ </span>lspci | grep thernet
+<div class="highlight"><pre><span class="nv">$ </span>lspci <span class="p">|</span> grep thernet
 02:00.0 Ethernet controller: Atheros Communications Inc...
 </pre></div>
 

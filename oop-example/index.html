@@ -1804,7 +1804,7 @@ div.slide {
             
             
             <section><p>Recai Okta&#351; <code>&lt;roktas@bil.omu.edu.tr&gt;</code></p>
-<p><a href="http://roktas.me/">http://roktas.me/</a></p>
+<p><a href="http://r.oktas.us/">http://r.oktas.us/</a></p>
 <p>May&#305;s 2014</p></section>
             
           </div>
@@ -1860,7 +1860,7 @@ div.slide {
 <span class="k">class</span> <span class="nc">Archive</span>
   <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
     <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-      <span class="k">unless</span> <span class="n">ext</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">extname</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>
+      <span class="k">unless</span> <span class="n">ext</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">extname</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span>
         <span class="vg">$stderr</span><span class="o">.</span><span class="n">puts</span> <span class="s1">&#39;Dosya türü belirlenemedi&#39;</span>
         <span class="nb">exit</span> <span class="mi">1</span>
       <span class="k">end</span>
@@ -1997,7 +1997,7 @@ div.slide {
 
   <span class="c1"># new yerine create metodu kullanıyoruz</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">create</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-    <span class="k">unless</span> <span class="n">ext</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">extname</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>
+    <span class="k">unless</span> <span class="n">ext</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">extname</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span>
       <span class="vg">$stderr</span><span class="o">.</span><span class="n">puts</span> <span class="s1">&#39;Dosya türü belirlenemedi&#39;</span>
       <span class="nb">exit</span> <span class="mi">1</span>
     <span class="k">end</span>

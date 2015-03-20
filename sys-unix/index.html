@@ -1804,7 +1804,7 @@ div.slide {
             
             
             <section><p>Recai Okta&#351; <code>&lt;roktas@bil.omu.edu.tr&gt;</code></p>
-<p><a href="http://roktas.me/">http://roktas.me/</a></p>
+<p><a href="http://r.oktas.us/">http://r.oktas.us/</a></p>
 <p>Ekim 2012</p></section>
             
           </div>
@@ -2438,7 +2438,7 @@ i&ccedil;inde tutuyoruz &rarr; <code>inode</code></p>
 <p><code>inode</code>&lsquo;lar da birer tamsay&#305;, &ouml;yle ki i&#351;letim sistemi bu tamsay&#305;lar&#305; anahtar
     (indis) olarak kullanarak inode veri yap&#305;s&#305;na eri&#351;ebiliyor</p>
 <div class="highlight"><pre><span class="nv">$ </span>ls -i /home/roktas/foo.xt
-2359898 foo.txt
+<span class="m">2359898</span> foo.txt
 </pre></div>
 
 </li>
@@ -2721,7 +2721,7 @@ tutulmaz!</strong></p>
 <li>
 <p>G&ouml;r&uuml;nt&uuml;lemek i&ccedil;in <code>-lu</code> se&ccedil;ene&#287;ini kullan&#305;n; &ouml;rnekte <code>atime</code> &rarr; <code>20:14</code></p>
 <div class="highlight"><pre><span class="nv">$ </span>ls -lu /home/roktas/foo.txt
--rw-r--r-- 1 roktas roktas 3 Eki  1 20:14 foo.txt
+-rw-r--r-- <span class="m">1</span> roktas roktas <span class="m">3</span> Eki  <span class="m">1</span> 20:14 foo.txt
 </pre></div>
 
 </li>
@@ -2775,7 +2775,7 @@ tutulmaz!</strong></p>
 <p>G&ouml;r&uuml;nt&uuml;lemek i&ccedil;in <code>-l</code> se&ccedil;ene&#287;ini kullanman&#305;z yeterli (<code>ls</code> &ouml;ntan&#305;ml&#305; olarak
     <code>mtime</code> zaman&#305;n&#305; g&ouml;r&uuml;nt&uuml;ler); &ouml;rnekte <code>mtime</code> &rarr; 20:20</p>
 <div class="highlight"><pre><span class="nv">$ </span>ls -l /home/roktas/foo.txt
--rw-r--r-- 1 roktas roktas 3 Eki  1 20:20 foo.txt
+-rw-r--r-- <span class="m">1</span> roktas roktas <span class="m">3</span> Eki  <span class="m">1</span> 20:20 foo.txt
 </pre></div>
 
 </li>
@@ -2823,7 +2823,7 @@ time de&#287;il)</p>
 <li>
 <p>G&ouml;r&uuml;nt&uuml;lemek i&ccedil;in <code>-lc</code> se&ccedil;ene&#287;ini kullan&#305;n; &ouml;rnekte <code>ctime</code> &rarr; <code>20:32</code></p>
 <div class="highlight"><pre><span class="nv">$ </span>ls -lc /home/roktas/foo.txt
--rwxr-xr-x 1 roktas roktas 3 Eki  1 20:32 foo.txt
+-rwxr-xr-x <span class="m">1</span> roktas roktas <span class="m">3</span> Eki  <span class="m">1</span> 20:32 foo.txt
 </pre></div>
 
 </li>
@@ -2918,10 +2918,10 @@ time de&#287;il)</p>
             <section><p>Ba&#351;vuru say&#305;s&#305; &rarr;  &#304;lgili dosya nesnesine referans veren d&uuml;&#287;&uuml;m say&#305;s&#305;</p>
 <div class="highlight"><pre>    <span class="nv">$ </span>mkdir /tmp/t
     <span class="nv">$ </span>ls -ld /tmp/t
-    drwxr-xr-x 2 roktas roktas 4096 Eki 11 00:17 /tmp/t
+    drwxr-xr-x <span class="m">2</span> roktas roktas <span class="m">4096</span> Eki <span class="m">11</span> 00:17 /tmp/t
     <span class="nv">$ </span>touch /tmp/t/f
     <span class="nv">$ </span>ls -l /tmp/t/f
-    -rw-r--r-- 1 roktas roktas 0 Eki 11 00:17 /tmp/t/f
+    -rw-r--r-- <span class="m">1</span> roktas roktas <span class="m">0</span> Eki <span class="m">11</span> 00:17 /tmp/t/f
 </pre></div>
 
 <ul>
@@ -2968,10 +2968,10 @@ time de&#287;il)</p>
             
             
             <section><div class="highlight"><pre>    <span class="nv">$ </span>ls -ld /tmp/t
-    drwxr-xr-x 2 roktas roktas 4096 Eki 11 00:17 /tmp/t
+    drwxr-xr-x <span class="m">2</span> roktas roktas <span class="m">4096</span> Eki <span class="m">11</span> 00:17 /tmp/t
     <span class="nv">$ </span>mkdir /tmp/t/u
     <span class="nv">$ </span>ls -ld /tmp/t
-    drwxr-xr-x 3 roktas roktas 4096 Eki 11 00:17 /tmp/t
+    drwxr-xr-x <span class="m">3</span> roktas roktas <span class="m">4096</span> Eki <span class="m">11</span> 00:17 /tmp/t
 </pre></div>
 
 <ul>
@@ -3065,14 +3065,14 @@ time de&#287;il)</p>
             
             
             <section><div class="highlight"><pre>    <span class="nv">$ </span>ls -ld /tmp/t
-    drwxr-xr-x 2 roktas roktas 4096 Eki 11 00:17 /tmp/t
+    drwxr-xr-x <span class="m">2</span> roktas roktas <span class="m">4096</span> Eki <span class="m">11</span> 00:17 /tmp/t
     <span class="nv">$ </span>ln /tmp/t /tmp/u
     <span class="nv">$ </span>ls -ld /tmp/t
-    drwxr-xr-x 3 roktas roktas 4096 Eki 11 00:17 /tmp/t
+    drwxr-xr-x <span class="m">3</span> roktas roktas <span class="m">4096</span> Eki <span class="m">11</span> 00:17 /tmp/t
 
     <span class="nv">$ </span>touch /tmp/t/f
     <span class="nv">$ </span>ls -l /tmp/t/f
-    -rw-r--r-- 1 roktas roktas 0 Eki 11 00:17 /tmp/t/f
+    -rw-r--r-- <span class="m">1</span> roktas roktas <span class="m">0</span> Eki <span class="m">11</span> 00:17 /tmp/t/f
 </pre></div>
 </section>
             
@@ -3144,40 +3144,40 @@ time de&#287;il)</p>
             <header><h2><code>echo(1)</code></h2></header>
             
             
-            <section><p><div class="highlight"><pre>ECHO(1)                    OpenBSD Reference Manual                    ECHO(1)
+            <section><p><div class="highlight"><pre><span class="err">ECHO(</span><span class="mi">1</span><span class="err">)</span>                    <span class="err">OpenBSD</span> <span class="err">Reference</span> <span class="err">Manual</span>                    <span class="err">ECHO(</span><span class="mi">1</span><span class="err">)</span>
 
-NAME
-     echo - write arguments to the standard output
+<span class="err">NAME</span>
+     <span class="err">echo</span> <span class="err">-</span> <span class="err">write</span> <span class="err">arguments</span> <span class="err">to</span> <span class="err">the</span> <span class="err">standard</span> <span class="err">output</span>
 
-SYNOPSIS
-     echo [-n] [string ...]
+<span class="err">SYNOPSIS</span>
+     <span class="err">echo</span> <span class="err">[-n]</span> <span class="err">[string</span> <span class="err">...]</span>
 
-DESCRIPTION
-     The echo utility writes any specified operands, separated by single blank
-     (` &#39;) characters and followed by a newline (`\n&#39;) character, to the
-     standard output.  When no operands are given, only the newline is
-     written.
+<span class="err">DESCRIPTION</span>
+     <span class="err">The</span> <span class="err">echo</span> <span class="err">utility</span> <span class="err">writes</span> <span class="err">any</span> <span class="err">specified</span> <span class="err">operands</span><span class="o">,</span> <span class="err">separated</span> <span class="err">by</span> <span class="err">single</span> <span class="err">blank</span>
+     <span class="err">(`</span> <span class="err">&#39;)</span> <span class="err">characters</span> <span class="err">and</span> <span class="err">followed</span> <span class="err">by</span> <span class="err">a</span> <span class="err">newline</span> <span class="err">(`\n&#39;)</span> <span class="err">character</span><span class="o">,</span> <span class="err">to</span> <span class="err">the</span>
+     <span class="err">standard</span> <span class="err">output.</span>  <span class="err">When</span> <span class="err">no</span> <span class="err">operands</span> <span class="err">are</span> <span class="err">given</span><span class="o">,</span> <span class="err">only</span> <span class="err">the</span> <span class="err">newline</span> <span class="err">is</span>
+     <span class="err">written.</span>
 
-     The options are as follows:
+     <span class="err">The</span> <span class="err">options</span> <span class="err">are</span> <span class="err">as</span> <span class="err">follows:</span>
 
-     -n      Do not print the trailing newline character.
+     <span class="err">-n</span>      <span class="err">Do</span> <span class="err">not</span> <span class="err">print</span> <span class="err">the</span> <span class="err">trailing</span> <span class="err">newline</span> <span class="err">character.</span>
 
-EXIT STATUS
-     The echo utility exits 0 on success, and &gt;0 if an error occurs.
+<span class="err">EXIT</span> <span class="err">STATUS</span>
+     <span class="err">The</span> <span class="err">echo</span> <span class="err">utility</span> <span class="err">exits</span> <span class="mi">0</span> <span class="err">on</span> <span class="err">success</span><span class="o">,</span> <span class="err">and</span> <span class="err">&gt;</span><span class="mi">0</span> <span class="err">if</span> <span class="err">an</span> <span class="err">error</span> <span class="err">occurs.</span>
 
-SEE ALSO
-     csh(1), ksh(1), printf(1)
+<span class="err">SEE</span> <span class="err">ALSO</span>
+     <span class="err">csh(</span><span class="mi">1</span><span class="err">)</span><span class="o">,</span> <span class="err">ksh(</span><span class="mi">1</span><span class="err">)</span><span class="o">,</span> <span class="err">printf(</span><span class="mi">1</span><span class="err">)</span>
 
-STANDARDS
-     The echo utility is compliant with the IEEE Std 1003.1-2008 (``POSIX.1&#39;&#39;)
-     specification.
+<span class="err">STANDARDS</span>
+     <span class="err">The</span> <span class="err">echo</span> <span class="err">utility</span> <span class="err">is</span> <span class="err">compliant</span> <span class="err">with</span> <span class="err">the</span> <span class="err">IEEE</span> <span class="err">Std</span> <span class="mi">1003</span><span class="err">.</span><span class="mi">1-2008</span> <span class="err">(``POSIX.</span><span class="mi">1</span><span class="err">&#39;&#39;)</span>
+     <span class="err">specification.</span>
 
-     The flag [-n] is an extension to that specification.
+     <span class="err">The</span> <span class="err">flag</span> <span class="err">[-n]</span> <span class="err">is</span> <span class="err">an</span> <span class="err">extension</span> <span class="err">to</span> <span class="err">that</span> <span class="err">specification.</span>
 
-     echo also exists as a built-in to csh(1) and ksh(1), though with a
-     different syntax.
+     <span class="err">echo</span> <span class="err">also</span> <span class="err">exists</span> <span class="err">as</span> <span class="err">a</span> <span class="err">built-in</span> <span class="err">to</span> <span class="err">csh(</span><span class="mi">1</span><span class="err">)</span> <span class="err">and</span> <span class="err">ksh(</span><span class="mi">1</span><span class="err">)</span><span class="o">,</span> <span class="err">though</span> <span class="err">with</span> <span class="err">a</span>
+     <span class="err">different</span> <span class="err">syntax.</span>
 
-OpenBSD 5.0                    September 3, 2010                   OpenBSD 5.0
+<span class="err">OpenBSD</span> <span class="mi">5</span><span class="err">.</span><span class="mi">0</span>                    <span class="err">September</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">2010</span>                   <span class="err">OpenBSD</span> <span class="mi">5</span><span class="err">.</span><span class="mi">0</span>
 </pre></div>
 </p></section>
             
@@ -3349,188 +3349,188 @@ OpenBSD 5.0                    September 3, 2010                   OpenBSD 5.0
             <header><h2><code>man(1)</code></h2></header>
             
             
-            <section><p><div class="highlight"><pre>MAN(1)                     OpenBSD Reference Manual                     MAN(1)
+            <section><p><div class="highlight"><pre><span class="err">MAN(</span><span class="mi">1</span><span class="err">)</span>                     <span class="err">OpenBSD</span> <span class="err">Reference</span> <span class="err">Manual</span>                     <span class="err">MAN(</span><span class="mi">1</span><span class="err">)</span>
 
-NAME
-     man - display manual pages
+<span class="err">NAME</span>
+     <span class="err">man</span> <span class="err">-</span> <span class="err">display</span> <span class="err">manual</span> <span class="err">pages</span>
 
-SYNOPSIS
-     man [-achw] [-C file] [-M path] [-m path] [-S subsection] [-s section]
-         [section] name ...
-     man -f command ...
-     man -k keyword ...
+<span class="err">SYNOPSIS</span>
+     <span class="err">man</span> <span class="err">[-achw]</span> <span class="err">[-C</span> <span class="err">file]</span> <span class="err">[-M</span> <span class="err">path]</span> <span class="err">[-m</span> <span class="err">path]</span> <span class="err">[-S</span> <span class="err">subsection]</span> <span class="err">[-s</span> <span class="err">section]</span>
+         <span class="err">[section]</span> <span class="err">name</span> <span class="err">...</span>
+     <span class="err">man</span> <span class="err">-f</span> <span class="err">command</span> <span class="err">...</span>
+     <span class="err">man</span> <span class="err">-k</span> <span class="err">keyword</span> <span class="err">...</span>
 
-DESCRIPTION
-     The man utility displays the BSD manual pages entitled name.  Pages may
-     be selected according to a specific category (section) or machine
-     architecture (subsection).
+<span class="err">DESCRIPTION</span>
+     <span class="err">The</span> <span class="err">man</span> <span class="err">utility</span> <span class="err">displays</span> <span class="err">the</span> <span class="err">BSD</span> <span class="err">manual</span> <span class="err">pages</span> <span class="err">entitled</span> <span class="err">name.</span>  <span class="err">Pages</span> <span class="err">may</span>
+     <span class="err">be</span> <span class="err">selected</span> <span class="err">according</span> <span class="err">to</span> <span class="err">a</span> <span class="err">specific</span> <span class="err">category</span> <span class="err">(section)</span> <span class="err">or</span> <span class="err">machine</span>
+     <span class="err">architecture</span> <span class="err">(subsection).</span>
 
-     The options are as follows:
+     <span class="err">The</span> <span class="err">options</span> <span class="err">are</span> <span class="err">as</span> <span class="err">follows:</span>
 
-     -a      Display all of the manual pages for a specified section and name
-             combination.  Normally, only the first manual page found is
-             displayed.
+     <span class="err">-a</span>      <span class="err">Display</span> <span class="err">all</span> <span class="err">of</span> <span class="err">the</span> <span class="err">manual</span> <span class="err">pages</span> <span class="err">for</span> <span class="err">a</span> <span class="err">specified</span> <span class="err">section</span> <span class="err">and</span> <span class="err">name</span>
+             <span class="err">combination.</span>  <span class="err">Normally</span><span class="o">,</span> <span class="err">only</span> <span class="err">the</span> <span class="err">first</span> <span class="err">manual</span> <span class="err">page</span> <span class="err">found</span> <span class="err">is</span>
+             <span class="err">displayed.</span>
 
-     -C file
-             Use the specified file instead of the default configuration file.
-             This permits users to configure their own manual environment.
-             See man.conf(5) for a description of the contents of this file.
+     <span class="err">-C</span> <span class="err">file</span>
+             <span class="err">Use</span> <span class="err">the</span> <span class="err">specified</span> <span class="err">file</span> <span class="err">instead</span> <span class="err">of</span> <span class="err">the</span> <span class="err">default</span> <span class="err">configuration</span> <span class="err">file.</span>
+             <span class="err">This</span> <span class="err">permits</span> <span class="err">users</span> <span class="err">to</span> <span class="err">configure</span> <span class="err">their</span> <span class="err">own</span> <span class="err">manual</span> <span class="err">environment.</span>
+             <span class="err">See</span> <span class="err">man.conf(</span><span class="mi">5</span><span class="err">)</span> <span class="err">for</span> <span class="err">a</span> <span class="err">description</span> <span class="err">of</span> <span class="err">the</span> <span class="err">contents</span> <span class="err">of</span> <span class="err">this</span> <span class="err">file.</span>
 
-     -c      Copy the manual page to the standard output instead of using
-             more(1) to paginate it.  This is done by default if the standard
-             output is not a terminal device.
+     <span class="err">-c</span>      <span class="err">Copy</span> <span class="err">the</span> <span class="err">manual</span> <span class="err">page</span> <span class="err">to</span> <span class="err">the</span> <span class="err">standard</span> <span class="err">output</span> <span class="err">instead</span> <span class="err">of</span> <span class="err">using</span>
+             <span class="err">more(</span><span class="mi">1</span><span class="err">)</span> <span class="err">to</span> <span class="err">paginate</span> <span class="err">it.</span>  <span class="err">This</span> <span class="err">is</span> <span class="err">done</span> <span class="err">by</span> <span class="err">default</span> <span class="err">if</span> <span class="err">the</span> <span class="err">standard</span>
+             <span class="err">output</span> <span class="err">is</span> <span class="err">not</span> <span class="err">a</span> <span class="err">terminal</span> <span class="err">device.</span>
 
-     -f command
-             A synonym for whatis(1).  It looks up a given command and gives
-             the header line from the manual page.  command is case
-             insensitive.
+     <span class="err">-f</span> <span class="err">command</span>
+             <span class="err">A</span> <span class="err">synonym</span> <span class="err">for</span> <span class="err">whatis(</span><span class="mi">1</span><span class="err">).</span>  <span class="err">It</span> <span class="err">looks</span> <span class="err">up</span> <span class="err">a</span> <span class="err">given</span> <span class="err">command</span> <span class="err">and</span> <span class="err">gives</span>
+             <span class="err">the</span> <span class="err">header</span> <span class="err">line</span> <span class="err">from</span> <span class="err">the</span> <span class="err">manual</span> <span class="err">page.</span>  <span class="err">command</span> <span class="err">is</span> <span class="err">case</span>
+             <span class="err">insensitive.</span>
 
-     -h      Display only the ``SYNOPSIS&#39;&#39; lines of the requested manual
-             pages.
+     <span class="err">-h</span>      <span class="err">Display</span> <span class="err">only</span> <span class="err">the</span> <span class="err">``SYNOPSIS&#39;&#39;</span> <span class="err">lines</span> <span class="err">of</span> <span class="err">the</span> <span class="err">requested</span> <span class="err">manual</span>
+             <span class="err">pages.</span>
 
-     -k keyword
-             A synonym for apropos(1).  It shows which manual pages contain
-             instances of any of the given keywords in their title line.
-             keyword is case insensitive.
+     <span class="err">-k</span> <span class="err">keyword</span>
+             <span class="err">A</span> <span class="err">synonym</span> <span class="err">for</span> <span class="err">apropos(</span><span class="mi">1</span><span class="err">).</span>  <span class="err">It</span> <span class="err">shows</span> <span class="err">which</span> <span class="err">manual</span> <span class="err">pages</span> <span class="err">contain</span>
+             <span class="err">instances</span> <span class="err">of</span> <span class="err">any</span> <span class="err">of</span> <span class="err">the</span> <span class="err">given</span> <span class="err">keywords</span> <span class="err">in</span> <span class="err">their</span> <span class="err">title</span> <span class="err">line.</span>
+             <span class="err">keyword</span> <span class="err">is</span> <span class="err">case</span> <span class="err">insensitive.</span>
 
-             For instance, to list all man pages which contain ``mount&#39;&#39; in
-             the ``NAME&#39;&#39; line of the man page:
+             <span class="err">For</span> <span class="err">instance</span><span class="o">,</span> <span class="err">to</span> <span class="err">list</span> <span class="err">all</span> <span class="err">man</span> <span class="err">pages</span> <span class="err">which</span> <span class="err">contain</span> <span class="err">``mount&#39;&#39;</span> <span class="err">in</span>
+             <span class="err">the</span> <span class="err">``NAME&#39;&#39;</span> <span class="err">line</span> <span class="err">of</span> <span class="err">the</span> <span class="err">man</span> <span class="err">page:</span>
 
-                   $ man -k mount
+                   <span class="err">$</span> <span class="err">man</span> <span class="err">-k</span> <span class="err">mount</span>
 
-             Which would produce a list much like this:
+             <span class="err">Which</span> <span class="err">would</span> <span class="err">produce</span> <span class="err">a</span> <span class="err">list</span> <span class="err">much</span> <span class="err">like</span> <span class="err">this:</span>
 
-             amd (8) - automatically mount file systems
-             amq (8) - automounter query tool
-             domountroothooks (9) - run all mountroot hooks
-             exports (5) - define remote mount points for NFS mount requests
-             getfsstat (2) - get list of all mounted file systems
-             getmntinfo (3) - get information about mounted file systems
-             mount (8) - mount file systems
-             mount, unmount (2) - mount or dismount a filesystem
-             mount_cd9660 (8) - mount an ISO-9660 filesystem
-             mount_ext2fs (8) - mount an ext2fs file system
-             mount_ffs (8) - mount a Berkeley Fast File System
-             mount_msdos (8) - mount an MS-DOS file system
-             mount_nfs (8) - mount NFS file systems
-             mount_ntfs (8) - mount an NTFS file system
-             mount_procfs (8) - mount the process file system
-             mount_udf (8) - mount a UDF filesystem
-             mount_vnd, vnconfig (8) - configure vnode disks
-             mountd (8) - service remote NFS mount requests
-             ...
+             <span class="err">amd</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">automatically</span> <span class="err">mount</span> <span class="err">file</span> <span class="err">systems</span>
+             <span class="err">amq</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">automounter</span> <span class="err">query</span> <span class="err">tool</span>
+             <span class="err">domountroothooks</span> <span class="err">(</span><span class="mi">9</span><span class="err">)</span> <span class="err">-</span> <span class="err">run</span> <span class="err">all</span> <span class="err">mountroot</span> <span class="err">hooks</span>
+             <span class="err">exports</span> <span class="err">(</span><span class="mi">5</span><span class="err">)</span> <span class="err">-</span> <span class="err">define</span> <span class="err">remote</span> <span class="err">mount</span> <span class="err">points</span> <span class="err">for</span> <span class="err">NFS</span> <span class="err">mount</span> <span class="err">requests</span>
+             <span class="err">getfsstat</span> <span class="err">(</span><span class="mi">2</span><span class="err">)</span> <span class="err">-</span> <span class="err">get</span> <span class="err">list</span> <span class="err">of</span> <span class="err">all</span> <span class="err">mounted</span> <span class="err">file</span> <span class="err">systems</span>
+             <span class="err">getmntinfo</span> <span class="err">(</span><span class="mi">3</span><span class="err">)</span> <span class="err">-</span> <span class="err">get</span> <span class="err">information</span> <span class="err">about</span> <span class="err">mounted</span> <span class="err">file</span> <span class="err">systems</span>
+             <span class="err">mount</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">mount</span> <span class="err">file</span> <span class="err">systems</span>
+             <span class="err">mount</span><span class="o">,</span> <span class="err">unmount</span> <span class="err">(</span><span class="mi">2</span><span class="err">)</span> <span class="err">-</span> <span class="err">mount</span> <span class="err">or</span> <span class="err">dismount</span> <span class="err">a</span> <span class="err">filesystem</span>
+             <span class="err">mount_cd</span><span class="mi">9660</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">mount</span> <span class="err">an</span> <span class="err">ISO</span><span class="mi">-9660</span> <span class="err">filesystem</span>
+             <span class="err">mount_ext</span><span class="mi">2</span><span class="err">fs</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">mount</span> <span class="err">an</span> <span class="err">ext</span><span class="mi">2</span><span class="err">fs</span> <span class="err">file</span> <span class="err">system</span>
+             <span class="err">mount_ffs</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">mount</span> <span class="err">a</span> <span class="err">Berkeley</span> <span class="err">Fast</span> <span class="err">File</span> <span class="err">System</span>
+             <span class="err">mount_msdos</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">mount</span> <span class="err">an</span> <span class="err">MS-DOS</span> <span class="err">file</span> <span class="err">system</span>
+             <span class="err">mount_nfs</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">mount</span> <span class="err">NFS</span> <span class="err">file</span> <span class="err">systems</span>
+             <span class="err">mount_ntfs</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">mount</span> <span class="err">an</span> <span class="err">NTFS</span> <span class="err">file</span> <span class="err">system</span>
+             <span class="err">mount_procfs</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">mount</span> <span class="err">the</span> <span class="err">process</span> <span class="err">file</span> <span class="err">system</span>
+             <span class="err">mount_udf</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">mount</span> <span class="err">a</span> <span class="err">UDF</span> <span class="err">filesystem</span>
+             <span class="err">mount_vnd</span><span class="o">,</span> <span class="err">vnconfig</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">configure</span> <span class="err">vnode</span> <span class="err">disks</span>
+             <span class="err">mountd</span> <span class="err">(</span><span class="mi">8</span><span class="err">)</span> <span class="err">-</span> <span class="err">service</span> <span class="err">remote</span> <span class="err">NFS</span> <span class="err">mount</span> <span class="err">requests</span>
+             <span class="err">...</span>
 
-     -M path
-             Override the list of standard directories which man searches for
-             manual pages.  The supplied path must be a colon (`:&#39;) separated
-             list of directories.  This search path may also be set using the
-             environment variable MANPATH.  The subdirectories to be searched,
-             and their search order, are specified by the ``_subdir&#39;&#39; line in
-             the man configuration file.
+     <span class="err">-M</span> <span class="err">path</span>
+             <span class="err">Override</span> <span class="err">the</span> <span class="err">list</span> <span class="err">of</span> <span class="err">standard</span> <span class="err">directories</span> <span class="err">which</span> <span class="err">man</span> <span class="err">searches</span> <span class="err">for</span>
+             <span class="err">manual</span> <span class="err">pages.</span>  <span class="err">The</span> <span class="err">supplied</span> <span class="err">path</span> <span class="err">must</span> <span class="err">be</span> <span class="err">a</span> <span class="err">colon</span> <span class="err">(`:&#39;)</span> <span class="err">separated</span>
+             <span class="err">list</span> <span class="err">of</span> <span class="err">directories.</span>  <span class="err">This</span> <span class="err">search</span> <span class="err">path</span> <span class="err">may</span> <span class="err">also</span> <span class="err">be</span> <span class="err">set</span> <span class="err">using</span> <span class="err">the</span>
+             <span class="err">environment</span> <span class="err">variable</span> <span class="err">MANPATH.</span>  <span class="err">The</span> <span class="err">subdirectories</span> <span class="err">to</span> <span class="err">be</span> <span class="err">searched</span><span class="o">,</span>
+             <span class="err">and</span> <span class="err">their</span> <span class="err">search</span> <span class="err">order</span><span class="o">,</span> <span class="err">are</span> <span class="err">specified</span> <span class="err">by</span> <span class="err">the</span> <span class="err">``_subdir&#39;&#39;</span> <span class="err">line</span> <span class="err">in</span>
+             <span class="err">the</span> <span class="err">man</span> <span class="err">configuration</span> <span class="err">file.</span>
 
-     -m path
-             Augment the list of standard directories which man searches for
-             manual pages.  The supplied path must be a colon (`:&#39;) separated
-             list of directories.  These directories will be searched before
-             the standard directories or the directories specified using the
-             -M option or the MANPATH environment variable.  The
-             subdirectories to be searched, and their search order, are
-             specified by the ``_subdir&#39;&#39; line in the man configuration file.
+     <span class="err">-m</span> <span class="err">path</span>
+             <span class="err">Augment</span> <span class="err">the</span> <span class="err">list</span> <span class="err">of</span> <span class="err">standard</span> <span class="err">directories</span> <span class="err">which</span> <span class="err">man</span> <span class="err">searches</span> <span class="err">for</span>
+             <span class="err">manual</span> <span class="err">pages.</span>  <span class="err">The</span> <span class="err">supplied</span> <span class="err">path</span> <span class="err">must</span> <span class="err">be</span> <span class="err">a</span> <span class="err">colon</span> <span class="err">(`:&#39;)</span> <span class="err">separated</span>
+             <span class="err">list</span> <span class="err">of</span> <span class="err">directories.</span>  <span class="err">These</span> <span class="err">directories</span> <span class="err">will</span> <span class="err">be</span> <span class="err">searched</span> <span class="err">before</span>
+             <span class="err">the</span> <span class="err">standard</span> <span class="err">directories</span> <span class="err">or</span> <span class="err">the</span> <span class="err">directories</span> <span class="err">specified</span> <span class="err">using</span> <span class="err">the</span>
+             <span class="err">-M</span> <span class="err">option</span> <span class="err">or</span> <span class="err">the</span> <span class="err">MANPATH</span> <span class="err">environment</span> <span class="err">variable.</span>  <span class="err">The</span>
+             <span class="err">subdirectories</span> <span class="err">to</span> <span class="err">be</span> <span class="err">searched</span><span class="o">,</span> <span class="err">and</span> <span class="err">their</span> <span class="err">search</span> <span class="err">order</span><span class="o">,</span> <span class="err">are</span>
+             <span class="err">specified</span> <span class="err">by</span> <span class="err">the</span> <span class="err">``_subdir&#39;&#39;</span> <span class="err">line</span> <span class="err">in</span> <span class="err">the</span> <span class="err">man</span> <span class="err">configuration</span> <span class="err">file.</span>
 
-     -S subsection
-             Restricts the directories that man will search to those of a
-             specific machine(1) architecture.  subsection is case
-             insensitive.
+     <span class="err">-S</span> <span class="err">subsection</span>
+             <span class="err">Restricts</span> <span class="err">the</span> <span class="err">directories</span> <span class="err">that</span> <span class="err">man</span> <span class="err">will</span> <span class="err">search</span> <span class="err">to</span> <span class="err">those</span> <span class="err">of</span> <span class="err">a</span>
+             <span class="err">specific</span> <span class="err">machine(</span><span class="mi">1</span><span class="err">)</span> <span class="err">architecture.</span>  <span class="err">subsection</span> <span class="err">is</span> <span class="err">case</span>
+             <span class="err">insensitive.</span>
 
-             By default manual pages for all architectures are installed.
-             Therefore this option can be used to view pages for one
-             architecture whilst using another.
+             <span class="err">By</span> <span class="err">default</span> <span class="err">manual</span> <span class="err">pages</span> <span class="err">for</span> <span class="err">all</span> <span class="err">architectures</span> <span class="err">are</span> <span class="err">installed.</span>
+             <span class="err">Therefore</span> <span class="err">this</span> <span class="err">option</span> <span class="err">can</span> <span class="err">be</span> <span class="err">used</span> <span class="err">to</span> <span class="err">view</span> <span class="err">pages</span> <span class="err">for</span> <span class="err">one</span>
+             <span class="err">architecture</span> <span class="err">whilst</span> <span class="err">using</span> <span class="err">another.</span>
 
-             This option overrides the MACHINE environment variable.
+             <span class="err">This</span> <span class="err">option</span> <span class="err">overrides</span> <span class="err">the</span> <span class="err">MACHINE</span> <span class="err">environment</span> <span class="err">variable.</span>
 
-     [-s] section
-             Restricts the directories that man will search to a specific
-             section.  The currently available sections are:
+     <span class="err">[-s]</span> <span class="err">section</span>
+             <span class="err">Restricts</span> <span class="err">the</span> <span class="err">directories</span> <span class="err">that</span> <span class="err">man</span> <span class="err">will</span> <span class="err">search</span> <span class="err">to</span> <span class="err">a</span> <span class="err">specific</span>
+             <span class="err">section.</span>  <span class="err">The</span> <span class="err">currently</span> <span class="err">available</span> <span class="err">sections</span> <span class="err">are:</span>
 
-                   1         General commands (tools and utilities).
-                   2         System calls and error numbers.
-                   3         Libraries.
-                   3f        Fortran programmer&#39;s reference guide.
-                   3p        perl(1) programmer&#39;s reference guide.
-                   4         Device drivers.
-                   5         File formats.
-                   6         Games.
-                   7         Miscellaneous.
-                   8         System maintenance and operation commands.
-                   9         Kernel internals.
-                   X11       An alias for X11R6.
-                   X11R6     X Window System.
-                   local     Pages located in /usr/local.
-                   n         Tcl/Tk commands.
+                   <span class="mi">1</span>         <span class="err">General</span> <span class="err">commands</span> <span class="err">(tools</span> <span class="err">and</span> <span class="err">utilities).</span>
+                   <span class="mi">2</span>         <span class="err">System</span> <span class="err">calls</span> <span class="err">and</span> <span class="err">error</span> <span class="err">numbers.</span>
+                   <span class="mi">3</span>         <span class="err">Libraries.</span>
+                   <span class="mi">3</span><span class="err">f</span>        <span class="err">Fortran</span> <span class="err">programmer&#39;s</span> <span class="err">reference</span> <span class="err">guide.</span>
+                   <span class="mi">3</span><span class="err">p</span>        <span class="err">perl(</span><span class="mi">1</span><span class="err">)</span> <span class="err">programmer&#39;s</span> <span class="err">reference</span> <span class="err">guide.</span>
+                   <span class="mi">4</span>         <span class="err">Device</span> <span class="err">drivers.</span>
+                   <span class="mi">5</span>         <span class="err">File</span> <span class="err">formats.</span>
+                   <span class="mi">6</span>         <span class="err">Games.</span>
+                   <span class="mi">7</span>         <span class="err">Miscellaneous.</span>
+                   <span class="mi">8</span>         <span class="err">System</span> <span class="err">maintenance</span> <span class="err">and</span> <span class="err">operation</span> <span class="err">commands.</span>
+                   <span class="mi">9</span>         <span class="err">Kernel</span> <span class="err">internals.</span>
+                   <span class="err">X</span><span class="mi">11</span>       <span class="err">An</span> <span class="err">alias</span> <span class="err">for</span> <span class="err">X</span><span class="mi">11</span><span class="err">R</span><span class="mi">6</span><span class="err">.</span>
+                   <span class="err">X</span><span class="mi">11</span><span class="err">R</span><span class="mi">6</span>     <span class="err">X</span> <span class="err">Window</span> <span class="err">System.</span>
+                   <span class="err">local</span>     <span class="err">Pages</span> <span class="err">located</span> <span class="err">in</span> <span class="err">/usr/local.</span>
+                   <span class="err">n</span>         <span class="err">Tcl/Tk</span> <span class="err">commands.</span>
 
-             The man configuration file, man.conf(5), specifies the possible
-             section values, and their search order.  Additional sections may
-             be specified.
+             <span class="err">The</span> <span class="err">man</span> <span class="err">configuration</span> <span class="err">file</span><span class="o">,</span> <span class="err">man.conf(</span><span class="mi">5</span><span class="err">)</span><span class="o">,</span> <span class="err">specifies</span> <span class="err">the</span> <span class="err">possible</span>
+             <span class="err">section</span> <span class="err">values</span><span class="o">,</span> <span class="err">and</span> <span class="err">their</span> <span class="err">search</span> <span class="err">order.</span>  <span class="err">Additional</span> <span class="err">sections</span> <span class="err">may</span>
+             <span class="err">be</span> <span class="err">specified.</span>
 
-     -w      List the pathnames of the manual pages which man would display
-             for the specified section and name combination.
+     <span class="err">-w</span>      <span class="err">List</span> <span class="err">the</span> <span class="err">pathnames</span> <span class="err">of</span> <span class="err">the</span> <span class="err">manual</span> <span class="err">pages</span> <span class="err">which</span> <span class="err">man</span> <span class="err">would</span> <span class="err">display</span>
+             <span class="err">for</span> <span class="err">the</span> <span class="err">specified</span> <span class="err">section</span> <span class="err">and</span> <span class="err">name</span> <span class="err">combination.</span>
 
-     Guidelines for OpenBSD man pages can be found in mdoc(7).
+     <span class="err">Guidelines</span> <span class="err">for</span> <span class="err">OpenBSD</span> <span class="err">man</span> <span class="err">pages</span> <span class="err">can</span> <span class="err">be</span> <span class="err">found</span> <span class="err">in</span> <span class="err">mdoc(</span><span class="mi">7</span><span class="err">).</span>
 
-     If both a formatted and an unformatted version of the same manual page,
-     for example cat1/foo.0 and man1/foo.1, exist in the same directory, and
-     at least one of them is selected, only the newer one is used.  However,
-     if both the -a and the -w options are specified, both file names are
-     printed.
+     <span class="err">If</span> <span class="err">both</span> <span class="err">a</span> <span class="err">formatted</span> <span class="err">and</span> <span class="err">an</span> <span class="err">unformatted</span> <span class="err">version</span> <span class="err">of</span> <span class="err">the</span> <span class="err">same</span> <span class="err">manual</span> <span class="err">page</span><span class="o">,</span>
+     <span class="err">for</span> <span class="err">example</span> <span class="err">cat</span><span class="mi">1</span><span class="err">/foo.</span><span class="mi">0</span> <span class="err">and</span> <span class="err">man</span><span class="mi">1</span><span class="err">/foo.</span><span class="mi">1</span><span class="o">,</span> <span class="err">exist</span> <span class="err">in</span> <span class="err">the</span> <span class="err">same</span> <span class="err">directory</span><span class="o">,</span> <span class="err">and</span>
+     <span class="err">at</span> <span class="err">least</span> <span class="err">one</span> <span class="err">of</span> <span class="err">them</span> <span class="err">is</span> <span class="err">selected</span><span class="o">,</span> <span class="err">only</span> <span class="err">the</span> <span class="err">newer</span> <span class="err">one</span> <span class="err">is</span> <span class="err">used.</span>  <span class="err">However</span><span class="o">,</span>
+     <span class="err">if</span> <span class="err">both</span> <span class="err">the</span> <span class="err">-a</span> <span class="err">and</span> <span class="err">the</span> <span class="err">-w</span> <span class="err">options</span> <span class="err">are</span> <span class="err">specified</span><span class="o">,</span> <span class="err">both</span> <span class="err">file</span> <span class="err">names</span> <span class="err">are</span>
+     <span class="err">printed.</span>
 
-ENVIRONMENT
-     MACHINE   As some manual pages are intended only for specific
-               architectures, man searches any subdirectories, with the same
-               name as the current architecture, in every directory which it
-               searches.  Machine specific areas are checked before general
-               areas.  The current machine type may be overridden by setting
-               the environment variable MACHINE to the name of a specific
-               architecture, or with the -S option.  MACHINE is case
-               insensitive.
+<span class="err">ENVIRONMENT</span>
+     <span class="err">MACHINE</span>   <span class="err">As</span> <span class="err">some</span> <span class="err">manual</span> <span class="err">pages</span> <span class="err">are</span> <span class="err">intended</span> <span class="err">only</span> <span class="err">for</span> <span class="err">specific</span>
+               <span class="err">architectures</span><span class="o">,</span> <span class="err">man</span> <span class="err">searches</span> <span class="err">any</span> <span class="err">subdirectories</span><span class="o">,</span> <span class="err">with</span> <span class="err">the</span> <span class="err">same</span>
+               <span class="err">name</span> <span class="err">as</span> <span class="err">the</span> <span class="err">current</span> <span class="err">architecture</span><span class="o">,</span> <span class="err">in</span> <span class="err">every</span> <span class="err">directory</span> <span class="err">which</span> <span class="err">it</span>
+               <span class="err">searches.</span>  <span class="err">Machine</span> <span class="err">specific</span> <span class="err">areas</span> <span class="err">are</span> <span class="err">checked</span> <span class="err">before</span> <span class="err">general</span>
+               <span class="err">areas.</span>  <span class="err">The</span> <span class="err">current</span> <span class="err">machine</span> <span class="err">type</span> <span class="err">may</span> <span class="err">be</span> <span class="err">overridden</span> <span class="err">by</span> <span class="err">setting</span>
+               <span class="err">the</span> <span class="err">environment</span> <span class="err">variable</span> <span class="err">MACHINE</span> <span class="err">to</span> <span class="err">the</span> <span class="err">name</span> <span class="err">of</span> <span class="err">a</span> <span class="err">specific</span>
+               <span class="err">architecture</span><span class="o">,</span> <span class="err">or</span> <span class="err">with</span> <span class="err">the</span> <span class="err">-S</span> <span class="err">option.</span>  <span class="err">MACHINE</span> <span class="err">is</span> <span class="err">case</span>
+               <span class="err">insensitive.</span>
 
-     MANPAGER  Any non-null value of the environment variable MANPAGER will be
-               used instead of the standard pagination program, more(1).
+     <span class="err">MANPAGER</span>  <span class="err">Any</span> <span class="err">non-null</span> <span class="err">value</span> <span class="err">of</span> <span class="err">the</span> <span class="err">environment</span> <span class="err">variable</span> <span class="err">MANPAGER</span> <span class="err">will</span> <span class="err">be</span>
+               <span class="err">used</span> <span class="err">instead</span> <span class="err">of</span> <span class="err">the</span> <span class="err">standard</span> <span class="err">pagination</span> <span class="err">program</span><span class="o">,</span> <span class="err">more(</span><span class="mi">1</span><span class="err">).</span>
 
-     MANPATH   The standard search path used by man may be overridden by
-               specifying a path in the MANPATH environment variable.  The
-               format of the path is a colon (`:&#39;) separated list of
-               directories.  The subdirectories to be searched, as well as
-               their search order, are specified by the ``_subdir&#39;&#39; line in
-               the man configuration file.
+     <span class="err">MANPATH</span>   <span class="err">The</span> <span class="err">standard</span> <span class="err">search</span> <span class="err">path</span> <span class="err">used</span> <span class="err">by</span> <span class="err">man</span> <span class="err">may</span> <span class="err">be</span> <span class="err">overridden</span> <span class="err">by</span>
+               <span class="err">specifying</span> <span class="err">a</span> <span class="err">path</span> <span class="err">in</span> <span class="err">the</span> <span class="err">MANPATH</span> <span class="err">environment</span> <span class="err">variable.</span>  <span class="err">The</span>
+               <span class="err">format</span> <span class="err">of</span> <span class="err">the</span> <span class="err">path</span> <span class="err">is</span> <span class="err">a</span> <span class="err">colon</span> <span class="err">(`:&#39;)</span> <span class="err">separated</span> <span class="err">list</span> <span class="err">of</span>
+               <span class="err">directories.</span>  <span class="err">The</span> <span class="err">subdirectories</span> <span class="err">to</span> <span class="err">be</span> <span class="err">searched</span><span class="o">,</span> <span class="err">as</span> <span class="err">well</span> <span class="err">as</span>
+               <span class="err">their</span> <span class="err">search</span> <span class="err">order</span><span class="o">,</span> <span class="err">are</span> <span class="err">specified</span> <span class="err">by</span> <span class="err">the</span> <span class="err">``_subdir&#39;&#39;</span> <span class="err">line</span> <span class="err">in</span>
+               <span class="err">the</span> <span class="err">man</span> <span class="err">configuration</span> <span class="err">file.</span>
 
-     PAGER     Specifies the pagination program to use when MANPAGER is not
-               defined.
+     <span class="err">PAGER</span>     <span class="err">Specifies</span> <span class="err">the</span> <span class="err">pagination</span> <span class="err">program</span> <span class="err">to</span> <span class="err">use</span> <span class="err">when</span> <span class="err">MANPAGER</span> <span class="err">is</span> <span class="err">not</span>
+               <span class="err">defined.</span>
 
-FILES
-     /etc/man.conf  default man configuration file
+<span class="err">FILES</span>
+     <span class="err">/etc/man.conf</span>  <span class="err">default</span> <span class="err">man</span> <span class="err">configuration</span> <span class="err">file</span>
 
-EXIT STATUS
-     The man utility exits 0 on success, and &gt;0 if an error occurs.
+<span class="err">EXIT</span> <span class="err">STATUS</span>
+     <span class="err">The</span> <span class="err">man</span> <span class="err">utility</span> <span class="err">exits</span> <span class="mi">0</span> <span class="err">on</span> <span class="err">success</span><span class="o">,</span> <span class="err">and</span> <span class="err">&gt;</span><span class="mi">0</span> <span class="err">if</span> <span class="err">an</span> <span class="err">error</span> <span class="err">occurs.</span>
 
-SEE ALSO
-     apropos(1), intro(1), whatis(1), whereis(1), intro(2), intro(3),
-     intro(4), intro(5), man.conf(5), intro(6), intro(7), mdoc(7), intro(8),
-     intro(9)
+<span class="err">SEE</span> <span class="err">ALSO</span>
+     <span class="err">apropos(</span><span class="mi">1</span><span class="err">)</span><span class="o">,</span> <span class="err">intro(</span><span class="mi">1</span><span class="err">)</span><span class="o">,</span> <span class="err">whatis(</span><span class="mi">1</span><span class="err">)</span><span class="o">,</span> <span class="err">whereis(</span><span class="mi">1</span><span class="err">)</span><span class="o">,</span> <span class="err">intro(</span><span class="mi">2</span><span class="err">)</span><span class="o">,</span> <span class="err">intro(</span><span class="mi">3</span><span class="err">)</span><span class="o">,</span>
+     <span class="err">intro(</span><span class="mi">4</span><span class="err">)</span><span class="o">,</span> <span class="err">intro(</span><span class="mi">5</span><span class="err">)</span><span class="o">,</span> <span class="err">man.conf(</span><span class="mi">5</span><span class="err">)</span><span class="o">,</span> <span class="err">intro(</span><span class="mi">6</span><span class="err">)</span><span class="o">,</span> <span class="err">intro(</span><span class="mi">7</span><span class="err">)</span><span class="o">,</span> <span class="err">mdoc(</span><span class="mi">7</span><span class="err">)</span><span class="o">,</span> <span class="err">intro(</span><span class="mi">8</span><span class="err">)</span><span class="o">,</span>
+     <span class="err">intro(</span><span class="mi">9</span><span class="err">)</span>
 
-STANDARDS
-     The man utility is compliant with the IEEE Std 1003.1-2008 (``POSIX.1&#39;&#39;)
-     specification.
+<span class="err">STANDARDS</span>
+     <span class="err">The</span> <span class="err">man</span> <span class="err">utility</span> <span class="err">is</span> <span class="err">compliant</span> <span class="err">with</span> <span class="err">the</span> <span class="err">IEEE</span> <span class="err">Std</span> <span class="mi">1003</span><span class="err">.</span><span class="mi">1-2008</span> <span class="err">(``POSIX.</span><span class="mi">1</span><span class="err">&#39;&#39;)</span>
+     <span class="err">specification.</span>
 
-     The flags [-aCcfhMmSsw] are extensions to that specification.
+     <span class="err">The</span> <span class="err">flags</span> <span class="err">[-aCcfhMmSsw]</span> <span class="err">are</span> <span class="err">extensions</span> <span class="err">to</span> <span class="err">that</span> <span class="err">specification.</span>
 
-HISTORY
-     A man command first appeared in Version 3 AT&amp;T UNIX.
+<span class="err">HISTORY</span>
+     <span class="err">A</span> <span class="err">man</span> <span class="err">command</span> <span class="err">first</span> <span class="err">appeared</span> <span class="err">in</span> <span class="err">Version</span> <span class="mi">3</span> <span class="err">AT&amp;T</span> <span class="err">UNIX.</span>
 
-     The -w option first appeared in Version 7 AT&amp;T UNIX; -f and -k in 4BSD;
-     -M in 4.3BSD; -a in 4.3BSD-Tahoe; -c and -m in 4.3BSD-Reno; -h in
-     4.3BSD-Net/2; -C in NetBSD 1.0; and -s and -S in OpenBSD 2.3.
+     <span class="err">The</span> <span class="err">-w</span> <span class="err">option</span> <span class="err">first</span> <span class="err">appeared</span> <span class="err">in</span> <span class="err">Version</span> <span class="mi">7</span> <span class="err">AT&amp;T</span> <span class="err">UNIX;</span> <span class="err">-f</span> <span class="err">and</span> <span class="err">-k</span> <span class="err">in</span> <span class="mi">4</span><span class="err">BSD;</span>
+     <span class="err">-M</span> <span class="err">in</span> <span class="mi">4</span><span class="err">.</span><span class="mi">3</span><span class="err">BSD;</span> <span class="err">-a</span> <span class="err">in</span> <span class="mi">4</span><span class="err">.</span><span class="mi">3</span><span class="err">BSD-Tahoe;</span> <span class="err">-c</span> <span class="err">and</span> <span class="err">-m</span> <span class="err">in</span> <span class="mi">4</span><span class="err">.</span><span class="mi">3</span><span class="err">BSD-Reno;</span> <span class="err">-h</span> <span class="err">in</span>
+     <span class="mi">4</span><span class="err">.</span><span class="mi">3</span><span class="err">BSD-Net/</span><span class="mi">2</span><span class="err">;</span> <span class="err">-C</span> <span class="err">in</span> <span class="err">NetBSD</span> <span class="mi">1</span><span class="err">.</span><span class="mi">0</span><span class="err">;</span> <span class="err">and</span> <span class="err">-s</span> <span class="err">and</span> <span class="err">-S</span> <span class="err">in</span> <span class="err">OpenBSD</span> <span class="mi">2</span><span class="err">.</span><span class="mi">3</span><span class="err">.</span>
 
-OpenBSD 5.0                     August 23, 2012                    OpenBSD 5.0
+<span class="err">OpenBSD</span> <span class="mi">5</span><span class="err">.</span><span class="mi">0</span>                     <span class="err">August</span> <span class="mi">23</span><span class="o">,</span> <span class="mi">2012</span>                    <span class="err">OpenBSD</span> <span class="mi">5</span><span class="err">.</span><span class="mi">0</span>
 </pre></div>
 </p></section>
             
@@ -3999,7 +3999,7 @@ OpenBSD 5.0                     August 23, 2012                    OpenBSD 5.0
 <div class="highlight"><pre><span class="nv">$ </span>ps au
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 ...
-root      6302  0.0  0.0  53592  1500 pts/12   S+   15:37   0:00 passwd
+root      <span class="m">6302</span>  0.0  0.0  <span class="m">53592</span>  <span class="m">1500</span> pts/12   S+   15:37   0:00 passwd
 ...
 </pre></div>
 
@@ -4186,7 +4186,7 @@ root      6302  0.0  0.0  53592  1500 pts/12   S+   15:37   0:00 passwd
             <header><h2>Proses A&#287;ac&#305;</h2></header>
             
             
-            <section><div class="highlight"><pre>    <span class="nv">$ </span>pstree -p | less
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>pstree -p <span class="p">|</span> less
 </pre></div>
 
 <p>T&uuml;m proseslerin ebeveyni durumundaki <code>init</code> prosesini g&ouml;rebiliyor musunuz?</p>
@@ -4246,7 +4246,7 @@ root      6302  0.0  0.0  53592  1500 pts/12   S+   15:37   0:00 passwd
 </li>
 <li>
 <p>&#304;&ccedil;inde sadece <code>&lt;terim&gt;</code> ge&ccedil;en sat&#305;rlar&#305; g&ouml;r&uuml;nt&uuml;le</p>
-<div class="highlight"><pre><span class="nv">$ </span>ps ax | grep &lt;terim&gt;
+<div class="highlight"><pre><span class="nv">$ </span>ps ax <span class="p">|</span> grep &lt;terim&gt;
 </pre></div>
 
 </li>
@@ -4771,7 +4771,7 @@ root      6302  0.0  0.0  53592  1500 pts/12   S+   15:37   0:00 passwd
 </li>
 <li>
 <p>&#304;&#351;lem her nas&#305;l sonlan&#305;rsa sonlans&#305;n bir &#351;eyler yap</p>
-<div class="highlight"><pre><span class="nv">$ </span>dağınık_işlem ; rm -rf çöpler
+<div class="highlight"><pre><span class="nv">$ </span>dağınık_işlem <span class="p">;</span> rm -rf çöpler
 </pre></div>
 
 </li>
@@ -5209,7 +5209,7 @@ okuyabilir/yazabilir, grup okuyabilir, ba&#351;kalar&#305; hi&ccedil; bir &#351;
 </ul>
 <p>Nas&#305;l g&ouml;r&uuml;nt&uuml;l&uuml;yoruz?</p>
 <div class="highlight"><pre>    <span class="nv">$ </span>ls foo.txt
-    -rw-r--r-- 1 roktas staff 0 Eki  2 01:27 foo.txt
+    -rw-r--r-- <span class="m">1</span> roktas staff <span class="m">0</span> Eki  <span class="m">2</span> 01:27 foo.txt
 </pre></div>
 
 <ul>
@@ -5697,8 +5697,8 @@ foo
 </li>
 <li>
 <p>Bit desenleri</p>
-<div class="highlight"><pre>0: 000   1: 001   2: 010   3: 011
-4: 100   5: 101   6: 110   7: 111
+<div class="highlight"><pre>0: <span class="m">000</span>   1: <span class="m">001</span>   2: <span class="m">010</span>   3: 011
+4: <span class="m">100</span>   5: <span class="m">101</span>   6: <span class="m">110</span>   7: 111
 </pre></div>
 
 </li>
@@ -5799,13 +5799,13 @@ foo
 </li>
 <li>
 <p>&Ouml;rnek sadece ben okuyup/yazabileyim</p>
-<div class="highlight"><pre><span class="nv">$ </span>chmod 400 foo.txt
+<div class="highlight"><pre><span class="nv">$ </span>chmod <span class="m">400</span> foo.txt
 </pre></div>
 
 </li>
 <li>
 <p>T&uuml;m izinleri ver</p>
-<div class="highlight"><pre><span class="nv">$ </span>chmod 777 foo.txt
+<div class="highlight"><pre><span class="nv">$ </span>chmod <span class="m">777</span> foo.txt
 </pre></div>
 
 </li>

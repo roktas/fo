@@ -1804,7 +1804,7 @@ div.slide {
             
             
             <section><p>Recai Okta&#351; <code>&lt;roktas@bil.omu.edu.tr&gt;</code></p>
-<p><a href="http://roktas.me/"><a href="http://roktas.me/">http://roktas.me/</a></a></p>
+<p><a href="http://r.oktas.us/"><a href="http://r.oktas.us/">http://r.oktas.us/</a></a></p>
 <p>Mart 2013</p></section>
             
           </div>
@@ -2111,7 +2111,7 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
             <section><p>&Ouml;rnekler</p>
 <div class="highlight"><pre>    <span class="nv">$ </span><span class="nb">trap</span> <span class="s1">&#39;printf &quot;\nDeğişti\n&quot;&#39;</span> SIGWINCH
     <span class="nv">$ </span><span class="nb">trap</span> <span class="s1">&#39;printf &quot;\nKesildi\n&quot;&#39;</span> SIGINT
-    <span class="nv">$ </span>xeyes &amp;
+    <span class="nv">$ </span>xeyes <span class="p">&amp;</span>
     <span class="nv">$ </span><span class="nb">kill</span> -s SIGSTOP «PID»
     <span class="nv">$ </span><span class="nb">kill</span> -s SIGCONT «PID»
 </pre></div>
@@ -2145,8 +2145,8 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
             <header><h2><code>getpid</code> ve <code>getppid</code></h2></header>
             
             
-            <section><div class="highlight"><pre>    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">sys</span><span class="o">/</span><span class="n">types</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
-    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">unistd</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+            <section><div class="highlight"><pre>    <span class="cp">#include &lt;sys/types.h&gt;</span>
+    <span class="cp">#include &lt;unistd.h&gt;</span>
 
     <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Pid: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">getpid</span><span class="p">());</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Parent Pid: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">getppid</span><span class="p">());</span>
@@ -2259,10 +2259,10 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
             <header><h2><code>fork</code></h2></header>
             
             
-            <section><div class="highlight"><pre>    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">sys</span><span class="o">/</span><span class="n">types</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
-    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">unistd</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+            <section><div class="highlight"><pre>    <span class="cp">#include &lt;sys/types.h&gt;</span>
+    <span class="cp">#include &lt;unistd.h&gt;</span>
 
-    <span class="kt">pid_t</span> <span class="n">fork</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+    <span class="kt">pid_t</span> <span class="nf">fork</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 </pre></div>
 </section>
             
@@ -2347,9 +2347,9 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
             <header><h2><code>exec</code></h2></header>
             
             
-            <section><div class="highlight"><pre>    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">unistd</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+            <section><div class="highlight"><pre>    <span class="cp">#include &lt;unistd.h&gt;</span>
 
-    <span class="kt">int</span> <span class="n">execlp</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">file</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">arg</span><span class="p">,</span> <span class="p">...);</span>
+    <span class="kt">int</span> <span class="nf">execlp</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">file</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">arg</span><span class="p">,</span> <span class="p">...);</span>
     <span class="kt">int</span> <span class="nf">execle</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">arg</span><span class="p">,</span> <span class="p">...,</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">envp</span><span class="p">[]);</span>
     <span class="kt">int</span> <span class="nf">execv</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">argv</span><span class="p">[]);</span>
     <span class="kt">int</span> <span class="nf">execvp</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">file</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">argv</span><span class="p">[]);</span>
@@ -2529,9 +2529,9 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
             <header><h2>Windows &reg;</h2></header>
             
             
-            <section><div class="highlight"><pre>    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">WinBase</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+            <section><div class="highlight"><pre>    <span class="cp">#include &lt;WinBase.h&gt;</span>
 
-    <span class="n">BOOL</span> <span class="n">WINAPI</span> <span class="n">CreateProcess</span><span class="p">(</span>
+    <span class="n">BOOL</span> <span class="n">WINAPI</span> <span class="nf">CreateProcess</span><span class="p">(</span>
       <span class="n">_In_opt_</span>     <span class="n">LPCTSTR</span> <span class="n">lpApplicationName</span><span class="p">,</span>
       <span class="n">_Inout_opt_</span>  <span class="n">LPTSTR</span> <span class="n">lpCommandLine</span><span class="p">,</span>
       <span class="n">_In_opt_</span>     <span class="n">LPSECURITY_ATTRIBUTES</span> <span class="n">lpProcessAttributes</span><span class="p">,</span>
@@ -2703,10 +2703,10 @@ s&#305;cakl&#305;k &lt; 100 C&deg;
             <header><h2><code>waitpid</code></h2></header>
             
             
-            <section><div class="highlight"><pre>    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">sys</span><span class="o">/</span><span class="n">types</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
-    <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">sys</span><span class="o">/</span><span class="n">wait</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+            <section><div class="highlight"><pre>    <span class="cp">#include &lt;sys/types.h&gt;</span>
+    <span class="cp">#include &lt;sys/wait.h&gt;</span>
 
-    <span class="kt">pid_t</span> <span class="n">waitpid</span><span class="p">(</span><span class="kt">pid_t</span> <span class="n">pid</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">status</span><span class="p">,</span> <span class="kt">int</span> <span class="n">options</span><span class="p">);</span>
+    <span class="kt">pid_t</span> <span class="nf">waitpid</span><span class="p">(</span><span class="kt">pid_t</span> <span class="n">pid</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">status</span><span class="p">,</span> <span class="kt">int</span> <span class="n">options</span><span class="p">);</span>
 
     <span class="kt">int</span> <span class="nf">WIFEXITED</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
     <span class="kt">int</span> <span class="nf">WIFSIGNALED</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
