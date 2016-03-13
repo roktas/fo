@@ -1,13 +1,15 @@
 #!/usr/bin/ruby
-# encoding: utf-8
 
 class Point
   attr_reader :x, :y
 
   ORIGIN = 0, 0
 
+  @@population = 0
+
   def initialize(x, y)
     @x, @y = x, y
+    @@population += 1
   end
 
   def >(other)
@@ -19,15 +21,23 @@ class Point
   end
 
   def >=(other)
-    @x > other.x or @x == other.x
+    @x > other.x || @x == other.x
   end
 
   def <=(other)
-    @x < other.x or @x == other.x
+    @x < other.x || @x == other.x
   end
 
   def ==(other)
-    @x == other.x and @y == other.y
+    @x == other.x && @y == other.y
+  end
+
+  # + işlecini overload ederek sınırsız sayıda noktayı da
+  # toplama olanağına kavuştuk.
+  def +(other)
+    # FIXME: Zaten Point sınıfındayız, açıkça yazmamız gerekiyor mu?
+    other ||= Point.origin
+    self.class.new @x + other.x, @y + other.y
   end
 
   def move(x, y)
@@ -40,15 +50,25 @@ class Point
     "(#{@x},#{@y})"
   end
 
-  # XXX Artık DRY (Point yok)
-  # FIXME Sadece iki nokta topluyor, nokta sayısını sınırlamasak?
-  def self.add(this, that)
-    self.new this.x + that.x, this.y + that.y # FIXME self'e gerek var mı?
+  # Sınıf metodları
+
+  # Burada self ne değer alır?  Point
+  def self.origin
+    # new metodunun alıcısı kim?  self
+    # self burada ne değer alır?  Point (yani sınıf)
+    new(*ORIGIN)
   end
+
+  def self.population
+    @@population
+  end
+
+  # FIXME: Her seferinde self. yazmak gerekiyor mu?
 end
 
 def main
-  puts Point.add Point.new(3, 5), Point.new(9, 7)
+  _, _, _ = Point.new(3, 5), Point.new(9, 7), Point.new(-2, 5)
+  puts "Nokta sayısı: #{Point.population}"
 end
 
 main if __FILE__ == $PROGRAM_NAME

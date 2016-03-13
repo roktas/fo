@@ -53,10 +53,6 @@ Ocak 2012
 
 #   Sınıf Metodları
 
-.code: code/rb_class_classmethod_point/main3.rb
-
-#   Sınıf Metodları
-
 .code: code/rb_class_classmethod_point/main2.rb
 
 #   Sınıf Metodları

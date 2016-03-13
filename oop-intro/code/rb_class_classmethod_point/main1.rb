@@ -1,13 +1,15 @@
 #!/usr/bin/ruby
-# encoding: utf-8
 
 class Point
   attr_reader :x, :y
 
   ORIGIN = 0, 0
 
+  @@population = 0
+
   def initialize(x, y)
     @x, @y = x, y
+    @@population += 1
   end
 
   def >(other)
@@ -19,15 +21,23 @@ class Point
   end
 
   def >=(other)
-    @x > other.x or @x == other.x
+    @x > other.x || @x == other.x
   end
 
   def <=(other)
-    @x < other.x or @x == other.x
+    @x < other.x || @x == other.x
   end
 
   def ==(other)
-    @x == other.x and @y == other.y
+    @x == other.x && @y == other.y
+  end
+
+  # + işlecini overload ederek sınırsız sayıda noktayı da
+  # toplama olanağına kavuştuk.
+  def +(other)
+    # FIXME: Zaten Point sınıfındayız, açıkça yazmamız gerekiyor mu?
+    other ||= Point.origin
+    self.class.new @x + other.x, @y + other.y
   end
 
   def move(x, y)
@@ -42,43 +52,21 @@ class Point
 
   # Sınıf metodları
 
-  # XXX Sınırsız sayıda nokta topluyor
-  # FIXME Fakat toplamayı + ile yapsak?
-  def self.add(*points)
-    # XXX new metodunun alıcısı kim?  self
+  # FIXME: Zaten Point sınıfındayız, açıkça yazmamız gerekiyor mu?
+  def Point.origin
+    # new metodunun alıcısı kim?  self
     # self burada ne değer alır?  Point (yani sınıf)
-    new points.map(&:x).sum, points.map(&:x).sum
-  end
-
-  def self.origin
     new(*ORIGIN)
   end
 
-  def self.distance(here, there = nil)
-    there ||= origin # origin metodunun alıcısı?  self → Point
-    Math.sqrt((here.x - there.x)**2 + (here.y - there.y)**2)
-  end
-
-  # FIXME Sınıf metodlarını böyle her seferinde self. ile mi
-  # yazacağız.  Pek DRY değil.
-end
-
-# XXX Array sınıfına bir yama yapıyoruz.  Ruby'de Python'daki gibi
-# hazır bir "sum" metodu yok, ama bunu yazmak çok kolay.
-class Array
-  def sum
-    # XXX vektörden skalara dönüştürme ihtiyacı varsa
-    # inject'i hatırlayın
-    inject(nil) { |sum, x| sum ? sum + x : x }
+  def Point.population
+    @@population
   end
 end
 
 def main
-  p, q, r = Point.new(3, 5), Point.new(9, 7), Point.new(-2, 5)
-  puts "Noktalar: #{p} #{q} #{r}"
-  puts "Toplam noktası: #{Point.add(p, q, r)}"
-  puts "#{p} - #{q} uzaklığı: #{Point.distance(p, q)}"
-  puts "#{p} - orijin uzaklığı: #{Point.distance(p)}"
+  _, _, _ = Point.new(3, 5), Point.new(9, 7), Point.new(-2, 5)
+  puts "Nokta sayısı: #{Point.population}"
 end
 
 main if __FILE__ == $PROGRAM_NAME
