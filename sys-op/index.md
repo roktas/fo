@@ -16,9 +16,6 @@ Ekim 2012
 
 *   Bu nasıl bir ortam, nasıl bir sistem?
 
-*   Sekreter Lale hanımı her sistem açılışından sonra mutad olduğu üzre
-    karşılayan Feysbuk ortamından bahsetmiyoruz!
-
 *   Örneğin bir veri merkezinde ("data center") yönetiminden sorumlu olduğunuz
     bir sunucu
 
