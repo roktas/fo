@@ -1846,10 +1846,6 @@ div.slide {
 <p>Bu nasıl bir ortam, nasıl bir sistem?</p>
 </li>
 <li>
-<p>Sekreter Lale hanımı her sistem açılışından sonra mutad olduğu üzre
-    karşılayan Feysbuk ortamından bahsetmiyoruz!</p>
-</li>
-<li>
 <p>Örneğin bir veri merkezinde ("data center") yönetiminden sorumlu olduğunuz
     bir sunucu</p>
 </li>
@@ -2430,7 +2426,7 @@ kısayolları kullanabilirsiniz</p>
 <li>
 <p>Bir komutun çıktısını (örneğin yardım almak amacıyla) bir dosyaya kaydetmeyi
     tercih edin; nasıl?</p>
-<div class="highlight"><pre><span></span>$ KOMUT &gt;dosya <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<div class="highlight"><pre><span></span>$ KOMUT &gt;dosya 2&gt;<span class="p">&amp;</span>1
 </pre></div>
 
 </li>
@@ -3073,7 +3069,7 @@ bin etc lib
 <li>
 <p>Daha uzun ("long") bilgi görüntüle → <code>-l</code></p>
 <div class="highlight"><pre><span></span>~$ ls -l ~
-drwxr-xr-x <span class="m">2</span> roktas roktas <span class="m">4096</span> Ağu <span class="m">12</span> <span class="m">00</span>:37 bin
+drwxr-xr-x <span class="m">2</span> roktas roktas <span class="m">4096</span> Ağu <span class="m">12</span> 00:37 bin
 ...
 </pre></div>
 
@@ -3378,7 +3374,7 @@ $ ls --ignore-backups ~
             
             
             <section><div class="highlight"><pre><span></span>    ~$ ls -l
-    drwxr-xr-x <span class="m">2</span> roktas roktas <span class="m">4096</span> Ağu <span class="m">12</span> <span class="m">00</span>:37 bin
+    drwxr-xr-x <span class="m">2</span> roktas roktas <span class="m">4096</span> Ağu <span class="m">12</span> 00:37 bin
     ...
 </pre></div>
 
@@ -3443,7 +3439,7 @@ $ ls --ignore-backups ~
 <li>
 <p>Sadece dizin ("directory") hakkında bilgi → <code>-d</code></p>
 <div class="highlight"><pre><span></span>~$ ls -ld
-drwx------ <span class="m">49</span> roktas roktas <span class="m">4096</span> Eki  <span class="m">3</span> <span class="m">21</span>:34 .
+drwx------ <span class="m">49</span> roktas roktas <span class="m">4096</span> Eki  <span class="m">3</span> 21:34 .
 </pre></div>
 
 </li>
@@ -3786,7 +3782,7 @@ tmp/foo/bar
             
             
             <section><div class="highlight"><pre><span></span>    $ ls foo.txt
-    -rw-r--r-- <span class="m">1</span> roktas users <span class="m">0</span> Eki  <span class="m">2</span> <span class="m">01</span>:27 foo.txt
+    -rw-r--r-- <span class="m">1</span> roktas users <span class="m">0</span> Eki  <span class="m">2</span> 01:27 foo.txt
 </pre></div>
 
 <ul>
@@ -3883,7 +3879,7 @@ tmp/foo/bar
             
             
             <section><div class="highlight"><pre><span></span>    $ ls -l foo.txt
-    -rw-r--r-- <span class="m">1</span> roktas users <span class="m">0</span> Eki  <span class="m">2</span> <span class="m">01</span>:27 foo.txt
+    -rw-r--r-- <span class="m">1</span> roktas users <span class="m">0</span> Eki  <span class="m">2</span> 01:27 foo.txt
 </pre></div>
 
 <ul>
@@ -4413,7 +4409,7 @@ tmp/foo/bar
 <li>
 <p>Bu yöntemde <code>echo.rb</code>'nin çalıştırılabilir olması gerekiyor mu?  Hayır</p>
 <div class="highlight"><pre><span></span>$ ls -l echo.rb
--rw-r--r-- <span class="m">1</span> roktas roktas <span class="m">19</span> Eki  <span class="m">4</span> <span class="m">03</span>:32 echo.rb
+-rw-r--r-- <span class="m">1</span> roktas roktas <span class="m">19</span> Eki  <span class="m">4</span> 03:32 echo.rb
 </pre></div>
 
 </li>
@@ -4609,7 +4605,7 @@ bash: papagan: komut yok
 <li>
 <p>O halde şöyle çalışmalı?</p>
 <div class="highlight"><pre><span></span>$ ./papagan
-./papagan: line <span class="m">1</span>: puts: komut yok
+./papagan: line 1: puts: komut yok
 </pre></div>
 
 </li>
@@ -5507,7 +5503,7 @@ bar
 <li>
 <p>Örneğin "foo" dizgisinde kaç bayt var?</p>
 <div class="highlight"><pre><span></span>$ <span class="nb">echo</span> -n foo <span class="p">|</span> wc -c
-<span class="m">3</span>
+3
 </pre></div>
 
 </li>
@@ -5548,7 +5544,7 @@ bar
             
             
             <section><div class="highlight"><pre><span></span>    $ <span class="nb">echo</span> -n foo <span class="p">|</span> wc -c
-    <span class="m">3</span>
+    3
 </pre></div>
 
 <ul>
@@ -5694,7 +5690,7 @@ satırları görüntüle</p>
 <li>
 <p>"Bu makinede kullanılan ağ bağdaştıcısının (Ethernet) markası ne?"</p>
 <div class="highlight"><pre><span></span>$ lspci <span class="p">|</span> grep thernet
-<span class="m">02</span>:00.0 Ethernet controller: Atheros Communications Inc...
+02:00.0 Ethernet controller: Atheros Communications Inc...
 </pre></div>
 
 </li>
