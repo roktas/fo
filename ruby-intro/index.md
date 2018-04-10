@@ -6,7 +6,7 @@ Recai Oktaş `<roktas@bil.omu.edu.tr>`
 
 http://r.oktas.us/
 
-Mart 2012
+Mart 2018
 
 #   Ruby
 
@@ -629,7 +629,7 @@ Bu sayede:
 
         ...
 
-        x = Math.sin(teta) > 0.5
+        x = Math.sin(teta)
         if x > 0.5
           sin("hatalı aralıkta değer üretildi: #{x}")
         end
@@ -646,7 +646,7 @@ Bu sayede:
           end
         end
 
-        x = Math.sin(teta) > 0.5
+        x = Math.sin(teta)
         if x > 0.5
           Log.sin("hatalı aralıkta değer üretildi: #{x}")
         end
@@ -670,7 +670,7 @@ Bu sayede:
         !ruby
         require 'log'
 
-        x = Math.sin(teta) > 0.5
+        x = Math.sin(teta)
         if x > 0.5
           Log.sin("hatalı aralıkta değer üretildi: #{x}")
         end
@@ -699,7 +699,7 @@ sağlıyor
 
         include 'Math' # Mixin
 
-        x = sin(teta) > 0.5
+        x = sin(teta)
         if x > 0.5
           Log.sin("hatalı aralıkta değer üretildi: #{x}")
         end
@@ -723,9 +723,9 @@ gibi, ekleyebiliyoruz.
 
 Çok güçlü bir araç
 
--   Kod paylaşımı için "miras alma" dışında bir yöntem sunuyor
+-   Kod paylaşımı için "statik miras alma" dışında bir yöntem sunuyor
 
--   Bu yöntem NYP'de genel olarak "komposizyon" olarak da bilinir
+-   Fakat bu da bir tür "miras alma" (daha sonra bahsedeceğiz)
 
 -   Bazı dillerde var olan "çoklu miras alma" ("multiple inheritance")
     özelliğini "katıştırma" ile taklit edebilirsiniz
