@@ -1,0 +1,28 @@
+// Test and Set
+
+#define LOCKED 1
+
+int TestAndSet(int* lockPtr) {
+    int oldValue;
+
+    ATOMIC();
+    // This should be interpreted as pseudocode for illustrative purposes only.
+    // Traditional compilation of this code will not guarantee atomicity, the
+    // use of shared memory (i.e., non-cached values), protection from compiler
+    // optimizations, or other required properties.
+    oldValue = *lockPtr;
+    *lockPtr = LOCKED;
+    END_ATOMIC();
+
+    return oldValue;
+}
+
+// Example
+
+volatile int lock = 0;
+
+void Critical() {
+    while (TestAndSet(&lock) == 1);
+    critical section // only one process can be in this section at a time
+    lock = 0 // release lock when finished with the critical section
+}

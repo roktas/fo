@@ -1,0 +1,29 @@
+// Compare and Swap
+function cas(p : pointer to int, old : int, new : int) returns bool {
+    if *p ≠ old {
+        return false
+    }
+    *p ← new
+    return true
+}
+
+// Example: atomic adder
+function add(p : pointer to int, a : int) returns int {
+    done ← false
+    while not done {
+        value ← *p  // Even this operation doesn't need to be atomic.
+        done ← cas(p, value, value + a)
+    }
+    return value + a
+}
+
+// C implementation
+int compare_and_swap(int* reg, int oldval, int newval)
+{
+  ATOMIC();
+  int old_reg_val = *reg;
+  if (old_reg_val == oldval)
+     *reg = newval;
+  END_ATOMIC();
+  return old_reg_val;
+}
