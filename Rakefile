@@ -458,7 +458,7 @@ task :new do
     erbify(Param[:foliotemplate], source, Param)
 
     # Düzenlemeye gir.
-    sh ENV['EDITOR'], source
+    sh 'editor' , source
   end
 end
 
